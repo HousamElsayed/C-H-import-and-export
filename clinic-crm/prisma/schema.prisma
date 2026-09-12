@@ -1,0 +1,1094 @@
+// Beauty clinic CRM — data model.
+// Money is stored as integer minor units (e.g. kuruş) to avoid float/Decimal
+// rounding and to keep values serialisable across the server/client boundary.
+// Rates and percentages are stored as basis points (2000 = 20.00%).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  OWNER
+  MANAGER
+  RECEPTIONIST
+  THERAPIST
+  ACCOUNTANT
+}
+
+enum Gender {
+  FEMALE
+  MALE
+  OTHER
+  UNDISCLOSED
+}
+
+enum ClientStatus {
+  LEAD
+  ACTIVE
+  DORMANT
+  BLOCKED
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  ARRIVED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum BookingSource {
+  WALK_IN
+  PHONE
+  WHATSAPP
+  INSTAGRAM
+  WEBSITE
+  REFERRAL
+  OTHER
+}
+
+enum InvoiceStatus {
+  DRAFT
+  ISSUED
+  PARTIALLY_PAID
+  PAID
+  VOID
+  REFUNDED
+}
+
+enum InvoiceItemKind {
+  SERVICE
+  PRODUCT
+  PACKAGE
+  GIFT_CARD
+  ADJUSTMENT
+}
+
+enum PaymentMethod {
+  CASH
+  CARD
+  BANK_TRANSFER
+  ONLINE
+  GIFT_CARD
+  PACKAGE_CREDIT
+  LOYALTY_POINTS
+}
+
+enum DiscountType {
+  NONE
+  PERCENT
+  FIXED
+}
+
+enum ProductType {
+  RETAIL
+  PROFESSIONAL
+  BOTH
+}
+
+enum StockMovementType {
+  PURCHASE
+  RETAIL_SALE
+  TREATMENT_USE
+  INTERNAL_USE
+  ADJUSTMENT
+  RETURN_TO_SUPPLIER
+  CUSTOMER_RETURN
+  WASTAGE
+  EXPIRY
+  STOCK_TAKE
+}
+
+enum ConsumptionBillStatus {
+  DRAFT
+  ISSUED
+  CANCELLED
+}
+
+enum ClientPackageStatus {
+  ACTIVE
+  COMPLETED
+  EXPIRED
+  CANCELLED
+}
+
+enum MessageChannel {
+  SMS
+  EMAIL
+  WHATSAPP
+}
+
+enum MessageStatus {
+  QUEUED
+  SENDING
+  SENT
+  DELIVERED
+  FAILED
+  CANCELLED
+}
+
+enum MessagePurpose {
+  APPOINTMENT_REMINDER
+  APPOINTMENT_CONFIRMATION
+  APPOINTMENT_CANCELLATION
+  BIRTHDAY
+  WIN_BACK
+  CAMPAIGN
+  AFTERCARE
+  MANUAL
+}
+
+enum CampaignStatus {
+  DRAFT
+  SCHEDULED
+  RUNNING
+  COMPLETED
+  CANCELLED
+}
+
+enum ConsentStatus {
+  PENDING
+  SIGNED
+  DECLINED
+  WITHDRAWN
+}
+
+enum LoyaltyReason {
+  EARNED_PURCHASE
+  REDEEMED
+  MANUAL_ADJUSTMENT
+  EXPIRED
+  REFERRAL_BONUS
+}
+
+enum DocumentKind {
+  BEFORE_PHOTO
+  AFTER_PHOTO
+  CONSENT_FORM
+  ID_DOCUMENT
+  PRESCRIPTION
+  LAB_RESULT
+  OTHER
+}
+
+// ---------------------------------------------------------------------------
+// Staff, auth, audit
+// ---------------------------------------------------------------------------
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String
+  firstName     String
+  lastName      String
+  phone         String?
+  role          Role      @default(RECEPTIONIST)
+  title         String?
+  bio           String?
+  avatarUrl     String?
+  colorHex      String    @default("#8b5cf6")
+  isBookable    Boolean   @default(false)
+  isActive      Boolean   @default(true)
+  commissionBps Int       @default(0)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions           Session[]
+  workingHours       WorkingHour[]
+  timeOff            TimeOff[]
+  serviceSkills      ServiceStaff[]
+  appointments       Appointment[]         @relation("AppointmentStaff")
+  createdAppointments Appointment[]        @relation("AppointmentCreatedBy")
+  appointmentServices AppointmentService[]
+  invoices           Invoice[]             @relation("InvoiceCashier")
+  payments           Payment[]
+  clientNotes        ClientNote[]
+  stockMovements     StockMovement[]
+  consumptionBills   ConsumptionBill[]     @relation("ConsumptionBillCreatedBy")
+  consumedBills      ConsumptionBill[]     @relation("ConsumptionBillStaff")
+  auditLogs          AuditLog[]
+  stockCounts        StockCount[]
+  commissions        Commission[]
+
+  @@index([isActive, isBookable])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  userAgent String?
+  ipAddress String?
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model WorkingHour {
+  id        String  @id @default(cuid())
+  userId    String
+  weekday   Int // 0 = Sunday .. 6 = Saturday
+  startMin  Int // minutes from midnight
+  endMin    Int
+  isActive  Boolean @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, weekday, startMin])
+  @@index([userId, weekday])
+}
+
+model TimeOff {
+  id      String   @id @default(cuid())
+  userId  String
+  startAt DateTime
+  endAt   DateTime
+  reason  String?
+  isAllDay Boolean @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, startAt])
+}
+
+model Room {
+  id       String  @id @default(cuid())
+  name     String  @unique
+  capacity Int     @default(1)
+  notes    String?
+  isActive Boolean @default(true)
+
+  appointments  Appointment[]
+  services      ServiceRoom[]
+  consumptions  ConsumptionBill[]
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  action     String
+  entityType String
+  entityId   String?
+  summary    String?
+  metadata   Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// Clients
+// ---------------------------------------------------------------------------
+
+model Client {
+  id             String       @id @default(cuid())
+  code           String       @unique
+  firstName      String
+  lastName       String
+  phone          String       @unique
+  email          String?
+  birthDate      DateTime?
+  gender         Gender       @default(UNDISCLOSED)
+  status         ClientStatus @default(ACTIVE)
+  address        String?
+  city           String?
+  nationalId     String?
+  occupation     String?
+  source         BookingSource @default(WALK_IN)
+  referredById   String?
+  skinType       String?
+  allergies      String?
+  medicalNotes   String?
+  medications    String?
+  preferences    String?
+  internalNotes  String?
+  loyaltyPoints  Int          @default(0)
+  marketingSms   Boolean      @default(false)
+  marketingEmail Boolean      @default(false)
+  marketingWhatsapp Boolean   @default(false)
+  kvkkConsentAt  DateTime?
+  firstVisitAt   DateTime?
+  lastVisitAt    DateTime?
+  totalSpentMinor Int         @default(0)
+  visitCount     Int          @default(0)
+  noShowCount    Int          @default(0)
+  isDeleted      Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  referredBy Client?  @relation("ClientReferral", fields: [referredById], references: [id], onDelete: SetNull)
+  referrals  Client[] @relation("ClientReferral")
+
+  tags            ClientTag[]
+  notes           ClientNote[]
+  documents       ClientDocument[]
+  consents        ConsentRecord[]
+  appointments    Appointment[]
+  invoices        Invoice[]
+  packages        ClientPackage[]
+  loyaltyEntries  LoyaltyEntry[]
+  messages        MessageLog[]
+  giftCardsBought GiftCard[]         @relation("GiftCardBuyer")
+  campaignTargets CampaignRecipient[]
+
+  @@index([lastName, firstName])
+  @@index([status, isDeleted])
+  @@index([lastVisitAt])
+}
+
+model Tag {
+  id       String      @id @default(cuid())
+  name     String      @unique
+  colorHex String      @default("#64748b")
+  clients  ClientTag[]
+}
+
+model ClientTag {
+  clientId String
+  tagId    String
+
+  client Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([clientId, tagId])
+}
+
+model ClientNote {
+  id            String   @id @default(cuid())
+  clientId      String
+  authorId      String?
+  appointmentId String?
+  body          String
+  isClinical    Boolean  @default(false)
+  isPinned      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  client      Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  author      User?        @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  appointment Appointment? @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+
+  @@index([clientId, createdAt])
+}
+
+model ClientDocument {
+  id            String       @id @default(cuid())
+  clientId      String
+  appointmentId String?
+  kind          DocumentKind @default(OTHER)
+  fileName      String
+  storageKey    String
+  mimeType      String
+  sizeBytes     Int
+  caption       String?
+  takenAt       DateTime?
+  createdAt     DateTime     @default(now())
+
+  client      Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  appointment Appointment? @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+
+  @@index([clientId, kind])
+}
+
+model ConsentTemplate {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  body      String
+  version   Int      @default(1)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  services Service[]
+  records  ConsentRecord[]
+}
+
+model ConsentRecord {
+  id            String        @id @default(cuid())
+  clientId      String
+  templateId    String
+  appointmentId String?
+  status        ConsentStatus @default(PENDING)
+  signedAt      DateTime?
+  signatureData String?
+  documentId    String?
+  notes         String?
+  createdAt     DateTime      @default(now())
+
+  client      Client          @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  template    ConsentTemplate @relation(fields: [templateId], references: [id])
+  appointment Appointment?    @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+
+  @@index([clientId, status])
+}
+
+// ---------------------------------------------------------------------------
+// Catalogue: services and packages
+// ---------------------------------------------------------------------------
+
+model ServiceCategory {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  colorHex String    @default("#0ea5e9")
+  sortOrder Int      @default(0)
+  isActive Boolean   @default(true)
+  services Service[]
+}
+
+model Service {
+  id                String   @id @default(cuid())
+  categoryId        String
+  name              String
+  description       String?
+  durationMin       Int
+  bufferMin         Int      @default(0)
+  priceMinor        Int
+  costMinor         Int      @default(0)
+  commissionBps     Int?
+  colorHex          String   @default("#0ea5e9")
+  requiresPatchTest Boolean  @default(false)
+  patchTestDays     Int      @default(0)
+  requiresConsent   Boolean  @default(false)
+  consentTemplateId String?
+  aftercareNote     String?
+  isOnlineBookable  Boolean  @default(true)
+  isActive          Boolean  @default(true)
+  sortOrder         Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  category        ServiceCategory  @relation(fields: [categoryId], references: [id])
+  consentTemplate ConsentTemplate? @relation(fields: [consentTemplateId], references: [id], onDelete: SetNull)
+
+  staff              ServiceStaff[]
+  rooms              ServiceRoom[]
+  productUsages      ServiceProductUsage[]
+  appointmentServices AppointmentService[]
+  packageItems       PackageItem[]
+  clientPackageItems ClientPackageItem[]
+  invoiceItems       InvoiceItem[]
+
+  @@unique([categoryId, name])
+  @@index([isActive])
+}
+
+model ServiceStaff {
+  serviceId String
+  userId    String
+
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, userId])
+}
+
+model ServiceRoom {
+  serviceId String
+  roomId    String
+
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  room    Room    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, roomId])
+}
+
+/// Standard product consumption for one delivery of a service — drives
+/// automatic stock deduction and true treatment cost.
+model ServiceProductUsage {
+  id        String @id @default(cuid())
+  serviceId String
+  productId String
+  quantity  Float
+
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([serviceId, productId])
+}
+
+model Package {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  description   String?
+  priceMinor    Int
+  validityDays  Int      @default(365)
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  items         PackageItem[]
+  clientPackages ClientPackage[]
+  invoiceItems  InvoiceItem[]
+}
+
+model PackageItem {
+  id         String @id @default(cuid())
+  packageId  String
+  serviceId  String
+  quantity   Int
+
+  package Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  service Service @relation(fields: [serviceId], references: [id])
+
+  @@unique([packageId, serviceId])
+}
+
+model ClientPackage {
+  id          String              @id @default(cuid())
+  clientId    String
+  packageId   String
+  invoiceId   String?
+  status      ClientPackageStatus @default(ACTIVE)
+  pricePaidMinor Int
+  purchasedAt DateTime            @default(now())
+  expiresAt   DateTime
+  notes       String?
+
+  client  Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  package Package  @relation(fields: [packageId], references: [id])
+  invoice Invoice? @relation(fields: [invoiceId], references: [id], onDelete: SetNull)
+
+  items       ClientPackageItem[]
+  redemptions PackageRedemption[]
+
+  @@index([clientId, status])
+  @@index([expiresAt])
+}
+
+model ClientPackageItem {
+  id              String @id @default(cuid())
+  clientPackageId String
+  serviceId       String
+  totalQty        Int
+  usedQty         Int    @default(0)
+
+  clientPackage ClientPackage @relation(fields: [clientPackageId], references: [id], onDelete: Cascade)
+  service       Service       @relation(fields: [serviceId], references: [id])
+  redemptions   PackageRedemption[]
+
+  @@unique([clientPackageId, serviceId])
+}
+
+model PackageRedemption {
+  id                   String   @id @default(cuid())
+  clientPackageId      String
+  clientPackageItemId  String
+  appointmentServiceId String?  @unique
+  invoiceItemId        String?  @unique
+  quantity             Int      @default(1)
+  valueMinor           Int      @default(0)
+  createdAt            DateTime @default(now())
+
+  clientPackage      ClientPackage       @relation(fields: [clientPackageId], references: [id], onDelete: Cascade)
+  clientPackageItem  ClientPackageItem   @relation(fields: [clientPackageItemId], references: [id], onDelete: Cascade)
+  appointmentService AppointmentService? @relation(fields: [appointmentServiceId], references: [id], onDelete: SetNull)
+  invoiceItem        InvoiceItem?        @relation(fields: [invoiceItemId], references: [id], onDelete: SetNull)
+
+  @@index([clientPackageId])
+}
+
+// ---------------------------------------------------------------------------
+// Appointments
+// ---------------------------------------------------------------------------
+
+model Appointment {
+  id             String            @id @default(cuid())
+  code           String            @unique
+  clientId       String
+  staffId        String
+  roomId         String?
+  startAt        DateTime
+  endAt          DateTime
+  status         AppointmentStatus @default(SCHEDULED)
+  source         BookingSource     @default(PHONE)
+  notes          String?
+  internalNotes  String?
+  cancelReason   String?
+  cancelledAt    DateTime?
+  arrivedAt      DateTime?
+  startedAt      DateTime?
+  completedAt    DateTime?
+  depositMinor   Int               @default(0)
+  totalMinor     Int               @default(0)
+  createdById    String?
+  reminderSentAt DateTime?
+  confirmedAt    DateTime?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  client    Client  @relation(fields: [clientId], references: [id])
+  staff     User    @relation("AppointmentStaff", fields: [staffId], references: [id])
+  room      Room?   @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  createdBy User?   @relation("AppointmentCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+  services         AppointmentService[]
+  invoice          Invoice?
+  notesList        ClientNote[]
+  documents        ClientDocument[]
+  consents         ConsentRecord[]
+  messages         MessageLog[]
+  stockMovements   StockMovement[]
+  consumptionBills ConsumptionBill[]
+
+  @@index([startAt, staffId])
+  @@index([clientId, startAt])
+  @@index([status, startAt])
+}
+
+model AppointmentService {
+  id            String @id @default(cuid())
+  appointmentId String
+  serviceId     String
+  staffId       String?
+  durationMin   Int
+  priceMinor    Int
+  sortOrder     Int    @default(0)
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  service     Service     @relation(fields: [serviceId], references: [id])
+  staff       User?       @relation(fields: [staffId], references: [id], onDelete: SetNull)
+
+  redemption  PackageRedemption?
+  invoiceItem InvoiceItem?
+
+  @@index([appointmentId])
+}
+
+// ---------------------------------------------------------------------------
+// Billing
+// ---------------------------------------------------------------------------
+
+model Invoice {
+  id             String        @id @default(cuid())
+  number         String        @unique
+  clientId       String?
+  appointmentId  String?       @unique
+  cashierId      String?
+  status         InvoiceStatus @default(DRAFT)
+  issuedAt       DateTime?
+  dueAt          DateTime?
+  subtotalMinor  Int           @default(0)
+  discountType   DiscountType  @default(NONE)
+  discountValue  Int           @default(0)
+  discountMinor  Int           @default(0)
+  taxBps         Int           @default(0)
+  taxMinor       Int           @default(0)
+  totalMinor     Int           @default(0)
+  paidMinor      Int           @default(0)
+  refundedMinor  Int           @default(0)
+  notes          String?
+  voidReason     String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  client      Client?      @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  appointment Appointment? @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+  cashier     User?        @relation("InvoiceCashier", fields: [cashierId], references: [id], onDelete: SetNull)
+
+  items          InvoiceItem[]
+  payments       Payment[]
+  clientPackages ClientPackage[]
+  loyaltyEntries LoyaltyEntry[]
+  stockMovements StockMovement[]
+  commissions    Commission[]
+
+  @@index([status, issuedAt])
+  @@index([clientId])
+}
+
+model InvoiceItem {
+  id            String          @id @default(cuid())
+  invoiceId     String
+  kind          InvoiceItemKind
+  description   String
+  serviceId     String?
+  productId     String?
+  packageId     String?
+  giftCardId    String?
+  appointmentServiceId String?  @unique
+  staffId       String?
+  quantity      Float           @default(1)
+  unitPriceMinor Int
+  discountMinor Int             @default(0)
+  totalMinor    Int
+  costMinor     Int             @default(0)
+  sortOrder     Int             @default(0)
+
+  invoice            Invoice             @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  service            Service?            @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+  product            Product?            @relation(fields: [productId], references: [id], onDelete: SetNull)
+  package            Package?            @relation(fields: [packageId], references: [id], onDelete: SetNull)
+  giftCard           GiftCard?           @relation(fields: [giftCardId], references: [id], onDelete: SetNull)
+  appointmentService AppointmentService? @relation(fields: [appointmentServiceId], references: [id], onDelete: SetNull)
+
+  redemption PackageRedemption?
+
+  @@index([invoiceId])
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  invoiceId   String
+  method      PaymentMethod
+  amountMinor Int
+  reference   String?
+  giftCardId  String?
+  receivedById String?
+  isRefund    Boolean       @default(false)
+  note        String?
+  createdAt   DateTime      @default(now())
+
+  invoice    Invoice   @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  giftCard   GiftCard? @relation(fields: [giftCardId], references: [id], onDelete: SetNull)
+  receivedBy User?     @relation(fields: [receivedById], references: [id], onDelete: SetNull)
+
+  @@index([invoiceId])
+  @@index([createdAt])
+}
+
+model Commission {
+  id          String   @id @default(cuid())
+  userId      String
+  invoiceId   String
+  baseMinor   Int
+  rateBps     Int
+  amountMinor Int
+  isPaid      Boolean  @default(false)
+  paidAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  invoice Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+model GiftCard {
+  id             String   @id @default(cuid())
+  code           String   @unique
+  initialMinor   Int
+  balanceMinor   Int
+  buyerClientId  String?
+  recipientName  String?
+  expiresAt      DateTime?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+
+  buyer        Client?       @relation("GiftCardBuyer", fields: [buyerClientId], references: [id], onDelete: SetNull)
+  payments     Payment[]
+  invoiceItems InvoiceItem[]
+}
+
+model LoyaltyEntry {
+  id        String        @id @default(cuid())
+  clientId  String
+  invoiceId String?
+  points    Int
+  reason    LoyaltyReason
+  note      String?
+  createdAt DateTime      @default(now())
+
+  client  Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  invoice Invoice? @relation(fields: [invoiceId], references: [id], onDelete: SetNull)
+
+  @@index([clientId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Inventory
+// ---------------------------------------------------------------------------
+
+model Supplier {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  contact   String?
+  phone     String?
+  email     String?
+  notes     String?
+  isActive  Boolean   @default(true)
+  products  Product[]
+}
+
+model ProductCategory {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  sortOrder Int       @default(0)
+  products  Product[]
+}
+
+model Product {
+  id             String      @id @default(cuid())
+  sku            String      @unique
+  barcode        String?     @unique
+  name           String
+  brand          String?
+  categoryId     String?
+  supplierId     String?
+  type           ProductType @default(PROFESSIONAL)
+  unit           String      @default("pcs")
+  /// Doses per container for professional products (e.g. 20 uses per bottle).
+  unitsPerPack   Float       @default(1)
+  costMinor      Int         @default(0)
+  retailMinor    Int         @default(0)
+  stockQty       Float       @default(0)
+  reorderLevel   Float       @default(0)
+  reorderQty     Float       @default(0)
+  trackStock     Boolean     @default(true)
+  expiresAt      DateTime?
+  location       String?
+  notes          String?
+  isActive       Boolean     @default(true)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  category ProductCategory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  supplier Supplier?        @relation(fields: [supplierId], references: [id], onDelete: SetNull)
+
+  movements        StockMovement[]
+  serviceUsages    ServiceProductUsage[]
+  invoiceItems     InvoiceItem[]
+  consumptionItems ConsumptionBillItem[]
+  countItems       StockCountItem[]
+
+  @@index([isActive, type])
+  @@index([name])
+}
+
+model StockMovement {
+  id                String            @id @default(cuid())
+  productId         String
+  type              StockMovementType
+  /// Signed change applied to Product.stockQty (negative for stock out).
+  quantity          Float
+  balanceAfter      Float
+  unitCostMinor     Int               @default(0)
+  totalCostMinor    Int               @default(0)
+  reference         String?
+  note              String?
+  userId            String?
+  appointmentId     String?
+  invoiceId         String?
+  consumptionBillId String?
+  stockCountId      String?
+  createdAt         DateTime          @default(now())
+
+  product         Product          @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user            User?            @relation(fields: [userId], references: [id], onDelete: SetNull)
+  appointment     Appointment?     @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+  invoice         Invoice?         @relation(fields: [invoiceId], references: [id], onDelete: SetNull)
+  consumptionBill ConsumptionBill? @relation(fields: [consumptionBillId], references: [id], onDelete: SetNull)
+  stockCount      StockCount?      @relation(fields: [stockCountId], references: [id], onDelete: SetNull)
+
+  @@index([productId, createdAt])
+  @@index([type, createdAt])
+}
+
+/// Internal consumption bill — an itemised, costed document for products used
+/// inside the clinic (back-bar use, testers, training, wastage). Not revenue:
+/// it posts stock out and books cost against a staff member, room or appointment.
+model ConsumptionBill {
+  id            String                @id @default(cuid())
+  number        String                @unique
+  status        ConsumptionBillStatus @default(DRAFT)
+  billDate      DateTime              @default(now())
+  costCenter    String?
+  staffId       String?
+  roomId        String?
+  appointmentId String?
+  reason        String?
+  notes         String?
+  totalCostMinor Int                  @default(0)
+  issuedAt      DateTime?
+  createdById   String?
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+
+  staff       User?        @relation("ConsumptionBillStaff", fields: [staffId], references: [id], onDelete: SetNull)
+  room        Room?        @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  appointment Appointment? @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+  createdBy   User?        @relation("ConsumptionBillCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+  items     ConsumptionBillItem[]
+  movements StockMovement[]
+
+  @@index([status, billDate])
+}
+
+model ConsumptionBillItem {
+  id                String @id @default(cuid())
+  consumptionBillId String
+  productId         String
+  quantity          Float
+  unitCostMinor     Int
+  totalCostMinor    Int
+  note              String?
+
+  consumptionBill ConsumptionBill @relation(fields: [consumptionBillId], references: [id], onDelete: Cascade)
+  product         Product         @relation(fields: [productId], references: [id])
+
+  @@index([consumptionBillId])
+}
+
+model StockCount {
+  id          String    @id @default(cuid())
+  number      String    @unique
+  countedAt   DateTime  @default(now())
+  countedById String?
+  notes       String?
+  isPosted    Boolean   @default(false)
+  postedAt    DateTime?
+
+  countedBy User?            @relation(fields: [countedById], references: [id], onDelete: SetNull)
+  items     StockCountItem[]
+  movements StockMovement[]
+}
+
+model StockCountItem {
+  id           String @id @default(cuid())
+  stockCountId String
+  productId    String
+  expectedQty  Float
+  countedQty   Float
+  varianceQty  Float
+  note         String?
+
+  stockCount StockCount @relation(fields: [stockCountId], references: [id], onDelete: Cascade)
+  product    Product    @relation(fields: [productId], references: [id])
+
+  @@unique([stockCountId, productId])
+}
+
+// ---------------------------------------------------------------------------
+// Messaging and marketing
+// ---------------------------------------------------------------------------
+
+model MessageTemplate {
+  id        String         @id @default(cuid())
+  name      String         @unique
+  channel   MessageChannel
+  purpose   MessagePurpose
+  subject   String?
+  body      String
+  isActive  Boolean        @default(true)
+  createdAt DateTime       @default(now())
+
+  messages  MessageLog[]
+  campaigns Campaign[]
+}
+
+model MessageLog {
+  id            String         @id @default(cuid())
+  clientId      String?
+  appointmentId String?
+  campaignId    String?
+  templateId    String?
+  channel       MessageChannel
+  purpose       MessagePurpose @default(MANUAL)
+  status        MessageStatus  @default(QUEUED)
+  toAddress     String
+  subject       String?
+  body          String
+  providerId    String?
+  error         String?
+  scheduledFor  DateTime?
+  sentAt        DateTime?
+  createdAt     DateTime       @default(now())
+
+  client      Client?          @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  appointment Appointment?     @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+  campaign    Campaign?        @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  template    MessageTemplate? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+
+  @@index([status, scheduledFor])
+  @@index([clientId, createdAt])
+}
+
+model Campaign {
+  id          String         @id @default(cuid())
+  name        String
+  channel     MessageChannel
+  templateId  String?
+  status      CampaignStatus @default(DRAFT)
+  /// Serialised audience filter (tags, last visit window, spend, birthday month).
+  filter      Json?
+  scheduledAt DateTime?
+  startedAt   DateTime?
+  completedAt DateTime?
+  createdAt   DateTime       @default(now())
+
+  template   MessageTemplate?    @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  recipients CampaignRecipient[]
+  messages   MessageLog[]
+}
+
+model CampaignRecipient {
+  id         String   @id @default(cuid())
+  campaignId String
+  clientId   String
+  isSent     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  client   Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, clientId])
+}
+
+// ---------------------------------------------------------------------------
+// Settings and numbering
+// ---------------------------------------------------------------------------
+
+model ClinicSetting {
+  id                  Int      @id @default(1)
+  name                String   @default("Beauty Clinic")
+  legalName           String?
+  taxNumber           String?
+  phone               String?
+  email               String?
+  address             String?
+  logoUrl             String?
+  currency            String   @default("TRY")
+  currencySymbol      String   @default("₺")
+  locale              String   @default("tr-TR")
+  timeZone            String   @default("Europe/Istanbul")
+  defaultTaxBps       Int      @default(2000)
+  slotMinutes         Int      @default(15)
+  openMin             Int      @default(540)
+  closeMin            Int      @default(1200)
+  reminderHoursBefore Int      @default(24)
+  secondReminderHoursBefore Int? @default(2)
+  loyaltyPointsPerUnit Int     @default(1)
+  loyaltyUnitMinor    Int      @default(10000)
+  loyaltyPointValueMinor Int   @default(100)
+  cancellationWindowH Int      @default(24)
+  updatedAt           DateTime @updatedAt
+}
+
+/// Transaction-safe per-prefix document numbering (INV-2026-000123).
+model DocumentSequence {
+  id     String @id @default(cuid())
+  prefix String
+  year   Int
+  value  Int    @default(0)
+
+  @@unique([prefix, year])
+}
