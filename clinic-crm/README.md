@@ -14,13 +14,24 @@ You need Node.js 20.19+ and a PostgreSQL 14+ database.
 
 ```bash
 cd clinic-crm
-npm install
+npm install                   # also generates the Prisma client
 
-cp .env.example .env          # then fill in DATABASE_URL and AUTH_SECRET
+cp .env.example .env          # then edit it — see below
 npx prisma migrate deploy     # create the schema
 npm run db:seed               # optional: a realistic demo clinic
-npm run dev
+npm run dev                   # http://localhost:3000
 ```
+
+Two values in `.env` must be set before the first command that touches the
+database:
+
+```ini
+DATABASE_URL="postgresql://crm:crm_dev_password@localhost:5432/clinic_crm?schema=public"
+AUTH_SECRET="paste the output of: openssl rand -base64 32"
+```
+
+The `DATABASE_URL` above matches the bundled `docker-compose.yml`. Point it at
+your own PostgreSQL instead if you have one.
 
 Open http://localhost:3000. The seed creates these logins (all with the password
 `Password123!` — change them before going anywhere near real data):

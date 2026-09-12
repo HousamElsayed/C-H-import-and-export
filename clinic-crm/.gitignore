@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — real secrets stay local, the template is committed
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -42,6 +43,5 @@ next-env.d.ts
 
 /src/generated/prisma
 
-# local env and uploads
-.env
+# uploads
 /storage
