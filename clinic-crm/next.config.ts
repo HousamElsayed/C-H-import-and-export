@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Keep the Postgres driver out of the bundler; it is loaded at runtime.
+  serverExternalPackages: ['@prisma/adapter-pg', 'pg'],
+}
 
-export default nextConfig;
+export default nextConfig

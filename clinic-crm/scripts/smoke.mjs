@@ -133,20 +133,39 @@ if (isAppointmentUrl(bookedUrl)) {
 
 // --- internal usage bill deducts stock ---------------------------------------
 {
-  await page.goto(`${base}/inventory/products`, { waitUntil: 'networkidle' })
-  const firstProductRow = page.locator('table tbody tr').first()
-  const productName = (await firstProductRow.locator('td').first().innerText()).split('\n')[0].trim()
-  const stockBefore = await firstProductRow.locator('td').nth(3).innerText()
-
   await page.goto(`${base}/inventory/consumption/new`, { waitUntil: 'networkidle' })
   await page.fill('input#reason', 'Smoke test consumption')
   const productSelect = page.locator('select[name="itemProductId"]').first()
-  const optionValue = await productSelect
-    .locator(`option:has-text("${productName}")`)
+
+  // Pick the best-stocked product so the shortage guard is not what we hit.
+  const options = await productSelect.locator('option').evaluateAll((nodes) =>
+    nodes
+      .filter((node) => node.value)
+      .map((node) => ({
+        value: node.value,
+        text: node.textContent ?? '',
+        stock: Number.parseFloat((node.textContent ?? '').split('—')[1] ?? '0'),
+      })),
+  )
+  const best = options.sort((a, b) => b.stock - a.stock)[0]
+  const optionValue = best && best.stock >= 1 ? best.value : null
+  const productName = best ? best.text.split('—')[0].trim() : ''
+
+  await page.goto(`${base}/inventory/products`, { waitUntil: 'networkidle' })
+  const stockBefore = await page
+    .locator('table tbody tr')
+    .filter({ hasText: productName })
     .first()
-    .getAttribute('value')
-    .catch(() => null)
+    .locator('td')
+    .nth(3)
+    .innerText()
+    .catch(() => '')
+
+  await page.goto(`${base}/inventory/consumption/new`, { waitUntil: 'networkidle' })
+  await page.fill('input#reason', 'Smoke test consumption')
+
   if (optionValue) {
+    const productSelect = page.locator('select[name="itemProductId"]').first()
     await productSelect.selectOption(optionValue)
     await page.fill('input[name="itemQuantity"]', '1')
     await page.click('button[type="submit"]:has-text("Save usage bill")')

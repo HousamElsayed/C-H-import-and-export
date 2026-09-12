@@ -464,8 +464,6 @@ async function main() {
 
   // --------------------------------------------------------- appointments ---
   const chargeableServices = services.filter((service) => service.priceMinor > 0)
-  let appointmentCount = 0
-  let invoiceCount = 0
 
   for (let offset = -70; offset <= 21; offset += 1) {
     const date = dayAt(offset, 9)
@@ -499,7 +497,6 @@ async function main() {
       else if (offset === 0) status = chance(0.5) ? 'COMPLETED' : 'CONFIRMED'
       else status = chance(0.6) ? 'CONFIRMED' : 'SCHEDULED'
 
-      appointmentCount += 1
       const appointment = await prisma.appointment.create({
         data: {
           code: nextCode('A', startAt),
@@ -543,7 +540,6 @@ async function main() {
       const net = subtotal - discountMinor
       const taxMinor = Math.round((net * 2000) / 10000)
       const total = net + taxMinor
-      invoiceCount += 1
 
       const invoice = await prisma.invoice.create({
         data: {
@@ -729,7 +725,7 @@ async function main() {
     },
   ]
 
-  for (const [index, spec] of consumptionSpec.entries()) {
+  for (const spec of consumptionSpec) {
     const billDate = dayAt(spec.offset, 18)
     let totalCost = 0
     const itemData = []

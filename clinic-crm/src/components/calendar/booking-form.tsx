@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useMemo, useState } from 'react'
+import { useActionState, useState } from 'react'
 import Link from 'next/link'
 import { Check, Search, TriangleAlert } from 'lucide-react'
 import { Card, CardBody, CardHeader } from '@/components/ui/card'
@@ -78,42 +78,35 @@ export function BookingForm({
   const bufferMin = selectedServices.length > 0 ? Math.max(...selectedServices.map((s) => s.bufferMin)) : 0
   const totalMinor = selectedServices.reduce((sum, service) => sum + service.priceMinor, 0)
 
-  const startMinutes = useMemo(() => {
-    const [h, m] = time.split(':').map((part) => Number.parseInt(part, 10))
-    return (Number.isNaN(h) ? 0 : h) * 60 + (Number.isNaN(m) ? 0 : m)
-  }, [time])
+  const [hourPart, minutePart] = time.split(':').map((part) => Number.parseInt(part, 10))
+  const startMinutes = (Number.isNaN(hourPart) ? 0 : hourPart) * 60 + (Number.isNaN(minutePart) ? 0 : minutePart)
 
-  const eligibleStaff = useMemo(() => {
-    if (selectedServices.length === 0) return staff
-    return staff.filter((member) => selectedServices.every((service) => service.staffIds.includes(member.id)))
-  }, [selectedServices, staff])
+  const eligibleStaff =
+    selectedServices.length === 0
+      ? staff
+      : staff.filter((member) => selectedServices.every((service) => service.staffIds.includes(member.id)))
 
-  const eligibleRooms = useMemo(() => {
-    if (selectedServices.length === 0) return rooms
-    const allowed = new Set(selectedServices.flatMap((service) => service.roomIds))
-    const filtered = rooms.filter((room) => allowed.has(room.id))
-    return filtered.length > 0 ? filtered : rooms
-  }, [selectedServices, rooms])
+  const allowedRoomIds = new Set(selectedServices.flatMap((service) => service.roomIds))
+  const roomsForServices = rooms.filter((room) => allowedRoomIds.has(room.id))
+  const eligibleRooms =
+    selectedServices.length === 0 || roomsForServices.length === 0 ? rooms : roomsForServices
 
-  const filteredClients = useMemo(() => {
-    const query = clientQuery.trim().toLowerCase()
-    if (!query) return clients.slice(0, 8)
-    return clients
-      .filter((client) =>
-        `${client.firstName} ${client.lastName} ${client.phone}`.toLowerCase().includes(query),
-      )
-      .slice(0, 8)
-  }, [clientQuery, clients])
+  const clientQueryText = clientQuery.trim().toLowerCase()
+  const filteredClients = (
+    clientQueryText
+      ? clients.filter((client) =>
+          `${client.firstName} ${client.lastName} ${client.phone}`.toLowerCase().includes(clientQueryText),
+        )
+      : clients
+  ).slice(0, 8)
 
-  const grouped = useMemo(() => {
-    const map = new Map<string, ServiceOption[]>()
-    for (const service of services) {
-      const bucket = map.get(service.categoryName) ?? []
-      bucket.push(service)
-      map.set(service.categoryName, bucket)
-    }
-    return [...map.entries()]
-  }, [services])
+  const groupedByCategory = new Map<string, ServiceOption[]>()
+  for (const service of services) {
+    const bucket = groupedByCategory.get(service.categoryName) ?? []
+    bucket.push(service)
+    groupedByCategory.set(service.categoryName, bucket)
+  }
+  const grouped = [...groupedByCategory.entries()]
 
   function toggleService(id: string) {
     setSelectedServiceIds((current) =>

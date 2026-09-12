@@ -47,11 +47,27 @@ export function parseMoney(input: string | number | null | undefined): number {
 
   if (lastComma === -1 && lastDot === -1) {
     normalised = cleaned
-  } else if (lastComma > lastDot) {
-    // Comma is the decimal separator: strip dots used as thousands separators.
-    normalised = cleaned.replace(/\./g, '').replace(',', '.')
+  } else if (lastComma !== -1 && lastDot !== -1) {
+    // Both present: whichever comes last is the decimal separator.
+    normalised =
+      lastComma > lastDot
+        ? cleaned.replace(/\./g, '').replace(',', '.')
+        : cleaned.replace(/,/g, '')
   } else {
-    normalised = cleaned.replace(/,/g, '')
+    // One separator type only, so "1.250" is ambiguous. Exactly three digits
+    // after a single separator means thousands (1.250 = 1250); anything else
+    // is a decimal point (12.50 = 12.5).
+    const separator = lastComma !== -1 ? ',' : '.'
+    const position = lastComma !== -1 ? lastComma : lastDot
+    const occurrences = cleaned.split(separator).length - 1
+    const trailing = cleaned.length - position - 1
+    const leading = cleaned.slice(0, position).replace('-', '')
+    // "0.005" is never grouped thousands, so a lone zero keeps the decimal reading.
+    const isThousands = occurrences > 1 || (trailing === 3 && leading !== '' && leading !== '0')
+
+    normalised = isThousands
+      ? cleaned.split(separator).join('')
+      : cleaned.replace(separator, '.')
   }
 
   const value = Number.parseFloat(normalised)
