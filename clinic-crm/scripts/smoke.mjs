@@ -131,6 +131,50 @@ if (isAppointmentUrl(bookedUrl)) {
   }
 }
 
+// --- internal usage bill deducts stock ---------------------------------------
+{
+  await page.goto(`${base}/inventory/products`, { waitUntil: 'networkidle' })
+  const firstProductRow = page.locator('table tbody tr').first()
+  const productName = (await firstProductRow.locator('td').first().innerText()).split('\n')[0].trim()
+  const stockBefore = await firstProductRow.locator('td').nth(3).innerText()
+
+  await page.goto(`${base}/inventory/consumption/new`, { waitUntil: 'networkidle' })
+  await page.fill('input#reason', 'Smoke test consumption')
+  const productSelect = page.locator('select[name="itemProductId"]').first()
+  const optionValue = await productSelect
+    .locator(`option:has-text("${productName}")`)
+    .first()
+    .getAttribute('value')
+    .catch(() => null)
+  if (optionValue) {
+    await productSelect.selectOption(optionValue)
+    await page.fill('input[name="itemQuantity"]', '1')
+    await page.click('button[type="submit"]:has-text("Save usage bill")')
+    await page.waitForTimeout(2500)
+
+    const onBill = /\/inventory\/consumption\/[a-z0-9]{12,}$/.test(new URL(page.url()).pathname)
+    const billError = await page.locator('.text-danger').first().textContent().catch(() => '')
+    check('usage bill issued', onBill, onBill ? '' : (billError?.trim() ?? page.url()))
+
+    if (onBill) {
+      const postedMovement = await page.locator('text=Internal use').first().isVisible().catch(() => false)
+      check('usage bill posted a stock movement', postedMovement)
+
+      await page.goto(`${base}/inventory/products`, { waitUntil: 'networkidle' })
+      const stockAfter = await page
+        .locator('table tbody tr')
+        .filter({ hasText: productName })
+        .first()
+        .locator('td')
+        .nth(3)
+        .innerText()
+      check('stock level decreased', stockBefore !== stockAfter, `${stockBefore.trim()} → ${stockAfter.trim()}`)
+    }
+  } else {
+    check('usage bill issued', false, `could not find product "${productName}" in the picker`)
+  }
+}
+
 check('no uncaught page errors', consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '))
 
 await browser.close()
