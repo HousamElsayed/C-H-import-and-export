@@ -101,6 +101,36 @@ if (isAppointmentUrl(bookedUrl)) {
   check('status transition to confirmed', confirmed)
 }
 
+// --- complete the appointment and take payment -------------------------------
+if (isAppointmentUrl(bookedUrl)) {
+  await page.goto(bookedUrl, { waitUntil: 'networkidle' })
+  await page.click('button:has-text("Client arrived")')
+  await page.waitForTimeout(1200)
+  await page.click('button:has-text("Complete")')
+  await page.waitForTimeout(1500)
+  const completed = await page.locator('text=Products used were deducted').isVisible().catch(() => false)
+  check('appointment completed', completed)
+
+  await page.click('a:has-text("Take payment")')
+  await page.waitForURL(/\/invoices\/new/, { timeout: 20000 })
+  const prefilledPrice = await page.locator('input[name="lineUnitPrice"]').first().inputValue().catch(() => '')
+  check('checkout prefilled from appointment', /[1-9]/.test(prefilledPrice), `unit price "${prefilledPrice}"`)
+
+  await page.click('button:has-text("Pay the full amount")')
+  await page.waitForTimeout(400)
+  await page.click('button[type="submit"]:has-text("Complete sale")')
+  await page.waitForTimeout(2500)
+
+  const onInvoice = /\/invoices\/[a-z0-9]{12,}$/.test(new URL(page.url()).pathname)
+  const checkoutError = await page.locator('.text-danger').first().textContent().catch(() => '')
+  check('invoice created', onInvoice, onInvoice ? '' : (checkoutError?.trim() ?? page.url()))
+
+  if (onInvoice) {
+    const paid = await page.locator('text=Paid').first().isVisible().catch(() => false)
+    check('invoice marked paid', paid)
+  }
+}
+
 check('no uncaught page errors', consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '))
 
 await browser.close()

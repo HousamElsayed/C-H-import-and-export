@@ -29,6 +29,20 @@ function round3(value: number) {
   return Math.round(value * 1000) / 1000
 }
 
+/**
+ * Mirrors nextDocumentNumber() so seeded records share the app's numbering,
+ * and so DocumentSequence can be primed to continue from where the seed left
+ * off instead of colliding with it.
+ */
+const sequences = new Map<string, number>()
+function nextCode(prefix: string, date: Date) {
+  const year = date.getFullYear()
+  const key = `${prefix}:${year}`
+  const value = (sequences.get(key) ?? 0) + 1
+  sequences.set(key, value)
+  return `${prefix}-${year}-${String(value).padStart(6, '0')}`
+}
+
 function dayAt(offsetDays: number, hour: number, minute = 0) {
   const date = new Date()
   date.setHours(0, 0, 0, 0)
@@ -419,7 +433,7 @@ async function main() {
     const created = new Date(Date.now() - int(5, 400) * DAY)
     const client = await prisma.client.create({
       data: {
-        code: `C-${String(1000 + i)}`,
+        code: nextCode('C', created),
         firstName,
         lastName,
         phone: `+9053${int(10, 99)}${String(int(1000000, 9999999))}`,
@@ -488,7 +502,7 @@ async function main() {
       appointmentCount += 1
       const appointment = await prisma.appointment.create({
         data: {
-          code: `A-${String(10000 + appointmentCount)}`,
+          code: nextCode('A', startAt),
           clientId: client.id,
           staffId,
           roomId: pick(rooms).id,
@@ -533,7 +547,7 @@ async function main() {
 
       const invoice = await prisma.invoice.create({
         data: {
-          number: `INV-${startAt.getFullYear()}-${String(invoiceCount).padStart(6, '0')}`,
+          number: nextCode('INV', endAt),
           clientId: client.id,
           appointmentId: appointment.id,
           cashierId: users[2]!.id,
@@ -734,7 +748,7 @@ async function main() {
 
     const bill = await prisma.consumptionBill.create({
       data: {
-        number: `USE-${billDate.getFullYear()}-${String(index + 1).padStart(6, '0')}`,
+        number: nextCode('USE', billDate),
         status: 'ISSUED',
         billDate,
         issuedAt: billDate,
@@ -771,6 +785,14 @@ async function main() {
         },
       })
     }
+  }
+
+  // Prime the app's numbering so the next document continues the seeded run.
+  for (const [key, value] of sequences) {
+    const [prefix, year] = key.split(':')
+    await prisma.documentSequence.create({
+      data: { prefix: prefix!, year: Number.parseInt(year!, 10), value },
+    })
   }
 
   const counts = await Promise.all([
