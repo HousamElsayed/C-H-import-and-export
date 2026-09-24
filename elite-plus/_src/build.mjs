@@ -241,7 +241,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   let heroLink = '';
   const wStem = cfg.hero.welcome?.replace(/\.\w+$/, '');
   if (heroPreload && wStem && fs.existsSync(path.join(ROOT, 'assets/img', `${wStem}-1200.webp`))) {
-    heroLink = `<link rel="preload" as="image" type="image/webp" imagesrcset="${[800, 1200, 1600].map((w) => `${asset(`img/${wStem}-${w}.webp`)} ${w}w`).join(', ')}" imagesizes="(max-width: 767px) 86vw, 44vw" fetchpriority="high">`;
+    heroLink = `<link rel="preload" as="image" type="image/webp" imagesrcset="${[800, 1200, 1600].map((w) => `${asset(`img/${wStem}-${w}.webp`)} ${w}w`).join(', ')}" imagesizes="(max-width: 1320px) 94vw, 1240px" fetchpriority="high">`;
   } else if (heroPreload && cfg.hero.welcome && fs.existsSync(path.join(ROOT, 'assets/img', cfg.hero.welcome))) {
     heroLink = `<link rel="preload" as="image" href="${asset('img/' + cfg.hero.welcome)}" fetchpriority="high">`;
   }
@@ -399,43 +399,49 @@ function address(lang) {
 }
 
 // ---------- home sections ----------
-// Welcome hero: framed card, text on the start side, the welcome image cropped into an
-// inverted, softly rounded triangle (a star ray pointing at the content) in the centre of the frame.
-const TRI_D = 'M0.07 0 H0.93 Q0.995 0 0.968 0.058 L0.54 0.955 Q0.5 1.035 0.46 0.955 L0.032 0.058 Q0.005 0 0.07 0 Z';
+// Welcome hero: a framed card with the full welcome image (logo included) as a wide banner,
+// the headline and calls to action underneath. Motion: slow Ken Burns drift, a light sheen,
+// rising light motes, drawn star rays and a staggered text entrance (all off under reduced motion).
 function heroMedia(lang) {
   const L = I[lang].hero; const hc = cfg.hero;
+  const alt = `${L.alt} – ${I[lang].meta.siteName}`;
   const base = hc.welcome && fs.existsSync(path.join(ROOT, 'assets/img', hc.welcome)) ? hc.welcome : null;
   if (!base) {
     problems.add(`missing file: assets/img/${hc.welcome} (welcome image)`);
-    return `<div class="hero__ph" role="img" aria-label="${esc(L.alt)}">${PREVIEW ? `<span class="todo hero__todo">assets/img/${esc(hc.welcome)}</span>` : ''}</div>`;
+    return `<div class="hero__ph" role="img" aria-label="${esc(alt)}">${PREVIEW ? `<span class="todo hero__todo">assets/img/${esc(hc.welcome)}</span>` : ''}</div>`;
   }
   const stem = base.replace(/\.\w+$/, '');
-  const variants = [800, 1200, 1600].filter((w) => fs.existsSync(path.join(ROOT, 'assets/img', `${stem}-${w}.webp`)));
-  const webp = variants.length ? `<source type="image/webp" srcset="${variants.map((w) => `${asset(`img/${stem}-${w}.webp`)} ${w}w`).join(', ')}" sizes="(max-width: 767px) 86vw, 44vw">` : '';
-  return `<picture>${webp}<img src="${asset('img/' + base)}" alt="${esc(L.alt)}" width="1080" height="450" fetchpriority="high" decoding="async" style="object-position:${esc(hc.focus || '50% 50%')}"></picture>`;
+  const variants = [800, 1200, 1600, 2400].filter((w) => fs.existsSync(path.join(ROOT, 'assets/img', `${stem}-${w}.webp`)));
+  const webp = variants.length ? `<source type="image/webp" srcset="${variants.map((w) => `${asset(`img/${stem}-${w}.webp`)} ${w}w`).join(', ')}" sizes="(max-width: 1320px) 94vw, 1240px">` : '';
+  return `<picture>${webp}<img src="${asset('img/' + base)}" alt="${esc(alt)}" width="${hc.width || 1080}" height="${hc.height || 450}" fetchpriority="high" decoding="async"></picture>`;
 }
 function hero(lang) {
   const L = I[lang].hero;
   const trust = trustItems(lang, true);
+  const motes = [[18, 70, 0], [34, 82, 2.4], [52, 76, 4.1], [64, 88, 1.2], [78, 72, 3.3], [88, 84, 5.2]]
+    .map(([x, y, d]) => `<span class="hero__mote" style="--x:${x}%;--y:${y}%;--d:${d}s"></span>`).join('');
   return `
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero__card">
       ${raysSvg('hero__rays')}
-      <div class="hero__content">
-        <p class="eyebrow">${starMark('eyebrow__star')}<span>${esc(L.eyebrow)}</span></p>
-        <h1 id="hero-title" class="duo duo--hero"><span class="duo__a">${esc(L.h1a)}</span> <span class="duo__b">${esc(L.h1b)}</span></h1>
-        <p class="hero__sub">${esc(L.sub)}</p>
-        <div class="cta-row">${btn(L.cta1, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${waBtn(lang, L.cta2, 'Home')}</div>
-        <p class="hero__micro">${fmtH(L.micro, { hours: String(cfg.promise.responseHours) })}</p>
-        ${trust.length ? `<ul class="hero__trust">${trust.map((t) => `<li>${t}</li>`).join('')}</ul>` : ''}
+      <figure class="hero__banner">
+        ${heroMedia(lang)}
+        <span class="hero__sheen" aria-hidden="true"></span>
+        <span class="hero__motes" aria-hidden="true">${motes}</span>
+      </figure>
+      <div class="hero__body">
+        <div class="hero__head">
+          <p class="eyebrow">${starMark('eyebrow__star')}<span>${esc(L.eyebrow)}</span></p>
+          <h1 id="hero-title" class="duo duo--hero"><span class="duo__a">${esc(L.h1a)}</span> <span class="duo__b">${esc(L.h1b)}</span></h1>
+        </div>
+        <div class="hero__content">
+          <p class="hero__sub">${esc(L.sub)}</p>
+          <div class="cta-row">${btn(L.cta1, href(lang, 'assessment/'), 'primary btn--shine', '', ' data-ev="cta_click"')}${waBtn(lang, L.cta2, 'Home')}</div>
+          <p class="hero__micro">${fmtH(L.micro, { hours: String(cfg.promise.responseHours) })}</p>
+          ${trust.length ? `<ul class="hero__trust">${trust.map((t) => `<li>${t}</li>`).join('')}</ul>` : ''}
+        </div>
       </div>
-      <div class="hero__frame">
-        <svg class="hero__tri-line" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="${TRI_D}" pathLength="1"/></svg>
-        <div class="hero__tri">${heroMedia(lang)}<span class="hero__streaks" aria-hidden="true"></span></div>
-        <span class="hero__apex" aria-hidden="true">${starMark()}</span>
-      </div>
-      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><clipPath id="tri-clip" clipPathUnits="objectBoundingBox"><path d="${TRI_D}"/></clipPath></svg>
     </div>
   </div>
 </section>`;
