@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings. Files starting with "_" (elite-plus/_src, elite-plus/_backend) are never published.
+exclude:
+  - elite-plus/README.md
+  - elite-plus/package.json
