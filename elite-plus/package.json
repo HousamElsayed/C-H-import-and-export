@@ -1,0 +1,14 @@
+{
+  "name": "elite-plus-site",
+  "private": true,
+  "type": "module",
+  "description": "Elite+ Wellness Clinics website (static generator, no dependencies)",
+  "scripts": {
+    "start": "node _src/build.mjs && node _src/serve.mjs",
+    "build": "node _src/build.mjs",
+    "build:prod": "node _src/build.mjs --prod",
+    "serve": "node _src/serve.mjs",
+    "test": "node --test _backend/tests/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -17,6 +17,16 @@ elite-plus/
 
 Folders starting with `_` are not published by GitHub Pages/Jekyll.
 
+## Preview locally (VS Code)
+
+```bash
+cd elite-plus
+npm start        # builds, then serves at http://localhost:8080/C-H-import-and-export/elite-plus/en/
+```
+
+The terminal also prints a `Phone (same Wi-Fi)` address for testing on a real phone.
+Do not use Live Server or open the HTML files directly: links are root-relative to `site.basePath`, so they only resolve when served under that path.
+
 ## Build
 
 Requires Node 20+. No npm packages are needed.
