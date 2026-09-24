@@ -22,7 +22,7 @@
   "hero": {
     "welcome": "hero/welcome.jpg",
     "_welcomeNote": "Welcome image shown in the triangle frame. Used automatically when the file exists in assets/img/. The supplied 1080x450 file works but is soft on retina screens; a 2400px-wide clean export is recommended.",
-    "focus": "32% 42%",
+    "focus": "21% 50%",
     "_note": "Clean brand photo WITHOUT baked-in logo or rays. Desktop >= 2400x1100, mobile >= 1200x1500, AVIF + WebP, < 250KB each. Paths relative to elite-plus/assets/img/.",
     "desktopAvif": null,
     "desktopWebp": null,

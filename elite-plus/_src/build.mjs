@@ -242,6 +242,8 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   const wStem = cfg.hero.welcome?.replace(/\.\w+$/, '');
   if (heroPreload && wStem && fs.existsSync(path.join(ROOT, 'assets/img', `${wStem}-1200.webp`))) {
     heroLink = `<link rel="preload" as="image" type="image/webp" imagesrcset="${[800, 1200, 1600].map((w) => `${asset(`img/${wStem}-${w}.webp`)} ${w}w`).join(', ')}" imagesizes="(max-width: 767px) 86vw, 44vw" fetchpriority="high">`;
+  } else if (heroPreload && cfg.hero.welcome && fs.existsSync(path.join(ROOT, 'assets/img', cfg.hero.welcome))) {
+    heroLink = `<link rel="preload" as="image" href="${asset('img/' + cfg.hero.welcome)}" fetchpriority="high">`;
   }
   const siteData = {
     lang, dir, base: BASE, page: key, pageName,
