@@ -1,0 +1,752 @@
+{
+  "lang": {
+    "name": "English",
+    "code": "EN",
+    "dir": "ltr",
+    "locale": "en_GB",
+    "og": "en_GB"
+  },
+  "meta": {
+    "siteName": "Elite+ Wellness Clinics",
+    "homeTitle": "Elite+ Wellness Clinics | Personalised Care in {city}",
+    "homeDesc": "Personalised treatment plans, expert medical care and all-inclusive packages for international patients in {city}, Türkiye. Get your free online assessment.",
+    "serviceTitle": "{service} in {city} {year} | Price & Results – Elite+",
+    "serviceDesc": "{service} at Elite+ Wellness Clinics in {city}: who it is for, the procedure step by step, results, starting prices and FAQ.",
+    "pages": {
+      "services": [
+        "Treatments & Services – Elite+ Wellness Clinics",
+        "All treatments offered at Elite+ Wellness Clinics in {city}, with all-inclusive packages for international patients."
+      ],
+      "results": [
+        "Before & After Results – Elite+ Wellness Clinics",
+        "Real patient results from Elite+ Wellness Clinics, shared with written patient consent."
+      ],
+      "doctors": [
+        "Our Doctors & Team – Elite+ Wellness Clinics",
+        "Meet the doctors and patient coordinators of Elite+ Wellness Clinics: education, experience and languages."
+      ],
+      "about": [
+        "About Us, Technology & Safety – Elite+ Wellness Clinics",
+        "Our clinic, our equipment, hygiene and sterilisation standards, and our licences."
+      ],
+      "prices": [
+        "Prices & All-Inclusive Packages {year} – Elite+",
+        "Starting prices and what is included: procedure, hotel, VIP transfers, interpreter and aftercare."
+      ],
+      "journey": [
+        "Patient Journey: Your Treatment Step by Step – Elite+",
+        "From free online assessment to remote follow-up: how treatment works for international patients."
+      ],
+      "assessment": [
+        "Free Online Assessment – Elite+ Wellness Clinics",
+        "Answer a few questions and receive a personalised treatment plan and quote. Free and without commitment."
+      ],
+      "blog": [
+        "Patient Guides – Elite+ Wellness Clinics",
+        "Guides on prices, recovery and travelling to Türkiye for treatment."
+      ],
+      "faq": [
+        "Frequently Asked Questions – Elite+ Wellness Clinics",
+        "Answers about prices, recovery, safety, travel and payment."
+      ],
+      "contact": [
+        "Contact – Elite+ Wellness Clinics",
+        "Contact Elite+ Wellness Clinics by WhatsApp, phone or email. Address and opening hours."
+      ],
+      "privacy": [
+        "Privacy Policy – Elite+ Wellness Clinics",
+        "How Elite+ Wellness Clinics processes personal and health data."
+      ],
+      "kvkk": [
+        "KVKK Information Notice – Elite+ Wellness Clinics",
+        "Information notice under Turkish Personal Data Protection Law No. 6698."
+      ],
+      "cookies": [
+        "Cookie Policy – Elite+ Wellness Clinics",
+        "Which cookies we use and how to change your choices."
+      ],
+      "terms": [
+        "Terms of Use – Elite+ Wellness Clinics",
+        "Terms of use of this website."
+      ],
+      "impressum": [
+        "Legal Notice (Impressum) – Elite+ Wellness Clinics",
+        "Legal notice: company, address, representative, registration and contact."
+      ]
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Treatments",
+    "results": "Results",
+    "doctors": "Doctors",
+    "about": "About & Safety",
+    "prices": "Prices",
+    "journey": "Patient Journey",
+    "blog": "Guides",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Free Consultation",
+    "menu": "Menu",
+    "close": "Close",
+    "allServices": "All treatments",
+    "learnMore": "Learn more",
+    "viewAll": "View all results",
+    "language": "Language",
+    "skip": "Skip to content",
+    "assessment": "Free Assessment",
+    "whatsapp": "WhatsApp",
+    "breadcrumbHome": "Home"
+  },
+  "hero": {
+    "eyebrow": "Wellness Clinics",
+    "h1a": "Welcome to Elite+",
+    "h1b": "Where Your Wellness Begins",
+    "sub": "Personalised treatment plans, expert medical care, and dedicated support at every step of your journey.",
+    "cta1": "Get Your Free Assessment",
+    "cta2": "Chat on WhatsApp",
+    "micro": "Free · No commitment · Reply within {hours} hours",
+    "alt": "Woman with raised arms in soft morning light"
+  },
+  "trust": {
+    "patients": "{n}+ patients treated",
+    "rating": "★ {r} on Google ({n} reviews)",
+    "ratingShort": "★ {r} Google",
+    "licensed": "Licensed by the Turkish Ministry of Health",
+    "licensedShort": "MoH licensed",
+    "speaks": "We speak {langs}"
+  },
+  "langNames": {
+    "en": "English",
+    "ar": "Arabic",
+    "tr": "Turkish",
+    "de": "German",
+    "es": "Spanish",
+    "fr": "French",
+    "ru": "Russian"
+  },
+  "home": {
+    "results": {
+      "label": "Results",
+      "h2a": "Real patients,",
+      "h2b": "real results",
+      "sub": "Drag the slider to compare. Every photo is published with the patient's written consent.",
+      "cta": "View all results",
+      "before": "Before",
+      "after": "After"
+    },
+    "why": {
+      "label": "Why Elite+",
+      "h2a": "Care you can",
+      "h2b": "count on",
+      "items": [
+        {
+          "t": "Experienced doctors",
+          "d": "Specialists with verifiable training and years of practice in their field."
+        },
+        {
+          "t": "Modern technology",
+          "d": "Up-to-date equipment and strict hygiene and sterilisation standards."
+        },
+        {
+          "t": "All-inclusive packages",
+          "d": "Treatment, hotel, VIP transfers and interpreter arranged for you."
+        },
+        {
+          "t": "We speak your language",
+          "d": "A dedicated coordinator guides you before, during and after your stay."
+        },
+        {
+          "t": "Aftercare follow-up",
+          "d": "Regular check-ins by WhatsApp and scheduled calls once you are home."
+        },
+        {
+          "t": "Transparent pricing",
+          "d": "A written quote with everything included, agreed before you travel."
+        }
+      ],
+      "cta": "Start your free assessment"
+    },
+    "services": {
+      "label": "Treatments",
+      "h2a": "Our",
+      "h2b": "hair treatments",
+      "cta": "Not sure which treatment? Ask us"
+    },
+    "included": {
+      "label": "All-inclusive",
+      "h2a": "Everything arranged,",
+      "h2b": "one clear price",
+      "items": [
+        "Consultation and medical tests",
+        "Your procedure",
+        "{nights}-night hotel stay",
+        "VIP airport and clinic transfers",
+        "Personal interpreter",
+        "Medication and aftercare kit",
+        "Follow-up for {months} months"
+      ],
+      "note": "Prices are shown as “starting from”. Your final price is confirmed in your written plan before you travel.",
+      "cta": "See prices & packages"
+    },
+    "journey": {
+      "label": "Your journey",
+      "h2a": "Six clear steps,",
+      "h2b": "one team beside you",
+      "cta": "Start step 1 — it's free"
+    },
+    "doctors": {
+      "label": "Doctors",
+      "h2a": "Meet the team",
+      "h2b": "behind your care",
+      "cta": "Meet all doctors"
+    },
+    "tech": {
+      "label": "Technology & safety",
+      "h2a": "Safety comes",
+      "h2b": "before everything",
+      "sub": "Your treatment takes place in a licensed facility that follows documented hygiene and sterilisation protocols.",
+      "items": [
+        {
+          "t": "Licensed facility",
+          "d": "Operating under the licence shown in the footer of every page."
+        },
+        {
+          "t": "Sterilisation protocols",
+          "d": "Single-use materials where possible and validated sterilisation for instruments."
+        },
+        {
+          "t": "Pre-treatment checks",
+          "d": "Medical history review and tests before any procedure is confirmed."
+        },
+        {
+          "t": "Modern equipment",
+          "d": "Diagnostic and treatment equipment maintained to manufacturer standards."
+        }
+      ],
+      "cta": "About the clinic"
+    },
+    "testimonials": {
+      "label": "Patient reviews",
+      "h2a": "What our",
+      "h2b": "patients say",
+      "sub": "Reviews are loaded directly from independent platforms.",
+      "consent": "Reviews are provided by a third-party service. Load them to view.",
+      "load": "Load reviews",
+      "cta": "Read reviews on Google"
+    },
+    "aftercare": {
+      "label": "Aftercare",
+      "h2a": "Our care continues",
+      "h2b": "after you fly home",
+      "items": [
+        {
+          "t": "WhatsApp photo check-ins",
+          "d": "Send progress photos; your coordinator shares them with your doctor."
+        },
+        {
+          "t": "Scheduled video calls",
+          "d": "Follow-up calls at agreed milestones of your recovery."
+        },
+        {
+          "t": "Clear written instructions",
+          "d": "Aftercare guidance in your language to take home."
+        },
+        {
+          "t": "A direct contact",
+          "d": "One coordinator who knows your case, reachable by WhatsApp."
+        }
+      ],
+      "cta": "Ask about aftercare"
+    },
+    "final": {
+      "h2a": "Start your journey",
+      "h2b": "today",
+      "sub": "Tell us about your goals and receive a personalised plan and quote. Free and without commitment."
+    },
+    "faq": {
+      "label": "FAQ",
+      "h2a": "Questions",
+      "h2b": "we hear often",
+      "cta": "All questions"
+    }
+  },
+  "journeySteps": [
+    {
+      "t": "Free online assessment",
+      "d": "Answer a few questions and, if you wish, share photos. It takes about 3 minutes."
+    },
+    {
+      "t": "Your plan & quote",
+      "d": "A doctor reviews your case and your coordinator sends a personalised plan with a written quote."
+    },
+    {
+      "t": "Travel",
+      "d": "We book your hotel and meet you at the airport with a VIP transfer."
+    },
+    {
+      "t": "Procedure day",
+      "d": "Consultation, tests and your procedure, with an interpreter at your side."
+    },
+    {
+      "t": "Recovery",
+      "d": "Rest at your hotel with check-ups at the clinic before you fly home."
+    },
+    {
+      "t": "Remote follow-up",
+      "d": "Photo check-ins and calls with your coordinator and doctor from home."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does treatment cost?",
+      "a": "Each treatment page shows a “starting from” price. Your final price depends on your medical assessment and is confirmed in a written quote before you travel. There are no hidden costs."
+    },
+    {
+      "q": "What is included in the package?",
+      "a": "Packages typically include consultation and tests, the procedure, hotel stay, VIP transfers, an interpreter, medication and an aftercare kit, and remote follow-up. Your quote lists every item."
+    },
+    {
+      "q": "How long do I need to stay in Türkiye?",
+      "a": "It depends on the treatment. Each treatment page shows the usual length of stay, and your coordinator confirms it in your plan."
+    },
+    {
+      "q": "Is the procedure painful?",
+      "a": "Procedures are performed under appropriate anaesthesia. You may feel discomfort during recovery; your doctor will explain what to expect and prescribe medication if needed."
+    },
+    {
+      "q": "How long is the recovery?",
+      "a": "Recovery time differs by treatment and by patient. Your doctor gives you a personal recovery timeline and written aftercare instructions."
+    },
+    {
+      "q": "When will I see the final results?",
+      "a": "Results develop over time and vary between patients. Your doctor explains the expected timeline for your treatment during your consultation."
+    },
+    {
+      "q": "Is it safe to have treatment in Türkiye?",
+      "a": "Safety depends on the clinic, not the country. Check the licence, the doctors' credentials and the hygiene standards. Ours are listed on the About & Safety and Doctors pages."
+    },
+    {
+      "q": "Do you speak my language?",
+      "a": "Your coordinator communicates with you in your language, and an interpreter is with you at the clinic."
+    },
+    {
+      "q": "How do I pay?",
+      "a": "Payment options and the payment schedule are set out in your written quote. Ask your coordinator which methods are available."
+    },
+    {
+      "q": "What happens after I go home?",
+      "a": "You stay in touch with your coordinator by WhatsApp. You send progress photos and we arrange follow-up calls with your doctor."
+    }
+  ],
+  "service": {
+    "whoFor": "Who is it for?",
+    "procedure": "The procedure, step by step",
+    "results": "Results",
+    "price": "Price & package",
+    "from": "From",
+    "onRequest": "Price on request",
+    "priceNote": "Starting price. Your final price is confirmed in your written plan.",
+    "stay": "Usual stay",
+    "faq": "Frequently asked questions",
+    "included": "Included in your package",
+    "ctaTitle": "Is this treatment right for you?",
+    "ctaSub": "Get a free assessment from our medical team.",
+    "other": "Other treatments"
+  },
+  "pages": {
+    "services": {
+      "h1a": "Our",
+      "h1b": "hair treatments",
+      "sub": "Each treatment is planned individually after a medical assessment."
+    },
+    "results": {
+      "h1a": "Before &",
+      "h1b": "after",
+      "sub": "Every result is published with the patient's written consent. Results vary between patients.",
+      "all": "All",
+      "empty": "Results will be published here once patients have given their written consent."
+    },
+    "doctors": {
+      "h1a": "Our doctors",
+      "h1b": "and team",
+      "sub": "The people who plan, perform and follow up your treatment.",
+      "empty": "Doctor profiles are being prepared.",
+      "back": "All doctors"
+    },
+    "about": {
+      "h1a": "About the clinic,",
+      "h1b": "technology & safety",
+      "sub": "A licensed clinic built around international patients.",
+      "storyH": "Our clinic",
+      "accredH": "Licences and accreditations",
+      "accredNone": "Licence details are listed in the footer."
+    },
+    "prices": {
+      "h1a": "Prices &",
+      "h1b": "packages",
+      "sub": "Clear starting prices and an all-inclusive package, confirmed in writing before you travel.",
+      "service": "Treatment",
+      "from": "Starting from",
+      "includedH": "What every package includes",
+      "howH": "How your price is set",
+      "how": "Your final price depends on your medical assessment: for example the extent of treatment and the techniques your doctor recommends. You receive a written, itemised quote before you book anything."
+    },
+    "journey": {
+      "h1a": "Your journey,",
+      "h1b": "step by step",
+      "sub": "What happens from your first message to your follow-up at home.",
+      "prepareH": "Before you travel",
+      "prepare": [
+        "A valid passport (check visa rules for your nationality)",
+        "Your medical history and current medication list",
+        "Comfortable, loose clothing for your recovery",
+        "Travel insurance that covers medical treatment abroad"
+      ]
+    },
+    "assessment": {
+      "h1a": "Free online",
+      "h1b": "assessment"
+    },
+    "blog": {
+      "h1a": "Patient",
+      "h1b": "guides",
+      "sub": "Practical guides written with our medical team.",
+      "empty": "Our first guides are being written by our medical team."
+    },
+    "faq": {
+      "h1a": "Frequently asked",
+      "h1b": "questions",
+      "sub": "Can't find your answer? Message us on WhatsApp."
+    },
+    "contact": {
+      "h1a": "Contact",
+      "h1b": "our team",
+      "sub": "The fastest way to reach us is WhatsApp.",
+      "whatsapp": "WhatsApp",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Opening hours",
+      "map": "Map",
+      "mapConsent": "The map is provided by Google. Loading it shares data with Google.",
+      "mapLoad": "Load map"
+    },
+    "privacy": {
+      "h1a": "Privacy",
+      "h1b": "policy"
+    },
+    "kvkk": {
+      "h1a": "KVKK",
+      "h1b": "information notice"
+    },
+    "cookies": {
+      "h1a": "Cookie",
+      "h1b": "policy"
+    },
+    "terms": {
+      "h1a": "Terms",
+      "h1b": "of use"
+    },
+    "impressum": {
+      "h1a": "Legal",
+      "h1b": "notice"
+    }
+  },
+  "legal": {
+    "draft": "This page must be drafted and approved by a qualified lawyer before launch. The headings below show the required structure.",
+    "privacy": [
+      "Data controller",
+      "Data we collect",
+      "Health data and explicit consent",
+      "Purposes and legal bases",
+      "Recipients and international transfers",
+      "Retention periods",
+      "Your rights",
+      "Contact"
+    ],
+    "kvkk": [
+      "Veri sorumlusu (Data controller)",
+      "Purposes of processing",
+      "Transfer of personal data",
+      "Method and legal grounds of collection",
+      "Rights under Article 11 of Law No. 6698"
+    ],
+    "cookies": [
+      "What cookies are",
+      "Strictly necessary cookies",
+      "Analytics cookies",
+      "Marketing cookies",
+      "How to change your choices"
+    ],
+    "terms": [
+      "Scope",
+      "Medical information disclaimer",
+      "Intellectual property",
+      "Liability",
+      "Governing law"
+    ],
+    "impressum": {
+      "company": "Company",
+      "address": "Address",
+      "representative": "Represented by",
+      "registry": "Trade registry no.",
+      "tax": "Tax ID",
+      "licence": "Health licence no.",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "desc": "Personalised treatment plans, expert medical care and dedicated support for international patients.",
+    "services": "Treatments",
+    "patients": "Patient information",
+    "contact": "Contact",
+    "legal": "Legal",
+    "licence": "Licence no.",
+    "rights": "All rights reserved.",
+    "cookieSettings": "Cookie settings",
+    "disclaimer": "The information on this website does not replace a medical consultation. Results vary between patients."
+  },
+  "cookie": {
+    "title": "Your privacy choices",
+    "text": "We use necessary cookies to run this site. With your consent we also use analytics and marketing cookies to measure and improve our services.",
+    "accept": "Accept all",
+    "reject": "Reject all",
+    "customise": "Customise",
+    "save": "Save choices",
+    "necessary": "Necessary",
+    "necessaryD": "Required for the site and the assessment form to work. Always on.",
+    "analytics": "Analytics",
+    "analyticsD": "Helps us understand how the site is used (Google Analytics, Microsoft Clarity).",
+    "marketing": "Marketing",
+    "marketingD": "Measures our advertising and shows embedded reviews and videos (Google, Meta).",
+    "policy": "Cookie policy"
+  },
+  "langBanner": {
+    "text": "This page is also available in English.",
+    "switch": "Switch to English",
+    "dismiss": "Dismiss"
+  },
+  "wa": {
+    "prefill": "Hello Elite+, I would like information about: {page}"
+  },
+  "a11y": {
+    "prev": "Previous",
+    "next": "Next",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "compare": "Compare before and after",
+    "ext": "(opens in a new tab)",
+    "star": "Elite+ star mark"
+  },
+  "assess": {
+    "title": "Free online assessment",
+    "intro": "About 3 minutes · Free · No commitment",
+    "step": "Step {n} of {total}",
+    "back": "Back",
+    "next": "Continue",
+    "skip": "Skip",
+    "submit": "Send my assessment",
+    "sending": "Sending…",
+    "required": "Please choose an option to continue.",
+    "resume": "Welcome back. We saved your answers so you can continue where you left off.",
+    "restart": "Start again",
+    "q_service": "Which treatment are you interested in?",
+    "q_goal": "What best describes your goal?",
+    "goals": [
+      "Improve how I look",
+      "Restore function or comfort",
+      "Correct a previous treatment",
+      "Not sure yet"
+    ],
+    "q_prior": "Have you had treatment for this before?",
+    "prior": [
+      "No",
+      "Yes",
+      "Not sure"
+    ],
+    "q_about": "About you",
+    "age": "Age range",
+    "ages": [
+      "18–24",
+      "25–34",
+      "35–44",
+      "45–54",
+      "55–64",
+      "65+"
+    ],
+    "gender": "Gender",
+    "genders": [
+      "Female",
+      "Male",
+      "Prefer not to say"
+    ],
+    "q_photos": "Would you like to share photos?",
+    "photosSub": "Optional. Photos help our doctors give you a more accurate plan. Up to 4 photos, 10 MB each. They are stored privately and only seen by our medical team.",
+    "photosDrop": "Drag photos here or",
+    "photosPick": "choose files",
+    "photosCamera": "Take a photo",
+    "photosRemove": "Remove photo",
+    "photosTooBig": "This photo is larger than 10 MB.",
+    "photosType": "Please upload JPG, PNG, HEIC or WebP images.",
+    "photosMax": "You can upload up to 4 photos.",
+    "q_date": "When would you like to have treatment?",
+    "dateUnsure": "Not sure yet",
+    "q_contact": "Where should we send your plan?",
+    "name": "Full name",
+    "country": "Country of residence",
+    "phone": "WhatsApp number",
+    "email": "Email (optional)",
+    "phoneHint": "Your coordinator will contact you on WhatsApp.",
+    "errName": "Please enter your name.",
+    "errPhone": "Please enter a valid WhatsApp number.",
+    "errEmail": "Please enter a valid email address.",
+    "q_consent": "One last step",
+    "consent": "I give my explicit consent to Elite+ Wellness Clinics processing my personal and health data, including any photos I upload, to assess my case and contact me, as described in the",
+    "consentLink": "privacy policy",
+    "consentKvkk": "KVKK notice",
+    "errConsent": "Your consent is required so our medical team can review your data.",
+    "errSend": "Sorry, we could not send your assessment. Please try again or message us on WhatsApp.",
+    "thanksH1a": "Thank you,",
+    "thanksH1b": "we received your assessment",
+    "thanks": "A patient coordinator will contact you on WhatsApp within {hours} hours.",
+    "thanksWa": "Message us now on WhatsApp",
+    "previewNote": "Preview mode: no lead endpoint is configured, so nothing was sent. The payload was logged to the browser console.",
+    "q_category": "Which area are you interested in?",
+    "unsure": "Not sure yet — help me choose"
+  },
+  "todo": "TODO",
+  "categories": {
+    "transplant": {
+      "name": "Hair Transplant",
+      "short": "Scalp, beard, eyebrow and moustache transplants, and hair restoration in scars."
+    },
+    "treatment": {
+      "name": "Hair Treatments",
+      "short": "Non-surgical treatments for thinning hair and a healthier scalp."
+    }
+  },
+  "doctor": {
+    "years": "{n} years of experience",
+    "viewProfile": "View profile",
+    "education": "Education",
+    "experience": "Experience",
+    "specialties": "Specialties",
+    "credentials": "Memberships & credentials",
+    "languages": "Languages"
+  },
+  "techniques": {
+    "label": "Our techniques",
+    "h2a": "FUE & DHI",
+    "h2b": "the right technique for you",
+    "nav": "FUE & DHI",
+    "sub": "Both are modern follicular unit techniques that leave no linear scar. Your doctor recommends one of them, or a combination, after examining your donor area, hair type and goals.",
+    "fue": {
+      "name": "FUE",
+      "full": "Follicular Unit Extraction",
+      "d": "Follicular units are extracted one by one from the donor area with a micro-punch. The doctor then opens tiny channels in the recipient area and places the grafts into them.",
+      "steps": [
+        "Individual extraction with a 0.7–1.0 mm micro-punch",
+        "Recipient channels opened at the planned angle and density",
+        "Grafts placed into the channels"
+      ],
+      "best": [
+        "Larger areas of thinning or baldness",
+        "A higher number of grafts in one session",
+        "Patients who are happy to shave the treatment area"
+      ]
+    },
+    "dhi": {
+      "name": "DHI",
+      "full": "Direct Hair Implantation",
+      "d": "Extraction is the same as in FUE. The difference is implantation: each graft is loaded into an implanter pen (Choi pen), which creates the channel and places the graft in a single step.",
+      "steps": [
+        "Individual extraction with a micro-punch, as in FUE",
+        "Each graft loaded into a Choi implanter pen",
+        "Channel and implantation in one motion, controlling angle, depth and direction"
+      ],
+      "best": [
+        "Hairline design and adding density between existing hair",
+        "Beard, eyebrow and moustache transplants",
+        "Keeping the recipient area unshaved, when suitable"
+      ]
+    },
+    "howH": "How it works",
+    "bestH": "Often recommended for",
+    "tableH": "FUE and DHI compared",
+    "table": {
+      "head": [
+        "",
+        "FUE",
+        "DHI"
+      ],
+      "rows": [
+        [
+          "Graft extraction",
+          "Micro-punch, one by one",
+          "Identical to FUE"
+        ],
+        [
+          "Recipient site",
+          "Channels opened first, then grafts placed",
+          "The pen opens the channel and implants in one step"
+        ],
+        [
+          "Shaving",
+          "Usually required",
+          "The recipient area can often stay unshaved"
+        ],
+        [
+          "Area per session",
+          "Suited to larger areas",
+          "Suited to precise work and adding density"
+        ],
+        [
+          "Donor area",
+          "Tiny dot scars, no linear scar",
+          "Same as FUE"
+        ]
+      ]
+    },
+    "fact": "Good to know: DHI is a variation of FUE, not a competing operation. Studies have not shown that either technique reliably gives better results. Surgical skill, planning and graft handling matter most.",
+    "clinicH": "How we apply FUE and DHI",
+    "clinic": [
+      {
+        "t": "Doctor-led planning",
+        "d": "Your doctor examines your donor area, designs the hairline with you and chooses FUE, DHI or a combination."
+      },
+      {
+        "t": "Careful graft handling",
+        "d": "Grafts are counted, sorted and kept in a cooled storage solution so their time out of the body is as short as possible."
+      },
+      {
+        "t": "Natural angle and direction",
+        "d": "Each graft is placed following the natural angle and direction of your own hair."
+      },
+      {
+        "t": "Protecting your donor area",
+        "d": "Extraction is spread evenly so your donor area keeps a natural density for the future."
+      }
+    ],
+    "timelineH": "What to expect after either technique",
+    "timeline": [
+      {
+        "t": "Weeks 2–6",
+        "d": "The transplanted hairs usually shed. This is a normal part of the hair growth cycle."
+      },
+      {
+        "t": "Months 3–4",
+        "d": "New hair usually starts to grow."
+      },
+      {
+        "t": "Months 12–18",
+        "d": "The final result is usually visible; the crown can take the longest."
+      }
+    ],
+    "note": "Individual results vary. Your doctor will explain realistic expectations for your case.",
+    "cta": "Which technique suits me?",
+    "more": "FUE vs DHI explained",
+    "metaTitle": "FUE vs DHI Hair Transplant in {city}: Differences Explained – Elite+",
+    "metaDesc": "How the FUE and DHI hair transplant techniques work, how they differ, who each one suits, and what to expect after surgery."
+  }
+}

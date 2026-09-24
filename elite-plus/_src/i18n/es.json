@@ -1,0 +1,247 @@
+{
+  "lang": { "name": "Español", "code": "ES", "dir": "ltr", "locale": "es_ES", "og": "es_ES" },
+  "meta": {
+    "siteName": "Elite+ Clínicas de Bienestar",
+    "homeTitle": "Elite+ Clínicas de Bienestar | Atención personalizada en {city}",
+    "homeDesc": "Planes de tratamiento personalizados, atención médica especializada y paquetes todo incluido para pacientes internacionales en {city}, Turquía. Solicite su evaluación online gratuita.",
+    "serviceTitle": "{service} en {city} {year} | Precio y resultados – Elite+",
+    "serviceDesc": "{service} en Elite+ ({city}): para quién está indicado, el procedimiento paso a paso, resultados, precios desde y preguntas frecuentes.",
+    "pages": {
+      "services": ["Tratamientos y servicios – Elite+ Clínicas de Bienestar", "Todos los tratamientos de las clínicas Elite+ en {city}, con paquetes todo incluido para pacientes internacionales."],
+      "results": ["Resultados antes y después – Elite+ Clínicas de Bienestar", "Resultados reales de pacientes de Elite+, publicados con su consentimiento por escrito."],
+      "doctors": ["Nuestros médicos y equipo – Elite+ Clínicas de Bienestar", "Conozca a los médicos y coordinadores de pacientes de Elite+: formación, experiencia e idiomas."],
+      "about": ["Sobre nosotros, tecnología y seguridad – Elite+ Clínicas de Bienestar", "Nuestra clínica, nuestros equipos, normas de higiene y esterilización, y nuestras licencias."],
+      "prices": ["Precios y paquetes todo incluido {year} – Elite+", "Precios desde y qué incluye: procedimiento, hotel, traslados VIP, intérprete y seguimiento."],
+      "journey": ["Su proceso de tratamiento paso a paso – Elite+", "Desde la evaluación online gratuita hasta el seguimiento a distancia: cómo funciona el tratamiento para pacientes internacionales."],
+      "assessment": ["Evaluación online gratuita – Elite+ Clínicas de Bienestar", "Responda unas preguntas y reciba un plan de tratamiento personalizado con presupuesto. Gratis y sin compromiso."],
+      "blog": ["Guías para pacientes – Elite+ Clínicas de Bienestar", "Guías sobre precios, recuperación y viajes a Turquía para recibir tratamiento."],
+      "faq": ["Preguntas frecuentes – Elite+ Clínicas de Bienestar", "Respuestas sobre precios, recuperación, seguridad, viaje y pago."],
+      "contact": ["Contacto – Elite+ Clínicas de Bienestar", "Contacte con Elite+ por WhatsApp, teléfono o correo electrónico. Dirección y horario."],
+      "privacy": ["Política de privacidad – Elite+ Clínicas de Bienestar", "Cómo trata Elite+ los datos personales y de salud."],
+      "kvkk": ["Aviso KVKK – Elite+ Clínicas de Bienestar", "Aviso informativo conforme a la Ley turca de Protección de Datos Personales n.º 6698."],
+      "cookies": ["Política de cookies – Elite+ Clínicas de Bienestar", "Qué cookies utilizamos y cómo cambiar sus preferencias."],
+      "terms": ["Condiciones de uso – Elite+ Clínicas de Bienestar", "Condiciones de uso de este sitio web."],
+      "impressum": ["Aviso legal – Elite+ Clínicas de Bienestar", "Aviso legal: empresa, dirección, representante, registro y contacto."]
+    }
+  },
+  "nav": {
+    "home": "Inicio", "services": "Tratamientos", "results": "Resultados", "doctors": "Médicos", "about": "Nosotros y seguridad",
+    "prices": "Precios", "journey": "Su proceso", "blog": "Guías", "faq": "Preguntas", "contact": "Contacto",
+    "cta": "Consulta gratuita", "menu": "Menú", "close": "Cerrar", "allServices": "Todos los tratamientos",
+    "learnMore": "Más información", "viewAll": "Ver todos los resultados", "language": "Idioma", "skip": "Saltar al contenido",
+    "assessment": "Evaluación gratuita", "whatsapp": "WhatsApp", "breadcrumbHome": "Inicio"
+  },
+  "hero": {
+    "eyebrow": "Clínicas de Bienestar",
+    "h1a": "Bienvenidos a Elite+",
+    "h1b": "Donde comienza su bienestar",
+    "sub": "Planes de tratamiento personalizados, atención médica especializada y acompañamiento en cada paso de su proceso.",
+    "cta1": "Solicite su evaluación gratuita",
+    "cta2": "Escríbanos por WhatsApp",
+    "micro": "Gratis · Sin compromiso · Respuesta en {hours} horas",
+    "alt": "Mujer con los brazos en alto bajo la suave luz de la mañana"
+  },
+  "trust": {
+    "patients": "Más de {n} pacientes tratados",
+    "rating": "★ {r} en Google ({n} reseñas)",
+    "ratingShort": "★ {r} en Google",
+    "licensed": "Autorizada por el Ministerio de Sanidad de Turquía",
+    "licensedShort": "Autorizada por Sanidad",
+    "speaks": "Hablamos {langs}"
+  },
+  "langNames": { "en": "inglés", "ar": "árabe", "tr": "turco", "de": "alemán", "es": "español", "fr": "francés", "ru": "ruso" },
+  "home": {
+    "results": { "label": "Resultados", "h2a": "Pacientes reales,", "h2b": "resultados reales", "sub": "Deslice para comparar. Cada foto se publica con el consentimiento por escrito del paciente.", "cta": "Ver todos los resultados", "before": "Antes", "after": "Después" },
+    "why": {
+      "label": "Por qué Elite+", "h2a": "Una atención", "h2b": "en la que puede confiar",
+      "items": [
+        { "t": "Médicos con experiencia", "d": "Especialistas con formación verificable y años de práctica en su campo." },
+        { "t": "Tecnología moderna", "d": "Equipos actualizados y estrictas normas de higiene y esterilización." },
+        { "t": "Paquetes todo incluido", "d": "Tratamiento, hotel, traslados VIP e intérprete, todo organizado para usted." },
+        { "t": "Hablamos su idioma", "d": "Un coordinador personal le acompaña antes, durante y después de su estancia." },
+        { "t": "Seguimiento posterior", "d": "Contacto regular por WhatsApp y llamadas programadas cuando ya esté en casa." },
+        { "t": "Precios transparentes", "d": "Un presupuesto por escrito con todo incluido, acordado antes de viajar." }
+      ],
+      "cta": "Inicie su evaluación gratuita"
+    },
+    "services": { "label": "Tratamientos", "h2a": "Nuestros", "h2b": "tratamientos capilares", "cta": "¿No sabe qué tratamiento elegir? Consúltenos" },
+    "included": {
+      "label": "Todo incluido", "h2a": "Todo organizado,", "h2b": "un precio claro",
+      "items": ["Consulta y pruebas médicas", "Su procedimiento", "{nights} noches de hotel", "Traslados VIP aeropuerto–clínica", "Intérprete personal", "Medicación y kit de cuidados", "Seguimiento durante {months} meses"],
+      "note": "Los precios se indican como “desde”. Su precio final se confirma en su plan por escrito antes de viajar.",
+      "cta": "Ver precios y paquetes"
+    },
+    "journey": { "label": "Su proceso", "h2a": "Seis pasos claros,", "h2b": "un equipo a su lado", "cta": "Empiece el paso 1, es gratis" },
+    "doctors": { "label": "Médicos", "h2a": "Conozca al equipo", "h2b": "que le atenderá", "cta": "Ver todos los médicos" },
+    "tech": {
+      "label": "Tecnología y seguridad", "h2a": "La seguridad", "h2b": "ante todo",
+      "sub": "Su tratamiento se realiza en un centro autorizado que sigue protocolos documentados de higiene y esterilización.",
+      "items": [
+        { "t": "Centro autorizado", "d": "Opera bajo la licencia indicada al pie de cada página." },
+        { "t": "Protocolos de esterilización", "d": "Material de un solo uso siempre que es posible y esterilización validada del instrumental." },
+        { "t": "Controles previos", "d": "Revisión del historial médico y pruebas antes de confirmar cualquier procedimiento." },
+        { "t": "Equipos modernos", "d": "Equipos de diagnóstico y tratamiento mantenidos según las normas del fabricante." }
+      ],
+      "cta": "Sobre la clínica"
+    },
+    "testimonials": { "label": "Opiniones de pacientes", "h2a": "Lo que dicen", "h2b": "nuestros pacientes", "sub": "Las reseñas se cargan directamente desde plataformas independientes.", "consent": "Las reseñas las proporciona un servicio externo. Cárguelas para verlas.", "load": "Cargar reseñas", "cta": "Leer reseñas en Google" },
+    "aftercare": {
+      "label": "Seguimiento", "h2a": "Nuestra atención continúa", "h2b": "cuando vuelve a casa",
+      "items": [
+        { "t": "Seguimiento con fotos por WhatsApp", "d": "Envíe fotos de su evolución; su coordinador las comparte con su médico." },
+        { "t": "Videollamadas programadas", "d": "Llamadas de seguimiento en momentos acordados de su recuperación." },
+        { "t": "Instrucciones claras por escrito", "d": "Indicaciones de cuidados en su idioma para llevar a casa." },
+        { "t": "Un contacto directo", "d": "Un coordinador que conoce su caso, disponible por WhatsApp." }
+      ],
+      "cta": "Pregunte por el seguimiento"
+    },
+    "final": { "h2a": "Empiece su proceso", "h2b": "hoy mismo", "sub": "Cuéntenos sus objetivos y reciba un plan y un presupuesto personalizados. Gratis y sin compromiso." },
+    "faq": { "label": "Preguntas", "h2a": "Preguntas", "h2b": "frecuentes", "cta": "Todas las preguntas" }
+  },
+  "journeySteps": [
+    { "t": "Evaluación online gratuita", "d": "Responda unas preguntas y, si lo desea, comparta fotos. Se tarda unos 3 minutos." },
+    { "t": "Su plan y presupuesto", "d": "Un médico revisa su caso y su coordinador le envía un plan personalizado con presupuesto por escrito." },
+    { "t": "Viaje", "d": "Reservamos su hotel y le recibimos en el aeropuerto con un traslado VIP." },
+    { "t": "Día del procedimiento", "d": "Consulta, pruebas y su procedimiento, con un intérprete a su lado." },
+    { "t": "Recuperación", "d": "Descanse en su hotel, con revisiones en la clínica antes de volver." },
+    { "t": "Seguimiento a distancia", "d": "Seguimiento con fotos y llamadas con su coordinador y su médico desde casa." }
+  ],
+  "faq": [
+    { "q": "¿Cuánto cuesta el tratamiento?", "a": "Cada página de tratamiento muestra un precio “desde”. Su precio final depende de su evaluación médica y se confirma en un presupuesto por escrito antes de viajar. No hay costes ocultos." },
+    { "q": "¿Qué incluye el paquete?", "a": "Los paquetes suelen incluir consulta y pruebas, el procedimiento, hotel, traslados VIP, intérprete, medicación y kit de cuidados, y seguimiento a distancia. Su presupuesto detalla cada concepto." },
+    { "q": "¿Cuánto tiempo debo quedarme en Turquía?", "a": "Depende del tratamiento. Cada página de tratamiento indica la estancia habitual y su coordinador la confirma en su plan." },
+    { "q": "¿Es doloroso el procedimiento?", "a": "Los procedimientos se realizan con la anestesia adecuada. Durante la recuperación puede sentir molestias; su médico le explicará qué esperar y le recetará medicación si es necesario." },
+    { "q": "¿Cuánto dura la recuperación?", "a": "El tiempo de recuperación varía según el tratamiento y la persona. Su médico le dará un calendario de recuperación personal e instrucciones de cuidados por escrito." },
+    { "q": "¿Cuándo veré el resultado final?", "a": "Los resultados se desarrollan con el tiempo y varían de una persona a otra. Su médico le explicará en la consulta los plazos previstos para su tratamiento." },
+    { "q": "¿Es seguro tratarse en Turquía?", "a": "La seguridad depende de la clínica, no del país. Compruebe la licencia, la cualificación de los médicos y las normas de higiene. Encontrará las nuestras en las páginas «Nosotros y seguridad» y «Médicos»." },
+    { "q": "¿Hablan mi idioma?", "a": "Su coordinador se comunica con usted en su idioma y en la clínica le acompaña un intérprete." },
+    { "q": "¿Cómo se paga?", "a": "Las formas de pago y el calendario de pagos figuran en su presupuesto por escrito. Consulte a su coordinador qué métodos están disponibles." },
+    { "q": "¿Qué pasa cuando vuelvo a casa?", "a": "Sigue en contacto con su coordinador por WhatsApp: envía fotos de su evolución y organizamos llamadas de seguimiento con su médico." }
+  ],
+  "service": {
+    "whoFor": "¿Para quién está indicado?", "procedure": "El procedimiento paso a paso", "results": "Resultados", "price": "Precio y paquete",
+    "from": "Desde", "onRequest": "Precio a consultar", "priceNote": "Precio desde. Su precio final se confirma en su plan por escrito.",
+    "stay": "Estancia habitual", "faq": "Preguntas frecuentes", "included": "Incluido en su paquete",
+    "ctaTitle": "¿Es este tratamiento adecuado para usted?", "ctaSub": "Reciba una evaluación gratuita de nuestro equipo médico.", "other": "Otros tratamientos"
+  },
+  "pages": {
+    "services": { "h1a": "Nuestros", "h1b": "tratamientos capilares", "sub": "Cada tratamiento se planifica de forma individual tras una evaluación médica." },
+    "results": { "h1a": "Antes y", "h1b": "después", "sub": "Cada resultado se publica con el consentimiento por escrito del paciente. Los resultados varían de una persona a otra.", "all": "Todos", "empty": "Los resultados se publicarán aquí cuando los pacientes hayan dado su consentimiento por escrito." },
+    "doctors": { "h1a": "Nuestros médicos", "h1b": "y equipo", "sub": "Las personas que planifican, realizan y siguen su tratamiento.", "empty": "Estamos preparando los perfiles de los médicos.", "back": "Todos los médicos" },
+    "about": { "h1a": "Sobre la clínica,", "h1b": "tecnología y seguridad", "sub": "Una clínica autorizada, pensada para pacientes internacionales.", "storyH": "Nuestra clínica", "accredH": "Licencias y acreditaciones", "accredNone": "Los datos de la licencia figuran al pie de la página." },
+    "prices": { "h1a": "Precios y", "h1b": "paquetes", "sub": "Precios desde claros y un paquete todo incluido, confirmado por escrito antes de viajar.", "service": "Tratamiento", "from": "Desde", "includedH": "Qué incluye cada paquete", "howH": "Cómo se fija su precio", "how": "Su precio final depende de su evaluación médica: por ejemplo, la extensión del tratamiento y las técnicas que recomiende su médico. Recibirá un presupuesto detallado por escrito antes de reservar nada." },
+    "journey": { "h1a": "Su proceso,", "h1b": "paso a paso", "sub": "Qué ocurre desde su primer mensaje hasta el seguimiento en casa.", "prepareH": "Antes de viajar", "prepare": ["Un pasaporte en vigor (consulte los requisitos de visado según su nacionalidad)", "Su historial médico y la lista de medicamentos que toma", "Ropa cómoda y holgada para la recuperación", "Un seguro de viaje que cubra tratamientos médicos en el extranjero"] },
+    "assessment": { "h1a": "Evaluación", "h1b": "online gratuita" },
+    "blog": { "h1a": "Guías para", "h1b": "pacientes", "sub": "Guías prácticas elaboradas con nuestro equipo médico.", "empty": "Nuestro equipo médico está redactando las primeras guías." },
+    "faq": { "h1a": "Preguntas", "h1b": "frecuentes", "sub": "¿No encuentra su respuesta? Escríbanos por WhatsApp." },
+    "contact": { "h1a": "Contacte con", "h1b": "nuestro equipo", "sub": "La forma más rápida de contactarnos es WhatsApp.", "whatsapp": "WhatsApp", "phone": "Teléfono", "email": "Correo electrónico", "address": "Dirección", "hours": "Horario", "map": "Mapa", "mapConsent": "El mapa lo proporciona Google. Al cargarlo se comparten datos con Google.", "mapLoad": "Cargar mapa" },
+    "privacy": { "h1a": "Política de", "h1b": "privacidad" },
+    "kvkk": { "h1a": "Aviso", "h1b": "KVKK" },
+    "cookies": { "h1a": "Política de", "h1b": "cookies" },
+    "terms": { "h1a": "Condiciones", "h1b": "de uso" },
+    "impressum": { "h1a": "Aviso", "h1b": "legal" }
+  },
+  "legal": {
+    "draft": "Esta página debe ser redactada y aprobada por un abogado cualificado antes del lanzamiento. Los títulos siguientes muestran la estructura necesaria.",
+    "privacy": ["Responsable del tratamiento", "Datos que recogemos", "Datos de salud y consentimiento explícito", "Finalidades y bases jurídicas", "Destinatarios y transferencias internacionales", "Plazos de conservación", "Sus derechos", "Contacto"],
+    "kvkk": ["Responsable del tratamiento (Veri sorumlusu)", "Finalidades del tratamiento", "Transferencia de datos personales", "Método de recogida y base jurídica", "Sus derechos según el artículo 11 de la Ley n.º 6698"],
+    "cookies": ["Qué son las cookies", "Cookies necesarias", "Cookies de análisis", "Cookies de marketing", "Cómo cambiar sus preferencias"],
+    "terms": ["Ámbito", "Exención de responsabilidad sobre la información médica", "Propiedad intelectual", "Responsabilidad", "Legislación aplicable"],
+    "impressum": { "company": "Empresa", "address": "Dirección", "representative": "Representante", "registry": "N.º de registro mercantil", "tax": "N.º de identificación fiscal", "licence": "N.º de licencia sanitaria", "contact": "Contacto" }
+  },
+  "footer": {
+    "desc": "Planes de tratamiento personalizados, atención médica especializada y acompañamiento para pacientes internacionales.",
+    "services": "Tratamientos", "patients": "Información al paciente", "contact": "Contacto", "legal": "Legal",
+    "licence": "Licencia n.º", "rights": "Todos los derechos reservados.", "cookieSettings": "Configuración de cookies",
+    "disclaimer": "La información de este sitio web no sustituye a una consulta médica. Los resultados varían de una persona a otra."
+  },
+  "cookie": {
+    "title": "Sus preferencias de privacidad",
+    "text": "Usamos cookies necesarias para el funcionamiento del sitio. Con su consentimiento, también usamos cookies de análisis y de marketing para medir y mejorar nuestros servicios.",
+    "accept": "Aceptar todas", "reject": "Rechazar todas", "customise": "Personalizar", "save": "Guardar preferencias",
+    "necessary": "Necesarias", "necessaryD": "Imprescindibles para el sitio y el formulario de evaluación. Siempre activas.",
+    "analytics": "Análisis", "analyticsD": "Nos ayudan a entender cómo se usa el sitio (Google Analytics, Microsoft Clarity).",
+    "marketing": "Marketing", "marketingD": "Miden nuestra publicidad y muestran reseñas y vídeos insertados (Google, Meta).",
+    "policy": "Política de cookies"
+  },
+  "langBanner": { "text": "Esta página también está disponible en español.", "switch": "Cambiar a español", "dismiss": "Cerrar" },
+  "wa": { "prefill": "Hola Elite+, me gustaría recibir información sobre: {page}" },
+  "a11y": { "prev": "Anterior", "next": "Siguiente", "openMenu": "Abrir menú", "closeMenu": "Cerrar menú", "compare": "Comparar antes y después", "ext": "(se abre en una pestaña nueva)", "star": "Estrella de Elite+" },
+  "assess": {
+    "title": "Evaluación online gratuita",
+    "intro": "Unos 3 minutos · Gratis · Sin compromiso",
+    "step": "Paso {n} de {total}",
+    "back": "Atrás", "next": "Continuar", "skip": "Omitir", "submit": "Enviar mi evaluación", "sending": "Enviando…",
+    "required": "Elija una opción para continuar.",
+    "resume": "Bienvenido de nuevo. Hemos guardado sus respuestas para que pueda continuar donde lo dejó.", "restart": "Empezar de nuevo",
+    "q_service": "¿Qué tratamiento le interesa?",
+    "q_goal": "¿Qué describe mejor su objetivo?",
+    "goals": ["Mejorar mi aspecto", "Recuperar función o comodidad", "Corregir un tratamiento anterior", "Aún no lo sé"],
+    "q_prior": "¿Ha recibido tratamiento para esto anteriormente?",
+    "prior": ["No", "Sí", "No estoy seguro/a"],
+    "q_about": "Sobre usted",
+    "age": "Rango de edad", "ages": ["18–24", "25–34", "35–44", "45–54", "55–64", "65+"],
+    "gender": "Sexo", "genders": ["Mujer", "Hombre", "Prefiero no decirlo"],
+    "q_photos": "¿Desea compartir fotos?",
+    "photosSub": "Opcional. Las fotos ayudan a nuestros médicos a preparar un plan más preciso. Hasta 4 fotos, máximo 10 MB cada una. Se guardan de forma privada y solo las ve nuestro equipo médico.",
+    "photosDrop": "Arrastre las fotos aquí o", "photosPick": "elija archivos", "photosCamera": "Hacer una foto", "photosRemove": "Eliminar foto",
+    "photosTooBig": "Esta foto supera los 10 MB.", "photosType": "Suba imágenes en formato JPG, PNG, HEIC o WebP.", "photosMax": "Puede subir hasta 4 fotos.",
+    "q_date": "¿Cuándo le gustaría recibir el tratamiento?", "dateUnsure": "Aún no lo sé",
+    "q_contact": "¿Dónde le enviamos su plan?",
+    "name": "Nombre completo", "country": "País de residencia", "phone": "Número de WhatsApp", "email": "Correo electrónico (opcional)",
+    "phoneHint": "Su coordinador se pondrá en contacto con usted por WhatsApp.",
+    "errName": "Introduzca su nombre.", "errPhone": "Introduzca un número de WhatsApp válido.", "errEmail": "Introduzca un correo electrónico válido.",
+    "q_consent": "Un último paso",
+    "consent": "Doy mi consentimiento explícito para que Elite+ Clínicas de Bienestar trate mis datos personales y de salud, incluidas las fotos que suba, para evaluar mi caso y contactar conmigo, según se describe en la",
+    "consentLink": "política de privacidad",
+    "consentKvkk": "aviso KVKK",
+    "errConsent": "Necesitamos su consentimiento para que nuestro equipo médico pueda revisar sus datos.",
+    "errSend": "Lo sentimos, no hemos podido enviar su evaluación. Inténtelo de nuevo o escríbanos por WhatsApp.",
+    "thanksH1a": "Gracias,", "thanksH1b": "hemos recibido su evaluación",
+    "thanks": "Un coordinador de pacientes se pondrá en contacto con usted por WhatsApp en un plazo de {hours} horas.",
+    "thanksWa": "Escríbanos ahora por WhatsApp",
+    "previewNote": "Modo de vista previa: no hay ningún destino configurado, así que no se ha enviado nada. Los datos se han registrado en la consola del navegador.",
+    "q_category": "¿Qué área le interesa?",
+    "unsure": "Aún no lo sé, ayúdenme a elegir"
+  },
+  "todo": "PENDIENTE",
+  "categories": {
+    "transplant": { "name": "Injerto capilar", "short": "Injerto de cabello, barba, cejas y bigote, y restauración capilar en cicatrices." },
+    "treatment": { "name": "Tratamientos capilares", "short": "Tratamientos no quirúrgicos para el cabello debilitado y un cuero cabelludo más sano." }
+  },
+  "doctor": { "years": "{n} años de experiencia", "viewProfile": "Ver perfil", "education": "Formación", "experience": "Experiencia", "specialties": "Especialidades", "credentials": "Afiliaciones y acreditaciones", "languages": "Idiomas" },
+  "techniques": {
+    "label": "Nuestras técnicas", "h2a": "FUE y DHI", "h2b": "la técnica adecuada para usted", "nav": "FUE y DHI",
+    "sub": "Ambas son técnicas modernas de unidades foliculares que no dejan cicatriz lineal. Su médico le recomendará una de ellas, o una combinación, tras examinar su zona donante, su tipo de cabello y sus objetivos.",
+    "fue": { "name": "FUE", "full": "Extracción de unidades foliculares", "d": "Las unidades foliculares se extraen una a una de la zona donante con un micropunch. Después, el médico abre pequeños canales en la zona receptora y coloca en ellos los injertos.",
+      "steps": ["Extracción individual con un micropunch de 0,7–1,0 mm", "Apertura de canales en la zona receptora con el ángulo y la densidad planificados", "Colocación de los injertos en los canales"],
+      "best": ["Zonas amplias con poca densidad o calvicie", "Un mayor número de injertos en una sola sesión", "Pacientes a los que no les importa rasurar la zona tratada"] },
+    "dhi": { "name": "DHI", "full": "Implantación capilar directa", "d": "La extracción es igual que en la FUE. La diferencia está en la implantación: cada injerto se carga en un implantador (bolígrafo Choi), que abre el canal y coloca el injerto en un solo paso.",
+      "steps": ["Extracción individual con micropunch, igual que en la FUE", "Carga de cada injerto en un implantador Choi", "Canal e implantación en un solo movimiento, controlando ángulo, profundidad y dirección"],
+      "best": ["Diseño de la línea frontal y aumento de densidad entre el cabello existente", "Injertos de barba, cejas y bigote", "Mantener la zona receptora sin rasurar, cuando es posible"] },
+    "howH": "Cómo se realiza", "bestH": "Suele recomendarse para",
+    "tableH": "FUE y DHI comparadas",
+    "table": { "head": ["", "FUE", "DHI"], "rows": [
+      ["Extracción de injertos", "Micropunch, uno a uno", "Igual que la FUE"],
+      ["Zona receptora", "Primero se abren los canales y después se colocan los injertos", "El implantador abre el canal e implanta en un solo paso"],
+      ["Rasurado", "Normalmente necesario", "La zona receptora a menudo puede quedar sin rasurar"],
+      ["Superficie por sesión", "Adecuada para zonas amplias", "Adecuada para trabajo de precisión y aumento de densidad"],
+      ["Zona donante", "Pequeñas cicatrices puntiformes, sin cicatriz lineal", "Igual que la FUE"]] },
+    "fact": "Conviene saber: la DHI es una variante de la FUE, no una operación rival. Los estudios no han demostrado que una de las dos técnicas ofrezca sistemáticamente mejores resultados. Lo decisivo es la destreza quirúrgica, la planificación y el manejo de los injertos.",
+    "clinicH": "Cómo aplicamos la FUE y la DHI",
+    "clinic": [
+      { "t": "Planificación dirigida por el médico", "d": "Su médico examina su zona donante, diseña con usted la línea frontal y elige FUE, DHI o una combinación." },
+      { "t": "Manejo cuidadoso de los injertos", "d": "Los injertos se cuentan, se clasifican y se conservan en una solución refrigerada para que pasen el menor tiempo posible fuera del cuerpo." },
+      { "t": "Ángulo y dirección naturales", "d": "Cada injerto se coloca siguiendo el ángulo y la dirección naturales de su propio cabello." },
+      { "t": "Protección de la zona donante", "d": "La extracción se reparte de forma uniforme para que su zona donante conserve una densidad natural en el futuro." }],
+    "timelineH": "Qué esperar después de cualquiera de las dos técnicas",
+    "timeline": [
+      { "t": "Semanas 2–6", "d": "El cabello injertado suele caerse. Es una parte normal del ciclo de crecimiento del cabello." },
+      { "t": "Meses 3–4", "d": "El cabello nuevo suele empezar a crecer." },
+      { "t": "Meses 12–18", "d": "El resultado final suele ser visible; la coronilla puede tardar más." }],
+    "note": "Los resultados varían de una persona a otra. Su médico le explicará qué expectativas son realistas en su caso.",
+    "cta": "¿Qué técnica es adecuada para mí?", "more": "FUE y DHI: diferencias",
+    "metaTitle": "Injerto capilar FUE o DHI en {city}: diferencias explicadas – Elite+",
+    "metaDesc": "Cómo funcionan las técnicas de injerto capilar FUE y DHI, en qué se diferencian, para quién es adecuada cada una y qué esperar después de la intervención."
+  }
+}

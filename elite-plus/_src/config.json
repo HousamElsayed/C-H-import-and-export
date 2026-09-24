@@ -1,0 +1,535 @@
+{
+  "_readme": "Clinic data. Every null renders as a visible [TODO] in preview builds and FAILS the production build (node _src/build.mjs --prod). Never replace a null with an estimate: leave it null until the real value is confirmed.",
+  "site": {
+    "origin": "https://housamelsayed.github.io",
+    "basePath": "/C-H-import-and-export/elite-plus",
+    "defaultLang": "en",
+    "languages": [
+      "en",
+      "ar",
+      "tr",
+      "de",
+      "es"
+    ],
+    "year": 2026
+  },
+  "brand": {
+    "logoLight": "logo-navy.svg",
+    "logoDark": "logo-white.svg",
+    "mark": "logo-mark.svg",
+    "_logoNote": "Traced to vector from Elite_Plus_Clinics_LOGO.pdf (raster source). Replace with the designer's original SVG/AI export when available."
+  },
+  "hero": {
+    "welcome": "hero/welcome.jpg",
+    "_welcomeNote": "Welcome image shown in the triangle frame. Used automatically when the file exists in assets/img/. The supplied 1080x450 file works but is soft on retina screens; a 2400px-wide clean export is recommended.",
+    "focus": "32% 42%",
+    "_note": "Clean brand photo WITHOUT baked-in logo or rays. Desktop >= 2400x1100, mobile >= 1200x1500, AVIF + WebP, < 250KB each. Paths relative to elite-plus/assets/img/.",
+    "desktopAvif": null,
+    "desktopWebp": null,
+    "mobileAvif": null,
+    "mobileWebp": null,
+    "width": 2400,
+    "height": 1100
+  },
+  "clinic": {
+    "legalName": null,
+    "licenceNumber": null,
+    "tradeRegistryNo": null,
+    "taxId": null,
+    "representative": null,
+    "street": null,
+    "district": null,
+    "city": null,
+    "postalCode": null,
+    "countryCode": "TR",
+    "lat": null,
+    "lng": null,
+    "mapEmbedUrl": null,
+    "phone": null,
+    "whatsapp": null,
+    "_whatsappNote": "Digits only with country code, e.g. 905xxxxxxxxx",
+    "email": null,
+    "hours": null,
+    "_hoursNote": "Schema.org format, e.g. [\"Mo-Fr 09:00-18:00\", \"Sa 10:00-15:00\"]",
+    "googleBusinessUrl": null,
+    "social": {
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "tiktok": null
+    }
+  },
+  "stats": {
+    "patientsTreated": null,
+    "yearsOpen": null,
+    "googleRating": null,
+    "googleReviewCount": null,
+    "ministryLicensed": null,
+    "languagesSpoken": null,
+    "_languagesNote": "ISO codes of languages the team really speaks, e.g. [\"ar\",\"en\",\"tr\"]"
+  },
+  "promise": {
+    "responseHours": 24,
+    "_responseNote": "Only keep 24 if the coordinator team can really reply within 24h, 7 days a week."
+  },
+  "package": {
+    "hotelNights": null,
+    "followUpMonths": null,
+    "currency": "EUR"
+  },
+  "services": [
+    {
+      "slug": "hair-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Hair Transplant",
+          "short": "Hair follicles are moved from a donor area to thinning or bald areas of the scalp."
+        },
+        "ar": {
+          "name": "زراعة شعر الرأس",
+          "short": "نقل بصيلات الشعر من المنطقة المانحة إلى مناطق الفراغات أو الصلع في فروة الرأس."
+        },
+        "tr": {
+          "name": "Saç Ekimi",
+          "short": "Saç kökleri donör bölgeden seyrelmiş veya açılmış bölgelere nakledilir."
+        },
+        "de": {
+          "name": "Haartransplantation",
+          "short": "Haarfollikel werden aus einem Spenderbereich in lichte oder kahle Stellen der Kopfhaut verpflanzt."
+        },
+        "es": {
+          "name": "Injerto capilar",
+          "short": "Los folículos se trasladan de una zona donante a las zonas con poca densidad o calvas del cuero cabelludo."
+        }
+      }
+    },
+    {
+      "slug": "beard-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Beard Transplant",
+          "short": "Follicles are placed to fill patchy or thin areas of the beard."
+        },
+        "ar": {
+          "name": "زراعة اللحية",
+          "short": "زراعة البصيلات لملء الفراغات والمناطق الخفيفة في اللحية."
+        },
+        "tr": {
+          "name": "Sakal Ekimi",
+          "short": "Sakaldaki seyrek veya boş alanları doldurmak için saç kökleri yerleştirilir."
+        },
+        "de": {
+          "name": "Barttransplantation",
+          "short": "Follikel werden eingesetzt, um lückige oder dünne Stellen im Bart aufzufüllen."
+        },
+        "es": {
+          "name": "Injerto de barba",
+          "short": "Se implantan folículos para rellenar zonas despobladas o con poca densidad de la barba."
+        }
+      }
+    },
+    {
+      "slug": "eyebrow-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Eyebrow Transplant",
+          "short": "Individual follicles are placed to restore the shape and density of the eyebrows."
+        },
+        "ar": {
+          "name": "زراعة الحواجب",
+          "short": "زراعة البصيلات واحدة تلو الأخرى لاستعادة شكل الحواجب وكثافتها."
+        },
+        "tr": {
+          "name": "Kaş Ekimi",
+          "short": "Kaşların şeklini ve yoğunluğunu yeniden kazandırmak için kökler tek tek yerleştirilir."
+        },
+        "de": {
+          "name": "Augenbrauentransplantation",
+          "short": "Einzelne Follikel werden eingesetzt, um Form und Dichte der Augenbrauen wiederherzustellen."
+        },
+        "es": {
+          "name": "Injerto de cejas",
+          "short": "Se implantan folículos uno a uno para recuperar la forma y la densidad de las cejas."
+        }
+      }
+    },
+    {
+      "slug": "moustache-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Moustache Transplant",
+          "short": "Follicles are placed to fill in or define the moustache."
+        },
+        "ar": {
+          "name": "زراعة الشارب",
+          "short": "زراعة البصيلات لملء الشارب أو تحديد شكله."
+        },
+        "tr": {
+          "name": "Bıyık Ekimi",
+          "short": "Bıyığı doldurmak veya şekillendirmek için saç kökleri yerleştirilir."
+        },
+        "de": {
+          "name": "Schnurrbarttransplantation",
+          "short": "Follikel werden eingesetzt, um den Schnurrbart aufzufüllen oder zu konturieren."
+        },
+        "es": {
+          "name": "Injerto de bigote",
+          "short": "Se implantan folículos para rellenar o definir el bigote."
+        }
+      }
+    },
+    {
+      "slug": "scar-hair-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Scar Hair Transplant",
+          "short": "Hair follicles are placed into suitable scar tissue on the scalp, beard or eyebrows."
+        },
+        "ar": {
+          "name": "زراعة الشعر في الندبات",
+          "short": "زراعة البصيلات في أنسجة الندبات المناسبة في فروة الرأس أو اللحية أو الحواجب."
+        },
+        "tr": {
+          "name": "Yara İzine Saç Ekimi",
+          "short": "Saç kökleri saçlı deri, sakal veya kaştaki uygun yara izi dokusuna yerleştirilir."
+        },
+        "de": {
+          "name": "Haartransplantation in Narben",
+          "short": "Haarfollikel werden in geeignetes Narbengewebe an Kopfhaut, Bart oder Augenbrauen eingesetzt."
+        },
+        "es": {
+          "name": "Injerto capilar en cicatrices",
+          "short": "Se implantan folículos en tejido cicatricial apto del cuero cabelludo, la barba o las cejas."
+        }
+      }
+    },
+    {
+      "slug": "burn-scar-hair-transplant",
+      "category": "transplant",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Burn Scar Hair Transplant",
+          "short": "Hair restoration in healed burn scars, after a medical assessment of the scar tissue."
+        },
+        "ar": {
+          "name": "زراعة الشعر في ندبات الحروق",
+          "short": "استعادة الشعر في ندبات الحروق الملتئمة بعد تقييم طبي لأنسجة الندبة."
+        },
+        "tr": {
+          "name": "Yanık İzine Saç Ekimi",
+          "short": "İyileşmiş yanık izlerinde, iz dokusunun tıbbi değerlendirmesinden sonra saç restorasyonu."
+        },
+        "de": {
+          "name": "Haartransplantation in Brandnarben",
+          "short": "Haarwiederherstellung in verheilten Brandnarben nach ärztlicher Beurteilung des Narbengewebes."
+        },
+        "es": {
+          "name": "Injerto capilar en cicatrices de quemaduras",
+          "short": "Restauración capilar en cicatrices de quemaduras ya curadas, tras una valoración médica del tejido."
+        }
+      }
+    },
+    {
+      "slug": "g-cell-hair-therapy",
+      "category": "treatment",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "G-Cell Hair Therapy",
+          "short": "A regenerative hair therapy. Your doctor assesses whether it suits your type of hair loss."
+        },
+        "ar": {
+          "name": "علاج الشعر G-Cell",
+          "short": "علاج تجديدي للشعر، ويقيّم الطبيب مدى ملاءمته لنوع تساقط الشعر لديك."
+        },
+        "tr": {
+          "name": "G-Cell Saç Tedavisi",
+          "short": "Rejeneratif bir saç tedavisi. Saç dökülmenize uygun olup olmadığını doktorunuz değerlendirir."
+        },
+        "de": {
+          "name": "G-Cell-Haartherapie",
+          "short": "Eine regenerative Haartherapie. Ihr Arzt prüft, ob sie für Ihre Form des Haarausfalls geeignet ist."
+        },
+        "es": {
+          "name": "Terapia capilar G-Cell",
+          "short": "Una terapia capilar regenerativa. Su médico valora si es adecuada para su tipo de caída."
+        }
+      }
+    },
+    {
+      "slug": "stem-cell-hair-therapy",
+      "category": "treatment",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Stem Cell Hair Therapy",
+          "short": "A regenerative treatment for thinning hair using cells from your own tissue."
+        },
+        "ar": {
+          "name": "علاج الشعر بالخلايا الجذعية",
+          "short": "علاج تجديدي لضعف الشعر يعتمد على خلايا مأخوذة من أنسجتك."
+        },
+        "tr": {
+          "name": "Kök Hücre Saç Tedavisi",
+          "short": "Kendi dokunuzdan alınan hücrelerle seyrelen saçlar için rejeneratif bir tedavi."
+        },
+        "de": {
+          "name": "Stammzell-Haartherapie",
+          "short": "Eine regenerative Behandlung bei dünner werdendem Haar mit Zellen aus Ihrem eigenen Gewebe."
+        },
+        "es": {
+          "name": "Terapia capilar con células madre",
+          "short": "Un tratamiento regenerativo para el cabello debilitado con células de su propio tejido."
+        }
+      }
+    },
+    {
+      "slug": "regenera-activa",
+      "category": "treatment",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Regenera Activa",
+          "short": "Micro-grafts prepared from a small sample of your own scalp tissue are injected into thinning areas."
+        },
+        "ar": {
+          "name": "ريجينيرا أكتيفا",
+          "short": "تحضير طُعوم دقيقة من عينة صغيرة من فروة رأسك ثم حقنها في المناطق الخفيفة."
+        },
+        "tr": {
+          "name": "Regenera Activa",
+          "short": "Kendi saçlı derinizden alınan küçük bir örnekten hazırlanan mikro greftler seyrek bölgelere enjekte edilir."
+        },
+        "de": {
+          "name": "Regenera Activa",
+          "short": "Aus einer kleinen Probe Ihrer eigenen Kopfhaut werden Mikrotransplantate gewonnen und in lichte Stellen injiziert."
+        },
+        "es": {
+          "name": "Regenera Activa",
+          "short": "Se preparan microinjertos a partir de una pequeña muestra de su cuero cabelludo y se inyectan en las zonas débiles."
+        }
+      }
+    },
+    {
+      "slug": "prp-hair-treatment",
+      "category": "treatment",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "PRP (Plasma) Hair Treatment",
+          "short": "Platelet-rich plasma prepared from your own blood is injected into the scalp."
+        },
+        "ar": {
+          "name": "علاج الشعر بالبلازما (PRP)",
+          "short": "حقن فروة الرأس ببلازما غنية بالصفائح الدموية محضّرة من دمك."
+        },
+        "tr": {
+          "name": "PRP Saç Tedavisi",
+          "short": "Kendi kanınızdan hazırlanan trombositten zengin plazma saçlı deriye enjekte edilir."
+        },
+        "de": {
+          "name": "PRP-Haarbehandlung (Eigenblut)",
+          "short": "Aus Ihrem eigenen Blut gewonnenes plättchenreiches Plasma wird in die Kopfhaut injiziert."
+        },
+        "es": {
+          "name": "Tratamiento capilar con PRP (plasma)",
+          "short": "Se inyecta en el cuero cabelludo plasma rico en plaquetas obtenido de su propia sangre."
+        }
+      }
+    },
+    {
+      "slug": "hair-mesotherapy",
+      "category": "treatment",
+      "priceFrom": null,
+      "image": null,
+      "content": {
+        "en": {
+          "name": "Hair Mesotherapy",
+          "short": "Micro-injections of vitamins and active ingredients into the scalp."
+        },
+        "ar": {
+          "name": "الميزوثيرابي للشعر",
+          "short": "حقن دقيقة للفيتامينات والمواد الفعّالة في فروة الرأس."
+        },
+        "tr": {
+          "name": "Saç Mezoterapisi",
+          "short": "Saçlı deriye vitamin ve aktif bileşenlerin mikro enjeksiyonu."
+        },
+        "de": {
+          "name": "Haar-Mesotherapie",
+          "short": "Mikroinjektionen von Vitaminen und Wirkstoffen in die Kopfhaut."
+        },
+        "es": {
+          "name": "Mesoterapia capilar",
+          "short": "Microinyecciones de vitaminas y principios activos en el cuero cabelludo."
+        }
+      }
+    }
+  ],
+  "_servicesContentExample": {
+    "en": {
+      "name": "Service name",
+      "short": "Two-line description for cards.",
+      "intro": "One-paragraph hero intro for the service page.",
+      "whoFor": [
+        "Candidate profile 1",
+        "Candidate profile 2"
+      ],
+      "steps": [
+        {
+          "t": "Step title",
+          "d": "Step description"
+        }
+      ],
+      "stay": "e.g. 3-4 days in Istanbul",
+      "included": [
+        "Service-specific inclusion"
+      ],
+      "faq": [
+        {
+          "q": "Question",
+          "a": "Answer"
+        }
+      ],
+      "questions": [
+        {
+          "id": "area",
+          "q": "Which area would you like to treat?",
+          "options": [
+            "Option A",
+            "Option B"
+          ]
+        }
+      ]
+    }
+  },
+  "doctors": [],
+  "_doctorExample": {
+    "slug": "dr-firstname-lastname",
+    "name": "Dr. Firstname Lastname",
+    "photo": "doctors/firstname.webp",
+    "lead": true,
+    "yearsExperience": 15,
+    "languages": [
+      "tr",
+      "en"
+    ],
+    "content": {
+      "en": {
+        "title": "Specialist in ...",
+        "bio": "Short bio.",
+        "education": [
+          "University, degree, year"
+        ],
+        "experience": [
+          "Hospital, role, years"
+        ],
+        "specialties": [
+          "Specialty"
+        ],
+        "credentials": [
+          "Board membership"
+        ]
+      }
+    }
+  },
+  "results": [],
+  "_resultExample": {
+    "service": "service-1",
+    "before": "results/case-01-before.webp",
+    "after": "results/case-01-after.webp",
+    "consentRef": "Signed consent form ID (internal, not rendered)",
+    "caption": {
+      "en": "6 months after treatment"
+    }
+  },
+  "accreditations": [],
+  "videoTestimonials": [],
+  "reviewsWidget": null,
+  "_reviewsNote": "Embed URL of a Google Reviews / Trustpilot widget. Loaded only after marketing consent.",
+  "integrations": {
+    "leadEndpoint": null,
+    "uploadUrlEndpoint": null,
+    "_endpointsNote": "See _backend/README.md. leadEndpoint = POST JSON lead; uploadUrlEndpoint = POST {count,types} -> signed PUT URLs to a private bucket.",
+    "turnstileSiteKey": null,
+    "gtmId": null,
+    "metaPixelId": null,
+    "clarityId": null
+  },
+  "serviceCategories": [
+    "transplant",
+    "treatment"
+  ],
+  "_servicesNote": "Names/short descriptions translated from the clinic's Arabic list; the short descriptions need medical-team review. 'Reginera' was interpreted as Regenera Activa: confirm the exact product name. intro/whoFor/steps/stay/faq/questions per language are still TODO.",
+  "techniquesConfirmed": false,
+  "_techniquesNote": "Set to true once the medical team confirms the 'How we apply FUE and DHI' standards (graft storage, doctor-led planning, equipment) are accurate for this clinic.",
+  "about": {
+    "story": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    },
+    "equipment": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    },
+    "_note": "story: 1-3 paragraphs of real facts (founding year, team, facility), separate paragraphs with blank lines. equipment: list of devices actually in use."
+  },
+  "legalText": {
+    "privacy": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    },
+    "kvkk": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    },
+    "cookies": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    },
+    "terms": {
+      "en": null,
+      "ar": null,
+      "tr": null,
+      "de": null,
+      "es": null
+    }
+  },
+  "_legalTextNote": "Lawyer-approved text per page and language. Simple markdown: '## Heading', blank line between paragraphs, '- ' for list items."
+}

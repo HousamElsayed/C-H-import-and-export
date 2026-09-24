@@ -1,0 +1,4 @@
+# Must be served at the domain root to take effect.
+User-agent: *
+Disallow: /
+Sitemap: https://housamelsayed.github.io/C-H-import-and-export/elite-plus/sitemap.xml

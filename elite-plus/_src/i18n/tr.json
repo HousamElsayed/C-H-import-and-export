@@ -1,0 +1,752 @@
+{
+  "lang": {
+    "name": "Türkçe",
+    "code": "TR",
+    "dir": "ltr",
+    "locale": "tr_TR",
+    "og": "tr_TR"
+  },
+  "meta": {
+    "siteName": "Elite+ Sağlıklı Yaşam Klinikleri",
+    "homeTitle": "Elite+ Sağlıklı Yaşam Klinikleri | {city} – Size Özel Bakım",
+    "homeDesc": "Uluslararası hastalar için size özel tedavi planları, uzman tıbbi bakım ve her şey dahil paketler ({city}, Türkiye). Ücretsiz online değerlendirmenizi alın.",
+    "serviceTitle": "{service} {year} – {city} | Fiyat ve Sonuçlar – Elite+",
+    "serviceDesc": "Elite+ Kliniklerinde {service} ({city}): kimler için uygun, adım adım işlem, sonuçlar, başlangıç fiyatları ve sık sorulan sorular.",
+    "pages": {
+      "services": [
+        "Tedaviler ve Hizmetler – Elite+ Klinikleri",
+        "Elite+ Kliniklerinde ({city}) sunulan tüm tedaviler ve uluslararası hastalar için her şey dahil paketler."
+      ],
+      "results": [
+        "Öncesi ve Sonrası – Elite+ Klinikleri",
+        "Hastalarımızın yazılı onayıyla paylaşılan gerçek sonuçlar."
+      ],
+      "doctors": [
+        "Doktorlarımız ve Ekibimiz – Elite+ Klinikleri",
+        "Elite+ Kliniklerinin doktorları ve hasta koordinatörleri: eğitim, deneyim ve konuşulan diller."
+      ],
+      "about": [
+        "Hakkımızda, Teknoloji ve Güvenlik – Elite+ Klinikleri",
+        "Kliniğimiz, cihazlarımız, hijyen ve sterilizasyon standartlarımız ve ruhsatlarımız."
+      ],
+      "prices": [
+        "Fiyatlar ve Her Şey Dahil Paketler {year} – Elite+",
+        "Başlangıç fiyatları ve pakete dahil olanlar: işlem, otel, VIP transfer, tercüman ve takip."
+      ],
+      "journey": [
+        "Hasta Yolculuğu: Adım Adım Tedaviniz – Elite+",
+        "Ücretsiz online değerlendirmeden uzaktan takibe: uluslararası hastalar için tedavi süreci."
+      ],
+      "assessment": [
+        "Ücretsiz Online Değerlendirme – Elite+ Klinikleri",
+        "Birkaç soruyu yanıtlayın, size özel tedavi planı ve fiyat teklifi alın. Ücretsiz ve taahhütsüz."
+      ],
+      "blog": [
+        "Hasta Rehberleri – Elite+ Klinikleri",
+        "Fiyatlar, iyileşme süreci ve tedavi için Türkiye'ye seyahat hakkında rehberler."
+      ],
+      "faq": [
+        "Sık Sorulan Sorular – Elite+ Klinikleri",
+        "Fiyatlar, iyileşme, güvenlik, seyahat ve ödeme hakkında yanıtlar."
+      ],
+      "contact": [
+        "İletişim – Elite+ Klinikleri",
+        "Elite+ Kliniklerine WhatsApp, telefon veya e-posta ile ulaşın. Adres ve çalışma saatleri."
+      ],
+      "privacy": [
+        "Gizlilik Politikası – Elite+ Klinikleri",
+        "Elite+ Kliniklerinin kişisel ve sağlık verilerini nasıl işlediği."
+      ],
+      "kvkk": [
+        "KVKK Aydınlatma Metni – Elite+ Klinikleri",
+        "6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni."
+      ],
+      "cookies": [
+        "Çerez Politikası – Elite+ Klinikleri",
+        "Kullandığımız çerezler ve tercihlerinizi nasıl değiştirebileceğiniz."
+      ],
+      "terms": [
+        "Kullanım Koşulları – Elite+ Klinikleri",
+        "Bu web sitesinin kullanım koşulları."
+      ],
+      "impressum": [
+        "Yasal Bilgiler – Elite+ Klinikleri",
+        "Yasal bilgiler: şirket, adres, temsilci, sicil ve iletişim."
+      ]
+    }
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Tedaviler",
+    "results": "Sonuçlar",
+    "doctors": "Doktorlar",
+    "about": "Hakkımızda ve Güvenlik",
+    "prices": "Fiyatlar",
+    "journey": "Hasta Yolculuğu",
+    "blog": "Rehberler",
+    "faq": "SSS",
+    "contact": "İletişim",
+    "cta": "Ücretsiz Danışmanlık",
+    "menu": "Menü",
+    "close": "Kapat",
+    "allServices": "Tüm tedaviler",
+    "learnMore": "Daha fazla bilgi",
+    "viewAll": "Tüm sonuçları gör",
+    "language": "Dil",
+    "skip": "İçeriğe geç",
+    "assessment": "Ücretsiz Değerlendirme",
+    "whatsapp": "WhatsApp",
+    "breadcrumbHome": "Ana Sayfa"
+  },
+  "hero": {
+    "eyebrow": "Sağlıklı Yaşam Klinikleri",
+    "h1a": "Elite+'ya Hoş Geldiniz",
+    "h1b": "Sağlıklı Yaşam Burada Başlar",
+    "sub": "Size özel tedavi planları, uzman tıbbi bakım ve yolculuğunuzun her adımında kesintisiz destek.",
+    "cta1": "Ücretsiz Değerlendirme Alın",
+    "cta2": "WhatsApp'tan Yazın",
+    "micro": "Ücretsiz · Taahhüt yok · {hours} saat içinde yanıt",
+    "alt": "Sabahın yumuşak ışığında kollarını kaldıran kadın"
+  },
+  "trust": {
+    "patients": "{n}+ hasta tedavi edildi",
+    "rating": "★ Google'da {r} ({n} değerlendirme)",
+    "ratingShort": "★ Google'da {r}",
+    "licensed": "T.C. Sağlık Bakanlığı ruhsatlı",
+    "licensedShort": "Sağlık Bakanlığı ruhsatlı",
+    "speaks": "Konuştuğumuz diller: {langs}"
+  },
+  "langNames": {
+    "en": "İngilizce",
+    "ar": "Arapça",
+    "tr": "Türkçe",
+    "de": "Almanca",
+    "es": "İspanyolca",
+    "fr": "Fransızca",
+    "ru": "Rusça"
+  },
+  "home": {
+    "results": {
+      "label": "Sonuçlar",
+      "h2a": "Gerçek hastalar,",
+      "h2b": "gerçek sonuçlar",
+      "sub": "Karşılaştırmak için kaydırın. Her fotoğraf hastanın yazılı onayıyla yayınlanır.",
+      "cta": "Tüm sonuçları gör",
+      "before": "Öncesi",
+      "after": "Sonrası"
+    },
+    "why": {
+      "label": "Neden Elite+",
+      "h2a": "Güvenebileceğiniz",
+      "h2b": "bir bakım",
+      "items": [
+        {
+          "t": "Deneyimli doktorlar",
+          "d": "Eğitimi doğrulanabilir, alanında yıllarca deneyim kazanmış uzmanlar."
+        },
+        {
+          "t": "Modern teknoloji",
+          "d": "Güncel cihazlar ve sıkı hijyen ile sterilizasyon standartları."
+        },
+        {
+          "t": "Her şey dahil paketler",
+          "d": "Tedavi, otel, VIP transfer ve tercüman sizin için ayarlanır."
+        },
+        {
+          "t": "Sizin dilinizi konuşuyoruz",
+          "d": "Size özel bir koordinatör, konaklamanızdan önce, sırasında ve sonrasında yanınızda."
+        },
+        {
+          "t": "Tedavi sonrası takip",
+          "d": "Evinize döndükten sonra WhatsApp üzerinden düzenli takip ve planlı görüşmeler."
+        },
+        {
+          "t": "Şeffaf fiyatlandırma",
+          "d": "Seyahatten önce üzerinde anlaşılan, her şeyi içeren yazılı fiyat teklifi."
+        }
+      ],
+      "cta": "Ücretsiz değerlendirmenizi başlatın"
+    },
+    "services": {
+      "label": "Tedaviler",
+      "h2a": "Saç",
+      "h2b": "tedavilerimiz",
+      "cta": "Hangi tedavi size uygun? Bize sorun"
+    },
+    "included": {
+      "label": "Her şey dahil",
+      "h2a": "Her şey ayarlandı,",
+      "h2b": "tek ve net bir fiyat",
+      "items": [
+        "Muayene ve tıbbi tetkikler",
+        "İşleminiz",
+        "{nights} gece otel konaklaması",
+        "VIP havalimanı ve klinik transferleri",
+        "Kişisel tercüman",
+        "İlaçlar ve bakım seti",
+        "{months} ay boyunca takip"
+      ],
+      "note": "Fiyatlar “başlangıç” fiyatı olarak gösterilir. Nihai fiyatınız seyahatten önce yazılı planınızda onaylanır.",
+      "cta": "Fiyatlar ve paketler"
+    },
+    "journey": {
+      "label": "Yolculuğunuz",
+      "h2a": "Altı net adım,",
+      "h2b": "yanınızda tek bir ekip",
+      "cta": "1. adımı başlatın, ücretsiz"
+    },
+    "doctors": {
+      "label": "Doktorlar",
+      "h2a": "Bakımınızın arkasındaki",
+      "h2b": "ekiple tanışın",
+      "cta": "Tüm doktorlar"
+    },
+    "tech": {
+      "label": "Teknoloji ve güvenlik",
+      "h2a": "Güvenlik",
+      "h2b": "her şeyden önce gelir",
+      "sub": "Tedaviniz, belgelenmiş hijyen ve sterilizasyon protokollerine uyan ruhsatlı bir tesiste gerçekleştirilir.",
+      "items": [
+        {
+          "t": "Ruhsatlı tesis",
+          "d": "Her sayfanın alt kısmında belirtilen ruhsat kapsamında hizmet verir."
+        },
+        {
+          "t": "Sterilizasyon protokolleri",
+          "d": "Mümkün olan her yerde tek kullanımlık malzemeler ve aletler için onaylı sterilizasyon."
+        },
+        {
+          "t": "Tedavi öncesi kontroller",
+          "d": "Herhangi bir işlem onaylanmadan önce tıbbi geçmiş incelemesi ve tetkikler."
+        },
+        {
+          "t": "Modern cihazlar",
+          "d": "Üretici standartlarına göre bakımı yapılan teşhis ve tedavi cihazları."
+        }
+      ],
+      "cta": "Klinik hakkında"
+    },
+    "testimonials": {
+      "label": "Hasta yorumları",
+      "h2a": "Hastalarımız",
+      "h2b": "ne diyor",
+      "sub": "Yorumlar doğrudan bağımsız platformlardan yüklenir.",
+      "consent": "Yorumlar üçüncü taraf bir hizmet tarafından sağlanır. Görüntülemek için yükleyin.",
+      "load": "Yorumları yükle",
+      "cta": "Google yorumlarını okuyun"
+    },
+    "aftercare": {
+      "label": "Tedavi sonrası",
+      "h2a": "Bakımımız",
+      "h2b": "eve döndüğünüzde de sürer",
+      "items": [
+        {
+          "t": "WhatsApp ile fotoğraflı takip",
+          "d": "İlerleme fotoğraflarınızı gönderin; koordinatörünüz bunları doktorunuzla paylaşır."
+        },
+        {
+          "t": "Planlı görüntülü görüşmeler",
+          "d": "İyileşmenizin belirlenen aşamalarında takip görüşmeleri."
+        },
+        {
+          "t": "Net yazılı talimatlar",
+          "d": "Yanınıza alacağınız, kendi dilinizde bakım talimatları."
+        },
+        {
+          "t": "Doğrudan iletişim",
+          "d": "Durumunuzu bilen ve WhatsApp'tan ulaşabileceğiniz tek bir koordinatör."
+        }
+      ],
+      "cta": "Takip hakkında sorun"
+    },
+    "final": {
+      "h2a": "Yolculuğunuza",
+      "h2b": "bugün başlayın",
+      "sub": "Hedeflerinizi bize anlatın; size özel plan ve fiyat teklifi alın. Ücretsiz ve taahhütsüz."
+    },
+    "faq": {
+      "label": "SSS",
+      "h2a": "Sık duyduğumuz",
+      "h2b": "sorular",
+      "cta": "Tüm sorular"
+    }
+  },
+  "journeySteps": [
+    {
+      "t": "Ücretsiz online değerlendirme",
+      "d": "Birkaç soruyu yanıtlayın, dilerseniz fotoğraf paylaşın. Yaklaşık 3 dakika sürer."
+    },
+    {
+      "t": "Planınız ve fiyat teklifiniz",
+      "d": "Doktor durumunuzu inceler, koordinatörünüz size özel planı ve yazılı teklifi gönderir."
+    },
+    {
+      "t": "Seyahat",
+      "d": "Otelinizi ayarlar, sizi havalimanında VIP transferle karşılarız."
+    },
+    {
+      "t": "İşlem günü",
+      "d": "Muayene, tetkikler ve işleminiz; yanınızda bir tercümanla."
+    },
+    {
+      "t": "İyileşme",
+      "d": "Otelinizde dinlenin; dönüşten önce klinikte kontrolleriniz yapılır."
+    },
+    {
+      "t": "Uzaktan takip",
+      "d": "Evinizden koordinatörünüz ve doktorunuzla fotoğraflı takip ve görüşmeler."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Tedavi ne kadar tutar?",
+      "a": "Her tedavi sayfasında bir “başlangıç” fiyatı yer alır. Nihai fiyatınız tıbbi değerlendirmenize bağlıdır ve seyahatten önce yazılı teklifte onaylanır. Gizli maliyet yoktur."
+    },
+    {
+      "q": "Pakete neler dahil?",
+      "a": "Paketler genellikle muayene ve tetkikleri, işlemi, otel konaklamasını, VIP transferleri, tercümanı, ilaçları ve bakım setini ve uzaktan takibi içerir. Teklifiniz her kalemi ayrı ayrı listeler."
+    },
+    {
+      "q": "Türkiye'de ne kadar kalmam gerekir?",
+      "a": "Tedaviye göre değişir. Her tedavi sayfası olağan konaklama süresini gösterir; koordinatörünüz bunu planınızda netleştirir."
+    },
+    {
+      "q": "İşlem ağrılı mı?",
+      "a": "İşlemler uygun anestezi altında yapılır. İyileşme sürecinde rahatsızlık hissedebilirsiniz; doktorunuz neler bekleyeceğinizi açıklar ve gerekirse ilaç reçete eder."
+    },
+    {
+      "q": "İyileşme ne kadar sürer?",
+      "a": "İyileşme süresi tedaviye ve kişiye göre değişir. Doktorunuz size kişisel bir iyileşme takvimi ve yazılı bakım talimatları verir."
+    },
+    {
+      "q": "Nihai sonuçları ne zaman görürüm?",
+      "a": "Sonuçlar zamanla ortaya çıkar ve kişiden kişiye değişir. Doktorunuz muayene sırasında tedaviniz için beklenen süreci açıklar."
+    },
+    {
+      "q": "Türkiye'de tedavi olmak güvenli mi?",
+      "a": "Güvenlik ülkeye değil kliniğe bağlıdır. Ruhsatı, doktorların yeterliliklerini ve hijyen standartlarını kontrol edin. Bizimkiler Hakkımızda ve Doktorlar sayfalarında yer alır."
+    },
+    {
+      "q": "Benim dilimi konuşuyor musunuz?",
+      "a": "Koordinatörünüz sizinle kendi dilinizde iletişim kurar ve klinikte yanınızda bir tercüman bulunur."
+    },
+    {
+      "q": "Nasıl ödeme yaparım?",
+      "a": "Ödeme seçenekleri ve ödeme planı yazılı teklifinizde belirtilir. Hangi yöntemlerin mevcut olduğunu koordinatörünüze sorabilirsiniz."
+    },
+    {
+      "q": "Eve döndükten sonra ne olur?",
+      "a": "Koordinatörünüzle WhatsApp üzerinden iletişimde kalırsınız. İlerleme fotoğraflarınızı gönderirsiniz, biz de doktorunuzla takip görüşmeleri ayarlarız."
+    }
+  ],
+  "service": {
+    "whoFor": "Kimler için uygun?",
+    "procedure": "Adım adım işlem",
+    "results": "Sonuçlar",
+    "price": "Fiyat ve paket",
+    "from": "Başlangıç",
+    "onRequest": "Fiyat için bize ulaşın",
+    "priceNote": "Başlangıç fiyatıdır. Nihai fiyatınız yazılı planınızda onaylanır.",
+    "stay": "Olağan konaklama süresi",
+    "faq": "Sık sorulan sorular",
+    "included": "Paketinize dahil olanlar",
+    "ctaTitle": "Bu tedavi size uygun mu?",
+    "ctaSub": "Tıbbi ekibimizden ücretsiz değerlendirme alın.",
+    "other": "Diğer tedaviler"
+  },
+  "pages": {
+    "services": {
+      "h1a": "Saç",
+      "h1b": "tedavilerimiz",
+      "sub": "Her tedavi, tıbbi değerlendirmeden sonra kişiye özel planlanır."
+    },
+    "results": {
+      "h1a": "Öncesi ve",
+      "h1b": "sonrası",
+      "sub": "Her sonuç hastanın yazılı onayıyla yayınlanır. Sonuçlar kişiden kişiye değişir.",
+      "all": "Tümü",
+      "empty": "Sonuçlar, hastalar yazılı onay verdikten sonra burada yayınlanacaktır."
+    },
+    "doctors": {
+      "h1a": "Doktorlarımız",
+      "h1b": "ve ekibimiz",
+      "sub": "Tedavinizi planlayan, uygulayan ve takip eden ekip.",
+      "empty": "Doktor profilleri hazırlanıyor.",
+      "back": "Tüm doktorlar"
+    },
+    "about": {
+      "h1a": "Klinik hakkında,",
+      "h1b": "teknoloji ve güvenlik",
+      "sub": "Uluslararası hastalar için kurulmuş ruhsatlı bir klinik.",
+      "storyH": "Kliniğimiz",
+      "accredH": "Ruhsatlar ve akreditasyonlar",
+      "accredNone": "Ruhsat bilgileri sayfanın alt kısmında yer alır."
+    },
+    "prices": {
+      "h1a": "Fiyatlar ve",
+      "h1b": "paketler",
+      "sub": "Net başlangıç fiyatları ve seyahatten önce yazılı olarak onaylanan her şey dahil paket.",
+      "service": "Tedavi",
+      "from": "Başlangıç",
+      "includedH": "Her pakete dahil olanlar",
+      "howH": "Fiyatınız nasıl belirlenir",
+      "how": "Nihai fiyatınız tıbbi değerlendirmenize bağlıdır; örneğin tedavinin kapsamı ve doktorunuzun önerdiği teknikler. Herhangi bir rezervasyon yapmadan önce kalem kalem yazılı bir teklif alırsınız."
+    },
+    "journey": {
+      "h1a": "Yolculuğunuz,",
+      "h1b": "adım adım",
+      "sub": "İlk mesajınızdan evdeki takibinize kadar neler olur.",
+      "prepareH": "Seyahatten önce",
+      "prepare": [
+        "Geçerli bir pasaport (uyruğunuz için vize kurallarını kontrol edin)",
+        "Tıbbi geçmişiniz ve kullandığınız ilaçların listesi",
+        "İyileşme dönemi için rahat, bol kıyafetler",
+        "Yurt dışında tıbbi tedaviyi kapsayan seyahat sigortası"
+      ]
+    },
+    "assessment": {
+      "h1a": "Ücretsiz online",
+      "h1b": "değerlendirme"
+    },
+    "blog": {
+      "h1a": "Hasta",
+      "h1b": "rehberleri",
+      "sub": "Tıbbi ekibimizle birlikte hazırlanan pratik rehberler.",
+      "empty": "İlk rehberlerimiz tıbbi ekibimiz tarafından hazırlanıyor."
+    },
+    "faq": {
+      "h1a": "Sık sorulan",
+      "h1b": "sorular",
+      "sub": "Yanıtınızı bulamadınız mı? Bize WhatsApp'tan yazın."
+    },
+    "contact": {
+      "h1a": "Ekibimizle",
+      "h1b": "iletişime geçin",
+      "sub": "Bize ulaşmanın en hızlı yolu WhatsApp'tır.",
+      "whatsapp": "WhatsApp",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "address": "Adres",
+      "hours": "Çalışma saatleri",
+      "map": "Harita",
+      "mapConsent": "Harita Google tarafından sağlanır. Yüklemek, verilerin Google ile paylaşılması anlamına gelir.",
+      "mapLoad": "Haritayı yükle"
+    },
+    "privacy": {
+      "h1a": "Gizlilik",
+      "h1b": "politikası"
+    },
+    "kvkk": {
+      "h1a": "KVKK",
+      "h1b": "aydınlatma metni"
+    },
+    "cookies": {
+      "h1a": "Çerez",
+      "h1b": "politikası"
+    },
+    "terms": {
+      "h1a": "Kullanım",
+      "h1b": "koşulları"
+    },
+    "impressum": {
+      "h1a": "Yasal",
+      "h1b": "bilgiler"
+    }
+  },
+  "legal": {
+    "draft": "Bu sayfa yayına alınmadan önce yetkili bir avukat tarafından hazırlanmalı ve onaylanmalıdır. Aşağıdaki başlıklar gerekli yapıyı gösterir.",
+    "privacy": [
+      "Veri sorumlusu",
+      "Topladığımız veriler",
+      "Sağlık verileri ve açık rıza",
+      "Amaçlar ve hukuki sebepler",
+      "Alıcılar ve yurt dışına aktarım",
+      "Saklama süreleri",
+      "Haklarınız",
+      "İletişim"
+    ],
+    "kvkk": [
+      "Veri sorumlusu",
+      "Kişisel verilerin işlenme amaçları",
+      "Kişisel verilerin aktarılması",
+      "Toplama yöntemi ve hukuki sebebi",
+      "6698 sayılı Kanun'un 11. maddesi kapsamındaki haklarınız"
+    ],
+    "cookies": [
+      "Çerez nedir",
+      "Zorunlu çerezler",
+      "Analitik çerezler",
+      "Pazarlama çerezleri",
+      "Tercihlerinizi nasıl değiştirirsiniz"
+    ],
+    "terms": [
+      "Kapsam",
+      "Tıbbi bilgilere ilişkin sorumluluk reddi",
+      "Fikri mülkiyet",
+      "Sorumluluk",
+      "Uygulanacak hukuk"
+    ],
+    "impressum": {
+      "company": "Şirket",
+      "address": "Adres",
+      "representative": "Temsilci",
+      "registry": "Ticaret sicil no.",
+      "tax": "Vergi no.",
+      "licence": "Sağlık ruhsat no.",
+      "contact": "İletişim"
+    }
+  },
+  "footer": {
+    "desc": "Uluslararası hastalar için size özel tedavi planları, uzman tıbbi bakım ve kesintisiz destek.",
+    "services": "Tedaviler",
+    "patients": "Hasta bilgileri",
+    "contact": "İletişim",
+    "legal": "Yasal",
+    "licence": "Ruhsat no.",
+    "rights": "Tüm hakları saklıdır.",
+    "cookieSettings": "Çerez ayarları",
+    "disclaimer": "Bu web sitesindeki bilgiler tıbbi muayenenin yerini tutmaz. Sonuçlar kişiden kişiye değişir."
+  },
+  "cookie": {
+    "title": "Gizlilik tercihleriniz",
+    "text": "Bu siteyi çalıştırmak için zorunlu çerezler kullanıyoruz. Onayınızla, hizmetlerimizi ölçmek ve geliştirmek için analitik ve pazarlama çerezleri de kullanırız.",
+    "accept": "Tümünü kabul et",
+    "reject": "Tümünü reddet",
+    "customise": "Özelleştir",
+    "save": "Tercihleri kaydet",
+    "necessary": "Zorunlu",
+    "necessaryD": "Sitenin ve değerlendirme formunun çalışması için gereklidir. Her zaman açık.",
+    "analytics": "Analitik",
+    "analyticsD": "Sitenin nasıl kullanıldığını anlamamıza yardımcı olur (Google Analytics, Microsoft Clarity).",
+    "marketing": "Pazarlama",
+    "marketingD": "Reklamlarımızı ölçer, gömülü yorumları ve videoları gösterir (Google, Meta).",
+    "policy": "Çerez politikası"
+  },
+  "langBanner": {
+    "text": "Bu sayfa Türkçe olarak da mevcut.",
+    "switch": "Türkçeye geç",
+    "dismiss": "Kapat"
+  },
+  "wa": {
+    "prefill": "Merhaba Elite+, şu konuda bilgi almak istiyorum: {page}"
+  },
+  "a11y": {
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "compare": "Öncesi ve sonrasını karşılaştır",
+    "ext": "(yeni sekmede açılır)",
+    "star": "Elite+ yıldız logosu"
+  },
+  "assess": {
+    "title": "Ücretsiz online değerlendirme",
+    "intro": "Yaklaşık 3 dakika · Ücretsiz · Taahhüt yok",
+    "step": "Adım {n} / {total}",
+    "back": "Geri",
+    "next": "Devam",
+    "skip": "Atla",
+    "submit": "Değerlendirmemi gönder",
+    "sending": "Gönderiliyor…",
+    "required": "Devam etmek için lütfen bir seçenek belirleyin.",
+    "resume": "Tekrar hoş geldiniz. Yanıtlarınızı kaydettik, kaldığınız yerden devam edebilirsiniz.",
+    "restart": "Baştan başla",
+    "q_service": "Hangi tedaviyle ilgileniyorsunuz?",
+    "q_goal": "Hedefinizi en iyi hangisi tanımlıyor?",
+    "goals": [
+      "Görünümümü iyileştirmek",
+      "İşlevi veya konforu geri kazanmak",
+      "Önceki bir tedaviyi düzeltmek",
+      "Henüz emin değilim"
+    ],
+    "q_prior": "Bu konuda daha önce tedavi oldunuz mu?",
+    "prior": [
+      "Hayır",
+      "Evet",
+      "Emin değilim"
+    ],
+    "q_about": "Sizin hakkınızda",
+    "age": "Yaş aralığı",
+    "ages": [
+      "18–24",
+      "25–34",
+      "35–44",
+      "45–54",
+      "55–64",
+      "65+"
+    ],
+    "gender": "Cinsiyet",
+    "genders": [
+      "Kadın",
+      "Erkek",
+      "Belirtmek istemiyorum"
+    ],
+    "q_photos": "Fotoğraf paylaşmak ister misiniz?",
+    "photosSub": "İsteğe bağlı. Fotoğraflar, doktorlarımızın size daha doğru bir plan sunmasına yardımcı olur. En fazla 4 fotoğraf, her biri en fazla 10 MB. Gizli olarak saklanır ve yalnızca tıbbi ekibimiz tarafından görülür.",
+    "photosDrop": "Fotoğrafları buraya sürükleyin veya",
+    "photosPick": "dosya seçin",
+    "photosCamera": "Fotoğraf çekin",
+    "photosRemove": "Fotoğrafı kaldır",
+    "photosTooBig": "Bu fotoğraf 10 MB'tan büyük.",
+    "photosType": "Lütfen JPG, PNG, HEIC veya WebP formatında görsel yükleyin.",
+    "photosMax": "En fazla 4 fotoğraf yükleyebilirsiniz.",
+    "q_date": "Tedaviyi ne zaman olmak istersiniz?",
+    "dateUnsure": "Henüz emin değilim",
+    "q_contact": "Planınızı nereye gönderelim?",
+    "name": "Ad soyad",
+    "country": "İkamet ettiğiniz ülke",
+    "phone": "WhatsApp numarası",
+    "email": "E-posta (isteğe bağlı)",
+    "phoneHint": "Koordinatörünüz sizinle WhatsApp üzerinden iletişime geçecektir.",
+    "errName": "Lütfen adınızı girin.",
+    "errPhone": "Lütfen geçerli bir WhatsApp numarası girin.",
+    "errEmail": "Lütfen geçerli bir e-posta adresi girin.",
+    "q_consent": "Son bir adım",
+    "consent": "Yüklediğim fotoğraflar dahil kişisel ve sağlık verilerimin, durumumun değerlendirilmesi ve benimle iletişime geçilmesi amacıyla Elite+ Klinikleri tarafından işlenmesine açık rıza veriyorum; ayrıntılar şurada açıklanmıştır:",
+    "consentLink": "gizlilik politikası",
+    "consentKvkk": "KVKK aydınlatma metni",
+    "errConsent": "Tıbbi ekibimizin verilerinizi inceleyebilmesi için onayınız gereklidir.",
+    "errSend": "Üzgünüz, değerlendirmeniz gönderilemedi. Lütfen tekrar deneyin veya bize WhatsApp'tan yazın.",
+    "thanksH1a": "Teşekkürler,",
+    "thanksH1b": "değerlendirmenizi aldık",
+    "thanks": "Bir hasta koordinatörü {hours} saat içinde sizinle WhatsApp üzerinden iletişime geçecek.",
+    "thanksWa": "Şimdi WhatsApp'tan yazın",
+    "previewNote": "Önizleme modu: Başvuru adresi tanımlanmadığı için hiçbir şey gönderilmedi. Veriler tarayıcı konsoluna yazıldı.",
+    "q_category": "Hangi alanla ilgileniyorsunuz?",
+    "unsure": "Henüz emin değilim, seçmeme yardım edin"
+  },
+  "todo": "EKSİK",
+  "categories": {
+    "transplant": {
+      "name": "Saç Ekimi",
+      "short": "Saç, sakal, kaş ve bıyık ekimi ile yara izlerinde saç restorasyonu."
+    },
+    "treatment": {
+      "name": "Saç Tedavileri",
+      "short": "Seyrelen saçlar ve daha sağlıklı bir saçlı deri için cerrahi olmayan tedaviler."
+    }
+  },
+  "doctor": {
+    "years": "{n} yıllık deneyim",
+    "viewProfile": "Profili gör",
+    "education": "Eğitim",
+    "experience": "Deneyim",
+    "specialties": "Uzmanlık alanları",
+    "credentials": "Üyelikler ve sertifikalar",
+    "languages": "Diller"
+  },
+  "techniques": {
+    "label": "Tekniklerimiz",
+    "h2a": "FUE ve DHI",
+    "h2b": "size uygun teknik",
+    "nav": "FUE ve DHI",
+    "sub": "Her ikisi de çizgi şeklinde iz bırakmayan modern foliküler ünite teknikleridir. Doktorunuz donör bölgenizi, saç yapınızı ve hedeflerinizi inceledikten sonra birini veya ikisinin kombinasyonunu önerir.",
+    "fue": {
+      "name": "FUE",
+      "full": "Foliküler Ünite Ekstraksiyonu",
+      "d": "Foliküler üniteler, donör bölgeden mikro punch ile tek tek alınır. Ardından doktor alıcı bölgede küçük kanallar açar ve greftleri bu kanallara yerleştirir.",
+      "steps": [
+        "0,7–1,0 mm mikro punch ile tek tek alım",
+        "Alıcı bölgede planlanan açı ve yoğunlukta kanal açılması",
+        "Greftlerin kanallara yerleştirilmesi"
+      ],
+      "best": [
+        "Geniş seyrek veya açık alanlar",
+        "Tek seansta daha fazla greft ihtiyacı",
+        "Tedavi bölgesinin tıraşlanmasını sorun etmeyen hastalar"
+      ]
+    },
+    "dhi": {
+      "name": "DHI",
+      "full": "Direkt Saç Ekimi",
+      "d": "Greft alımı FUE ile aynıdır. Fark ekim aşamasındadır: her greft bir implanter kaleme (Choi kalem) yerleştirilir; kalem kanalı açar ve grefti tek adımda yerleştirir.",
+      "steps": [
+        "FUE'de olduğu gibi mikro punch ile tek tek alım",
+        "Her greftin Choi implanter kaleme yerleştirilmesi",
+        "Açı, derinlik ve yön kontrol edilerek kanal açma ve ekimin tek hareketle yapılması"
+      ],
+      "best": [
+        "Saç çizgisi tasarımı ve mevcut saçlar arasında yoğunluk artırma",
+        "Sakal, kaş ve bıyık ekimi",
+        "Uygun olduğunda alıcı bölgeyi tıraşsız bırakma"
+      ]
+    },
+    "howH": "Nasıl yapılır",
+    "bestH": "Genellikle önerildiği durumlar",
+    "tableH": "FUE ve DHI karşılaştırması",
+    "table": {
+      "head": [
+        "",
+        "FUE",
+        "DHI"
+      ],
+      "rows": [
+        [
+          "Greft alımı",
+          "Mikro punch ile tek tek",
+          "FUE ile aynı"
+        ],
+        [
+          "Alıcı bölge",
+          "Önce kanallar açılır, sonra greftler yerleştirilir",
+          "Kalem kanalı açar ve tek adımda ekim yapar"
+        ],
+        [
+          "Tıraş",
+          "Genellikle gerekir",
+          "Alıcı bölge çoğu zaman tıraşsız kalabilir"
+        ],
+        [
+          "Seans başına alan",
+          "Geniş alanlar için uygun",
+          "Hassas çalışma ve yoğunluk artırma için uygun"
+        ],
+        [
+          "Donör bölge",
+          "Çok küçük nokta izler, çizgi iz yok",
+          "FUE ile aynı"
+        ]
+      ]
+    },
+    "fact": "Bilmekte fayda var: DHI, FUE'nin bir varyasyonudur; rakip bir operasyon değildir. Çalışmalar, tekniklerden birinin sürekli olarak daha iyi sonuç verdiğini göstermemiştir. En önemlisi cerrahi beceri, planlama ve greftlerin doğru işlenmesidir.",
+    "clinicH": "FUE ve DHI'yi nasıl uyguluyoruz",
+    "clinic": [
+      {
+        "t": "Doktor liderliğinde planlama",
+        "d": "Doktorunuz donör bölgenizi inceler, saç çizgisini sizinle birlikte tasarlar ve FUE, DHI veya ikisinin kombinasyonunu seçer."
+      },
+      {
+        "t": "Greftlerin özenle işlenmesi",
+        "d": "Greftler sayılır, ayrılır ve vücut dışında kalma süresini en aza indirmek için soğutulmuş saklama solüsyonunda tutulur."
+      },
+      {
+        "t": "Doğal açı ve yön",
+        "d": "Her greft, kendi saçınızın doğal açısına ve yönüne uygun şekilde yerleştirilir."
+      },
+      {
+        "t": "Donör bölgenin korunması",
+        "d": "Alım eşit dağıtılır; böylece donör bölgeniz gelecekte de doğal yoğunluğunu korur."
+      }
+    ],
+    "timelineH": "Her iki teknikten sonra sizi neler bekliyor",
+    "timeline": [
+      {
+        "t": "2–6. haftalar",
+        "d": "Ekilen saçlar genellikle dökülür. Bu, saç büyüme döngüsünün normal bir parçasıdır."
+      },
+      {
+        "t": "3–4. aylar",
+        "d": "Yeni saçlar genellikle çıkmaya başlar."
+      },
+      {
+        "t": "12–18. aylar",
+        "d": "Nihai sonuç genellikle görünür hale gelir; tepe bölgesi daha uzun sürebilir."
+      }
+    ],
+    "note": "Sonuçlar kişiden kişiye değişir. Doktorunuz durumunuz için gerçekçi beklentileri açıklayacaktır.",
+    "cta": "Bana hangi teknik uygun?",
+    "more": "FUE ve DHI farkları",
+    "metaTitle": "FUE ve DHI Saç Ekimi – {city}: Farklar – Elite+",
+    "metaDesc": "FUE ve DHI saç ekimi teknikleri nasıl çalışır, aralarındaki farklar nelerdir, kimlere uygundur ve operasyondan sonra neler beklenir."
+  }
+}
