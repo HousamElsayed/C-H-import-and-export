@@ -425,8 +425,9 @@ function hero(lang) {
   <div class="wrap">
     <div class="hero__card">
       ${raysSvg('hero__rays')}
-      <figure class="hero__banner">
+      <figure class="hero__banner" data-parallax>
         ${heroMedia(lang)}
+        <span class="hero__glow" aria-hidden="true"></span>
         <span class="hero__sheen" aria-hidden="true"></span>
         <span class="hero__motes" aria-hidden="true">${motes}</span>
       </figure>

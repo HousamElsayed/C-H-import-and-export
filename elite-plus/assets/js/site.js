@@ -85,6 +85,20 @@
     setInterval(() => { if (mq.matches) { i = (i + 1) % items.length; apply(); } }, 3500);
   }
 
+  // ---------- hero image depth: follows the pointer on desktop, the scroll position on touch screens ----------
+  const par = $('[data-parallax]');
+  if (par && !reduced) {
+    const img = $('img', par); const MAX = 14;
+    const set = (x, y) => { img?.style.setProperty('--px', `${x.toFixed(1)}px`); img?.style.setProperty('--py', `${y.toFixed(1)}px`); };
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      par.addEventListener('pointermove', (e) => { const r = par.getBoundingClientRect(); set(-((e.clientX - r.left) / r.width - .5) * MAX * 2, -((e.clientY - r.top) / r.height - .5) * MAX); });
+      par.addEventListener('pointerleave', () => set(0, 0));
+    } else {
+      let ticking = false;
+      addEventListener('scroll', () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { const r = par.getBoundingClientRect(); if (r.bottom > 0) set(0, Math.max(-4, Math.min(4, -r.top * 0.03))); ticking = false; }); }, { passive: true });
+    }
+  }
+
   // ---------- carousels ----------
   $$('[data-carousel]').forEach((c) => {
     const track = $('.carousel__track', c); const prev = $('[data-prev]', c); const next = $('[data-next]', c);
