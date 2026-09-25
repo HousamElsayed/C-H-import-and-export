@@ -59,6 +59,7 @@
   }
   disclosure($('[data-mega-btn]'), $('[data-mega]'));
   disclosure($('.lang__btn'), $('#lang-menu'));
+  disclosure($('[data-clinics-btn]'), $('[data-clinics]'));
 
   // Mobile nav
   const burger = $('[data-burger]'); const nav = $('[data-nav]');
@@ -115,23 +116,76 @@
     track.addEventListener('scroll', update, { passive: true }); addEventListener('resize', update); update();
   });
 
-  // ---------- before / after ----------
+  // ---------- before / after (with optional month-by-month timeline) ----------
   $$('[data-ba]').forEach((f) => {
     const stage = $('.ba__stage', f); const range = $('.ba__range', f);
     range.addEventListener('input', () => stage.style.setProperty('--pos', range.value + '%'));
+    const img = $('.ba__after img', f); const label = $('[data-ba-label]', f);
+    $$('.ba__step', f).forEach((b) => b.addEventListener('click', () => {
+      $$('.ba__step', f).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      if (img) img.src = b.dataset.src;
+      if (label) label.textContent = b.textContent;
+    }));
   });
 
-  // Results filter (?service=slug supported)
-  const filters = $('[data-filters]');
-  if (filters) {
-    const apply = (slug) => {
-      $$('[data-filter]', filters).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === slug)));
-      $$('[data-filter-grid] [data-ba]').forEach((f) => { f.hidden = slug !== 'all' && f.dataset.service !== slug; });
+  // Results filters: several groups (clinic, treatment) combine; ?branch= and ?service= preselect.
+  const groups = $$('[data-filters]');
+  if (groups.length) {
+    const active = {};
+    const apply = () => $$('[data-filter-grid] [data-ba]').forEach((f) => {
+      f.hidden = Object.entries(active).some(([k, v]) => v !== 'all' && f.dataset[k] !== v);
+    });
+    const set = (key, val) => {
+      active[key] = val;
+      $$(`[data-filter-key="${key}"]`).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === val)));
+      apply();
     };
-    filters.addEventListener('click', (e) => { const b = e.target.closest('[data-filter]'); if (b) apply(b.dataset.filter); });
-    const q = new URLSearchParams(location.search).get('service');
-    if (q && $(`[data-filter="${CSS.escape(q)}"]`, filters)) apply(q);
+    groups.forEach((g) => g.addEventListener('click', (e) => { const b = e.target.closest('[data-filter]'); if (b) set(b.dataset.filterKey || 'service', b.dataset.filter); }));
+    const q = new URLSearchParams(location.search);
+    for (const k of ['branch', 'service']) { const v = q.get(k); if (v && $(`[data-filter-key="${k}"][data-filter="${CSS.escape(v)}"]`)) set(k, v); }
   }
+
+  // ---------- clinics: remember the visitor's branch, suggest one, point WhatsApp at it ----------
+  (() => {
+    const branches = SITE.branches || {};
+    if (SITE.branch) store.set('elite_branch', SITE.branch);
+    $$('[data-branch-link]').forEach((a) => a.addEventListener('click', () => store.set('elite_branch', a.dataset.branchLink)));
+    const mine = store.get('elite_branch');
+    let suggested = null;
+    try { suggested = { 'Africa/Cairo': 'egypt', 'Europe/Istanbul': 'turkey' }[Intl.DateTimeFormat().resolvedOptions().timeZone] || null; } catch { /* ignore */ }
+    $$('[data-branch-card]').forEach((card) => {
+      const slug = card.dataset.branchCard; const badge = $('[data-badge]', card);
+      if (mine === slug) { card.classList.add('is-yours'); badge.textContent = SITE.labels?.yours || ''; badge.hidden = !badge.textContent; }
+      else if (!mine && suggested === slug) { badge.textContent = SITE.labels?.suggested || ''; badge.hidden = !badge.textContent; }
+    });
+    if (mine) $$(`[data-clinics] [data-branch-link="${mine}"] .clinics__yours`).forEach((el) => { el.hidden = false; });
+    const wa = mine && branches[mine]?.wa;
+    if (wa) $$('[data-wa-main]').forEach((a) => {
+      const u = new URL(a.href, location.href);
+      a.href = `https://wa.me/${wa}${u.search}`;
+    });
+  })();
+
+  // ---------- currency: approximate conversion next to prices ----------
+  (() => {
+    const sel = $('[data-currency]'); const R = SITE.rates;
+    if (!sel || !R) return;
+    const fmt = (n, cur) => { try { return new Intl.NumberFormat(document.documentElement.lang, { style: 'currency', currency: cur, maximumFractionDigits: 0, numberingSystem: 'latn' }).format(n); } catch { return `${Math.round(n)} ${cur}`; } };
+    const rate = (c) => (c === R.base ? 1 : R.rates[c]);
+    const apply = (cur) => $$('.money').forEach((m) => {
+      const conv = m.nextElementSibling; if (!conv || !conv.hasAttribute('data-conv')) return;
+      const from = m.dataset.cur; const amt = Number(m.dataset.amount);
+      if (!cur || cur === from || !rate(cur) || !rate(from)) { conv.hidden = true; return; }
+      conv.textContent = `≈ ${fmt((amt / rate(from)) * rate(cur), cur)}`;
+      conv.title = (SITE.currencyNote || '').replace('{date}', R.date);
+      conv.hidden = false;
+    });
+    const saved = store.get('elite_currency');
+    if (saved && [...sel.options].some((o) => o.value === saved)) sel.value = saved;
+    else { const first = $('.money'); if (first) sel.value = first.dataset.cur; }
+    sel.addEventListener('change', () => { store.set('elite_currency', sel.value); apply(sel.value); });
+    apply(sel.value);
+  })();
 
   // ---------- scroll reveal ----------
   if ('IntersectionObserver' in window && !reduced) {

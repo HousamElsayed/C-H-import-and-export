@@ -72,6 +72,10 @@
       "impressum": [
         "Legal Notice (Impressum) – Elite+ Wellness Clinics",
         "Legal notice: company, address, representative, registration and contact."
+      ],
+      "pdpl": [
+        "Egypt Data Protection Notice – Elite+",
+        "Information notice under Egyptian Personal Data Protection Law No. 151 of 2020."
       ]
     }
   },
@@ -96,7 +100,9 @@
     "skip": "Skip to content",
     "assessment": "Free Assessment",
     "whatsapp": "WhatsApp",
-    "breadcrumbHome": "Home"
+    "breadcrumbHome": "Home",
+    "clinics": "Clinics",
+    "aboutShort": "About us"
   },
   "hero": {
     "eyebrow": "Wellness Clinics",
@@ -430,7 +436,8 @@
       "hours": "Opening hours",
       "map": "Map",
       "mapConsent": "The map is provided by Google. Loading it shares data with Google.",
-      "mapLoad": "Load map"
+      "mapLoad": "Load map",
+      "branchesH": "Our clinics"
     },
     "privacy": {
       "h1a": "Privacy",
@@ -451,6 +458,10 @@
     "impressum": {
       "h1a": "Legal",
       "h1b": "notice"
+    },
+    "pdpl": {
+      "h1a": "Egypt data",
+      "h1b": "protection notice"
     }
   },
   "legal": {
@@ -494,7 +505,15 @@
       "tax": "Tax ID",
       "licence": "Health licence no.",
       "contact": "Contact"
-    }
+    },
+    "pdpl": [
+      "Data controller",
+      "Purposes and legal bases",
+      "Health data and consent",
+      "Transfers outside Egypt",
+      "Your rights",
+      "Contact"
+    ]
   },
   "footer": {
     "desc": "Personalised treatment plans, expert medical care and dedicated support for international patients.",
@@ -505,7 +524,8 @@
     "licence": "Licence no.",
     "rights": "All rights reserved.",
     "cookieSettings": "Cookie settings",
-    "disclaimer": "The information on this website does not replace a medical consultation. Results vary between patients."
+    "disclaimer": "The information on this website does not replace a medical consultation. Results vary between patients.",
+    "clinics": "Our clinics"
   },
   "cookie": {
     "title": "Your privacy choices",
@@ -613,7 +633,9 @@
     "thanksWa": "Message us now on WhatsApp",
     "previewNote": "Preview mode: no lead endpoint is configured, so nothing was sent. The payload was logged to the browser console.",
     "q_category": "Which area are you interested in?",
-    "unsure": "Not sure yet — help me choose"
+    "unsure": "Not sure yet — help me choose",
+    "q_branch": "Which clinic would you like?",
+    "branchUnsure": "Not sure yet — help me choose"
   },
   "todo": "TODO",
   "categories": {
@@ -748,5 +770,55 @@
     "more": "FUE vs DHI explained",
     "metaTitle": "FUE vs DHI Hair Transplant in {city}: Differences Explained – Elite+",
     "metaDesc": "How the FUE and DHI hair transplant techniques work, how they differ, who each one suits, and what to expect after surgery."
+  },
+  "branch": {
+    "nav": "Clinics",
+    "label": "Our clinics",
+    "h2a": "Choose",
+    "h2b": "your clinic",
+    "sub": "Two clinics, one standard of care. Choose the clinic you would like to explore.",
+    "explore": "Explore the {country} clinic",
+    "suggested": "Suggested for you",
+    "yours": "Your clinic",
+    "switchTo": "Switch to {country}",
+    "doctorsN": "{n} doctors",
+    "eyebrow": "Elite+ {country}",
+    "h1a": "Elite+",
+    "h1b": "{country}",
+    "docH2a": "Doctors in",
+    "docH2b": "{country}",
+    "resH2a": "Results from",
+    "resH2b": "{country}",
+    "revH2a": "Patient reviews",
+    "revH2b": "{country}",
+    "visitH2a": "Visit",
+    "visitH2b": "the clinic",
+    "directions": "Get directions",
+    "bookH": "Book a free video consultation",
+    "bookSub": "Talk to a coordinator from our {country} clinic before you decide.",
+    "bookCta": "Book a video call",
+    "emptyDoctors": "Doctor profiles for this clinic are being prepared.",
+    "emptyResults": "Results from this clinic will be published once patients have given written consent.",
+    "meta": [
+      "Elite+ {country} | Hair Transplant & Hair Treatments",
+      "Hair transplant, FUE, DHI and hair treatments at Elite+ {country}: doctors, results, prices and all-inclusive packages."
+    ],
+    "pageSub": "Hair transplant and hair treatments by our {country} team, with an all-inclusive package for international patients."
+  },
+  "stage": {
+    "q": "Which picture looks most like your hair today?",
+    "sub": "An estimate is enough. Your doctor will confirm it.",
+    "male": "Hair loss in men",
+    "female": "Hair loss in women",
+    "stage": "Stage {n}",
+    "unsure": "Not sure"
+  },
+  "currency": {
+    "label": "Currency",
+    "note": "Converted prices are approximate, based on exchange rates of {date}. You pay in the clinic's currency."
+  },
+  "results2": {
+    "months": "{n} months",
+    "final": "Final"
   }
 }

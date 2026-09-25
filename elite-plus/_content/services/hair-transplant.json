@@ -1,0 +1,29 @@
+{
+  "slug": "hair-transplant",
+  "category": "transplant",
+  "order": 1,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Hair Transplant",
+      "short": "Hair follicles are moved from a donor area to thinning or bald areas of the scalp."
+    },
+    "ar": {
+      "name": "زراعة شعر الرأس",
+      "short": "نقل بصيلات الشعر من المنطقة المانحة إلى مناطق الفراغات أو الصلع في فروة الرأس."
+    },
+    "tr": {
+      "name": "Saç Ekimi",
+      "short": "Saç kökleri donör bölgeden seyrelmiş veya açılmış bölgelere nakledilir."
+    },
+    "de": {
+      "name": "Haartransplantation",
+      "short": "Haarfollikel werden aus einem Spenderbereich in lichte oder kahle Stellen der Kopfhaut verpflanzt."
+    },
+    "es": {
+      "name": "Injerto capilar",
+      "short": "Los folículos se trasladan de una zona donante a las zonas con poca densidad o calvas del cuero cabelludo."
+    }
+  }
+}

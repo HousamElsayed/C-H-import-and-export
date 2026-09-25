@@ -1,0 +1,56 @@
+{
+  "_readme": "Company-level facts. One legal entity per country.",
+  "entities": {
+    "turkey": {
+      "legalName": null,
+      "tradeRegistryNo": null,
+      "taxId": null,
+      "representative": null,
+      "registeredAddress": null
+    },
+    "egypt": {
+      "legalName": null,
+      "tradeRegistryNo": null,
+      "taxId": null,
+      "representative": null,
+      "registeredAddress": null
+    }
+  },
+  "email": null,
+  "whatsapp": null,
+  "_whatsappNote": "Main international WhatsApp line used on pages that are not branch-specific (digits only with country code). Branch pages use the branch's own number.",
+  "social": {
+    "instagram": "https://www.instagram.com/elite.plus.clinics/",
+    "facebook": "https://www.facebook.com/elite.plus.clinics",
+    "youtube": null,
+    "tiktok": null
+  },
+  "languagesSpoken": null,
+  "foundedYear": null,
+  "story": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "currency": "EUR",
+  "package": {
+    "hotelNights": null,
+    "followUpMonths": null
+  },
+  "stats": {
+    "patientsTreated": null,
+    "yearsOpen": null,
+    "ministryLicensed": null
+  },
+  "accreditations": [],
+  "equipment": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "_currencyNote": "Currency of the 'starting from' prices (EUR, USD, …). Confirm with the clinic."
+}

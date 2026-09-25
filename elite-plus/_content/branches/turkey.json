@@ -1,0 +1,46 @@
+{
+  "slug": "turkey",
+  "order": 1,
+  "countryCode": "TR",
+  "country": {
+    "en": "Türkiye",
+    "ar": "تركيا",
+    "tr": "Türkiye",
+    "de": "Türkei",
+    "es": "Turquía"
+  },
+  "city": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "street": null,
+  "district": null,
+  "postalCode": null,
+  "lat": null,
+  "lng": null,
+  "mapsUrl": null,
+  "mapEmbedUrl": null,
+  "licenceNumber": null,
+  "phone": null,
+  "whatsapp": null,
+  "email": null,
+  "hours": null,
+  "stats": {
+    "googleRating": null,
+    "googleReviewCount": null
+  },
+  "googleBusinessUrl": null,
+  "reviewsWidget": null,
+  "bookingUrl": null,
+  "heroPhoto": null,
+  "story": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  }
+}

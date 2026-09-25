@@ -3,6 +3,7 @@
 
 export const LANGS = ['en', 'ar', 'tr', 'de', 'es'];
 export const CATEGORIES = ['transplant', 'treatment', 'unsure'];
+export const BRANCHES = ['turkey', 'egypt', 'unsure'];
 export const AGES = ['18–24', '25–34', '35–44', '45–54', '55–64', '65+'];
 export const GENDERS = ['female', 'male', 'undisclosed'];
 export const PHOTO_TYPES = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/heic': 'heic', 'image/heif': 'heic' };
@@ -30,6 +31,7 @@ export function validateLead(body, { partial }) {
     id: str(b.leadId, 36).toLowerCase(),
     is_partial: partial,
     lang: LANGS.includes(b.lang) ? b.lang : null,
+    branch: BRANCHES.includes(b.branch) ? b.branch : (partial && b.branch == null ? 'unsure' : null),
     name: str(b.name, 120),
     country: /^[A-Z]{2}$/.test(b.country) ? b.country : null,
     phone: str(b.phone, 20),
@@ -39,6 +41,7 @@ export function validateLead(body, { partial }) {
   };
   if (!UUID.test(v.id)) e.push('leadId');
   if (!v.lang) e.push('lang');
+  if (!v.branch) e.push('branch');
   if (v.name.length < 2) e.push('name');
   if (!v.country) e.push('country');
   if (!isE164(v.phone)) e.push('phone');
@@ -187,7 +190,7 @@ export function createHandler(deps) {
 /** Minimal notification text: no health answers or photos are sent over email/Telegram. */
 export function notificationText(lead, photoCount) {
   return [
-    `New ${lead.is_partial ? 'PARTIAL ' : ''}lead – Elite+`,
+    `New ${lead.is_partial ? 'PARTIAL ' : ''}lead – Elite+ ${({ turkey: 'Türkiye', egypt: 'Egypt' })[lead.branch] ?? '(clinic not chosen)'}`,
     `Name: ${lead.name}`,
     `WhatsApp: ${lead.phone}`,
     `Country: ${lead.country} · Language: ${lead.lang}`,

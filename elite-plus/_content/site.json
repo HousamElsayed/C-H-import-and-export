@@ -1,0 +1,47 @@
+{
+  "_readme": "Site-wide settings. Clinic facts live in company.json and branches/*.json. Never replace null with an estimate.",
+  "origin": "https://housamelsayed.github.io",
+  "basePath": "/C-H-import-and-export/elite-plus",
+  "defaultLang": "en",
+  "languages": [
+    "en",
+    "ar",
+    "tr",
+    "de",
+    "es"
+  ],
+  "year": 2026,
+  "brand": {
+    "logoLight": "logo-navy.svg",
+    "logoDark": "logo-white.svg",
+    "mark": "logo-mark.svg"
+  },
+  "hero": {
+    "welcome": "hero/welcome.jpg",
+    "width": 1080,
+    "height": 450
+  },
+  "promise": {
+    "responseHours": 24
+  },
+  "techniquesConfirmed": false,
+  "currencies": [
+    "EUR",
+    "USD",
+    "GBP",
+    "EGP",
+    "SAR",
+    "AED",
+    "TRY"
+  ],
+  "integrations": {
+    "leadEndpoint": null,
+    "uploadUrlEndpoint": null,
+    "turnstileSiteKey": null,
+    "gtmId": null,
+    "metaPixelId": null,
+    "clarityId": null,
+    "supabaseUrl": null,
+    "supabaseAnonKey": null
+  }
+}

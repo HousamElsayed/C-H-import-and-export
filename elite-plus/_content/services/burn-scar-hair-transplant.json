@@ -1,0 +1,29 @@
+{
+  "slug": "burn-scar-hair-transplant",
+  "category": "transplant",
+  "order": 6,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Burn Scar Hair Transplant",
+      "short": "Hair restoration in healed burn scars, after a medical assessment of the scar tissue."
+    },
+    "ar": {
+      "name": "زراعة الشعر في ندبات الحروق",
+      "short": "استعادة الشعر في ندبات الحروق الملتئمة بعد تقييم طبي لأنسجة الندبة."
+    },
+    "tr": {
+      "name": "Yanık İzine Saç Ekimi",
+      "short": "İyileşmiş yanık izlerinde, iz dokusunun tıbbi değerlendirmesinden sonra saç restorasyonu."
+    },
+    "de": {
+      "name": "Haartransplantation in Brandnarben",
+      "short": "Haarwiederherstellung in verheilten Brandnarben nach ärztlicher Beurteilung des Narbengewebes."
+    },
+    "es": {
+      "name": "Injerto capilar en cicatrices de quemaduras",
+      "short": "Restauración capilar en cicatrices de quemaduras ya curadas, tras una valoración médica del tejido."
+    }
+  }
+}

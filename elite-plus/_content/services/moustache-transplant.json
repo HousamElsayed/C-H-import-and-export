@@ -1,0 +1,29 @@
+{
+  "slug": "moustache-transplant",
+  "category": "transplant",
+  "order": 4,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Moustache Transplant",
+      "short": "Follicles are placed to fill in or define the moustache."
+    },
+    "ar": {
+      "name": "زراعة الشارب",
+      "short": "زراعة البصيلات لملء الشارب أو تحديد شكله."
+    },
+    "tr": {
+      "name": "Bıyık Ekimi",
+      "short": "Bıyığı doldurmak veya şekillendirmek için saç kökleri yerleştirilir."
+    },
+    "de": {
+      "name": "Schnurrbarttransplantation",
+      "short": "Follikel werden eingesetzt, um den Schnurrbart aufzufüllen oder zu konturieren."
+    },
+    "es": {
+      "name": "Injerto de bigote",
+      "short": "Se implantan folículos para rellenar o definir el bigote."
+    }
+  }
+}

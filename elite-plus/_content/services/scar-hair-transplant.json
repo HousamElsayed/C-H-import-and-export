@@ -1,0 +1,29 @@
+{
+  "slug": "scar-hair-transplant",
+  "category": "transplant",
+  "order": 5,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Scar Hair Transplant",
+      "short": "Hair follicles are placed into suitable scar tissue on the scalp, beard or eyebrows."
+    },
+    "ar": {
+      "name": "زراعة الشعر في الندبات",
+      "short": "زراعة البصيلات في أنسجة الندبات المناسبة في فروة الرأس أو اللحية أو الحواجب."
+    },
+    "tr": {
+      "name": "Yara İzine Saç Ekimi",
+      "short": "Saç kökleri saçlı deri, sakal veya kaştaki uygun yara izi dokusuna yerleştirilir."
+    },
+    "de": {
+      "name": "Haartransplantation in Narben",
+      "short": "Haarfollikel werden in geeignetes Narbengewebe an Kopfhaut, Bart oder Augenbrauen eingesetzt."
+    },
+    "es": {
+      "name": "Injerto capilar en cicatrices",
+      "short": "Se implantan folículos en tejido cicatricial apto del cuero cabelludo, la barba o las cejas."
+    }
+  }
+}

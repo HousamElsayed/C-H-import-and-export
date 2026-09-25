@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Daily rebuild so the Elite+ currency converter uses fresh exchange rates
+  schedule:
+    - cron: "17 3 * * *"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -28,6 +32,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Elite+ site: regenerate every page from elite-plus/_content (edited by staff in Pages CMS)
+      - name: Elite+ backend tests
+        run: node --test elite-plus/_backend/tests/*.test.mjs
+      - name: Elite+ exchange rates
+        run: node elite-plus/_src/rates.mjs
+      - name: Elite+ build
+        run: node elite-plus/_src/build.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll

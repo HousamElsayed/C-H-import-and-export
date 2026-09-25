@@ -72,6 +72,10 @@
       "impressum": [
         "Yasal Bilgiler – Elite+ Klinikleri",
         "Yasal bilgiler: şirket, adres, temsilci, sicil ve iletişim."
+      ],
+      "pdpl": [
+        "Mısır Veri Koruma Bildirimi – Elite+",
+        "2020 tarihli ve 151 sayılı Mısır Kişisel Verilerin Korunması Kanunu kapsamında bilgilendirme."
       ]
     }
   },
@@ -96,7 +100,9 @@
     "skip": "İçeriğe geç",
     "assessment": "Ücretsiz Değerlendirme",
     "whatsapp": "WhatsApp",
-    "breadcrumbHome": "Ana Sayfa"
+    "breadcrumbHome": "Ana Sayfa",
+    "clinics": "Kliniklerimiz",
+    "aboutShort": "Hakkımızda"
   },
   "hero": {
     "eyebrow": "Sağlıklı Yaşam Klinikleri",
@@ -430,7 +436,8 @@
       "hours": "Çalışma saatleri",
       "map": "Harita",
       "mapConsent": "Harita Google tarafından sağlanır. Yüklemek, verilerin Google ile paylaşılması anlamına gelir.",
-      "mapLoad": "Haritayı yükle"
+      "mapLoad": "Haritayı yükle",
+      "branchesH": "Kliniklerimiz"
     },
     "privacy": {
       "h1a": "Gizlilik",
@@ -451,6 +458,10 @@
     "impressum": {
       "h1a": "Yasal",
       "h1b": "bilgiler"
+    },
+    "pdpl": {
+      "h1a": "Mısır veri koruma",
+      "h1b": "bildirimi"
     }
   },
   "legal": {
@@ -494,7 +505,15 @@
       "tax": "Vergi no.",
       "licence": "Sağlık ruhsat no.",
       "contact": "İletişim"
-    }
+    },
+    "pdpl": [
+      "Veri sorumlusu",
+      "Amaçlar ve hukuki sebepler",
+      "Sağlık verileri ve rıza",
+      "Mısır dışına aktarım",
+      "Haklarınız",
+      "İletişim"
+    ]
   },
   "footer": {
     "desc": "Uluslararası hastalar için size özel tedavi planları, uzman tıbbi bakım ve kesintisiz destek.",
@@ -505,7 +524,8 @@
     "licence": "Ruhsat no.",
     "rights": "Tüm hakları saklıdır.",
     "cookieSettings": "Çerez ayarları",
-    "disclaimer": "Bu web sitesindeki bilgiler tıbbi muayenenin yerini tutmaz. Sonuçlar kişiden kişiye değişir."
+    "disclaimer": "Bu web sitesindeki bilgiler tıbbi muayenenin yerini tutmaz. Sonuçlar kişiden kişiye değişir.",
+    "clinics": "Kliniklerimiz"
   },
   "cookie": {
     "title": "Gizlilik tercihleriniz",
@@ -613,7 +633,9 @@
     "thanksWa": "Şimdi WhatsApp'tan yazın",
     "previewNote": "Önizleme modu: Başvuru adresi tanımlanmadığı için hiçbir şey gönderilmedi. Veriler tarayıcı konsoluna yazıldı.",
     "q_category": "Hangi alanla ilgileniyorsunuz?",
-    "unsure": "Henüz emin değilim, seçmeme yardım edin"
+    "unsure": "Henüz emin değilim, seçmeme yardım edin",
+    "q_branch": "Hangi kliniği tercih edersiniz?",
+    "branchUnsure": "Henüz emin değilim, seçmeme yardım edin"
   },
   "todo": "EKSİK",
   "categories": {
@@ -748,5 +770,55 @@
     "more": "FUE ve DHI farkları",
     "metaTitle": "FUE ve DHI Saç Ekimi – {city}: Farklar – Elite+",
     "metaDesc": "FUE ve DHI saç ekimi teknikleri nasıl çalışır, aralarındaki farklar nelerdir, kimlere uygundur ve operasyondan sonra neler beklenir."
+  },
+  "branch": {
+    "nav": "Kliniklerimiz",
+    "label": "Kliniklerimiz",
+    "h2a": "Kliniğinizi",
+    "h2b": "seçin",
+    "sub": "İki klinik, tek bakım standardı. İncelemek istediğiniz kliniği seçin.",
+    "explore": "{country} kliniğini inceleyin",
+    "suggested": "Size önerilen",
+    "yours": "Kliniğiniz",
+    "switchTo": "{country} kliniğine geç",
+    "doctorsN": "{n} doktor",
+    "eyebrow": "Elite+ {country}",
+    "h1a": "Elite+",
+    "h1b": "{country}",
+    "docH2a": "Doktorlarımız:",
+    "docH2b": "{country}",
+    "resH2a": "Sonuçlar:",
+    "resH2b": "{country}",
+    "revH2a": "Hasta yorumları:",
+    "revH2b": "{country}",
+    "visitH2a": "Kliniğimizi",
+    "visitH2b": "ziyaret edin",
+    "directions": "Yol tarifi al",
+    "bookH": "Ücretsiz görüntülü görüşme ayarlayın",
+    "bookSub": "Karar vermeden önce {country} kliniğimizden bir koordinatörle görüşün.",
+    "bookCta": "Görüntülü görüşme ayarla",
+    "emptyDoctors": "Bu kliniğin doktor profilleri hazırlanıyor.",
+    "emptyResults": "Bu kliniğin sonuçları, hastalar yazılı onay verdikten sonra yayınlanacak.",
+    "meta": [
+      "Elite+ {country} | Saç Ekimi ve Saç Tedavileri",
+      "Elite+ {country} kliniğinde FUE, DHI saç ekimi ve saç tedavileri: doktorlar, sonuçlar, fiyatlar ve her şey dahil paketler."
+    ],
+    "pageSub": "{country} ekibimizden saç ekimi ve saç tedavileri; uluslararası hastalar için her şey dahil paketle."
+  },
+  "stage": {
+    "q": "Saçınız bugün en çok hangi resme benziyor?",
+    "sub": "Tahmini bir seçim yeterli. Doktorunuz netleştirecek.",
+    "male": "Erkeklerde saç dökülmesi",
+    "female": "Kadınlarda saç dökülmesi",
+    "stage": "Evre {n}",
+    "unsure": "Emin değilim"
+  },
+  "currency": {
+    "label": "Para birimi",
+    "note": "Dönüştürülen fiyatlar yaklaşıktır ve {date} tarihli döviz kurlarına dayanır. Ödeme kliniğin para biriminde yapılır."
+  },
+  "results2": {
+    "months": "{n}. ay",
+    "final": "Son"
   }
 }

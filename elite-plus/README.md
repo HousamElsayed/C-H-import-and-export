@@ -1,108 +1,118 @@
-# Elite+ Wellness Clinics — website
+# Elite+ Wellness Clinics: website
 
-A static, multilingual site (EN default, AR right-to-left, TR, DE, ES) with a free-assessment lead funnel.
-Pages are generated from one data file plus one translation file per language. There is no CMS: content changes are edits to JSON files, followed by a rebuild.
+A multilingual website (EN default, AR right-to-left, TR, DE, ES) for two clinics, **Türkiye** and **Egypt**, with a free-assessment lead funnel and a coordinator dashboard.
+Every page is generated from the content files in `_content/`, which staff edit in a web form (Pages CMS). No code is needed for day-to-day changes.
 
 ```
 elite-plus/
-  _src/config.json        clinic data: services, prices, doctors, results, contact, integrations
-  _src/i18n/<lang>.json   every word of the site per language (same keys in all 5 files)
-  _src/build.mjs          generator  ->  <lang>/…/index.html, sitemaps, robots.txt
-  _src/og.mjs             social share images + app icon (Chromium)
-  _src/placeholders.mjs   brand placeholder artwork (replace with real photography)
-  _backend/               Supabase schema + lead-intake edge function + tests (see _backend/README.md)
-  assets/                 css, js, fonts (self-hosted), img
-  _headers                security headers for Cloudflare Pages / Netlify
+  _content/               ← all clinic content (edited in Pages CMS)
+    site.json             site settings, integrations (analytics, backend, Turnstile)
+    company.json          legal entities, main email/WhatsApp, social links, currency, package, trust figures
+    branches/turkey.json  per clinic: address, map, phone, WhatsApp, hours, licence, Google rating, booking link, photo
+    branches/egypt.json
+    services/*.json       the 11 treatments: text in 5 languages, starting price
+    doctors/*.json        one file per doctor (clinic, photo, CV text in 5 languages)
+    results/*.json        one file per before/after case (clinic, treatment, photos, optional 3/6/12-month timeline)
+    videos/*.json         video testimonials (with consent)
+    legal.json            lawyer-approved legal texts
+    rates.json            exchange rates (written automatically by _src/rates.mjs)
+  _src/                   generator (build.mjs), preview server, rates, OG images, stage drawings, CMS config generator
+  _backend/               Supabase: database migrations, lead-intake edge function, tests
+  _docs/                  data-intake spreadsheet, content plan
+  admin/                  coordinator dashboard (sign in with work email)
+  assets/                 css, js, fonts (self-hosted), images; staff uploads go to assets/img/uploads/
 ```
 
-Folders starting with `_` are not published by GitHub Pages/Jekyll.
+Folders starting with `_` are never published.
 
-## Preview locally (VS Code)
+## How the site is organised
+
+- **Home**: welcome, then **Our clinics** (Türkiye and Egypt cards), then the shared sections (treatments, FUE & DHI, package, journey, doctors, safety, reviews, FAQ).
+- **Clinic pages** `/{lang}/turkey/`, `/{lang}/egypt/`: that clinic's doctors, before/after results, Google reviews, video-consultation booking, address, hours and map. WhatsApp buttons on these pages go to that clinic's number.
+- **Doctor profiles** `/{lang}/{clinic}/doctors/{name}/`.
+- **Shared pages**: treatments, prices, FUE & DHI, journey, FAQ, guides, contact (both clinics), legal pages (privacy, KVKK, Egypt data protection, cookies, terms, Impressum).
+- The site remembers the clinic a visitor chose, marks it "Your clinic", suggests Egypt to visitors in Egypt and Türkiye to visitors in Türkiye, and points the general WhatsApp buttons to the chosen clinic.
+- **Assessment**: clinic → treatment → questions → hair-loss stage (scalp treatments) → photos → date → contact → consent. Each request is tagged with the clinic and routed to that clinic's team.
+
+## Staff guide: editing content (Pages CMS)
+
+1. The clinic's GitHub owner opens https://app.pagescms.org, signs in with GitHub and selects this repository and the `main` branch.
+2. Staff who edit content need a GitHub account invited to the repository (Settings → Collaborators, role *Write*).
+3. In Pages CMS: **Doctors**, **Before & after results**, **Clinic – Türkiye**, **Clinic – Egypt**, **Treatments**, **Company & contact**, **Legal texts**. Photos are uploaded directly in the form.
+4. Press **Save**. GitHub rebuilds and publishes the site in about 2 minutes.
+   On the live site (production build) a save only goes live when the content is complete: a doctor without all five language texts, for example, keeps the previous version online. The build log in Cloudflare Pages names what is missing.
+
+Rules for all content:
+- Never enter estimates. Ratings, patient numbers, doctors, results and licences must be real.
+- No superlatives or guarantees ("best", "No. 1", "100%", "painless"): Turkish and Egyptian health-advertising rules.
+- Before/after photos only with the patient's signed consent; enter the consent form reference (it is never published).
+- Doctor texts must be approved by the doctor.
+
+| To… | Do this in Pages CMS |
+|---|---|
+| Add a doctor | Doctors → Add: clinic, name, photo, texts. The profile page and the clinic page update automatically. |
+| Add a result | Before & after results → Add: clinic, treatment (e.g. `hair-transplant`), before photo, final photo, months; optionally 3/6-month photos. |
+| Change a phone, WhatsApp, hours, map | Clinic – Türkiye / Clinic – Egypt |
+| Change a price | Treatments → the treatment → Starting price (currency in Company & contact) |
+| Instagram / Facebook links | Company & contact → Social media |
+
+The CMS form definition is generated by `python3 _src/cms.py` (writes `/.pages.yml`). Change the content model there, not in `.pages.yml`.
+
+## Developers
+
+Node 20+; no npm packages.
 
 ```bash
 cd elite-plus
-npm start        # builds, then serves at http://localhost:8080/C-H-import-and-export/elite-plus/en/
+npm start                # build + preview on http://localhost:8080/C-H-import-and-export/elite-plus/en/ (also prints a phone URL)
+npm run build            # preview build: missing data shows as dashed orange chips; pages are noindex
+npm run build:prod       # production build: refuses to write while any data, translation or approval is missing
+npm test                 # backend tests
+node _src/rates.mjs      # refresh exchange rates (needs internet; CI does this daily)
+node _src/og.mjs         # regenerate social share images
+node _src/stages.mjs     # regenerate hair-loss stage drawings
 ```
 
-The terminal also prints a `Phone (same Wi-Fi)` address for testing on a real phone.
-Do not use Live Server or open the HTML files directly: links are root-relative to `site.basePath`, so they only resolve when served under that path.
+GitHub Actions (`.github/workflows/jekyll-gh-pages.yml`) runs the backend tests, refreshes rates, builds and publishes on every push to `main` and daily. `.github/workflows/uptime.yml` checks the site every 30 minutes.
+**GitHub Pages setting:** Settings → Pages → Source must be **GitHub Actions**; otherwise GitHub also publishes the committed files directly and CMS edits can appear late.
 
-## Build
+### Integrations (`_content/site.json → integrations`)
 
-Requires Node 20+. No npm packages are needed.
+- `leadEndpoint`, `uploadUrlEndpoint`, `supabaseUrl`, `supabaseAnonKey`: the Supabase project (see `_backend/README.md`).
+- `turnstileSiteKey`: Cloudflare Turnstile (invisible spam protection).
+- `gtmId`: Google Tag Manager, loaded **only after consent** (Consent Mode v2 defaults to denied). DataLayer events: `cta_click`, `whatsapp_click`, `phone_click`, `social_click`, `booking_click`, `quiz_start`, `quiz_step`, `photo_upload`, `lead_partial`, `lead_submit`, `consent_update`.
+- `clarityId`: Microsoft Clarity, after analytics consent.
 
-```bash
-node _src/build.mjs          # preview build: missing data shows as dashed orange chips, pages are noindex
-node _src/build.mjs --prod   # production build: refuses to write anything while data or translations are missing
-```
+### Notes
 
-The preview build ends with the list of open items. `--prod` succeeds only when that list is empty.
-Commit the generated HTML together with the source change.
+- Fonts: Brice, Century Gothic and Montserrat Arabic are commercial. Free stand-ins are self-hosted (Outfit, Questrial, Tajawal) until web licences are bought.
+- The logo SVGs were traced from the brand-guidelines PDF; replace them with the designer's vector files when available.
+- Currency selector: prices are stored in the company currency; the footer selector shows an approximate conversion (ExchangeRate-API, attribution shown). Hidden until `rates.json` exists.
+- Structured data: `MedicalOrganization` with one `MedicalClinic` per branch, `Physician`, `MedicalProcedure`, `FAQPage`, `BreadcrumbList`. Ratings are output only when real Google ratings are entered.
 
-## Staff guide
+## Going live
 
-**Rule for all content:** never replace a `null` with an estimate. Stats, ratings, doctors, results, accreditations and prices must be real and verifiable (Turkish health-advertising rules, and the brief). No superlatives ("best", "No. 1", "guaranteed", "painless").
-
-| Task | Where |
-|---|---|
-| Clinic name, licence, address, phone, WhatsApp, hours, social links | `config.json → clinic` |
-| Trust bar (patients treated, Google rating, MoH licence, languages) | `config.json → stats` (items with `null` are hidden in production) |
-| Service text (intro, who it is for, steps, stay, FAQ, extra assessment questions) | `config.json → services[i].content.<lang>` (see `_servicesContentExample`) |
-| Service starting price | `config.json → services[i].priceFrom` (number, currency in `package.currency`) |
-| Package inclusions (hotel nights, follow-up months) | `config.json → package` |
-| Add a doctor | Add photo to `assets/img/doctors/`, add an entry to `config.json → doctors` (see `_doctorExample`). A profile page is generated automatically. |
-| Add a before/after case | Only with a signed consent form. Photos in `assets/img/results/`, entry in `config.json → results` with `consentRef`. |
-| Welcome (hero) image | Save the clean photo as `assets/img/hero/welcome.jpg`. Optional sharper versions: `welcome-800.webp`, `welcome-1200.webp`, `welcome-1600.webp`. Adjust the crop with `hero.focus` (e.g. `"32% 42%"`). |
-| About page story and equipment | `config.json → about` |
-| Wording anywhere | `_src/i18n/<lang>.json`; change the same key in all 5 files |
-| Legal pages | Lawyer-approved text is still required (currently headings only) |
-
-After editing: run the build, open the page locally (`npx http-server .. -p 8080`, then visit `/elite-plus/en/`), then commit.
-
-### Reading the leads
-
-Leads arrive in Supabase (`leads` table), by email/Telegram (name, phone, country, interest; no health details), and in the clinic CRM when `CRM_WEBHOOK_URL` is set.
-- `status`: `partial` (left after entering a phone number; follow up) → `new` → `contacted` → `qualified` → `booked` / `lost` / `spam`.
-- `abandoned_leads` view: partial leads older than 30 minutes.
-- `lead_report` view: leads per day, language, treatment, source and campaign.
-- Photos are in the private `lead-photos` bucket and can only be opened through signed links.
-
-## Integrations
-
-Set in `config.json → integrations`, then rebuild:
-- `leadEndpoint` / `uploadUrlEndpoint`: the deployed edge function (`https://<project>.supabase.co/functions/v1/leads` and `…/leads/upload-url`).
-- `turnstileSiteKey`: Cloudflare Turnstile (invisible, no puzzles).
-- `gtmId`: Google Tag Manager. It is loaded **only after consent**; Google Consent Mode v2 defaults to denied. Configure GA4, Google Ads, Meta (with Conversions API) and TikTok/Snap inside GTM, triggered on these dataLayer events: `cta_click`, `whatsapp_click`, `phone_click`, `quiz_start`, `quiz_step` (with `quiz_step`, `quiz_step_name`), `photo_upload`, `lead_partial`, `lead_submit`, `consent_update`.
-- `clarityId`: Microsoft Clarity, loaded only after analytics consent.
-
-## Technical notes
-
-- Languages live in sub-folders (`/ar/`, `/en/`…) with full `hreflang` + `x-default` (EN). Visitors are never redirected: a dismissible banner suggests their browser language.
-- RTL is handled by one set of components using logical CSS properties. The hero image is mirrored in Arabic so the subject faces into the page.
-- Fonts: the brand fonts (Brice, Century Gothic, Montserrat Arabic) are commercial. Until web licences are bought, free stand-ins are self-hosted (Outfit, Questrial, Tajawal). With licences: add the WOFF2 files to `assets/fonts/` and `@font-face` rules; the font stacks already list the brand fonts first.
-- The logo SVGs were vector-traced from the brand-guidelines PDF (a raster file). Replace them with the designer's original vector export when available.
-- Photo uploads are compressed in the browser (max 2000 px, JPEG) and stored in a private bucket; partial leads contain contact details only, never health answers or photos.
-- Structured data: `MedicalClinic`, `MedicalProcedure`, `Physician`, `FAQPage`, `BreadcrumbList`, `MedicalWebPage`. `AggregateRating` is output only when a real Google rating is configured.
-
-## Hosting
-
-GitHub Pages works for the preview, but it cannot send security headers and the preview is `noindex`.
-For launch: serve the `elite-plus` folder from Cloudflare Pages (or put Cloudflare in front) on the clinic's domain, set `site.origin`/`site.basePath` in `config.json` (e.g. `https://eliteplusclinics.com` and `""`), rebuild with `--prod`, and make sure `robots.txt` is served at the domain root.
+1. Buy the domain (Cloudflare Registrar recommended).
+2. Cloudflare Pages → Create project → connect this GitHub repository.
+   - Build command: `node elite-plus/_src/rates.mjs && node elite-plus/_src/build.mjs --prod`
+   - Build output directory: `elite-plus`
+   - Custom domain: the clinic domain.
+3. In `_content/site.json` set `origin` to `https://<domain>` and `basePath` to `""`.
+4. `_headers` (security headers, CSP) is applied automatically by Cloudflare Pages.
+5. Google Search Console: add the domain, submit `https://<domain>/sitemap.xml`. Create a Google Business Profile for each clinic and link it to its clinic page.
+6. Set the `SITE_URL` repository variable for the uptime check.
 
 ## Pre-launch checklist
 
-- [ ] `node _src/build.mjs --prod` passes (no missing data or translations)
-- [ ] Clean welcome photo supplied (no baked-in logo or rays), ideally ≥ 2400 px wide
-- [ ] Native speakers have reviewed AR, TR, DE, ES (the current translations are professional drafts, not native-reviewed)
-- [ ] Medical team has approved every treatment text, the FUE/DHI section (`techniquesConfirmed`), and the FAQ answers
-- [ ] Service names confirmed, especially "Regenera Activa" (the brief said "Reginera") and "G-Cell"
-- [ ] Stem-cell / regenerative treatment wording checked against Turkish Ministry of Health rules
-- [ ] Turkish healthcare lawyer has signed off on all copy, before/after consents, privacy, KVKK, cookie and terms pages, and the Impressum
-- [ ] "Reply within 24 hours" is an operational promise the team can keep (`promise.responseHours`)
-- [ ] Backend deployed, `_backend` tests passing, one real test lead received by email/Telegram/CRM and deleted afterwards
-- [ ] GTM container published with consent-aware tags; conversions verified in GA4 / Google Ads / Meta Events Manager
-- [ ] Security headers active (`curl -I https://domain/en/`), HTTPS only
-- [ ] Lighthouse mobile ≥ 90 in all four categories on home, a service page and the assessment
-- [ ] axe accessibility scan clean; keyboard-only run through the menu, carousels, FAQ and assessment
-- [ ] Assessment tested on a real iPhone (Safari, HEIC photo from the camera) and Android (Chrome)
-- [ ] Google Business Profile linked; sitemap submitted in Search Console for each language
+- [ ] `npm run build:prod` passes
+- [ ] Clinic data complete (intake spreadsheet in `_docs/`), including both clinics' addresses, maps, WhatsApp numbers and licences
+- [ ] Doctors and results entered per clinic, with approvals and consent references
+- [ ] Native review of AR, TR, DE, ES
+- [ ] Medical approval of treatment texts, FAQ and the FUE/DHI "how we work" points (`techniquesConfirmed`)
+- [ ] Service names confirmed ("Regenera Activa", "G-Cell"); regenerative-treatment wording checked against Ministry of Health rules in both countries
+- [ ] Lawyer sign-off: privacy (GDPR), KVKK, Egypt PDPL 151/2020, cookies, terms, Impressum, consent wording
+- [ ] Backend deployed; one real test request per clinic received by the right team and deleted
+- [ ] Dashboard: staff accounts added; each coordinator sees only their clinic
+- [ ] GTM container published with consent-aware tags; conversions verified
+- [ ] Security headers active; Lighthouse mobile ≥ 90; accessibility scan clean
+- [ ] Tested on a real iPhone (Safari, HEIC photo) and Android (Chrome)

@@ -1,0 +1,29 @@
+{
+  "slug": "eyebrow-transplant",
+  "category": "transplant",
+  "order": 3,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Eyebrow Transplant",
+      "short": "Individual follicles are placed to restore the shape and density of the eyebrows."
+    },
+    "ar": {
+      "name": "زراعة الحواجب",
+      "short": "زراعة البصيلات واحدة تلو الأخرى لاستعادة شكل الحواجب وكثافتها."
+    },
+    "tr": {
+      "name": "Kaş Ekimi",
+      "short": "Kaşların şeklini ve yoğunluğunu yeniden kazandırmak için kökler tek tek yerleştirilir."
+    },
+    "de": {
+      "name": "Augenbrauentransplantation",
+      "short": "Einzelne Follikel werden eingesetzt, um Form und Dichte der Augenbrauen wiederherzustellen."
+    },
+    "es": {
+      "name": "Injerto de cejas",
+      "short": "Se implantan folículos uno a uno para recuperar la forma y la densidad de las cejas."
+    }
+  }
+}

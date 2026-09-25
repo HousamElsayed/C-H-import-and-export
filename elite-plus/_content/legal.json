@@ -1,0 +1,38 @@
+{
+  "_readme": "Lawyer-approved text per page and language. Simple markdown: '## Heading', blank line between paragraphs, '- ' for list items.",
+  "privacy": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "kvkk": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "pdpl": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "cookies": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  },
+  "terms": {
+    "en": null,
+    "ar": null,
+    "tr": null,
+    "de": null,
+    "es": null
+  }
+}

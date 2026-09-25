@@ -1,0 +1,29 @@
+{
+  "slug": "hair-mesotherapy",
+  "category": "treatment",
+  "order": 11,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Hair Mesotherapy",
+      "short": "Micro-injections of vitamins and active ingredients into the scalp."
+    },
+    "ar": {
+      "name": "الميزوثيرابي للشعر",
+      "short": "حقن دقيقة للفيتامينات والمواد الفعّالة في فروة الرأس."
+    },
+    "tr": {
+      "name": "Saç Mezoterapisi",
+      "short": "Saçlı deriye vitamin ve aktif bileşenlerin mikro enjeksiyonu."
+    },
+    "de": {
+      "name": "Haar-Mesotherapie",
+      "short": "Mikroinjektionen von Vitaminen und Wirkstoffen in die Kopfhaut."
+    },
+    "es": {
+      "name": "Mesoterapia capilar",
+      "short": "Microinyecciones de vitaminas y principios activos en el cuero cabelludo."
+    }
+  }
+}

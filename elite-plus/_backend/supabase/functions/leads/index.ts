@@ -81,14 +81,19 @@ const handler = createHandler({
   async notify(lead: Record<string, unknown>, photoCount: number) {
     const text = notificationText(lead, photoCount);
     const jobs: Promise<unknown>[] = [];
-    const resendKey = env('RESEND_API_KEY'); const to = env('NOTIFY_EMAILS');
+    // Per-clinic routing: ROUTING_JSON = {"turkey":{"emails":[..],"telegramChatId":".."},"egypt":{..},"unsure":{..}}.
+    // Falls back to NOTIFY_EMAILS / TELEGRAM_CHAT_ID when a clinic has no entry.
+    let routing: Record<string, { emails?: string[]; telegramChatId?: string }> = {};
+    try { routing = JSON.parse(env('ROUTING_JSON') || '{}'); } catch { log('error', 'ROUTING_JSON is not valid JSON'); }
+    const route = routing[lead.branch as string] ?? routing.unsure ?? {};
+    const resendKey = env('RESEND_API_KEY'); const to = route.emails?.join(',') || env('NOTIFY_EMAILS');
     if (resendKey && to) {
       jobs.push(fetch('https://api.resend.com/emails', {
         method: 'POST', headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ from: env('EMAIL_FROM', true), to: to.split(','), subject: `New lead: ${lead.name} (${lead.country})`, text }),
       }).then((r) => { if (!r.ok) throw new Error(`resend ${r.status}`); }));
     }
-    const tg = env('TELEGRAM_BOT_TOKEN'); const chat = env('TELEGRAM_CHAT_ID');
+    const tg = env('TELEGRAM_BOT_TOKEN'); const chat = route.telegramChatId || env('TELEGRAM_CHAT_ID');
     if (tg && chat) {
       jobs.push(fetch(`https://api.telegram.org/bot${tg}/sendMessage`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: chat, text, disable_web_page_preview: true }),

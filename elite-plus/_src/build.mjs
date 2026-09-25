@@ -12,8 +12,30 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PROD = process.argv.includes('--prod');
 const PREVIEW = !PROD;
 const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
-const cfg = JSON.parse(read('_src/config.json'));
-// Local/E2E overrides (never committed into config): ELITE_LEAD_ENDPOINT, ELITE_UPLOAD_ENDPOINT
+// ---------- content (edited by staff in _content/, see README) ----------
+const readJson = (p) => JSON.parse(read(p));
+const readDir = (d) => fs.readdirSync(path.join(ROOT, '_content', d)).filter((f) => f.endsWith('.json')).sort().map((f) => ({ ...readJson(`_content/${d}/${f}`), _file: `_content/${d}/${f}` }));
+const SITE = readJson('_content/site.json');
+const CO = readJson('_content/company.json');
+const LEGAL = readJson('_content/legal.json');
+const BRANCHES = readDir('branches').sort((a, b) => a.order - b.order);
+const SERVICES = readDir('services').sort((a, b) => a.order - b.order);
+const DOCTORS = readDir('doctors').sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+const RESULTS = readDir('results').sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+const VIDEOS = readDir('videos');
+const RATES = fs.existsSync(path.join(ROOT, '_content/rates.json')) ? readJson('_content/rates.json') : null;
+// One view of the data used by the page builders.
+const cfg = {
+  site: { origin: SITE.origin, basePath: SITE.basePath, defaultLang: SITE.defaultLang, languages: SITE.languages, year: SITE.year },
+  brand: SITE.brand, hero: SITE.hero, promise: SITE.promise, integrations: { ...SITE.integrations }, techniquesConfirmed: SITE.techniquesConfirmed,
+  services: SERVICES, serviceCategories: ['transplant', 'treatment'],
+  package: { ...CO.package, currency: CO.currency },
+  stats: { ...CO.stats, languagesSpoken: CO.languagesSpoken },
+  doctors: DOCTORS, results: RESULTS, videoTestimonials: VIDEOS, accreditations: CO.accreditations ?? [],
+  about: { story: CO.story, equipment: CO.equipment }, legalText: LEGAL,
+};
+const branchBy = (slug) => BRANCHES.find((b) => b.slug === slug);
+// Local/E2E overrides (never committed into content): ELITE_LEAD_ENDPOINT, ELITE_UPLOAD_ENDPOINT
 if (process.env.ELITE_LEAD_ENDPOINT) cfg.integrations.leadEndpoint = process.env.ELITE_LEAD_ENDPOINT;
 if (process.env.ELITE_UPLOAD_ENDPOINT) cfg.integrations.uploadUrlEndpoint = process.env.ELITE_UPLOAD_ENDPOINT;
 const LANGS = cfg.site.languages;
@@ -67,6 +89,8 @@ function fmtT(tpl, vars = {}) {
 const href = (lang, p = '') => `${BASE}/${lang}/${p}`;
 const absUrl = (p) => ORIGIN + p;
 const asset = (p) => `${BASE}/assets/${p}`;
+// Images from the content editor may be saved as "uploads/x.jpg", "/uploads/x.jpg" or a full assets path.
+const imgSrc = (p) => asset('img/' + String(p).replace(/^.*assets\/img\//, '').replace(/^\/+/, ''));
 const hash = (p) => crypto.createHash('sha1').update(read(p)).digest('hex').slice(0, 8);
 // Minified stylesheet (the source stays readable in assets/css/site.css).
 const minCss = read('assets/css/site.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{}:;,>])\s*/g, '$1').replace(/;}/g, '}').replace(/\( /g, '(').replace(/ \)/g, ')').trim();
@@ -74,7 +98,9 @@ fs.writeFileSync(path.join(ROOT, 'assets/css/site.min.css'), minCss + '\n');
 const V = { css: hash('assets/css/site.min.css'), js: hash('assets/js/site.js'), qa: hash('assets/js/assessment.js') };
 const LOCALES = { en: 'en-GB', ar: 'ar', tr: 'tr-TR', de: 'de-DE', es: 'es-ES' };
 const money = (lang, n) => new Intl.NumberFormat(LOCALES[lang], { style: 'currency', currency: cfg.package.currency, maximumFractionDigits: 0, numberingSystem: 'latn' }).format(n);
-const C = cfg.clinic;
+// Price with a hook for the visitor-selected currency (site.js adds an approximate conversion next to it).
+const moneyH = (lang, n) => `<span class="money" data-amount="${n}" data-cur="${cfg.package.currency}">${esc(money(lang, n))}</span><span class="money__conv" data-conv hidden></span>`;
+const C = { whatsapp: CO.whatsapp, email: CO.email, social: CO.social };
 
 // ---------- icons ----------
 const ICON = {
@@ -127,14 +153,14 @@ function starPath(R = 48, r = 25, inner = 9.5) {
 }
 const STAR_OUTER = starPath();
 const STAR_INNER = 'M0 -20L5 -5L20 0L5 5L0 20L-5 5L-20 0L-5 -5Z';
-const starMark = (cls = '') => `<img class="star ${cls}" src="${asset('img/' + cfg.brand.mark)}" alt="" width="40" height="40" aria-hidden="true">`;
+const starMark = (cls = '') => `<img class="star ${cls}" src="${imgSrc(cfg.brand.mark)}" alt="" width="40" height="40" aria-hidden="true">`;
 const starMarkSvg = (cls = '', label = '') => `<svg class="star ${cls}" viewBox="-52 -52 104 104" ${label ? `role="img" aria-label="${esc(label)}"` : 'aria-hidden="true" focusable="false"'}><path d="${STAR_OUTER}" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="${STAR_INNER}" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>`;
 
 function logo(lang, variant = 'light') {
   const L = I[lang];
   const file = variant === 'light' ? cfg.brand.logoLight : cfg.brand.logoDark;
   const inner = file
-    ? `<img src="${asset('img/' + file)}" alt="${esc(L.meta.siteName)}" width="172" height="48">`
+    ? `<img src="${imgSrc(file)}" alt="${esc(L.meta.siteName)}" width="172" height="48">`
     : `${starMark('logo__mark')}<span class="logo__text"><span class="logo__word" dir="ltr">elite<span class="logo__plus">+</span></span><span class="logo__sub">Wellness Clinics</span></span>`;
   return `<a class="logo logo--${variant}" href="${href(lang)}" aria-label="${esc(L.meta.siteName)} – ${esc(L.nav.home)}">${inner}</a>`;
 }
@@ -144,22 +170,35 @@ const byCategory = () => cfg.serviceCategories.map((cat) => ({ cat, items: cfg.s
 const svc = (s, lang) => s.content?.[lang] ?? {};
 const svcName = (s, lang, i) => h(svc(s, lang).name, `Service ${i + 1}`, `services[${i}].content.${lang}.name`);
 const svcNameT = (s, lang, i) => svc(s, lang).name ?? (problems.add(`missing data: services[${i}].content.${lang}.name`), `Service ${i + 1}`);
-const city = (lang) => C.city;
+// Where the clinic is, for titles: "Türkiye and Egypt" in the page language.
+const city = (lang) => new Intl.ListFormat(LOCALES[lang], { type: 'conjunction' }).format(BRANCHES.map((b) => b.country[lang]));
 const langList = (lang) => (cfg.stats.languagesSpoken ?? []).map((c) => I[lang].langNames[c] ?? c).join(', ');
 
-function waHref(lang, pageName) {
-  if (!C.whatsapp) { problems.add('missing data: clinic.whatsapp'); return '#todo-whatsapp'; }
-  return `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(fmtT(I[lang].wa.prefill, { page: pageName }))}`;
+// WhatsApp: branch pages use the branch's number; other pages use the main line
+// (site.js swaps it for the visitor's chosen branch when one is remembered).
+function waHref(lang, pageName, b = null) {
+  const num = b ? b.whatsapp : C.whatsapp;
+  if (!num) { problems.add(b ? `missing data: branches/${b.slug}.whatsapp` : 'missing data: company.whatsapp'); return '#todo-whatsapp'; }
+  return `https://wa.me/${num}?text=${encodeURIComponent(fmtT(I[lang].wa.prefill, { page: pageName }))}`;
 }
+const bCountry = (b, lang) => b.country[lang];
+const bCity = (b, lang) => b.city?.[lang] ?? null;
+const bDoctors = (b) => DOCTORS.filter((d) => d.branch === b.slug);
+const bResults = (b) => RESULTS.filter((r) => r.branch === b.slug);
+const FLAG = { TR: '🇹🇷', EG: '🇪🇬' };
 
-function trustItems(lang, short = false) {
+function trustItems(lang, short = false, b = null) {
   const L = I[lang].trust; const s = cfg.stats; const items = [];
-  if (s.patientsTreated) items.push(fmtH(L.patients, { n: s.patientsTreated.toLocaleString(LOCALES[lang]) }));
-  if (s.googleRating) items.push(fmtH(short ? L.ratingShort : L.rating, { r: s.googleRating, n: s.googleReviewCount }));
+  const rated = (b ? [b] : BRANCHES).filter((x) => x.stats?.googleRating);
+  if (!b && s.patientsTreated) items.push(fmtH(L.patients, { n: s.patientsTreated.toLocaleString(LOCALES[lang]) }));
+  for (const x of rated) {
+    const r = fmtH(short ? L.ratingShort : L.rating, { r: x.stats.googleRating, n: x.stats.googleReviewCount });
+    items.push(b || BRANCHES.length === 1 ? r : `${r} · ${esc(bCountry(x, lang))}`);
+  }
   if (s.ministryLicensed) items.push(esc(short ? L.licensedShort : L.licensed));
-  if (short && s.languagesSpoken?.length) items.push(fmtH(L.speaks, { langs: langList(lang) }));
+  if (short && !b && s.languagesSpoken?.length) items.push(fmtH(L.speaks, { langs: langList(lang) }));
   if (!items.length && PREVIEW) {
-    problems.add('missing data: stats (patientsTreated / googleRating / ministryLicensed)');
+    problems.add('missing data: company.stats / branch Google ratings');
     items.push(`<span class="todo">${esc(fmtT(L.patients, { n: 'X' }))}</span>`, `<span class="todo">${esc(fmtT(L.ratingShort, { r: '4.x' }))}</span>`, `<span class="todo">${esc(L.licensedShort)}</span>`);
   }
   return items;
@@ -174,11 +213,11 @@ function sectionHead(label, a, b, { id, sub, center = false } = {}) {
 }
 const btn = (label, url, kind = 'primary', ico = '', extra = '') =>
   `<a class="btn btn--${kind}" href="${url}"${extra}>${ico ? icon(ico) : ''}<span>${esc(label)}</span></a>`;
-const waBtn = (lang, label, pageName, kind = 'outline', ev = 'whatsapp_click') =>
-  `<a class="btn btn--${kind}" href="${waHref(lang, pageName)}" target="_blank" rel="noopener" data-ev="${ev}">${icon('wa')}<span>${esc(label)}</span><span class="sr-only"> ${esc(I[lang].a11y.ext)}</span></a>`;
-const ctaRow = (lang, pageName, alt = false) => {
+const waBtn = (lang, label, pageName, kind = 'outline', ev = 'whatsapp_click', b = null) =>
+  `<a class="btn btn--${kind}" href="${waHref(lang, pageName, b)}"${b ? '' : ' data-wa-main'} target="_blank" rel="noopener" data-ev="${ev}">${icon('wa')}<span>${esc(label)}</span><span class="sr-only"> ${esc(I[lang].a11y.ext)}</span></a>`;
+const ctaRow = (lang, pageName, alt = false, b = null) => {
   const L = I[lang];
-  return `<div class="cta-row">${btn(L.hero.cta1, href(lang, 'assessment/'), alt ? 'primary' : 'primary', '', ' data-ev="cta_click"')}${waBtn(lang, L.hero.cta2, pageName, alt ? 'ghost' : 'outline')}</div>`;
+  return `<div class="cta-row">${btn(L.hero.cta1, href(lang, 'assessment/') + (b ? `?branch=${b.slug}` : ''), 'primary', '', ' data-ev="cta_click"')}${waBtn(lang, L.hero.cta2, pageName, alt ? 'ghost' : 'outline', 'whatsapp_click', b)}</div>`;
 };
 const linkMore = (label, url) => `<a class="more" href="${url}"><span>${esc(label)}</span>${icon('arrow', 'i-flip')}</a>`;
 
@@ -189,8 +228,8 @@ function phImg(kind, i = 0, alt = '') {
 function breadcrumbs(lang, trail) {
   const L = I[lang];
   const items = [{ name: L.nav.breadcrumbHome, url: href(lang) }, ...trail];
-  const html = `<nav class="crumbs" aria-label="Breadcrumb"><ol>${items.map((c, i) => `<li>${i < items.length - 1 ? `<a href="${c.url}">${esc(c.name)}</a>` : `<span aria-current="page">${esc(c.name)}</span>`}</li>`).join('')}</ol></nav>`;
-  const ld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: absUrl(c.url) })) };
+  const html = `<nav class="crumbs" aria-label="Breadcrumb"><ol>${items.map((c, i) => `<li>${i < items.length - 1 ? (c.url ? `<a href="${c.url}">${esc(c.name)}</a>` : `<span>${esc(c.name)}</span>`) : `<span aria-current="page">${esc(c.name)}</span>`}</li>`).join('')}</ol></nav>`;
+  const ld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url ? absUrl(c.url) : undefined })) };
   return { html, ld };
 }
 
@@ -211,26 +250,45 @@ function faqList(items, idp = 'faq') {
 }
 const faqLd = (items) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 
-function clinicLd(lang) {
-  const s = cfg.stats;
+const orgId = absUrl(`${BASE}/#org`);
+const branchId = (b) => absUrl(`${BASE}/#clinic-${b.slug}`);
+function orgLd(lang) {
   const ld = {
-    '@context': 'https://schema.org', '@type': 'MedicalClinic', '@id': absUrl(`${BASE}/#clinic`),
-    name: I[lang].meta.siteName, url: absUrl(href(lang)), logo: absUrl(asset('img/' + cfg.brand.logoLight)), image: absUrl(asset(`img/og-${lang}.png`)),
-    telephone: C.phone ?? undefined, email: C.email ?? undefined,
-    address: { '@type': 'PostalAddress', streetAddress: C.street ?? undefined, addressLocality: C.city ?? undefined, postalCode: C.postalCode ?? undefined, addressCountry: C.countryCode },
-    geo: C.lat != null ? { '@type': 'GeoCoordinates', latitude: C.lat, longitude: C.lng } : undefined,
-    openingHours: C.hours ?? undefined,
-    priceRange: cfg.services.some((x) => x.priceFrom) ? `${cfg.package.currency} ${Math.min(...cfg.services.filter((x) => x.priceFrom).map((x) => x.priceFrom))}+` : undefined,
-    availableLanguage: s.languagesSpoken ?? undefined,
-    sameAs: Object.values(C.social).filter(Boolean),
+    '@context': 'https://schema.org', '@type': 'MedicalOrganization', '@id': orgId,
+    name: I[lang].meta.siteName, url: absUrl(href(lang)), logo: absUrl(imgSrc(cfg.brand.logoLight)), image: absUrl(asset(`img/og-${lang}.png`)),
+    email: C.email ?? undefined, sameAs: Object.values(C.social).filter(Boolean),
+    subOrganization: BRANCHES.map((b) => ({ '@id': branchId(b) })),
   };
-  if (s.googleRating && s.googleReviewCount) ld.aggregateRating = { '@type': 'AggregateRating', ratingValue: s.googleRating, reviewCount: s.googleReviewCount, bestRating: 5 };
   if (!ld.sameAs.length) delete ld.sameAs;
+  return ld;
+}
+function branchLd(lang, b) {
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'MedicalClinic', '@id': branchId(b),
+    name: `${I[lang].meta.siteName} – ${bCountry(b, lang)}`, url: absUrl(href(lang, `${b.slug}/`)), parentOrganization: { '@id': orgId },
+    image: absUrl(asset(b.heroPhoto ? 'img/' + b.heroPhoto : `img/og-${lang}.png`)), logo: absUrl(imgSrc(cfg.brand.logoLight)),
+    telephone: b.phone ?? undefined, email: b.email ?? undefined,
+    address: { '@type': 'PostalAddress', streetAddress: b.street ?? undefined, addressLocality: bCity(b, 'en') ?? undefined, postalCode: b.postalCode ?? undefined, addressCountry: b.countryCode },
+    geo: b.lat != null ? { '@type': 'GeoCoordinates', latitude: b.lat, longitude: b.lng } : undefined,
+    hasMap: b.mapsUrl ?? undefined, openingHours: b.hours ?? undefined,
+    medicalSpecialty: 'Dermatology', availableService: SERVICES.map((sv) => ({ '@type': 'MedicalProcedure', name: sv.content?.[lang]?.name })).filter((x) => x.name),
+    employee: bDoctors(b).map((d) => ({ '@type': 'Physician', name: d.name })),
+  };
+  if (b.stats?.googleRating && b.stats?.googleReviewCount) ld.aggregateRating = { '@type': 'AggregateRating', ratingValue: b.stats.googleRating, reviewCount: b.stats.googleReviewCount, bestRating: 5 };
+  if (!ld.employee.length) delete ld.employee;
   return ld;
 }
 
 // ---------- layout ----------
-function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noindex = false, heroPreload = false, scripts = [], finalCta = true }) {
+// Social profiles (company.json → social). Every link opens in a new tab without leaking the referrer.
+const SOCIAL_LABEL = { instagram: 'Instagram', facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok' };
+function socialList(lang, cls = '') {
+  const items = Object.entries(C.social).filter(([, v]) => v);
+  if (!items.length) return PREVIEW ? `<p>${todo('social links', 'company.social')}</p>` : '';
+  return `<ul class="social ${cls}">${items.map(([k, v]) => `<li><a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="${SOCIAL_LABEL[k] ?? k} ${esc(I[lang].a11y.ext)}" data-ev="social_click">${icon(k)}</a></li>`).join('')}</ul>`;
+}
+
+function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noindex = false, heroPreload = false, scripts = [], finalCta = true, branch = null }) {
   const L = I[lang];
   const dir = L.lang.dir;
   const canonical = absUrl(href(lang, p));
@@ -243,25 +301,31 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   if (heroPreload && wStem && fs.existsSync(path.join(ROOT, 'assets/img', `${wStem}-1200.webp`))) {
     heroLink = `<link rel="preload" as="image" type="image/webp" imagesrcset="${[800, 1200, 1600].map((w) => `${asset(`img/${wStem}-${w}.webp`)} ${w}w`).join(', ')}" imagesizes="(max-width: 1320px) 94vw, 1240px" fetchpriority="high">`;
   } else if (heroPreload && cfg.hero.welcome && fs.existsSync(path.join(ROOT, 'assets/img', cfg.hero.welcome))) {
-    heroLink = `<link rel="preload" as="image" href="${asset('img/' + cfg.hero.welcome)}" fetchpriority="high">`;
+    heroLink = `<link rel="preload" as="image" href="${imgSrc(cfg.hero.welcome)}" fetchpriority="high">`;
   }
   const siteData = {
-    lang, dir, base: BASE, page: key, pageName,
+    lang, dir, base: BASE, page: key, pageName, branch: branch?.slug ?? null,
     urls: Object.fromEntries(LANGS.map((l) => [l, href(l, p)])),
     langBanner: Object.fromEntries(LANGS.map((l) => [l, I[l].langBanner])),
+    branches: Object.fromEntries(BRANCHES.map((b) => [b.slug, { wa: b.whatsapp, name: bCountry(b, lang), url: href(lang, `${b.slug}/`) }])),
+    waPrefill: L.wa.prefill,
+    labels: { yours: L.branch.yours, suggested: L.branch.suggested },
+    rates: RATES ? { base: RATES.base, date: RATES.date, rates: RATES.rates } : null,
+    currencyNote: L.currency.note,
     integrations: { gtmId: cfg.integrations.gtmId, metaPixelId: cfg.integrations.metaPixelId, clarityId: cfg.integrations.clarityId },
   };
   const trust = trustItems(lang);
-  const headerNav = [
-    ['results', 'results/'], ['doctors', 'doctors/'], ['prices', 'prices/'], ['journey', 'journey/'], ['about', 'about/'], ['contact', 'contact/'],
-  ];
+  const headerNav = [['results', 'results/'], ['doctors', 'doctors/'], ['prices', 'prices/'], ['journey', 'journey/'], ['contact', 'contact/']];
   const mega = byCategory().map(({ cat, items }) => `<div class="mega__col"><p class="mega__h">${starMark('mega__star')}${esc(L.categories[cat].name)}</p><ul>${items.map(({ s, i }) => `<li><a class="mega__link" href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}</a></li>`).join('')}${cat === 'transplant' ? `<li><a class="mega__link mega__link--tech" href="${href(lang, 'fue-dhi/')}"${key === 'fue-dhi' ? ' aria-current="page"' : ''}>${esc(L.techniques.nav)}</a></li>` : ''}</ul></div>`).join('');
+  const clinicsMenu = BRANCHES.map((b) => `<li><a href="${href(lang, `${b.slug}/`)}" data-branch-link="${b.slug}"${branch?.slug === b.slug ? ' aria-current="page"' : ''}><span class="flag" aria-hidden="true">${FLAG[b.countryCode] ?? ''}</span><span>${esc(bCountry(b, lang))}</span><small class="clinics__yours" hidden>${esc(L.branch.yours)}</small></a></li>`).join('');
   const langMenu = LANGS.map((l) => `<li><a href="${href(l, p)}" hreflang="${l}" lang="${l}" data-lang-link="${l}"${l === lang ? ' aria-current="true"' : ''}><span class="lang__code">${I[l].lang.code}</span><span>${esc(I[l].lang.name)}</span></a></li>`).join('');
+  const wa = waHref(lang, pageName, branch);
+  const waAttr = branch ? '' : ' data-wa-main';
 
   const header = `
 <a class="skip" href="#main">${esc(L.nav.skip)}</a>
 <div class="langbar" data-langbar hidden></div>
-${trust.length ? `<div class="trustbar"><div class="wrap"><ul class="trustbar__list" data-rotate>${trust.map((t) => `<li>${starMark('trustbar__star')}<span>${t}</span></li>`).join('')}</ul></div></div>` : ''}
+<div class="trustbar"><div class="wrap trustbar__in">${trust.length ? `<ul class="trustbar__list" data-rotate>${trust.map((t) => `<li>${starMark('trustbar__star')}<span>${t}</span></li>`).join('')}</ul>` : '<span></span>'}${socialList(lang, 'social--bar')}</div></div>
 <header class="hdr" data-header>
   <div class="wrap hdr__in">
     ${logo(lang, 'light')}
@@ -271,17 +335,21 @@ ${trust.length ? `<div class="trustbar"><div class="wrap"><ul class="trustbar__l
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="mega" data-mega-btn>${esc(L.nav.services)}${icon('chevron', 'nav__chev')}</button>
           <div class="mega" id="mega" data-mega hidden><div class="wrap mega__in"><div class="mega__grid">${mega}</div>${linkMore(L.nav.allServices, href(lang, 'services/'))}</div></div>
         </li>
+        <li class="nav__item nav__item--drop">
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="clinics-menu" data-clinics-btn${branch ? ' aria-current="page"' : ''}>${esc(L.nav.clinics)}${icon('chevron', 'nav__chev')}</button>
+          <ul class="clinics" id="clinics-menu" data-clinics hidden>${clinicsMenu}</ul>
+        </li>
         ${headerNav.map(([k, u]) => `<li class="nav__item"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
-      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}</div>
+      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav')}</div>
     </nav>
     <div class="hdr__actions">
       <div class="lang" data-lang>
         <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="${esc(L.nav.language)}: ${esc(L.lang.name)}">${icon('globe')}<span>${L.lang.code}</span>${icon('chevron', 'lang__chev')}</button>
         <ul class="lang__menu" id="lang-menu" hidden>${langMenu}</ul>
       </div>
-      <a class="icon-btn icon-btn--wa" href="${waHref(lang, pageName)}" target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
-      <a class="btn btn--primary btn--sm hdr__cta" href="${href(lang, 'assessment/')}" data-ev="cta_click"><span>${esc(L.nav.cta)}</span></a>
+      <a class="icon-btn icon-btn--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
+      <a class="btn btn--primary btn--sm hdr__cta" href="${href(lang, 'assessment/')}${branch ? `?branch=${branch.slug}` : ''}" data-ev="cta_click"><span>${esc(L.nav.cta)}</span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="${esc(L.a11y.openMenu)}" data-label-open="${esc(L.a11y.openMenu)}" data-label-close="${esc(L.a11y.closeMenu)}" data-burger>${icon('menu', 'burger__open')}${icon('close', 'burger__close')}</button>
     </div>
   </div>
@@ -289,35 +357,35 @@ ${trust.length ? `<div class="trustbar"><div class="wrap"><ul class="trustbar__l
 
   const final = finalCta ? `
 <section class="final" aria-labelledby="final-title">${raysSvg('final__rays')}
-  <div class="wrap final__in">${duo(L.home.final.h2a, L.home.final.h2b, 'h2', 'final-title', 'duo--light')}<p>${esc(L.home.final.sub)}</p>${ctaRow(lang, pageName, true)}</div>
+  <div class="wrap final__in">${duo(L.home.final.h2a, L.home.final.h2b, 'h2', 'final-title', 'duo--light')}<p>${esc(L.home.final.sub)}</p>${ctaRow(lang, pageName, true, branch)}</div>
 </section>` : '';
 
-  const social = Object.entries(C.social).filter(([, v]) => v);
+  const currencies = SITE.currencies ?? [];
   const footer = `
 <footer class="ftr">
   <div class="wrap ftr__grid">
-    <div class="ftr__brand">${logo(lang, 'dark')}<p>${esc(L.footer.desc)}</p>
-      ${social.length ? `<ul class="ftr__social">${social.map(([k, v]) => `<li><a href="${esc(v)}" target="_blank" rel="noopener" aria-label="${k} ${esc(L.a11y.ext)}">${icon(k)}</a></li>`).join('')}</ul>` : (PREVIEW ? `<p>${todo('social links', 'clinic.social')}</p>` : '')}
+    <div class="ftr__brand">${logo(lang, 'dark')}<p>${esc(L.footer.desc)}</p>${socialList(lang, 'ftr__social')}</div>
+    <div><h2 class="ftr__h">${esc(L.footer.clinics)}</h2>
+      <ul class="ftr__contact">${BRANCHES.map((b) => `<li class="ftr__branch"><a href="${href(lang, `${b.slug}/`)}"><strong>${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</strong></a>
+        <span>${b.whatsapp ? `${icon('wa')}<a href="${waHref(lang, pageName, b)}" target="_blank" rel="noopener" data-ev="whatsapp_click" dir="ltr">+${esc(b.whatsapp)}</a>` : todo('WhatsApp', `branches/${b.slug}.whatsapp`)}</span>
+        <span>${b.phone ? `${icon('phone')}<a href="tel:${esc(b.phone.replace(/\s/g, ''))}" data-ev="phone_click" dir="ltr">${esc(b.phone)}</a>` : todo('phone', `branches/${b.slug}.phone`)}</span></li>`).join('')}
+        <li>${icon('mail')}${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'company.email')}</li>
+      </ul>
     </div>
     <div><h2 class="ftr__h">${esc(L.footer.services)}</h2><ul>${cfg.services.map((s, i) => `<li><a href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}</a></li>`).join('')}</ul></div>
     <div><h2 class="ftr__h">${esc(L.footer.patients)}</h2><ul><li><a href="${href(lang, 'fue-dhi/')}">${esc(L.techniques.nav)}</a></li>${['journey', 'prices', 'results', 'doctors', 'about', 'blog', 'faq'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.nav[k])}</a></li>`).join('')}</ul></div>
-    <div><h2 class="ftr__h">${esc(L.footer.contact)}</h2>
-      <ul class="ftr__contact">
-        <li>${icon('wa')}<a href="${waHref(lang, pageName)}" target="_blank" rel="noopener" data-ev="whatsapp_click">WhatsApp</a></li>
-        <li>${icon('phone')}${C.phone ? `<a href="tel:${esc(C.phone.replace(/\s/g, ''))}" data-ev="phone_click" dir="ltr">${esc(C.phone)}</a>` : todo('phone', 'clinic.phone')}</li>
-        <li>${icon('mail')}${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'clinic.email')}</li>
-        <li>${icon('pin')}<span>${address(lang)}</span></li>
-      </ul>
-    </div>
   </div>
   <div class="wrap ftr__legal">
     <p class="ftr__disc">${esc(L.footer.disclaimer)}</p>
     <ul class="ftr__links">
-      ${['privacy', 'kvkk', 'cookies', 'terms', 'impressum'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.pages[k].h1a)} ${esc(L.pages[k].h1b)}</a></li>`).join('')}
+      ${['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'impressum'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.pages[k].h1a)} ${esc(L.pages[k].h1b)}</a></li>`).join('')}
       <li><button type="button" class="linklike" data-cookie-open>${esc(L.footer.cookieSettings)}</button></li>
     </ul>
-    <p class="ftr__meta">© ${YEAR} ${h(C.legalName, 'legal company name', 'clinic.legalName')} · ${esc(L.footer.licence)} ${h(C.licenceNumber, 'licence number', 'clinic.licenceNumber')} · ${esc(L.footer.rights)}</p>
-    <div class="ftr__langs">${LANGS.map((l) => `<a href="${href(l, p)}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="true"' : ''}>${esc(I[l].lang.name)}</a>`).join('')}</div>
+    <p class="ftr__meta">© ${YEAR} ${esc(L.meta.siteName)} · ${BRANCHES.map((b) => `${esc(bCountry(b, lang))}: ${esc(L.footer.licence)} ${h(b.licenceNumber, 'licence number', `branches/${b.slug}.licenceNumber`)}`).join(' · ')} · ${esc(L.footer.rights)}</p>
+    <div class="ftr__row">
+      <div class="ftr__langs">${LANGS.map((l) => `<a href="${href(l, p)}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="true"' : ''}>${esc(I[l].lang.name)}</a>`).join('')}</div>
+      ${RATES && currencies.length ? `<label class="ftr__cur">${esc(L.currency.label)} <select data-currency>${currencies.map((c) => `<option value="${c}">${c}</option>`).join('')}</select> <a class="ftr__rates" href="${esc(RATES.source)}" target="_blank" rel="noopener noreferrer">Rates by ExchangeRate-API</a></label>` : ''}
+    </div>
   </div>
 </footer>`;
 
@@ -341,8 +409,8 @@ ${trust.length ? `<div class="trustbar"><div class="wrap"><ul class="trustbar__l
 </div>`;
 
   const floating = key === 'assessment' ? '' : `
-<a class="fab" href="${waHref(lang, pageName)}" target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
-<div class="mbar"><a class="btn btn--primary" href="${href(lang, 'assessment/')}" data-ev="cta_click"><span>${esc(L.nav.assessment)}</span></a><a class="btn btn--wa" href="${waHref(lang, pageName)}" target="_blank" rel="noopener" data-ev="whatsapp_click">${icon('wa')}<span>${esc(L.nav.whatsapp)}</span></a></div>`;
+<a class="fab" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
+<div class="mbar"><a class="btn btn--primary" href="${href(lang, 'assessment/')}${branch ? `?branch=${branch.slug}` : ''}" data-ev="cta_click"><span>${esc(L.nav.assessment)}</span></a><a class="btn btn--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click">${icon('wa')}<span>${esc(L.nav.whatsapp)}</span></a></div>`;
 
   const ogImg = absUrl(asset(`img/og-${lang}.png`));
   return `<!doctype html>
@@ -357,7 +425,7 @@ ${noindex || PREVIEW ? '<meta name="robots" content="noindex, nofollow">' : ''}
 ${alternates}
 <meta name="theme-color" content="#073251">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="icon" href="${asset('img/' + cfg.brand.mark)}" type="image/svg+xml">
+<link rel="icon" href="${imgSrc(cfg.brand.mark)}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${asset('img/apple-touch-icon.png')}">
 ${fontPreload}${heroLink}
 <link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
@@ -392,9 +460,9 @@ ${cookie}
 </html>`;
 }
 
-function address(lang) {
-  const parts = [C.street, C.district, [C.postalCode, C.city].filter(Boolean).join(' '), 'Türkiye'].filter(Boolean);
-  if (!C.street || !C.city) return todo('full address', 'clinic.street/city') + ' ' + esc(parts.join(', '));
+function address(lang, b) {
+  const parts = [b.street, b.district, [b.postalCode, bCity(b, lang)].filter(Boolean).join(' '), bCountry(b, lang)].filter(Boolean);
+  if (!b.street || !bCity(b, lang)) return todo('full address', `branches/${b.slug}.street/city`) + ' ' + esc(parts.join(', '));
   return esc(parts.join(', '));
 }
 
@@ -413,7 +481,7 @@ function heroMedia(lang) {
   const stem = base.replace(/\.\w+$/, '');
   const variants = [800, 1200, 1600, 2400].filter((w) => fs.existsSync(path.join(ROOT, 'assets/img', `${stem}-${w}.webp`)));
   const webp = variants.length ? `<source type="image/webp" srcset="${variants.map((w) => `${asset(`img/${stem}-${w}.webp`)} ${w}w`).join(', ')}" sizes="(max-width: 1320px) 94vw, 1240px">` : '';
-  return `<picture>${webp}<img src="${asset('img/' + base)}" alt="${esc(alt)}" width="${hc.width || 1080}" height="${hc.height || 450}" fetchpriority="high" decoding="async"></picture>`;
+  return `<picture>${webp}<img src="${imgSrc(base)}" alt="${esc(alt)}" width="${hc.width || 1080}" height="${hc.height || 450}" fetchpriority="high" decoding="async"></picture>`;
 }
 function hero(lang) {
   const L = I[lang].hero;
@@ -448,26 +516,33 @@ function hero(lang) {
 </section>`;
 }
 
-function compareCard(lang, r, i) {
-  const L = I[lang].home.results; const A = I[lang].a11y;
-  const before = r ? `<img src="${asset('img/' + r.before)}" alt="${esc(L.before)}" loading="lazy" width="800" height="600">` : phImg('before', 0, L.before);
-  const after = r ? `<img src="${asset('img/' + r.after)}" alt="${esc(L.after)}" loading="lazy" width="800" height="600">` : phImg('after', 0, L.after);
+// Before/after comparison. A case can carry a timeline (e.g. 3, 6, 12 months): tabs swap the "after" photo.
+function compareCard(lang, r, i, showBranch = true) {
+  const L = I[lang].home.results; const A = I[lang].a11y; const R = I[lang].results2;
+  const img = (f, alt) => `<img src="${imgSrc(f)}" alt="${esc(alt)}" loading="lazy" width="800" height="600">`;
+  const before = r ? img(r.before, L.before) : phImg('before', 0, L.before);
+  const after = r ? img(r.after, L.after) : phImg('after', 0, L.after);
   const s = r ? cfg.services.find((x) => x.slug === r.service) : cfg.services[i % 4];
   const si = cfg.services.indexOf(s);
-  return `<figure class="ba" data-ba data-service="${s.slug}">
+  const b = r ? branchBy(r.branch) : BRANCHES[i % BRANCHES.length];
+  const stages = r?.timeline?.length ? [...r.timeline.map((t) => ({ label: fmtT(R.months, { n: t.month }), src: imgSrc(t.image) })), { label: r.months ? fmtT(R.months, { n: r.months }) : R.final, src: imgSrc(r.after) }] : [];
+  return `<figure class="ba" data-ba data-service="${s?.slug ?? ''}" data-branch="${b?.slug ?? ''}">
     <div class="ba__stage" style="--pos:50%">
       <div class="ba__img">${before}</div>
       <div class="ba__img ba__after">${after}</div>
-      <span class="ba__tag ba__tag--b">${esc(L.before)}</span><span class="ba__tag ba__tag--a">${esc(L.after)}</span>
+      <span class="ba__tag ba__tag--b">${esc(L.before)}</span><span class="ba__tag ba__tag--a" data-ba-label>${esc(stages.length ? stages.at(-1).label : L.after)}</span>
       <span class="ba__handle" aria-hidden="true"></span>
       <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="${esc(A.compare)}">
     </div>
-    <figcaption>${svcName(s, lang, si)}${r?.caption?.[lang] ? ` · ${esc(r.caption[lang])}` : (PREVIEW && !r ? ` · <span class="todo">consented case</span>` : '')}</figcaption>
+    ${stages.length ? `<div class="ba__steps" role="group" aria-label="${esc(L.after)}">${stages.map((st, n) => `<button type="button" class="ba__step" data-src="${st.src}" aria-pressed="${n === stages.length - 1}">${esc(st.label)}</button>`).join('')}</div>` : ''}
+    <figcaption>${s ? svcName(s, lang, si) : ''}${showBranch && b ? ` · ${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}` : ''}${r?.caption?.[lang] ? ` · ${esc(r.caption[lang])}` : (PREVIEW && !r ? ` · <span class="todo">consented case</span>` : '')}</figcaption>
   </figure>`;
 }
-function resultsItems() {
-  if (cfg.results.length) return cfg.results;
-  problems.add('missing data: results (before/after with signed consent)');
+
+function resultsItems(b = null) {
+  const list = b ? bResults(b) : RESULTS;
+  if (list.length) return list;
+  problems.add(`missing data: results${b ? ` (${b.slug})` : ''} (before/after with signed consent)`);
   return PREVIEW ? [null, null, null, null] : [];
 }
 
@@ -481,7 +556,7 @@ function carousel(lang, items, cls = '') {
 
 function serviceCard(lang, s, i) {
   const c = svc(s, lang);
-  const img = s.image ? `<img src="${asset('img/' + s.image)}" alt="" loading="lazy" width="800" height="600">` : phImg('service', i, '');
+  const img = s.image ? `<img src="${imgSrc(s.image)}" alt="" loading="lazy" width="800" height="600">` : phImg('service', i, '');
   return `<article class="scard"><a class="scard__link" href="${href(lang, `services/${s.slug}/`)}">
     <div class="scard__img">${img}</div>
     <div class="scard__body"><h3>${svcName(s, lang, i)}</h3><p>${h(c.short, 'two-line description', `services[${i}].content.${lang}.short`)}</p><span class="more"><span>${esc(I[lang].nav.learnMore)}</span>${icon('arrow', 'i-flip')}</span></div>
@@ -520,23 +595,107 @@ function timeline(lang, hx = 'h3') {
   return `<ol class="timeline">${I[lang].journeySteps.map((s, i) => `<li class="timeline__step"><span class="timeline__n" aria-hidden="true">${i + 1}</span><div><${hx} class="timeline__h">${esc(s.t)}</${hx}><p>${esc(s.d)}</p></div></li>`).join('')}</ol>`;
 }
 
-function doctorsData() {
-  if (cfg.doctors.length) return cfg.doctors;
-  problems.add('missing data: doctors');
+function doctorsData(b = null) {
+  const list = b ? bDoctors(b) : DOCTORS;
+  if (list.length) return list;
+  problems.add(`missing data: doctors${b ? ` (${b.slug})` : ''}`);
   return [];
 }
-function doctorCard(lang, d, lead = false, hx = 'h3') {
-  const L = I[lang].home.doctors; const P = I[lang].pages.doctors;
+
+function doctorCard(lang, d, lead = false, hx = 'h3', showBranch = true) {
   if (!d) {
     return `<article class="dcard${lead ? ' dcard--lead' : ''}"><div class="dcard__img">${phImg('doctor', 0, '')}</div><div class="dcard__body"><${hx}>${todo('Doctor name', 'doctors')}</${hx}><p class="dcard__title">${todo('Title / specialty', 'doctors')}</p>${lead ? `<p>${todo('years of experience · credentials', 'doctors')}</p>` : ''}</div></article>`;
   }
-  const c = d.content?.[lang] ?? {};
-  return `<article class="dcard${lead ? ' dcard--lead' : ''}"><a class="dcard__link" href="${href(lang, `doctors/${d.slug}/`)}">
-    <div class="dcard__img"><img src="${asset('img/' + d.photo)}" alt="${esc(d.name)}" loading="lazy" width="600" height="750"></div>
-    <div class="dcard__body"><${hx}>${esc(d.name)}</${hx}><p class="dcard__title">${h(c.title, 'title', `doctors.${d.slug}.${lang}.title`)}</p>
+  const c = d.content?.[lang] ?? {}; const b = branchBy(d.branch);
+  if (!b) problems.add(`invalid data: doctors/${d.slug}.branch`);
+  return `<article class="dcard${lead ? ' dcard--lead' : ''}"><a class="dcard__link" href="${href(lang, `${d.branch}/doctors/${d.slug}/`)}">
+    <div class="dcard__img"><img src="${imgSrc(d.photo)}" alt="${esc(d.name)}" loading="lazy" width="600" height="750"></div>
+    <div class="dcard__body">${showBranch && b ? `<p class="dcard__branch">${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</p>` : ''}<${hx}>${esc(d.name)}</${hx}><p class="dcard__title">${h(c.title, 'title', `doctors/${d.slug}.${lang}.title`)}</p>
+    ${c.short ? `<p class="dcard__short">${esc(c.short)}</p>` : ''}
     ${lead && d.yearsExperience ? `<p class="dcard__meta">${esc(fmtT(I[lang].doctor.years, { n: d.yearsExperience }))}</p>` : ''}
     <span class="more"><span>${esc(I[lang].doctor.viewProfile)}</span>${icon('arrow', 'i-flip')}</span></div>
   </a></article>`;
+}
+
+// "Our clinics" section on the home page, right after the welcome.
+function clinicsSection(lang) {
+  const L = I[lang]; const B = L.branch;
+  return `<section class="sec sec--clinics" aria-labelledby="clinics-title"><div class="wrap">
+  ${sectionHead(B.label, B.h2a, B.h2b, { id: 'clinics-title', sub: B.sub, center: true })}
+  <div class="bchoose">${BRANCHES.map((b, n) => {
+    const docs = bDoctors(b).length;
+    const photo = b.heroPhoto ? `<img src="${imgSrc(b.heroPhoto)}" alt="" loading="lazy" width="800" height="500">` : phImg('service', n + 1, '');
+    return `<article class="bcard" data-branch-card="${b.slug}">
+      <a class="bcard__link" href="${href(lang, `${b.slug}/`)}" data-branch-link="${b.slug}">
+        <div class="bcard__img">${photo}<span class="bcard__flag" aria-hidden="true">${FLAG[b.countryCode] ?? ''}</span><span class="bcard__badge" data-badge hidden></span></div>
+        <div class="bcard__body">
+          <h3>${esc(bCountry(b, lang))}</h3>
+          <p class="bcard__city">${bCity(b, lang) ? esc(bCity(b, lang)) : todo('city', `branches/${b.slug}.city`)}</p>
+          <ul class="bcard__facts">${docs ? `<li>${icon('doctor')}${esc(fmtT(B.doctorsN, { n: docs }))}</li>` : ''}${b.stats?.googleRating ? `<li>★ ${esc(b.stats.googleRating)} Google</li>` : ''}</ul>
+          <span class="btn btn--primary btn--sm"><span>${esc(fmtT(B.explore, { country: bCountry(b, lang) }))}</span>${icon('arrow', 'i-flip')}</span>
+        </div>
+      </a>
+    </article>`;
+  }).join('')}</div>
+</div></section>`;
+}
+
+// Branch page: the branch's doctors and results, reviews, video consultation and how to find the clinic.
+function branchPage(lang, b) {
+  const L = I[lang]; const B = L.branch; const H = L.home; const P = L.pages.contact;
+  const country = bCountry(b, lang);
+  const f = (t) => fmtT(t, { country });
+  const bc = breadcrumbs(lang, [{ name: L.nav.clinics }, { name: country }]);
+  const docs = doctorsData(b);
+  const lead = docs.find((d) => d.lead) ?? docs[0];
+  const results = resultsItems(b);
+  const other = BRANCHES.filter((x) => x !== b);
+  const photo = b.heroPhoto ? `<img src="${imgSrc(b.heroPhoto)}" alt="${esc(`${L.meta.siteName} – ${country}`)}" width="1200" height="800" fetchpriority="high">` : phImg('service', b.order, '');
+  if (!b.bookingUrl) problems.add(`missing data: branches/${b.slug}.bookingUrl (video consultation)`);
+  const trust = trustItems(lang, true, b);
+  const row = (ico, title, content) => `<li class="ccard"><span class="icard__ico">${icon(ico)}</span><div><h3 class="h3">${esc(title)}</h3>${content}</div></li>`;
+  const body = `
+<section class="phero phero--branch">${raysSvg('phero__rays')}<div class="wrap split">
+  <div>${bc.html}<p class="eyebrow">${starMark('eyebrow__star')}<span>${esc(f(B.eyebrow))}</span></p>
+    <h1 id="page-title" class="duo"><span class="duo__a">${esc(B.h1a)}</span> <span class="duo__b">${FLAG[b.countryCode] ?? ''} ${esc(f(B.h1b))}</span></h1>
+    <p class="phero__sub">${esc(f(B.pageSub))}</p>
+    ${b.story?.[lang] ? `<p>${esc(b.story[lang])}</p>` : ''}
+    ${ctaRow(lang, `${L.meta.siteName} ${country}`, false, b)}
+    ${trust.length ? `<ul class="hero__trust">${trust.map((t) => `<li>${t}</li>`).join('')}</ul>` : ''}
+    ${other.map((o) => `<p class="bswitch">${linkMore(fmtT(B.switchTo, { country: bCountry(o, lang) }), href(lang, `${o.slug}/`))}</p>`).join('')}
+  </div>
+  <div class="phero__img">${photo}</div>
+</div></section>
+<section class="sec sec--grey" aria-labelledby="bdoc-title"><div class="wrap">
+  ${sectionHead(H.doctors.label, B.docH2a, f(B.docH2b), { id: 'bdoc-title' })}
+  ${docs.length ? `<div class="doc-grid">${[lead, ...docs.filter((d) => d !== lead)].map((d) => doctorCard(lang, d, d === lead, 'h3', false)).join('')}</div>` : (PREVIEW ? `<div class="doc-grid">${[null, null, null].map((d) => doctorCard(lang, d)).join('')}</div>` : `<p class="empty">${esc(B.emptyDoctors)}</p>`)}
+</div></section>
+<section class="sec" aria-labelledby="bres-title"><div class="wrap">
+  ${sectionHead(H.results.label, B.resH2a, f(B.resH2b), { id: 'bres-title', sub: H.results.sub })}
+  ${results.length ? `<div class="ba-grid">${results.map((r, i) => compareCard(lang, r, i, false)).join('')}</div>` : `<p class="empty">${esc(B.emptyResults)}</p>`}
+</div></section>
+<section class="sec sec--grey" aria-labelledby="brev-title"><div class="wrap">
+  ${sectionHead(H.testimonials.label, B.revH2a, f(B.revH2b), { id: 'brev-title', sub: H.testimonials.sub })}
+  ${reviews(lang, b)}
+</div></section>
+<section class="sec" aria-labelledby="bvisit-title"><div class="wrap split">
+  <div>${sectionHead(P.h1a, B.visitH2a, B.visitH2b, { id: 'bvisit-title' })}
+    <ul class="contact-list">
+      ${row('pin', P.address, `<p>${address(lang, b)}</p>${b.mapsUrl ? `<p>${linkMore(B.directions, b.mapsUrl)}</p>` : ''}`)}
+      ${row('clock', P.hours, `<p>${b.hours ? b.hours.map((x) => `<span dir="ltr">${esc(x)}</span>`).join('<br>') : todo('opening hours', `branches/${b.slug}.hours`)}</p>`)}
+      ${row('phone', P.phone, `<p>${b.phone ? `<a href="tel:${esc(b.phone.replace(/\s/g, ''))}" dir="ltr" data-ev="phone_click">${esc(b.phone)}</a>` : todo('phone', `branches/${b.slug}.phone`)}</p>`)}
+      ${row('mail', P.email, `<p>${b.email ? `<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>` : todo('email', `branches/${b.slug}.email`)}</p>`)}
+    </ul>
+  </div>
+  <div>
+    <div class="book"><span class="icard__ico">${icon('video')}</span><h3 class="h3">${esc(B.bookH)}</h3><p>${esc(f(B.bookSub))}</p>
+      ${b.bookingUrl ? `<a class="btn btn--primary" href="${esc(b.bookingUrl)}" target="_blank" rel="noopener" data-ev="booking_click">${icon('calendar')}<span>${esc(B.bookCta)}</span></a>` : todo('booking link (Cal.com / Calendly)', `branches/${b.slug}.bookingUrl`)}
+      ${waBtn(lang, L.hero.cta2, `${L.meta.siteName} ${country}`, 'outline', 'whatsapp_click', b)}</div>
+    <div class="map">${b.mapEmbedUrl ? `<div class="embed embed--map" data-embed="${esc(b.mapEmbedUrl)}" data-consent="none"><p>${esc(P.mapConsent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('pin')}<span>${esc(P.mapLoad)}</span></button></div>` : `<div class="embed embed--map">${todo('Google Maps embed', `branches/${b.slug}.mapEmbedUrl`)}</div>`}</div>
+  </div>
+</div></section>`;
+  const [t, d] = B.meta;
+  return layout({ lang, key: 'branch', p: `${b.slug}/`, pageName: `${L.meta.siteName} ${country}`, title: f(t), desc: f(d), body, ld: [bc.ld, orgLd(lang), branchLd(lang, b)], branch: b });
 }
 
 function homePage(lang) {
@@ -550,6 +709,7 @@ function homePage(lang) {
   const afterIcons = ['camera', 'video', 'file', 'wa'];
   const body = `
 ${hero(lang)}
+${clinicsSection(lang)}
 ${results.length ? `<section class="sec" aria-labelledby="res-title"><div class="wrap">
   ${sectionHead(H.results.label, H.results.h2a, H.results.h2b, { id: 'res-title', sub: H.results.sub })}
   ${carousel(lang, results.slice(0, 8).map((r, i) => compareCard(lang, r, i)), 'carousel--ba')}
@@ -605,26 +765,31 @@ ${results.length ? `<section class="sec" aria-labelledby="res-title"><div class=
   return layout({
     lang, key: 'home', p: '', pageName: 'Home', heroPreload: true,
     title: fmtT(L.meta.homeTitle, { city: city(lang) }), desc: fmtT(L.meta.homeDesc, { city: city(lang) }),
-    body, ld: [clinicLd(lang), faqLd(L.faq.slice(0, 8)), { '@context': 'https://schema.org', '@type': 'WebSite', name: L.meta.siteName, url: absUrl(href(lang)), inLanguage: lang }],
+    body, ld: [orgLd(lang), ...BRANCHES.map((b) => branchLd(lang, b)), faqLd(L.faq.slice(0, 8)), { '@context': 'https://schema.org', '@type': 'WebSite', name: L.meta.siteName, url: absUrl(href(lang)), inLanguage: lang }],
   });
 }
 
 function accreditations(lang) {
-  if (cfg.accreditations.length) return `<ul class="logos">${cfg.accreditations.map((a) => `<li><img src="${asset('img/' + a.logo)}" alt="${esc(a.name)}" loading="lazy" height="56"></li>`).join('')}</ul>`;
+  if (cfg.accreditations.length) return `<ul class="logos">${cfg.accreditations.map((a) => `<li><img src="${imgSrc(a.logo)}" alt="${esc(a.name)}" loading="lazy" height="56"></li>`).join('')}</ul>`;
   problems.add('missing data: accreditations (only ones officially held)');
   return PREVIEW ? `<p class="logos">${todo('Licence / accreditation logos (only if officially held)', 'accreditations')}</p>` : '';
 }
 
-function reviews(lang) {
+function reviews(lang, b = null) {
   const T = I[lang].home.testimonials;
-  const vids = cfg.videoTestimonials;
-  if (!cfg.reviewsWidget) problems.add('missing data: reviewsWidget (Google Reviews / Trustpilot embed)');
-  const widget = cfg.reviewsWidget
-    ? `<div class="embed" data-embed="${esc(cfg.reviewsWidget)}" data-consent="marketing"><p>${esc(T.consent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${esc(T.load)}</button></div>`
-    : (PREVIEW ? `<div class="embed">${todo('Google Reviews / Trustpilot widget', 'reviewsWidget')}</div>` : '');
-  const google = C.googleBusinessUrl ? `<div class="sec__cta">${linkMore(T.cta, C.googleBusinessUrl)}</div>` : '';
+  const list = b ? [b] : BRANCHES;
+  const vids = cfg.videoTestimonials.filter((v) => !b || v.branch === b.slug);
+  const widgets = list.map((x) => {
+    if (!x.reviewsWidget) problems.add(`missing data: branches/${x.slug}.reviewsWidget (Google reviews embed)`);
+    const head = b ? '' : `<h3 class="rev__h">${FLAG[x.countryCode] ?? ''} ${esc(bCountry(x, lang))}${x.stats?.googleRating ? ` · ★ ${esc(x.stats.googleRating)}` : ''}</h3>`;
+    const w = x.reviewsWidget
+      ? `<div class="embed" data-embed="${esc(x.reviewsWidget)}" data-consent="marketing"><p>${esc(T.consent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${esc(T.load)}</button></div>`
+      : (PREVIEW ? `<div class="embed">${todo('Google reviews widget', `branches/${x.slug}.reviewsWidget`)}</div>` : '');
+    const g = x.googleBusinessUrl ? `<div class="sec__cta">${linkMore(T.cta, x.googleBusinessUrl)}</div>` : '';
+    return `<div class="rev">${head}${w}${g}</div>`;
+  }).join('');
   const v = vids.length ? `<ul class="vids">${vids.map((x) => `<li class="embed embed--video" data-embed="${esc(x.embed)}" data-consent="marketing"><p>${esc(x.title?.[lang] ?? '')}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('video')}<span>${esc(T.load)}</span></button></li>`).join('')}</ul>` : '';
-  return widget + v + google;
+  return `<div class="rev-grid${list.length > 1 ? ' rev-grid--2' : ''}">${widgets}</div>${v}`;
 }
 
 // ---------- inner pages ----------
@@ -649,12 +814,12 @@ function servicePage(lang, s, i) {
 <section class="phero phero--svc">${raysSvg('phero__rays')}<div class="wrap split">
   <div>${bc.html}<p class="label">${esc(L.nav.services)}</p><h1 id="page-title" class="duo"><span class="duo__a">${svcName(s, lang, i)}</span></h1>
   <p class="phero__sub">${h(c.intro, 'one-paragraph intro', key('intro'))}</p>${ctaRow(lang, nameT)}</div>
-  <div class="phero__img">${s.image ? `<img src="${asset('img/' + s.image)}" alt="" width="800" height="600" fetchpriority="high">` : phImg('service', i, '')}</div>
+  <div class="phero__img">${s.image ? `<img src="${imgSrc(s.image)}" alt="" width="800" height="600" fetchpriority="high">` : phImg('service', i, '')}</div>
 </div></section>
 <section class="sec"><div class="wrap split">
   <div><h2 class="h2">${esc(S.whoFor)}</h2>${listOrTodo(c.whoFor, 'candidate profiles', 'whoFor', (a) => `<ul class="checks">${a.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>`)}</div>
   <div class="panel"><h2 class="h3">${esc(S.stay)}</h2><p>${h(c.stay, 'usual length of stay', key('stay'))}</p><h2 class="h3">${esc(S.price)}</h2>
-    <p class="price">${s.priceFrom ? `<small>${esc(S.from)}</small> ${esc(money(lang, s.priceFrom))}` : todo('starting price', `services[${i}].priceFrom`)}</p><p class="note">${esc(S.priceNote)}</p></div>
+    <p class="price">${s.priceFrom ? `<small>${esc(S.from)}</small> ${moneyH(lang, s.priceFrom)}` : todo('starting price', `services[${i}].priceFrom`)}</p><p class="note">${esc(S.priceNote)}</p></div>
 </div></section>
 <section class="sec sec--grey"><div class="wrap"><h2 class="h2">${esc(S.procedure)}</h2>
   ${c.steps?.length ? `<ol class="timeline timeline--row">${c.steps.map((st, n) => `<li class="timeline__step"><span class="timeline__n" aria-hidden="true">${n + 1}</span><div><h3>${esc(st.t)}</h3><p>${esc(st.d)}</p></div></li>`).join('')}</ol>` : `<p>${todo('procedure steps (medically reviewed)', key('steps'))}</p>`}
@@ -687,43 +852,52 @@ function techniquesPage(lang) {
 <section class="sec sec--grey"><div class="wrap"><h2 class="h2">${esc(T.clinicH)}</h2>${cfg.techniquesConfirmed ? '' : (PREVIEW ? `<p>${todo('Medical team to confirm these standards', 'techniquesConfirmed')}</p>` : '')}
   <ul class="cards cards--4">${T.clinic.map((it, i) => `<li class="icard"><span class="icard__ico">${icon(clinicIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul></div></section>
 <section class="sec"><div class="wrap narrow"><h2 class="h2">${esc(T.timelineH)}</h2><ol class="timeline">${T.timeline.map((s, i) => `<li class="timeline__step"><span class="timeline__n" aria-hidden="true">${i + 1}</span><div><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div></li>`).join('')}</ol><p class="note">${esc(T.note)}</p></div></section>`;
-  return layout({ lang, key: 'fue-dhi', p: 'fue-dhi/', pageName: T.nav, title: fmtT(T.metaTitle, { city: city(lang) }), desc: T.metaDesc, body, ld: [bc.ld, { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: T.metaTitle.replace(/\{city\}/, C.city ?? ''), about: [{ '@type': 'MedicalProcedure', name: `${T.fue.name} (${T.fue.full})`, description: T.fue.d }, { '@type': 'MedicalProcedure', name: `${T.dhi.name} (${T.dhi.full})`, description: T.dhi.d }], inLanguage: lang }] });
+  return layout({ lang, key: 'fue-dhi', p: 'fue-dhi/', pageName: T.nav, title: fmtT(T.metaTitle, { city: city(lang) }), desc: T.metaDesc, body, ld: [bc.ld, { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: fmtT(T.metaTitle, { city: city(lang) }), about: [{ '@type': 'MedicalProcedure', name: `${T.fue.name} (${T.fue.full})`, description: T.fue.d }, { '@type': 'MedicalProcedure', name: `${T.dhi.name} (${T.dhi.full})`, description: T.dhi.d }], inLanguage: lang }] });
 }
 
 function resultsPage(lang) {
   const L = I[lang]; const P = L.pages.results;
   const ph = pageHero(lang, 'results', [{ name: L.nav.results }]);
   const items = resultsItems();
-  const filters = `<div class="filters" role="group" aria-label="${esc(L.nav.services)}" data-filters><button type="button" class="chip" aria-pressed="true" data-filter="all">${esc(P.all)}</button>${cfg.services.map((s, i) => `<button type="button" class="chip" aria-pressed="false" data-filter="${s.slug}">${svcName(s, lang, i)}</button>`).join('')}</div>`;
+  const chip = (k, v, label, on) => `<button type="button" class="chip" aria-pressed="${on}" data-filter-key="${k}" data-filter="${v}">${label}</button>`;
+  const filters = `<div class="filters" role="group" aria-label="${esc(L.nav.clinics)}" data-filters>${chip('branch', 'all', esc(P.all), true)}${BRANCHES.map((b) => chip('branch', b.slug, `${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}`, false)).join('')}</div>
+  <div class="filters" role="group" aria-label="${esc(L.nav.services)}" data-filters>${chip('service', 'all', esc(P.all), true)}${cfg.services.map((s, i) => chip('service', s.slug, svcName(s, lang, i), false)).join('')}</div>`;
   const body = `${ph.html}<section class="sec"><div class="wrap">${items.length ? `${filters}<div class="ba-grid" data-filter-grid>${items.map((r, i) => compareCard(lang, r, i)).join('')}</div>` : `<p class="empty">${esc(P.empty)}</p>`}</div></section>`;
   const [t, d] = L.meta.pages.results;
   return layout({ lang, key: 'results', p: 'results/', pageName: 'Results', title: t, desc: d, body, ld: [ph.ld] });
 }
 
 function doctorsPage(lang) {
-  const L = I[lang]; const P = L.pages.doctors;
+  const L = I[lang]; const P = L.pages.doctors; const B = L.branch;
   const ph = pageHero(lang, 'doctors', [{ name: L.nav.doctors }]);
-  const docs = doctorsData();
-  const grid = docs.length ? docs.map((d) => doctorCard(lang, d, false, 'h2')).join('') : (PREVIEW ? [null, null, null, null].map((d) => doctorCard(lang, d, false, 'h2')).join('') : '');
-  const body = `${ph.html}<section class="sec"><div class="wrap">${grid ? `<div class="doc-grid">${grid}</div>` : `<p class="empty">${esc(P.empty)}</p>`}</div></section>`;
+  const sections = BRANCHES.map((b, n) => {
+    const docs = bDoctors(b);
+    const grid = docs.length ? docs.map((d) => doctorCard(lang, d, false, 'h3', false)).join('') : (PREVIEW ? [null, null, null].map((d) => doctorCard(lang, d, false, 'h3')).join('') : '');
+    return `<section class="sec${n % 2 ? ' sec--grey' : ''}" id="${b.slug}" aria-labelledby="doc-${b.slug}"><div class="wrap">
+      <h2 class="h2" id="doc-${b.slug}">${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</h2>
+      ${grid ? `<div class="doc-grid">${grid}</div>` : `<p class="empty">${esc(B.emptyDoctors)}</p>`}
+      <div class="sec__cta">${linkMore(fmtT(B.explore, { country: bCountry(b, lang) }), href(lang, `${b.slug}/`))}</div></div></section>`;
+  }).join('');
+  if (!DOCTORS.length) problems.add('missing data: doctors');
   const [t, d] = L.meta.pages.doctors;
-  return layout({ lang, key: 'doctors', p: 'doctors/', pageName: 'Doctors', title: t, desc: d, body, ld: [ph.ld] });
+  return layout({ lang, key: 'doctors', p: 'doctors/', pageName: 'Doctors', title: t, desc: d, body: ph.html + sections, ld: [ph.ld] });
 }
 
 function doctorProfile(lang, d) {
-  const L = I[lang]; const D = L.doctor; const c = d.content?.[lang] ?? {};
-  const bc = breadcrumbs(lang, [{ name: L.nav.doctors, url: href(lang, 'doctors/') }, { name: d.name }]);
-  const sec = (title, arr, f) => `<div class="cv__block"><h2 class="h3">${esc(title)}</h2>${arr?.length ? `<ul class="checks">${arr.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : `<p>${todo(f, `doctors.${d.slug}.${lang}.${f}`)}</p>`}</div>`;
+  const L = I[lang]; const D = L.doctor; const c = d.content?.[lang] ?? {}; const b = branchBy(d.branch);
+  const bc = breadcrumbs(lang, [{ name: L.nav.doctors, url: href(lang, 'doctors/') }, { name: bCountry(b, lang), url: href(lang, `${b.slug}/`) }, { name: d.name }]);
+  const sec = (title, arr, f) => `<div class="cv__block"><h2 class="h3">${esc(title)}</h2>${arr?.length ? `<ul class="checks">${arr.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : `<p>${todo(f, `doctors/${d.slug}.${lang}.${f}`)}</p>`}</div>`;
   const body = `<section class="phero"><div class="wrap split">
-    <div>${bc.html}<h1 id="page-title" class="duo"><span class="duo__a">${esc(d.name)}</span> <span class="duo__b">${h(c.title, 'title', `doctors.${d.slug}.${lang}.title`)}</span></h1>
-      ${d.yearsExperience ? `<p class="phero__sub">${esc(fmtT(D.years, { n: d.yearsExperience }))}</p>` : ''}<p>${h(c.bio, 'bio', `doctors.${d.slug}.${lang}.bio`)}</p></div>
-    <div class="phero__img phero__img--portrait"><img src="${asset('img/' + d.photo)}" alt="${esc(d.name)}" width="600" height="750"></div>
+    <div>${bc.html}<p class="eyebrow">${starMark('eyebrow__star')}<span>${esc(fmtT(L.branch.eyebrow, { country: bCountry(b, lang) }))}</span></p><h1 id="page-title" class="duo"><span class="duo__a">${esc(d.name)}</span> <span class="duo__b">${h(c.title, 'title', `doctors/${d.slug}.${lang}.title`)}</span></h1>
+      ${d.yearsExperience ? `<p class="phero__sub">${esc(fmtT(D.years, { n: d.yearsExperience }))}</p>` : ''}<p>${h(c.bio, 'bio', `doctors/${d.slug}.${lang}.bio`)}</p>
+      ${d.licence ? `<p class="note">${esc(d.licence)}</p>` : ''}${ctaRow(lang, d.name, false, b)}</div>
+    <div class="phero__img phero__img--portrait"><img src="${imgSrc(d.photo)}" alt="${esc(d.name)}" width="600" height="750"></div>
   </div></section>
   <section class="sec"><div class="wrap cv">${sec(D.education, c.education, 'education')}${sec(D.experience, c.experience, 'experience')}${sec(D.specialties, c.specialties, 'specialties')}${sec(D.credentials, c.credentials, 'credentials')}
     <div class="cv__block"><h2 class="h3">${esc(D.languages)}</h2><p>${esc((d.languages ?? []).map((x) => L.langNames[x] ?? x).join(', '))}</p></div></div>
-    <div class="wrap sec__cta">${linkMore(L.pages.doctors.back, href(lang, 'doctors/'))}</div></section>`;
-  const ld = [bc.ld, { '@context': 'https://schema.org', '@type': 'Physician', name: d.name, image: absUrl(asset('img/' + d.photo)), description: c.bio, medicalSpecialty: c.specialties, knowsLanguage: d.languages, worksFor: { '@id': absUrl(`${BASE}/#clinic`) }, url: absUrl(href(lang, `doctors/${d.slug}/`)) }];
-  return layout({ lang, key: 'doctor', p: `doctors/${d.slug}/`, pageName: d.name, title: `${d.name} – ${c.title ?? ''} | Elite+`, desc: (c.bio ?? '').slice(0, 155), body, ld });
+    <div class="wrap sec__cta">${linkMore(fmtT(L.branch.explore, { country: bCountry(b, lang) }), href(lang, `${b.slug}/`))}</div></section>`;
+  const ld = [bc.ld, { '@context': 'https://schema.org', '@type': 'Physician', name: d.name, image: absUrl(imgSrc(d.photo)), description: c.bio, medicalSpecialty: c.specialties, knowsLanguage: d.languages, worksFor: { '@id': branchId(b) }, url: absUrl(href(lang, `${b.slug}/doctors/${d.slug}/`)) }];
+  return layout({ lang, key: 'doctor', p: `${b.slug}/doctors/${d.slug}/`, pageName: d.name, title: `${d.name} – ${c.title ?? ''} | Elite+ ${bCountry(b, lang)}`, desc: (c.bio ?? '').slice(0, 155), body, ld, branch: b });
 }
 
 function aboutPage(lang) {
@@ -731,11 +905,11 @@ function aboutPage(lang) {
   const ph = pageHero(lang, 'about', [{ name: L.nav.about }]);
   const techIcons = ['shield', 'check', 'file', 'tech'];
   const body = `${ph.html}
-<section class="sec"><div class="wrap split"><div><h2 class="h2">${esc(P.storyH)}</h2>${cfg.about.story[lang] ? cfg.about.story[lang].split(/\n\s*\n/).map((x) => `<p>${esc(x)}</p>`).join('') : `<p>${todo('Clinic story: founding year, team, facility (real facts only)', `about.story.${lang}`)}</p>`}</div><div class="phero__img">${phImg('service', 2, '')}</div></div></section>
+<section class="sec"><div class="wrap split"><div><h2 class="h2">${esc(P.storyH)}</h2>${cfg.about.story[lang] ? cfg.about.story[lang].split(/\n\s*\n/).map((x) => `<p>${esc(x)}</p>`).join('') : `<p>${todo('Clinic story: founding year, team, facility (real facts only)', `company.story.${lang}`)}</p>`}</div><div class="phero__img">${phImg('service', 2, '')}</div></div></section>
 <section class="sec sec--grey"><div class="wrap">${sectionHead(H.tech.label, H.tech.h2a, H.tech.h2b, { sub: H.tech.sub })}
   <ul class="cards cards--4">${H.tech.items.map((it, i) => `<li class="icard icard--flat"><span class="icard__ico">${icon(techIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul>
-  ${Array.isArray(cfg.about.equipment[lang]) && cfg.about.equipment[lang].length ? `<ul class="checks" style="margin-top:28px">${cfg.about.equipment[lang].map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : `<p>${todo('Equipment list (devices actually in use)', `about.equipment.${lang}`)}</p>`}</div></section>
-<section class="sec"><div class="wrap"><h2 class="h2">${esc(P.accredH)}</h2>${accreditations(lang)}<p>${esc(L.footer.licence)} ${h(C.licenceNumber, 'licence number', 'clinic.licenceNumber')}</p></div></section>`;
+  ${Array.isArray(cfg.about.equipment[lang]) && cfg.about.equipment[lang].length ? `<ul class="checks" style="margin-top:28px">${cfg.about.equipment[lang].map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : `<p>${todo('Equipment list (devices actually in use)', `company.equipment.${lang}`)}</p>`}</div></section>
+<section class="sec"><div class="wrap"><h2 class="h2">${esc(P.accredH)}</h2>${accreditations(lang)}<ul class="checks">${BRANCHES.map((b) => `<li>${icon('shield', 'checks__ico')}<span>${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))} · ${esc(L.footer.licence)} ${h(b.licenceNumber, 'licence number', `branches/${b.slug}.licenceNumber`)}</span></li>`).join('')}</ul></div></section>`;
   const [t, d] = L.meta.pages.about;
   return layout({ lang, key: 'about', p: 'about/', pageName: 'About', title: t, desc: d, body, ld: [ph.ld] });
 }
@@ -745,7 +919,7 @@ function pricesPage(lang) {
   const ph = pageHero(lang, 'prices', [{ name: L.nav.prices }]);
   const [t, d] = L.meta.pages.prices;
   const body = `${ph.html}
-<section class="sec"><div class="wrap"><div class="price-grid">${cfg.services.map((s, i) => `<article class="pcard"><h2 class="h3">${svcName(s, lang, i)}</h2><p class="price">${s.priceFrom ? `<small>${esc(P.from)}</small> ${esc(money(lang, s.priceFrom))}` : todo('starting price', `services[${i}].priceFrom`)}</p><p>${h(svc(s, lang).stay, 'usual stay', `services[${i}].content.${lang}.stay`)}</p>${linkMore(L.nav.learnMore, href(lang, `services/${s.slug}/`))}</article>`).join('')}</div>
+<section class="sec"><div class="wrap"><div class="price-grid">${cfg.services.map((s, i) => `<article class="pcard"><h2 class="h3">${svcName(s, lang, i)}</h2><p class="price">${s.priceFrom ? `<small>${esc(P.from)}</small> ${moneyH(lang, s.priceFrom)}` : todo('starting price', `services[${i}].priceFrom`)}</p><p>${h(svc(s, lang).stay, 'usual stay', `services[${i}].content.${lang}.stay`)}</p>${linkMore(L.nav.learnMore, href(lang, `services/${s.slug}/`))}</article>`).join('')}</div>
 <p class="note">${esc(L.service.priceNote)}</p></div></section>
 <section class="sec sec--grey"><div class="wrap split"><div><h2 class="h2">${esc(P.includedH)}</h2><h3 class="h3">${esc(P.howH)}</h3><p>${esc(P.how)}</p></div><div class="panel">${includedList(lang)}</div></div></section>`;
   return layout({ lang, key: 'prices', p: 'prices/', pageName: 'Prices', title: fmtT(t, { year: String(YEAR) }), desc: d, body, ld: [ph.ld] });
@@ -777,25 +951,27 @@ function faqPage(lang) {
 }
 
 function contactPage(lang) {
-  const L = I[lang]; const P = L.pages.contact;
+  const L = I[lang]; const P = L.pages.contact; const B = L.branch;
   const ph = pageHero(lang, 'contact', [{ name: L.nav.contact }]);
   const [t, d] = L.meta.pages.contact;
-  const row = (ico, title, content) => `<li class="ccard"><span class="icard__ico">${icon(ico)}</span><div><h2 class="h3">${esc(title)}</h2>${content}</div></li>`;
   const body = `${ph.html}
-<section class="sec"><div class="wrap split">
-  <ul class="contact-list">
-    ${row('wa', P.whatsapp, `<p>${waBtn(lang, L.hero.cta2, 'Contact', 'primary')}</p>`)}
-    ${row('phone', P.phone, `<p>${C.phone ? `<a href="tel:${esc(C.phone.replace(/\s/g, ''))}" dir="ltr" data-ev="phone_click">${esc(C.phone)}</a>` : todo('phone', 'clinic.phone')}</p>`)}
-    ${row('mail', P.email, `<p>${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'clinic.email')}</p>`)}
-    ${row('pin', P.address, `<p>${address(lang)}</p>`)}
-    ${row('clock', P.hours, `<p>${C.hours ? C.hours.map((x) => `<span dir="ltr">${esc(x)}</span>`).join('<br>') : todo('opening hours', 'clinic.hours')}</p>`)}
-  </ul>
-  <div class="map">${C.mapEmbedUrl ? `<div class="embed embed--map" data-embed="${esc(C.mapEmbedUrl)}" data-consent="none"><p>${esc(P.mapConsent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('pin')}<span>${esc(P.mapLoad)}</span></button></div>` : `<div class="embed embed--map">${todo('map embed URL + pin', 'clinic.mapEmbedUrl')}</div>`}</div>
+<section class="sec"><div class="wrap">
+  <div class="cbranches">${BRANCHES.map((b) => `<article class="cbranch">
+    <h2 class="h3">${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</h2>
+    <ul class="ftr__contact cbranch__list">
+      <li>${icon('pin')}<span>${address(lang, b)}${b.mapsUrl ? ` · <a href="${esc(b.mapsUrl)}" target="_blank" rel="noopener">${esc(B.directions)}</a>` : ''}</span></li>
+      <li>${icon('clock')}<span>${b.hours ? b.hours.map((x) => `<span dir="ltr">${esc(x)}</span>`).join(', ') : todo('opening hours', `branches/${b.slug}.hours`)}</span></li>
+      <li>${icon('phone')}${b.phone ? `<a href="tel:${esc(b.phone.replace(/\s/g, ''))}" dir="ltr" data-ev="phone_click">${esc(b.phone)}</a>` : todo('phone', `branches/${b.slug}.phone`)}</li>
+      <li>${icon('mail')}${b.email ? `<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>` : todo('email', `branches/${b.slug}.email`)}</li>
+    </ul>
+    <div class="cta-row">${waBtn(lang, L.hero.cta2, `Contact ${bCountry(b, lang)}`, 'primary', 'whatsapp_click', b)}${linkMore(fmtT(B.explore, { country: bCountry(b, lang) }), href(lang, `${b.slug}/`))}</div>
+    <div class="map">${b.mapEmbedUrl ? `<div class="embed embed--map" data-embed="${esc(b.mapEmbedUrl)}" data-consent="none"><p>${esc(P.mapConsent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('pin')}<span>${esc(P.mapLoad)}</span></button></div>` : `<div class="embed embed--map">${todo('Google Maps embed', `branches/${b.slug}.mapEmbedUrl`)}</div>`}</div>
+  </article>`).join('')}</div>
+  <div class="csocial"><p>${icon('mail')} ${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'company.email')}</p>${socialList(lang)}</div>
 </div></section>`;
-  return layout({ lang, key: 'contact', p: 'contact/', pageName: 'Contact', title: t, desc: d, body, ld: [ph.ld, clinicLd(lang)] });
+  return layout({ lang, key: 'contact', p: 'contact/', pageName: 'Contact', title: t, desc: d, body, ld: [ph.ld, orgLd(lang), ...BRANCHES.map((b) => branchLd(lang, b))] });
 }
 
-// Minimal markdown for staff-edited legal text: "## heading", "- item", blank-line paragraphs. Everything is escaped.
 function mdLite(src) {
   return src.trim().split(/\n\s*\n/).map((b) => {
     if (/^##\s/.test(b)) return `<h2 class="h3">${esc(b.replace(/^##\s*/, ''))}</h2>`;
@@ -811,13 +987,16 @@ function legalPage(lang, key) {
   let content;
   if (key === 'impressum') {
     const Im = L.legal.impressum;
-    const rows = [[Im.company, h(C.legalName, 'legal company name', 'clinic.legalName')], [Im.address, address(lang)], [Im.representative, h(C.representative, 'representative', 'clinic.representative')], [Im.registry, h(C.tradeRegistryNo, 'trade registry no.', 'clinic.tradeRegistryNo')], [Im.tax, h(C.taxId, 'tax ID', 'clinic.taxId')], [Im.licence, h(C.licenceNumber, 'licence number', 'clinic.licenceNumber')], [Im.contact, `${C.phone ? `<span dir="ltr">${esc(C.phone)}</span>` : todo('phone', 'clinic.phone')} · ${C.email ? esc(C.email) : todo('email', 'clinic.email')}`]];
-    content = `<dl class="dl">${rows.map(([a, b]) => `<dt>${esc(a)}</dt><dd>${b}</dd>`).join('')}</dl>`;
+    content = BRANCHES.map((b) => {
+      const e = CO.entities?.[b.slug] ?? {}; const k = (f) => `company.entities.${b.slug}.${f}`;
+      const rows = [[Im.company, h(e.legalName, 'legal company name', k('legalName'))], [Im.address, h(e.registeredAddress, 'registered address', k('registeredAddress'))], [Im.representative, h(e.representative, 'representative', k('representative'))], [Im.registry, h(e.tradeRegistryNo, 'trade registry no.', k('tradeRegistryNo'))], [Im.tax, h(e.taxId, 'tax ID', k('taxId'))], [Im.licence, h(b.licenceNumber, 'licence number', `branches/${b.slug}.licenceNumber`)], [Im.contact, `${b.phone ? `<span dir="ltr">${esc(b.phone)}</span>` : todo('phone', `branches/${b.slug}.phone`)} · ${b.email || C.email ? esc(b.email || C.email) : todo('email', 'company.email')}`]];
+      return `<h2 class="h3">${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</h2><dl class="dl">${rows.map(([a, v]) => `<dt>${esc(a)}</dt><dd>${v}</dd>`).join('')}</dl>`;
+    }).join('');
   } else if (cfg.legalText?.[key]?.[lang]) {
     content = mdLite(cfg.legalText[key][lang]);
   } else {
-    problems.add(`missing data: legalText.${key}.${lang} (lawyer-approved)`);
-    content = `<p class="notice">${esc(L.legal.draft)}</p>${L.legal[key].map((s) => `<h2 class="h3">${esc(s)}</h2><p>${todo('lawyer-approved text', `legal.${key}`)}</p>`).join('')}`;
+    problems.add(`missing data: legal.${key}.${lang} (lawyer-approved)`);
+    content = `<p class="notice">${esc(L.legal.draft)}</p>${L.legal[key].map((sct) => `<h2 class="h3">${esc(sct)}</h2><p>${todo('lawyer-approved text', `legal.${key}`)}</p>`).join('')}`;
   }
   const body = `${ph.html}<section class="sec"><div class="wrap narrow prose">${content}</div></section>`;
   return layout({ lang, key, p: `${key}/`, pageName: t, title: t, desc: d, body, ld: [ph.ld], finalCta: false });
@@ -829,13 +1008,18 @@ function assessmentPage(lang) {
   const data = {
     strings: A,
     categories: cfg.serviceCategories.map((c, ci) => ({ id: c, name: L.categories[c].name, short: L.categories[c].short, image: asset(`img/ph-service-${ci + 1}.svg`) })),
-    services: cfg.services.map((s, i) => ({ slug: s.slug, category: s.category, name: svc(s, lang).name ?? `Service ${i + 1}`, image: s.image ? asset('img/' + s.image) : asset(`img/ph-service-${(i % 4) + 1}.svg`), questions: svc(s, lang).questions ?? null })),
+    services: cfg.services.map((s, i) => ({ slug: s.slug, category: s.category, name: svc(s, lang).name ?? `Service ${i + 1}`, image: s.image ? imgSrc(s.image) : asset(`img/ph-service-${(i % 4) + 1}.svg`), questions: svc(s, lang).questions ?? null })),
     countries: COUNTRIES, defaultCountry: { en: 'GB', ar: 'SA', tr: 'TR', de: 'DE', es: 'ES' }[lang],
     endpoints: { lead: cfg.integrations.leadEndpoint, uploadUrl: cfg.integrations.uploadUrlEndpoint },
     turnstileSiteKey: cfg.integrations.turnstileSiteKey,
     responseHours: cfg.promise.responseHours,
     privacyUrl: href(lang, 'privacy/'), kvkkUrl: href(lang, 'kvkk/'),
     wa: C.whatsapp ? `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(fmtT(L.wa.prefill, { page: A.title }))}` : '#todo-whatsapp',
+    branches: BRANCHES.map((b) => ({ slug: b.slug, name: bCountry(b, lang), city: bCity(b, lang), flag: FLAG[b.countryCode] ?? '', wa: b.whatsapp ? `https://wa.me/${b.whatsapp}?text=${encodeURIComponent(fmtT(L.wa.prefill, { page: A.title }))}` : null })),
+    stage: { ...L.stage, male: { label: L.stage.male, images: [1, 2, 3, 4, 5, 6, 7].map((n) => ({ id: `norwood-${n}`, n, src: asset(`img/stages/norwood-${n}.svg`) })) }, female: { label: L.stage.female, images: [1, 2, 3].map((n) => ({ id: `ludwig-${n}`, n, src: asset(`img/stages/ludwig-${n}.svg`) })) } },
+    // Scalp hair-loss stage only makes sense for scalp treatments (not beard, eyebrows, moustache or scars).
+    stageServices: ['hair-transplant', ...cfg.services.filter((sv) => sv.category === 'treatment').map((sv) => sv.slug)],
+    pdplUrl: href(lang, 'pdpl/'),
     locale: LOCALES[lang],
   };
   if (!cfg.integrations.leadEndpoint) problems.add('missing data: integrations.leadEndpoint');
@@ -855,7 +1039,7 @@ function rootPage() {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elite+ Wellness Clinics</title><meta name="robots" content="noindex, follow"><link rel="canonical" href="${absUrl(href(DEF))}">
 ${LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${absUrl(href(l))}">`).join('')}<link rel="alternate" hreflang="x-default" href="${absUrl(href(DEF))}">
-<link rel="icon" href="${asset('img/' + cfg.brand.mark)}" type="image/svg+xml"><link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
+<link rel="icon" href="${imgSrc(cfg.brand.mark)}" type="image/svg+xml"><link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
 <script src="${asset('js/site.js')}?v=${V.js}" defer></script><script type="application/json" id="site-data">${JSON.stringify({ lang: 'root', base: BASE, urls: Object.fromEntries(LANGS.map((l) => [l, href(l)])), langBanner: Object.fromEntries(LANGS.map((l) => [l, I[l].langBanner])), integrations: {} })}</script>
 </head><body class="pg-root"><main class="root-pick"><div>${logo(DEF).replace(href(DEF), href(DEF))}<ul>${LANGS.map((l) => `<li><a class="btn btn--outline" href="${href(l)}" hreflang="${l}" lang="${l}" data-lang-link="${l}">${esc(I[l].lang.name)}</a></li>`).join('')}</ul></div></main></body></html>`;
 }
@@ -884,8 +1068,8 @@ function designSystem() {
 }
 
 // ---------- assemble ----------
-const legalKeys = ['privacy', 'kvkk', 'cookies', 'terms', 'impressum'];
-const sitemapPaths = ['', 'services/', ...cfg.services.map((s) => `services/${s.slug}/`), 'fue-dhi/', 'results/', 'doctors/', ...cfg.doctors.map((d) => `doctors/${d.slug}/`), 'about/', 'prices/', 'journey/', 'assessment/', 'faq/', 'contact/', ...legalKeys.map((k) => k + '/')];
+const legalKeys = ['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'impressum'];
+const sitemapPaths = ['', 'services/', ...cfg.services.map((s) => `services/${s.slug}/`), 'fue-dhi/', ...BRANCHES.map((b) => `${b.slug}/`), 'results/', 'doctors/', ...cfg.doctors.map((d) => `${d.branch}/doctors/${d.slug}/`), 'about/', 'prices/', 'journey/', 'assessment/', 'faq/', 'contact/', ...legalKeys.map((k) => k + '/')];
 
 for (const lang of LANGS) {
   const put = (p, html) => out.set(`${lang}/${p}index.html`, html);
@@ -895,7 +1079,8 @@ for (const lang of LANGS) {
   put('fue-dhi/', techniquesPage(lang));
   put('results/', resultsPage(lang));
   put('doctors/', doctorsPage(lang));
-  cfg.doctors.forEach((d) => put(`doctors/${d.slug}/`, doctorProfile(lang, d)));
+  BRANCHES.forEach((b) => put(`${b.slug}/`, branchPage(lang, b)));
+  cfg.doctors.forEach((d) => put(`${d.branch}/doctors/${d.slug}/`, doctorProfile(lang, d)));
   put('about/', aboutPage(lang));
   put('prices/', pricesPage(lang));
   put('journey/', journeyPage(lang));
@@ -909,6 +1094,14 @@ for (const lang of LANGS) {
   out.set(`sitemap-${lang}.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
 }
 out.set('index.html', rootPage());
+// Coordinator dashboard (static page; data access is enforced by Supabase row-level security).
+if (!cfg.integrations.supabaseUrl || !cfg.integrations.supabaseAnonKey) problems.add('missing data: integrations.supabaseUrl / supabaseAnonKey (coordinator dashboard)');
+out.set('admin/index.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coordinator dashboard – Elite+</title><meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<link rel="icon" href="${imgSrc(cfg.brand.mark)}" type="image/svg+xml"><link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
+<script type="application/json" id="admin-config">${JSON.stringify({ supabaseUrl: cfg.integrations.supabaseUrl, supabaseAnonKey: cfg.integrations.supabaseAnonKey, logo: imgSrc(cfg.brand.logoLight), stageBase: asset('img/stages/') })}</script>
+<script type="module" src="app.js?v=${hash('admin/app.js')}"></script></head>
+<body class="pg-admin"><div id="app"><p style="padding:24px">Loading…</p></div></body></html>`);
 out.set('design-system/index.html', designSystem());
 out.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${LANGS.map((l) => `<sitemap><loc>${absUrl(`${BASE}/sitemap-${l}.xml`)}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 out.set('robots.txt', `# Must be served at the domain root to take effect.\nUser-agent: *\n${PREVIEW ? 'Disallow: /\n' : `Disallow: ${BASE}/design-system/\n`}Sitemap: ${absUrl(`${BASE}/sitemap.xml`)}\n`);

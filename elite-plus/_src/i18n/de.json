@@ -1,5 +1,11 @@
 {
-  "lang": { "name": "Deutsch", "code": "DE", "dir": "ltr", "locale": "de_DE", "og": "de_DE" },
+  "lang": {
+    "name": "Deutsch",
+    "code": "DE",
+    "dir": "ltr",
+    "locale": "de_DE",
+    "og": "de_DE"
+  },
   "meta": {
     "siteName": "Elite+ Wellness-Kliniken",
     "homeTitle": "Elite+ Wellness-Kliniken | Individuelle Behandlung in {city}",
@@ -7,29 +13,96 @@
     "serviceTitle": "{service} in {city} {year} | Preise & Ergebnisse – Elite+",
     "serviceDesc": "{service} bei Elite+ in {city}: für wen geeignet, Ablauf Schritt für Schritt, Ergebnisse, Preise ab und häufige Fragen.",
     "pages": {
-      "services": ["Behandlungen & Leistungen – Elite+ Wellness-Kliniken", "Alle Behandlungen der Elite+ Kliniken in {city}, mit All-inclusive-Paketen für internationale Patienten."],
-      "results": ["Vorher-Nachher-Ergebnisse – Elite+ Wellness-Kliniken", "Echte Ergebnisse von Patienten der Elite+ Kliniken, veröffentlicht mit schriftlicher Einwilligung."],
-      "doctors": ["Unsere Ärzte & unser Team – Elite+ Wellness-Kliniken", "Lernen Sie die Ärzte und Patientenkoordinatoren der Elite+ Kliniken kennen: Ausbildung, Erfahrung, Sprachen."],
-      "about": ["Über uns, Technologie & Sicherheit – Elite+ Wellness-Kliniken", "Unsere Klinik, unsere Geräte, Hygiene- und Sterilisationsstandards und unsere Zulassungen."],
-      "prices": ["Preise & All-inclusive-Pakete {year} – Elite+", "Preise ab und was enthalten ist: Eingriff, Hotel, VIP-Transfers, Dolmetscher und Nachsorge."],
-      "journey": ["Ihr Behandlungsweg Schritt für Schritt – Elite+", "Von der kostenlosen Online-Analyse bis zur Nachsorge aus der Ferne: So läuft die Behandlung für internationale Patienten ab."],
-      "assessment": ["Kostenlose Online-Analyse – Elite+ Wellness-Kliniken", "Beantworten Sie einige Fragen und erhalten Sie einen individuellen Behandlungsplan mit Kostenvoranschlag. Kostenlos und unverbindlich."],
-      "blog": ["Patientenratgeber – Elite+ Wellness-Kliniken", "Ratgeber zu Preisen, Heilungsverlauf und Reisen in die Türkei zur Behandlung."],
-      "faq": ["Häufige Fragen – Elite+ Wellness-Kliniken", "Antworten zu Preisen, Heilung, Sicherheit, Reise und Zahlung."],
-      "contact": ["Kontakt – Elite+ Wellness-Kliniken", "Kontaktieren Sie Elite+ per WhatsApp, Telefon oder E-Mail. Adresse und Öffnungszeiten."],
-      "privacy": ["Datenschutzerklärung – Elite+ Wellness-Kliniken", "Wie Elite+ personenbezogene Daten und Gesundheitsdaten verarbeitet."],
-      "kvkk": ["KVKK-Informationspflicht – Elite+ Wellness-Kliniken", "Informationen nach dem türkischen Datenschutzgesetz Nr. 6698 (KVKK)."],
-      "cookies": ["Cookie-Richtlinie – Elite+ Wellness-Kliniken", "Welche Cookies wir verwenden und wie Sie Ihre Auswahl ändern."],
-      "terms": ["Nutzungsbedingungen – Elite+ Wellness-Kliniken", "Nutzungsbedingungen dieser Website."],
-      "impressum": ["Impressum – Elite+ Wellness-Kliniken", "Impressum: Unternehmen, Anschrift, Vertretungsberechtigte, Registereintrag und Kontakt."]
+      "services": [
+        "Behandlungen & Leistungen – Elite+ Wellness-Kliniken",
+        "Alle Behandlungen der Elite+ Kliniken in {city}, mit All-inclusive-Paketen für internationale Patienten."
+      ],
+      "results": [
+        "Vorher-Nachher-Ergebnisse – Elite+ Wellness-Kliniken",
+        "Echte Ergebnisse von Patienten der Elite+ Kliniken, veröffentlicht mit schriftlicher Einwilligung."
+      ],
+      "doctors": [
+        "Unsere Ärzte & unser Team – Elite+ Wellness-Kliniken",
+        "Lernen Sie die Ärzte und Patientenkoordinatoren der Elite+ Kliniken kennen: Ausbildung, Erfahrung, Sprachen."
+      ],
+      "about": [
+        "Über uns, Technologie & Sicherheit – Elite+ Wellness-Kliniken",
+        "Unsere Klinik, unsere Geräte, Hygiene- und Sterilisationsstandards und unsere Zulassungen."
+      ],
+      "prices": [
+        "Preise & All-inclusive-Pakete {year} – Elite+",
+        "Preise ab und was enthalten ist: Eingriff, Hotel, VIP-Transfers, Dolmetscher und Nachsorge."
+      ],
+      "journey": [
+        "Ihr Behandlungsweg Schritt für Schritt – Elite+",
+        "Von der kostenlosen Online-Analyse bis zur Nachsorge aus der Ferne: So läuft die Behandlung für internationale Patienten ab."
+      ],
+      "assessment": [
+        "Kostenlose Online-Analyse – Elite+ Wellness-Kliniken",
+        "Beantworten Sie einige Fragen und erhalten Sie einen individuellen Behandlungsplan mit Kostenvoranschlag. Kostenlos und unverbindlich."
+      ],
+      "blog": [
+        "Patientenratgeber – Elite+ Wellness-Kliniken",
+        "Ratgeber zu Preisen, Heilungsverlauf und Reisen in die Türkei zur Behandlung."
+      ],
+      "faq": [
+        "Häufige Fragen – Elite+ Wellness-Kliniken",
+        "Antworten zu Preisen, Heilung, Sicherheit, Reise und Zahlung."
+      ],
+      "contact": [
+        "Kontakt – Elite+ Wellness-Kliniken",
+        "Kontaktieren Sie Elite+ per WhatsApp, Telefon oder E-Mail. Adresse und Öffnungszeiten."
+      ],
+      "privacy": [
+        "Datenschutzerklärung – Elite+ Wellness-Kliniken",
+        "Wie Elite+ personenbezogene Daten und Gesundheitsdaten verarbeitet."
+      ],
+      "kvkk": [
+        "KVKK-Informationspflicht – Elite+ Wellness-Kliniken",
+        "Informationen nach dem türkischen Datenschutzgesetz Nr. 6698 (KVKK)."
+      ],
+      "cookies": [
+        "Cookie-Richtlinie – Elite+ Wellness-Kliniken",
+        "Welche Cookies wir verwenden und wie Sie Ihre Auswahl ändern."
+      ],
+      "terms": [
+        "Nutzungsbedingungen – Elite+ Wellness-Kliniken",
+        "Nutzungsbedingungen dieser Website."
+      ],
+      "impressum": [
+        "Impressum – Elite+ Wellness-Kliniken",
+        "Impressum: Unternehmen, Anschrift, Vertretungsberechtigte, Registereintrag und Kontakt."
+      ],
+      "pdpl": [
+        "Datenschutzhinweis Ägypten – Elite+",
+        "Informationen nach dem ägyptischen Datenschutzgesetz Nr. 151 von 2020."
+      ]
     }
   },
   "nav": {
-    "home": "Startseite", "services": "Behandlungen", "results": "Ergebnisse", "doctors": "Ärzte", "about": "Über uns & Sicherheit",
-    "prices": "Preise", "journey": "Ihr Weg", "blog": "Ratgeber", "faq": "FAQ", "contact": "Kontakt",
-    "cta": "Kostenlose Beratung", "menu": "Menü", "close": "Schließen", "allServices": "Alle Behandlungen",
-    "learnMore": "Mehr erfahren", "viewAll": "Alle Ergebnisse ansehen", "language": "Sprache", "skip": "Zum Inhalt springen",
-    "assessment": "Kostenlose Analyse", "whatsapp": "WhatsApp", "breadcrumbHome": "Startseite"
+    "home": "Startseite",
+    "services": "Behandlungen",
+    "results": "Ergebnisse",
+    "doctors": "Ärzte",
+    "about": "Über uns & Sicherheit",
+    "prices": "Preise",
+    "journey": "Ihr Weg",
+    "blog": "Ratgeber",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "cta": "Kostenlose Beratung",
+    "menu": "Menü",
+    "close": "Schließen",
+    "allServices": "Alle Behandlungen",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle Ergebnisse ansehen",
+    "language": "Sprache",
+    "skip": "Zum Inhalt springen",
+    "assessment": "Kostenlose Analyse",
+    "whatsapp": "WhatsApp",
+    "breadcrumbHome": "Startseite",
+    "clinics": "Kliniken",
+    "aboutShort": "Über uns"
   },
   "hero": {
     "eyebrow": "Wellness-Kliniken",
@@ -49,199 +122,703 @@
     "licensedShort": "Staatlich zugelassen",
     "speaks": "Wir sprechen {langs}"
   },
-  "langNames": { "en": "Englisch", "ar": "Arabisch", "tr": "Türkisch", "de": "Deutsch", "es": "Spanisch", "fr": "Französisch", "ru": "Russisch" },
+  "langNames": {
+    "en": "Englisch",
+    "ar": "Arabisch",
+    "tr": "Türkisch",
+    "de": "Deutsch",
+    "es": "Spanisch",
+    "fr": "Französisch",
+    "ru": "Russisch"
+  },
   "home": {
-    "results": { "label": "Ergebnisse", "h2a": "Echte Patienten,", "h2b": "echte Ergebnisse", "sub": "Ziehen Sie den Regler zum Vergleichen. Jedes Foto wird mit schriftlicher Einwilligung der Patienten veröffentlicht.", "cta": "Alle Ergebnisse ansehen", "before": "Vorher", "after": "Nachher" },
+    "results": {
+      "label": "Ergebnisse",
+      "h2a": "Echte Patienten,",
+      "h2b": "echte Ergebnisse",
+      "sub": "Ziehen Sie den Regler zum Vergleichen. Jedes Foto wird mit schriftlicher Einwilligung der Patienten veröffentlicht.",
+      "cta": "Alle Ergebnisse ansehen",
+      "before": "Vorher",
+      "after": "Nachher"
+    },
     "why": {
-      "label": "Warum Elite+", "h2a": "Betreuung, auf die", "h2b": "Sie sich verlassen können",
+      "label": "Warum Elite+",
+      "h2a": "Betreuung, auf die",
+      "h2b": "Sie sich verlassen können",
       "items": [
-        { "t": "Erfahrene Ärzte", "d": "Fachärzte mit nachweisbarer Ausbildung und langjähriger Praxis in ihrem Fachgebiet." },
-        { "t": "Moderne Technologie", "d": "Aktuelle Geräte und strenge Hygiene- und Sterilisationsstandards." },
-        { "t": "All-inclusive-Pakete", "d": "Behandlung, Hotel, VIP-Transfers und Dolmetscher – alles für Sie organisiert." },
-        { "t": "Wir sprechen Ihre Sprache", "d": "Eine persönliche Koordinatorin bzw. ein Koordinator begleitet Sie vor, während und nach Ihrem Aufenthalt." },
-        { "t": "Nachsorge", "d": "Regelmäßiger Kontakt per WhatsApp und vereinbarte Gespräche, wenn Sie wieder zu Hause sind." },
-        { "t": "Transparente Preise", "d": "Ein schriftlicher Kostenvoranschlag mit allen Leistungen, vereinbart vor Ihrer Reise." }
+        {
+          "t": "Erfahrene Ärzte",
+          "d": "Fachärzte mit nachweisbarer Ausbildung und langjähriger Praxis in ihrem Fachgebiet."
+        },
+        {
+          "t": "Moderne Technologie",
+          "d": "Aktuelle Geräte und strenge Hygiene- und Sterilisationsstandards."
+        },
+        {
+          "t": "All-inclusive-Pakete",
+          "d": "Behandlung, Hotel, VIP-Transfers und Dolmetscher – alles für Sie organisiert."
+        },
+        {
+          "t": "Wir sprechen Ihre Sprache",
+          "d": "Eine persönliche Koordinatorin bzw. ein Koordinator begleitet Sie vor, während und nach Ihrem Aufenthalt."
+        },
+        {
+          "t": "Nachsorge",
+          "d": "Regelmäßiger Kontakt per WhatsApp und vereinbarte Gespräche, wenn Sie wieder zu Hause sind."
+        },
+        {
+          "t": "Transparente Preise",
+          "d": "Ein schriftlicher Kostenvoranschlag mit allen Leistungen, vereinbart vor Ihrer Reise."
+        }
       ],
       "cta": "Kostenlose Analyse starten"
     },
-    "services": { "label": "Behandlungen", "h2a": "Unsere", "h2b": "Haarbehandlungen", "cta": "Unsicher, welche Behandlung passt? Fragen Sie uns" },
+    "services": {
+      "label": "Behandlungen",
+      "h2a": "Unsere",
+      "h2b": "Haarbehandlungen",
+      "cta": "Unsicher, welche Behandlung passt? Fragen Sie uns"
+    },
     "included": {
-      "label": "All-inclusive", "h2a": "Alles organisiert,", "h2b": "ein klarer Preis",
-      "items": ["Beratung und medizinische Untersuchungen", "Ihr Eingriff", "{nights} Nächte im Hotel", "VIP-Transfers zwischen Flughafen und Klinik", "Persönlicher Dolmetscher", "Medikamente und Nachsorge-Set", "Nachsorge über {months} Monate"],
+      "label": "All-inclusive",
+      "h2a": "Alles organisiert,",
+      "h2b": "ein klarer Preis",
+      "items": [
+        "Beratung und medizinische Untersuchungen",
+        "Ihr Eingriff",
+        "{nights} Nächte im Hotel",
+        "VIP-Transfers zwischen Flughafen und Klinik",
+        "Persönlicher Dolmetscher",
+        "Medikamente und Nachsorge-Set",
+        "Nachsorge über {months} Monate"
+      ],
       "note": "Preise werden als „ab“-Preise angegeben. Ihr Endpreis wird vor Ihrer Reise in Ihrem schriftlichen Plan bestätigt.",
       "cta": "Preise & Pakete ansehen"
     },
-    "journey": { "label": "Ihr Weg", "h2a": "Sechs klare Schritte,", "h2b": "ein Team an Ihrer Seite", "cta": "Schritt 1 starten – kostenlos" },
-    "doctors": { "label": "Ärzte", "h2a": "Das Team hinter", "h2b": "Ihrer Behandlung", "cta": "Alle Ärzte ansehen" },
+    "journey": {
+      "label": "Ihr Weg",
+      "h2a": "Sechs klare Schritte,",
+      "h2b": "ein Team an Ihrer Seite",
+      "cta": "Schritt 1 starten – kostenlos"
+    },
+    "doctors": {
+      "label": "Ärzte",
+      "h2a": "Das Team hinter",
+      "h2b": "Ihrer Behandlung",
+      "cta": "Alle Ärzte ansehen"
+    },
     "tech": {
-      "label": "Technologie & Sicherheit", "h2a": "Sicherheit", "h2b": "steht an erster Stelle",
+      "label": "Technologie & Sicherheit",
+      "h2a": "Sicherheit",
+      "h2b": "steht an erster Stelle",
       "sub": "Ihre Behandlung findet in einer zugelassenen Einrichtung statt, die dokumentierte Hygiene- und Sterilisationsprotokolle einhält.",
       "items": [
-        { "t": "Zugelassene Einrichtung", "d": "Tätig unter der Zulassung, die im Fußbereich jeder Seite angegeben ist." },
-        { "t": "Sterilisationsprotokolle", "d": "Einwegmaterialien, wo immer möglich, und validierte Sterilisation der Instrumente." },
-        { "t": "Voruntersuchungen", "d": "Prüfung der Krankengeschichte und Untersuchungen, bevor ein Eingriff bestätigt wird." },
-        { "t": "Moderne Geräte", "d": "Diagnose- und Behandlungsgeräte, gewartet nach Herstellervorgaben." }
+        {
+          "t": "Zugelassene Einrichtung",
+          "d": "Tätig unter der Zulassung, die im Fußbereich jeder Seite angegeben ist."
+        },
+        {
+          "t": "Sterilisationsprotokolle",
+          "d": "Einwegmaterialien, wo immer möglich, und validierte Sterilisation der Instrumente."
+        },
+        {
+          "t": "Voruntersuchungen",
+          "d": "Prüfung der Krankengeschichte und Untersuchungen, bevor ein Eingriff bestätigt wird."
+        },
+        {
+          "t": "Moderne Geräte",
+          "d": "Diagnose- und Behandlungsgeräte, gewartet nach Herstellervorgaben."
+        }
       ],
       "cta": "Über die Klinik"
     },
-    "testimonials": { "label": "Patientenbewertungen", "h2a": "Das sagen", "h2b": "unsere Patienten", "sub": "Bewertungen werden direkt von unabhängigen Plattformen geladen.", "consent": "Die Bewertungen werden von einem Drittanbieter bereitgestellt. Laden Sie sie, um sie anzuzeigen.", "load": "Bewertungen laden", "cta": "Bewertungen auf Google lesen" },
+    "testimonials": {
+      "label": "Patientenbewertungen",
+      "h2a": "Das sagen",
+      "h2b": "unsere Patienten",
+      "sub": "Bewertungen werden direkt von unabhängigen Plattformen geladen.",
+      "consent": "Die Bewertungen werden von einem Drittanbieter bereitgestellt. Laden Sie sie, um sie anzuzeigen.",
+      "load": "Bewertungen laden",
+      "cta": "Bewertungen auf Google lesen"
+    },
     "aftercare": {
-      "label": "Nachsorge", "h2a": "Unsere Betreuung", "h2b": "endet nicht mit dem Heimflug",
+      "label": "Nachsorge",
+      "h2a": "Unsere Betreuung",
+      "h2b": "endet nicht mit dem Heimflug",
       "items": [
-        { "t": "Foto-Check-ins per WhatsApp", "d": "Senden Sie Fotos Ihres Verlaufs; Ihre Koordination leitet sie an Ihren Arzt weiter." },
-        { "t": "Vereinbarte Videogespräche", "d": "Nachsorgegespräche zu festgelegten Zeitpunkten Ihrer Heilung." },
-        { "t": "Klare schriftliche Anleitungen", "d": "Nachsorgehinweise in Ihrer Sprache zum Mitnehmen." },
-        { "t": "Ein direkter Kontakt", "d": "Eine Koordinationsperson, die Ihren Fall kennt und per WhatsApp erreichbar ist." }
+        {
+          "t": "Foto-Check-ins per WhatsApp",
+          "d": "Senden Sie Fotos Ihres Verlaufs; Ihre Koordination leitet sie an Ihren Arzt weiter."
+        },
+        {
+          "t": "Vereinbarte Videogespräche",
+          "d": "Nachsorgegespräche zu festgelegten Zeitpunkten Ihrer Heilung."
+        },
+        {
+          "t": "Klare schriftliche Anleitungen",
+          "d": "Nachsorgehinweise in Ihrer Sprache zum Mitnehmen."
+        },
+        {
+          "t": "Ein direkter Kontakt",
+          "d": "Eine Koordinationsperson, die Ihren Fall kennt und per WhatsApp erreichbar ist."
+        }
       ],
       "cta": "Zur Nachsorge fragen"
     },
-    "final": { "h2a": "Starten Sie", "h2b": "noch heute", "sub": "Erzählen Sie uns von Ihren Zielen und erhalten Sie einen individuellen Plan mit Kostenvoranschlag. Kostenlos und unverbindlich." },
-    "faq": { "label": "FAQ", "h2a": "Fragen, die wir", "h2b": "oft hören", "cta": "Alle Fragen" }
+    "final": {
+      "h2a": "Starten Sie",
+      "h2b": "noch heute",
+      "sub": "Erzählen Sie uns von Ihren Zielen und erhalten Sie einen individuellen Plan mit Kostenvoranschlag. Kostenlos und unverbindlich."
+    },
+    "faq": {
+      "label": "FAQ",
+      "h2a": "Fragen, die wir",
+      "h2b": "oft hören",
+      "cta": "Alle Fragen"
+    }
   },
   "journeySteps": [
-    { "t": "Kostenlose Online-Analyse", "d": "Beantworten Sie einige Fragen und teilen Sie auf Wunsch Fotos. Das dauert etwa 3 Minuten." },
-    { "t": "Ihr Plan & Kostenvoranschlag", "d": "Ein Arzt prüft Ihren Fall, und Ihre Koordination sendet Ihnen einen individuellen Plan mit schriftlichem Kostenvoranschlag." },
-    { "t": "Anreise", "d": "Wir buchen Ihr Hotel und holen Sie mit einem VIP-Transfer am Flughafen ab." },
-    { "t": "Behandlungstag", "d": "Beratung, Untersuchungen und Ihr Eingriff – mit einem Dolmetscher an Ihrer Seite." },
-    { "t": "Erholung", "d": "Erholen Sie sich im Hotel, mit Kontrollterminen in der Klinik vor Ihrer Abreise." },
-    { "t": "Nachsorge aus der Ferne", "d": "Foto-Check-ins und Gespräche mit Ihrer Koordination und Ihrem Arzt von zu Hause aus." }
+    {
+      "t": "Kostenlose Online-Analyse",
+      "d": "Beantworten Sie einige Fragen und teilen Sie auf Wunsch Fotos. Das dauert etwa 3 Minuten."
+    },
+    {
+      "t": "Ihr Plan & Kostenvoranschlag",
+      "d": "Ein Arzt prüft Ihren Fall, und Ihre Koordination sendet Ihnen einen individuellen Plan mit schriftlichem Kostenvoranschlag."
+    },
+    {
+      "t": "Anreise",
+      "d": "Wir buchen Ihr Hotel und holen Sie mit einem VIP-Transfer am Flughafen ab."
+    },
+    {
+      "t": "Behandlungstag",
+      "d": "Beratung, Untersuchungen und Ihr Eingriff – mit einem Dolmetscher an Ihrer Seite."
+    },
+    {
+      "t": "Erholung",
+      "d": "Erholen Sie sich im Hotel, mit Kontrollterminen in der Klinik vor Ihrer Abreise."
+    },
+    {
+      "t": "Nachsorge aus der Ferne",
+      "d": "Foto-Check-ins und Gespräche mit Ihrer Koordination und Ihrem Arzt von zu Hause aus."
+    }
   ],
   "faq": [
-    { "q": "Was kostet die Behandlung?", "a": "Jede Behandlungsseite zeigt einen „ab“-Preis. Ihr Endpreis hängt von Ihrer medizinischen Analyse ab und wird vor Ihrer Reise in einem schriftlichen Kostenvoranschlag bestätigt. Es gibt keine versteckten Kosten." },
-    { "q": "Was ist im Paket enthalten?", "a": "Pakete umfassen in der Regel Beratung und Untersuchungen, den Eingriff, Hotelaufenthalt, VIP-Transfers, Dolmetscher, Medikamente und Nachsorge-Set sowie Nachsorge aus der Ferne. Ihr Kostenvoranschlag führt jede Position auf." },
-    { "q": "Wie lange muss ich in der Türkei bleiben?", "a": "Das hängt von der Behandlung ab. Jede Behandlungsseite nennt die übliche Aufenthaltsdauer; Ihre Koordination bestätigt sie in Ihrem Plan." },
-    { "q": "Ist der Eingriff schmerzhaft?", "a": "Eingriffe erfolgen unter geeigneter Betäubung. Während der Heilung können Beschwerden auftreten; Ihr Arzt erklärt Ihnen, was Sie erwartet, und verschreibt bei Bedarf Medikamente." },
-    { "q": "Wie lange dauert die Heilung?", "a": "Die Heilungsdauer ist je nach Behandlung und Person unterschiedlich. Ihr Arzt gibt Ihnen einen persönlichen Zeitplan und schriftliche Nachsorgehinweise." },
-    { "q": "Wann sehe ich das endgültige Ergebnis?", "a": "Ergebnisse entwickeln sich mit der Zeit und sind individuell verschieden. Ihr Arzt erläutert im Beratungsgespräch den zu erwartenden Zeitrahmen für Ihre Behandlung." },
-    { "q": "Ist eine Behandlung in der Türkei sicher?", "a": "Sicherheit hängt von der Klinik ab, nicht vom Land. Prüfen Sie Zulassung, Qualifikationen der Ärzte und Hygienestandards. Unsere Angaben finden Sie auf den Seiten „Über uns & Sicherheit“ und „Ärzte“." },
-    { "q": "Sprechen Sie meine Sprache?", "a": "Ihre Koordination kommuniziert mit Ihnen in Ihrer Sprache, und in der Klinik begleitet Sie ein Dolmetscher." },
-    { "q": "Wie bezahle ich?", "a": "Zahlungsmöglichkeiten und Zahlungsplan stehen in Ihrem schriftlichen Kostenvoranschlag. Fragen Sie Ihre Koordination nach den verfügbaren Zahlungsarten." },
-    { "q": "Was passiert, wenn ich wieder zu Hause bin?", "a": "Sie bleiben per WhatsApp mit Ihrer Koordination in Kontakt, senden Verlaufsfotos, und wir vereinbaren Nachsorgegespräche mit Ihrem Arzt." }
+    {
+      "q": "Was kostet die Behandlung?",
+      "a": "Jede Behandlungsseite zeigt einen „ab“-Preis. Ihr Endpreis hängt von Ihrer medizinischen Analyse ab und wird vor Ihrer Reise in einem schriftlichen Kostenvoranschlag bestätigt. Es gibt keine versteckten Kosten."
+    },
+    {
+      "q": "Was ist im Paket enthalten?",
+      "a": "Pakete umfassen in der Regel Beratung und Untersuchungen, den Eingriff, Hotelaufenthalt, VIP-Transfers, Dolmetscher, Medikamente und Nachsorge-Set sowie Nachsorge aus der Ferne. Ihr Kostenvoranschlag führt jede Position auf."
+    },
+    {
+      "q": "Wie lange muss ich in der Türkei bleiben?",
+      "a": "Das hängt von der Behandlung ab. Jede Behandlungsseite nennt die übliche Aufenthaltsdauer; Ihre Koordination bestätigt sie in Ihrem Plan."
+    },
+    {
+      "q": "Ist der Eingriff schmerzhaft?",
+      "a": "Eingriffe erfolgen unter geeigneter Betäubung. Während der Heilung können Beschwerden auftreten; Ihr Arzt erklärt Ihnen, was Sie erwartet, und verschreibt bei Bedarf Medikamente."
+    },
+    {
+      "q": "Wie lange dauert die Heilung?",
+      "a": "Die Heilungsdauer ist je nach Behandlung und Person unterschiedlich. Ihr Arzt gibt Ihnen einen persönlichen Zeitplan und schriftliche Nachsorgehinweise."
+    },
+    {
+      "q": "Wann sehe ich das endgültige Ergebnis?",
+      "a": "Ergebnisse entwickeln sich mit der Zeit und sind individuell verschieden. Ihr Arzt erläutert im Beratungsgespräch den zu erwartenden Zeitrahmen für Ihre Behandlung."
+    },
+    {
+      "q": "Ist eine Behandlung in der Türkei sicher?",
+      "a": "Sicherheit hängt von der Klinik ab, nicht vom Land. Prüfen Sie Zulassung, Qualifikationen der Ärzte und Hygienestandards. Unsere Angaben finden Sie auf den Seiten „Über uns & Sicherheit“ und „Ärzte“."
+    },
+    {
+      "q": "Sprechen Sie meine Sprache?",
+      "a": "Ihre Koordination kommuniziert mit Ihnen in Ihrer Sprache, und in der Klinik begleitet Sie ein Dolmetscher."
+    },
+    {
+      "q": "Wie bezahle ich?",
+      "a": "Zahlungsmöglichkeiten und Zahlungsplan stehen in Ihrem schriftlichen Kostenvoranschlag. Fragen Sie Ihre Koordination nach den verfügbaren Zahlungsarten."
+    },
+    {
+      "q": "Was passiert, wenn ich wieder zu Hause bin?",
+      "a": "Sie bleiben per WhatsApp mit Ihrer Koordination in Kontakt, senden Verlaufsfotos, und wir vereinbaren Nachsorgegespräche mit Ihrem Arzt."
+    }
   ],
   "service": {
-    "whoFor": "Für wen ist die Behandlung geeignet?", "procedure": "Der Ablauf Schritt für Schritt", "results": "Ergebnisse", "price": "Preis & Paket",
-    "from": "ab", "onRequest": "Preis auf Anfrage", "priceNote": "Ab-Preis. Ihr Endpreis wird in Ihrem schriftlichen Plan bestätigt.",
-    "stay": "Übliche Aufenthaltsdauer", "faq": "Häufige Fragen", "included": "In Ihrem Paket enthalten",
-    "ctaTitle": "Ist diese Behandlung das Richtige für Sie?", "ctaSub": "Erhalten Sie eine kostenlose Analyse durch unser medizinisches Team.", "other": "Weitere Behandlungen"
+    "whoFor": "Für wen ist die Behandlung geeignet?",
+    "procedure": "Der Ablauf Schritt für Schritt",
+    "results": "Ergebnisse",
+    "price": "Preis & Paket",
+    "from": "ab",
+    "onRequest": "Preis auf Anfrage",
+    "priceNote": "Ab-Preis. Ihr Endpreis wird in Ihrem schriftlichen Plan bestätigt.",
+    "stay": "Übliche Aufenthaltsdauer",
+    "faq": "Häufige Fragen",
+    "included": "In Ihrem Paket enthalten",
+    "ctaTitle": "Ist diese Behandlung das Richtige für Sie?",
+    "ctaSub": "Erhalten Sie eine kostenlose Analyse durch unser medizinisches Team.",
+    "other": "Weitere Behandlungen"
   },
   "pages": {
-    "services": { "h1a": "Unsere", "h1b": "Haarbehandlungen", "sub": "Jede Behandlung wird nach einer medizinischen Analyse individuell geplant." },
-    "results": { "h1a": "Vorher &", "h1b": "Nachher", "sub": "Jedes Ergebnis wird mit schriftlicher Einwilligung der Patienten veröffentlicht. Ergebnisse sind individuell verschieden.", "all": "Alle", "empty": "Ergebnisse werden hier veröffentlicht, sobald die schriftlichen Einwilligungen der Patienten vorliegen." },
-    "doctors": { "h1a": "Unsere Ärzte", "h1b": "und unser Team", "sub": "Die Menschen, die Ihre Behandlung planen, durchführen und begleiten.", "empty": "Die Arztprofile werden gerade erstellt.", "back": "Alle Ärzte" },
-    "about": { "h1a": "Über die Klinik,", "h1b": "Technologie & Sicherheit", "sub": "Eine zugelassene Klinik, ausgerichtet auf internationale Patienten.", "storyH": "Unsere Klinik", "accredH": "Zulassungen und Akkreditierungen", "accredNone": "Die Zulassungsdaten stehen im Fußbereich der Seite." },
-    "prices": { "h1a": "Preise &", "h1b": "Pakete", "sub": "Klare Ab-Preise und ein All-inclusive-Paket, schriftlich bestätigt vor Ihrer Reise.", "service": "Behandlung", "from": "ab", "includedH": "Das ist in jedem Paket enthalten", "howH": "So entsteht Ihr Preis", "how": "Ihr Endpreis hängt von Ihrer medizinischen Analyse ab, zum Beispiel vom Umfang der Behandlung und den von Ihrem Arzt empfohlenen Techniken. Sie erhalten einen schriftlichen, aufgeschlüsselten Kostenvoranschlag, bevor Sie etwas buchen." },
-    "journey": { "h1a": "Ihr Weg,", "h1b": "Schritt für Schritt", "sub": "Was von Ihrer ersten Nachricht bis zur Nachsorge zu Hause passiert.", "prepareH": "Vor der Reise", "prepare": ["Ein gültiger Reisepass (prüfen Sie die Visabestimmungen für Ihre Staatsangehörigkeit)", "Ihre Krankengeschichte und eine Liste Ihrer aktuellen Medikamente", "Bequeme, weite Kleidung für die Erholungsphase", "Eine Reiseversicherung, die medizinische Behandlungen im Ausland abdeckt"] },
-    "assessment": { "h1a": "Kostenlose", "h1b": "Online-Analyse" },
-    "blog": { "h1a": "Patienten-", "h1b": "ratgeber", "sub": "Praktische Ratgeber, verfasst mit unserem medizinischen Team.", "empty": "Unsere ersten Ratgeber werden gerade von unserem medizinischen Team verfasst." },
-    "faq": { "h1a": "Häufige", "h1b": "Fragen", "sub": "Keine Antwort gefunden? Schreiben Sie uns per WhatsApp." },
-    "contact": { "h1a": "Kontakt", "h1b": "zu unserem Team", "sub": "Am schnellsten erreichen Sie uns per WhatsApp.", "whatsapp": "WhatsApp", "phone": "Telefon", "email": "E-Mail", "address": "Anschrift", "hours": "Öffnungszeiten", "map": "Karte", "mapConsent": "Die Karte wird von Google bereitgestellt. Beim Laden werden Daten an Google übermittelt.", "mapLoad": "Karte laden" },
-    "privacy": { "h1a": "Datenschutz-", "h1b": "erklärung" },
-    "kvkk": { "h1a": "KVKK-", "h1b": "Informationen" },
-    "cookies": { "h1a": "Cookie-", "h1b": "Richtlinie" },
-    "terms": { "h1a": "Nutzungs-", "h1b": "bedingungen" },
-    "impressum": { "h1a": "Impressum", "h1b": "" }
+    "services": {
+      "h1a": "Unsere",
+      "h1b": "Haarbehandlungen",
+      "sub": "Jede Behandlung wird nach einer medizinischen Analyse individuell geplant."
+    },
+    "results": {
+      "h1a": "Vorher &",
+      "h1b": "Nachher",
+      "sub": "Jedes Ergebnis wird mit schriftlicher Einwilligung der Patienten veröffentlicht. Ergebnisse sind individuell verschieden.",
+      "all": "Alle",
+      "empty": "Ergebnisse werden hier veröffentlicht, sobald die schriftlichen Einwilligungen der Patienten vorliegen."
+    },
+    "doctors": {
+      "h1a": "Unsere Ärzte",
+      "h1b": "und unser Team",
+      "sub": "Die Menschen, die Ihre Behandlung planen, durchführen und begleiten.",
+      "empty": "Die Arztprofile werden gerade erstellt.",
+      "back": "Alle Ärzte"
+    },
+    "about": {
+      "h1a": "Über die Klinik,",
+      "h1b": "Technologie & Sicherheit",
+      "sub": "Eine zugelassene Klinik, ausgerichtet auf internationale Patienten.",
+      "storyH": "Unsere Klinik",
+      "accredH": "Zulassungen und Akkreditierungen",
+      "accredNone": "Die Zulassungsdaten stehen im Fußbereich der Seite."
+    },
+    "prices": {
+      "h1a": "Preise &",
+      "h1b": "Pakete",
+      "sub": "Klare Ab-Preise und ein All-inclusive-Paket, schriftlich bestätigt vor Ihrer Reise.",
+      "service": "Behandlung",
+      "from": "ab",
+      "includedH": "Das ist in jedem Paket enthalten",
+      "howH": "So entsteht Ihr Preis",
+      "how": "Ihr Endpreis hängt von Ihrer medizinischen Analyse ab, zum Beispiel vom Umfang der Behandlung und den von Ihrem Arzt empfohlenen Techniken. Sie erhalten einen schriftlichen, aufgeschlüsselten Kostenvoranschlag, bevor Sie etwas buchen."
+    },
+    "journey": {
+      "h1a": "Ihr Weg,",
+      "h1b": "Schritt für Schritt",
+      "sub": "Was von Ihrer ersten Nachricht bis zur Nachsorge zu Hause passiert.",
+      "prepareH": "Vor der Reise",
+      "prepare": [
+        "Ein gültiger Reisepass (prüfen Sie die Visabestimmungen für Ihre Staatsangehörigkeit)",
+        "Ihre Krankengeschichte und eine Liste Ihrer aktuellen Medikamente",
+        "Bequeme, weite Kleidung für die Erholungsphase",
+        "Eine Reiseversicherung, die medizinische Behandlungen im Ausland abdeckt"
+      ]
+    },
+    "assessment": {
+      "h1a": "Kostenlose",
+      "h1b": "Online-Analyse"
+    },
+    "blog": {
+      "h1a": "Patienten-",
+      "h1b": "ratgeber",
+      "sub": "Praktische Ratgeber, verfasst mit unserem medizinischen Team.",
+      "empty": "Unsere ersten Ratgeber werden gerade von unserem medizinischen Team verfasst."
+    },
+    "faq": {
+      "h1a": "Häufige",
+      "h1b": "Fragen",
+      "sub": "Keine Antwort gefunden? Schreiben Sie uns per WhatsApp."
+    },
+    "contact": {
+      "h1a": "Kontakt",
+      "h1b": "zu unserem Team",
+      "sub": "Am schnellsten erreichen Sie uns per WhatsApp.",
+      "whatsapp": "WhatsApp",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "address": "Anschrift",
+      "hours": "Öffnungszeiten",
+      "map": "Karte",
+      "mapConsent": "Die Karte wird von Google bereitgestellt. Beim Laden werden Daten an Google übermittelt.",
+      "mapLoad": "Karte laden",
+      "branchesH": "Unsere Kliniken"
+    },
+    "privacy": {
+      "h1a": "Datenschutz-",
+      "h1b": "erklärung"
+    },
+    "kvkk": {
+      "h1a": "KVKK-",
+      "h1b": "Informationen"
+    },
+    "cookies": {
+      "h1a": "Cookie-",
+      "h1b": "Richtlinie"
+    },
+    "terms": {
+      "h1a": "Nutzungs-",
+      "h1b": "bedingungen"
+    },
+    "impressum": {
+      "h1a": "Impressum",
+      "h1b": ""
+    },
+    "pdpl": {
+      "h1a": "Datenschutzhinweis",
+      "h1b": "Ägypten"
+    }
   },
   "legal": {
     "draft": "Diese Seite muss vor dem Start von einer qualifizierten Rechtsanwältin bzw. einem Rechtsanwalt erstellt und freigegeben werden. Die folgenden Überschriften zeigen die erforderliche Struktur.",
-    "privacy": ["Verantwortlicher", "Welche Daten wir erheben", "Gesundheitsdaten und ausdrückliche Einwilligung", "Zwecke und Rechtsgrundlagen", "Empfänger und Übermittlung in Drittländer", "Speicherdauer", "Ihre Rechte", "Kontakt"],
-    "kvkk": ["Verantwortlicher (Veri sorumlusu)", "Zwecke der Verarbeitung", "Übermittlung personenbezogener Daten", "Art der Erhebung und Rechtsgrundlage", "Ihre Rechte nach Art. 11 des Gesetzes Nr. 6698"],
-    "cookies": ["Was Cookies sind", "Notwendige Cookies", "Analyse-Cookies", "Marketing-Cookies", "So ändern Sie Ihre Auswahl"],
-    "terms": ["Geltungsbereich", "Haftungsausschluss für medizinische Informationen", "Urheberrecht", "Haftung", "Anwendbares Recht"],
-    "impressum": { "company": "Unternehmen", "address": "Anschrift", "representative": "Vertreten durch", "registry": "Handelsregisternummer", "tax": "Steuernummer", "licence": "Gesundheitszulassung Nr.", "contact": "Kontakt" }
+    "privacy": [
+      "Verantwortlicher",
+      "Welche Daten wir erheben",
+      "Gesundheitsdaten und ausdrückliche Einwilligung",
+      "Zwecke und Rechtsgrundlagen",
+      "Empfänger und Übermittlung in Drittländer",
+      "Speicherdauer",
+      "Ihre Rechte",
+      "Kontakt"
+    ],
+    "kvkk": [
+      "Verantwortlicher (Veri sorumlusu)",
+      "Zwecke der Verarbeitung",
+      "Übermittlung personenbezogener Daten",
+      "Art der Erhebung und Rechtsgrundlage",
+      "Ihre Rechte nach Art. 11 des Gesetzes Nr. 6698"
+    ],
+    "cookies": [
+      "Was Cookies sind",
+      "Notwendige Cookies",
+      "Analyse-Cookies",
+      "Marketing-Cookies",
+      "So ändern Sie Ihre Auswahl"
+    ],
+    "terms": [
+      "Geltungsbereich",
+      "Haftungsausschluss für medizinische Informationen",
+      "Urheberrecht",
+      "Haftung",
+      "Anwendbares Recht"
+    ],
+    "impressum": {
+      "company": "Unternehmen",
+      "address": "Anschrift",
+      "representative": "Vertreten durch",
+      "registry": "Handelsregisternummer",
+      "tax": "Steuernummer",
+      "licence": "Gesundheitszulassung Nr.",
+      "contact": "Kontakt"
+    },
+    "pdpl": [
+      "Verantwortlicher",
+      "Zwecke und Rechtsgrundlagen",
+      "Gesundheitsdaten und Einwilligung",
+      "Übermittlung ins Ausland",
+      "Ihre Rechte",
+      "Kontakt"
+    ]
   },
   "footer": {
     "desc": "Individuelle Behandlungspläne, fachärztliche Betreuung und persönliche Begleitung für internationale Patienten.",
-    "services": "Behandlungen", "patients": "Patienteninformationen", "contact": "Kontakt", "legal": "Rechtliches",
-    "licence": "Zulassung Nr.", "rights": "Alle Rechte vorbehalten.", "cookieSettings": "Cookie-Einstellungen",
-    "disclaimer": "Die Informationen auf dieser Website ersetzen keine ärztliche Beratung. Ergebnisse sind individuell verschieden."
+    "services": "Behandlungen",
+    "patients": "Patienteninformationen",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "licence": "Zulassung Nr.",
+    "rights": "Alle Rechte vorbehalten.",
+    "cookieSettings": "Cookie-Einstellungen",
+    "disclaimer": "Die Informationen auf dieser Website ersetzen keine ärztliche Beratung. Ergebnisse sind individuell verschieden.",
+    "clinics": "Unsere Kliniken"
   },
   "cookie": {
     "title": "Ihre Datenschutzeinstellungen",
     "text": "Wir verwenden notwendige Cookies für den Betrieb dieser Website. Mit Ihrer Einwilligung nutzen wir zusätzlich Analyse- und Marketing-Cookies, um unsere Leistungen zu messen und zu verbessern.",
-    "accept": "Alle akzeptieren", "reject": "Alle ablehnen", "customise": "Anpassen", "save": "Auswahl speichern",
-    "necessary": "Notwendig", "necessaryD": "Erforderlich für die Website und das Analyseformular. Immer aktiv.",
-    "analytics": "Analyse", "analyticsD": "Hilft uns zu verstehen, wie die Website genutzt wird (Google Analytics, Microsoft Clarity).",
-    "marketing": "Marketing", "marketingD": "Misst unsere Werbung und zeigt eingebettete Bewertungen und Videos (Google, Meta).",
+    "accept": "Alle akzeptieren",
+    "reject": "Alle ablehnen",
+    "customise": "Anpassen",
+    "save": "Auswahl speichern",
+    "necessary": "Notwendig",
+    "necessaryD": "Erforderlich für die Website und das Analyseformular. Immer aktiv.",
+    "analytics": "Analyse",
+    "analyticsD": "Hilft uns zu verstehen, wie die Website genutzt wird (Google Analytics, Microsoft Clarity).",
+    "marketing": "Marketing",
+    "marketingD": "Misst unsere Werbung und zeigt eingebettete Bewertungen und Videos (Google, Meta).",
     "policy": "Cookie-Richtlinie"
   },
-  "langBanner": { "text": "Diese Seite ist auch auf Deutsch verfügbar.", "switch": "Zur deutschen Version", "dismiss": "Schließen" },
-  "wa": { "prefill": "Hallo Elite+, ich hätte gerne Informationen zu: {page}" },
-  "a11y": { "prev": "Zurück", "next": "Weiter", "openMenu": "Menü öffnen", "closeMenu": "Menü schließen", "compare": "Vorher und nachher vergleichen", "ext": "(öffnet in neuem Tab)", "star": "Elite+ Sternsymbol" },
+  "langBanner": {
+    "text": "Diese Seite ist auch auf Deutsch verfügbar.",
+    "switch": "Zur deutschen Version",
+    "dismiss": "Schließen"
+  },
+  "wa": {
+    "prefill": "Hallo Elite+, ich hätte gerne Informationen zu: {page}"
+  },
+  "a11y": {
+    "prev": "Zurück",
+    "next": "Weiter",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "compare": "Vorher und nachher vergleichen",
+    "ext": "(öffnet in neuem Tab)",
+    "star": "Elite+ Sternsymbol"
+  },
   "assess": {
     "title": "Kostenlose Online-Analyse",
     "intro": "Etwa 3 Minuten · Kostenlos · Unverbindlich",
     "step": "Schritt {n} von {total}",
-    "back": "Zurück", "next": "Weiter", "skip": "Überspringen", "submit": "Analyse absenden", "sending": "Wird gesendet …",
+    "back": "Zurück",
+    "next": "Weiter",
+    "skip": "Überspringen",
+    "submit": "Analyse absenden",
+    "sending": "Wird gesendet …",
     "required": "Bitte wählen Sie eine Option, um fortzufahren.",
-    "resume": "Willkommen zurück. Wir haben Ihre Antworten gespeichert, damit Sie dort weitermachen können, wo Sie aufgehört haben.", "restart": "Neu beginnen",
+    "resume": "Willkommen zurück. Wir haben Ihre Antworten gespeichert, damit Sie dort weitermachen können, wo Sie aufgehört haben.",
+    "restart": "Neu beginnen",
     "q_service": "Für welche Behandlung interessieren Sie sich?",
     "q_goal": "Was beschreibt Ihr Ziel am besten?",
-    "goals": ["Mein Aussehen verbessern", "Funktion oder Wohlbefinden wiederherstellen", "Eine frühere Behandlung korrigieren", "Ich bin noch unsicher"],
+    "goals": [
+      "Mein Aussehen verbessern",
+      "Funktion oder Wohlbefinden wiederherstellen",
+      "Eine frühere Behandlung korrigieren",
+      "Ich bin noch unsicher"
+    ],
     "q_prior": "Wurden Sie deswegen schon einmal behandelt?",
-    "prior": ["Nein", "Ja", "Weiß nicht"],
+    "prior": [
+      "Nein",
+      "Ja",
+      "Weiß nicht"
+    ],
     "q_about": "Über Sie",
-    "age": "Altersgruppe", "ages": ["18–24", "25–34", "35–44", "45–54", "55–64", "65+"],
-    "gender": "Geschlecht", "genders": ["Weiblich", "Männlich", "Keine Angabe"],
+    "age": "Altersgruppe",
+    "ages": [
+      "18–24",
+      "25–34",
+      "35–44",
+      "45–54",
+      "55–64",
+      "65+"
+    ],
+    "gender": "Geschlecht",
+    "genders": [
+      "Weiblich",
+      "Männlich",
+      "Keine Angabe"
+    ],
     "q_photos": "Möchten Sie Fotos teilen?",
     "photosSub": "Optional. Fotos helfen unseren Ärzten, Ihnen einen genaueren Plan zu erstellen. Bis zu 4 Fotos, je max. 10 MB. Sie werden vertraulich gespeichert und nur von unserem medizinischen Team angesehen.",
-    "photosDrop": "Fotos hierher ziehen oder", "photosPick": "Dateien auswählen", "photosCamera": "Foto aufnehmen", "photosRemove": "Foto entfernen",
-    "photosTooBig": "Dieses Foto ist größer als 10 MB.", "photosType": "Bitte laden Sie Bilder im Format JPG, PNG, HEIC oder WebP hoch.", "photosMax": "Sie können bis zu 4 Fotos hochladen.",
-    "q_date": "Wann möchten Sie die Behandlung durchführen lassen?", "dateUnsure": "Noch unklar",
+    "photosDrop": "Fotos hierher ziehen oder",
+    "photosPick": "Dateien auswählen",
+    "photosCamera": "Foto aufnehmen",
+    "photosRemove": "Foto entfernen",
+    "photosTooBig": "Dieses Foto ist größer als 10 MB.",
+    "photosType": "Bitte laden Sie Bilder im Format JPG, PNG, HEIC oder WebP hoch.",
+    "photosMax": "Sie können bis zu 4 Fotos hochladen.",
+    "q_date": "Wann möchten Sie die Behandlung durchführen lassen?",
+    "dateUnsure": "Noch unklar",
     "q_contact": "Wohin dürfen wir Ihren Plan senden?",
-    "name": "Vollständiger Name", "country": "Wohnsitzland", "phone": "WhatsApp-Nummer", "email": "E-Mail (optional)",
+    "name": "Vollständiger Name",
+    "country": "Wohnsitzland",
+    "phone": "WhatsApp-Nummer",
+    "email": "E-Mail (optional)",
     "phoneHint": "Ihre Koordination meldet sich per WhatsApp bei Ihnen.",
-    "errName": "Bitte geben Sie Ihren Namen ein.", "errPhone": "Bitte geben Sie eine gültige WhatsApp-Nummer ein.", "errEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "errName": "Bitte geben Sie Ihren Namen ein.",
+    "errPhone": "Bitte geben Sie eine gültige WhatsApp-Nummer ein.",
+    "errEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     "q_consent": "Ein letzter Schritt",
     "consent": "Ich willige ausdrücklich ein, dass Elite+ Wellness-Kliniken meine personenbezogenen Daten und Gesundheitsdaten, einschließlich hochgeladener Fotos, zur Beurteilung meines Falls und zur Kontaktaufnahme verarbeitet, wie beschrieben in der",
     "consentLink": "Datenschutzerklärung",
     "consentKvkk": "KVKK-Information",
     "errConsent": "Ihre Einwilligung ist erforderlich, damit unser medizinisches Team Ihre Angaben prüfen kann.",
     "errSend": "Leider konnte Ihre Analyse nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns per WhatsApp.",
-    "thanksH1a": "Vielen Dank,", "thanksH1b": "wir haben Ihre Analyse erhalten",
+    "thanksH1a": "Vielen Dank,",
+    "thanksH1b": "wir haben Ihre Analyse erhalten",
     "thanks": "Eine Patientenkoordinatorin bzw. ein Patientenkoordinator meldet sich innerhalb von {hours} Stunden per WhatsApp bei Ihnen.",
     "thanksWa": "Jetzt per WhatsApp schreiben",
     "previewNote": "Vorschaumodus: Es ist kein Empfangsendpunkt konfiguriert, daher wurde nichts gesendet. Die Daten wurden in der Browserkonsole protokolliert.",
     "q_category": "Welcher Bereich interessiert Sie?",
-    "unsure": "Noch unsicher – helfen Sie mir bei der Wahl"
+    "unsure": "Noch unsicher – helfen Sie mir bei der Wahl",
+    "q_branch": "Welche Klinik möchten Sie?",
+    "branchUnsure": "Noch unsicher – helfen Sie mir bei der Wahl"
   },
   "todo": "FEHLT",
   "categories": {
-    "transplant": { "name": "Haartransplantation", "short": "Haar-, Bart-, Augenbrauen- und Schnurrbarttransplantation sowie Haarwiederherstellung in Narben." },
-    "treatment": { "name": "Haarbehandlungen", "short": "Nicht-operative Behandlungen bei dünner werdendem Haar und für eine gesündere Kopfhaut." }
+    "transplant": {
+      "name": "Haartransplantation",
+      "short": "Haar-, Bart-, Augenbrauen- und Schnurrbarttransplantation sowie Haarwiederherstellung in Narben."
+    },
+    "treatment": {
+      "name": "Haarbehandlungen",
+      "short": "Nicht-operative Behandlungen bei dünner werdendem Haar und für eine gesündere Kopfhaut."
+    }
   },
-  "doctor": { "years": "{n} Jahre Erfahrung", "viewProfile": "Profil ansehen", "education": "Ausbildung", "experience": "Berufserfahrung", "specialties": "Schwerpunkte", "credentials": "Mitgliedschaften & Nachweise", "languages": "Sprachen" },
+  "doctor": {
+    "years": "{n} Jahre Erfahrung",
+    "viewProfile": "Profil ansehen",
+    "education": "Ausbildung",
+    "experience": "Berufserfahrung",
+    "specialties": "Schwerpunkte",
+    "credentials": "Mitgliedschaften & Nachweise",
+    "languages": "Sprachen"
+  },
   "techniques": {
-    "label": "Unsere Techniken", "h2a": "FUE & DHI", "h2b": "die passende Technik für Sie", "nav": "FUE & DHI",
+    "label": "Unsere Techniken",
+    "h2a": "FUE & DHI",
+    "h2b": "die passende Technik für Sie",
+    "nav": "FUE & DHI",
     "sub": "Beide sind moderne Techniken der follikulären Einheiten, die keine lineare Narbe hinterlassen. Ihr Arzt empfiehlt eine davon oder eine Kombination, nachdem er Ihren Spenderbereich, Ihren Haartyp und Ihre Ziele beurteilt hat.",
-    "fue": { "name": "FUE", "full": "Follikuläre Einheitenextraktion", "d": "Die follikulären Einheiten werden einzeln mit einer Mikrohohlnadel aus dem Spenderbereich entnommen. Anschließend öffnet der Arzt feine Kanäle im Empfängerbereich und setzt die Grafts dort ein.",
-      "steps": ["Einzelentnahme mit einer 0,7–1,0 mm Mikrohohlnadel", "Öffnen der Kanäle im Empfängerbereich in geplantem Winkel und geplanter Dichte", "Einsetzen der Grafts in die Kanäle"],
-      "best": ["Größere lichte oder kahle Bereiche", "Eine höhere Graft-Anzahl in einer Sitzung", "Patienten, für die eine Rasur des Behandlungsbereichs in Ordnung ist"] },
-    "dhi": { "name": "DHI", "full": "Direkte Haarimplantation", "d": "Die Entnahme erfolgt wie bei FUE. Der Unterschied liegt in der Implantation: Jedes Graft wird in einen Implanter-Stift (Choi-Pen) geladen, der den Kanal öffnet und das Graft in einem Schritt einsetzt.",
-      "steps": ["Einzelentnahme mit einer Mikrohohlnadel, wie bei FUE", "Laden jedes Grafts in einen Choi-Implanter", "Kanal und Implantation in einer Bewegung, mit Kontrolle von Winkel, Tiefe und Richtung"],
-      "best": ["Gestaltung des Haaransatzes und Verdichtung zwischen vorhandenem Haar", "Bart-, Augenbrauen- und Schnurrbarttransplantation", "Den Empfängerbereich unrasiert lassen, wenn geeignet"] },
-    "howH": "So funktioniert es", "bestH": "Häufig empfohlen für",
+    "fue": {
+      "name": "FUE",
+      "full": "Follikuläre Einheitenextraktion",
+      "d": "Die follikulären Einheiten werden einzeln mit einer Mikrohohlnadel aus dem Spenderbereich entnommen. Anschließend öffnet der Arzt feine Kanäle im Empfängerbereich und setzt die Grafts dort ein.",
+      "steps": [
+        "Einzelentnahme mit einer 0,7–1,0 mm Mikrohohlnadel",
+        "Öffnen der Kanäle im Empfängerbereich in geplantem Winkel und geplanter Dichte",
+        "Einsetzen der Grafts in die Kanäle"
+      ],
+      "best": [
+        "Größere lichte oder kahle Bereiche",
+        "Eine höhere Graft-Anzahl in einer Sitzung",
+        "Patienten, für die eine Rasur des Behandlungsbereichs in Ordnung ist"
+      ]
+    },
+    "dhi": {
+      "name": "DHI",
+      "full": "Direkte Haarimplantation",
+      "d": "Die Entnahme erfolgt wie bei FUE. Der Unterschied liegt in der Implantation: Jedes Graft wird in einen Implanter-Stift (Choi-Pen) geladen, der den Kanal öffnet und das Graft in einem Schritt einsetzt.",
+      "steps": [
+        "Einzelentnahme mit einer Mikrohohlnadel, wie bei FUE",
+        "Laden jedes Grafts in einen Choi-Implanter",
+        "Kanal und Implantation in einer Bewegung, mit Kontrolle von Winkel, Tiefe und Richtung"
+      ],
+      "best": [
+        "Gestaltung des Haaransatzes und Verdichtung zwischen vorhandenem Haar",
+        "Bart-, Augenbrauen- und Schnurrbarttransplantation",
+        "Den Empfängerbereich unrasiert lassen, wenn geeignet"
+      ]
+    },
+    "howH": "So funktioniert es",
+    "bestH": "Häufig empfohlen für",
     "tableH": "FUE und DHI im Vergleich",
-    "table": { "head": ["", "FUE", "DHI"], "rows": [
-      ["Graft-Entnahme", "Mikrohohlnadel, einzeln", "Wie bei FUE"],
-      ["Empfängerbereich", "Zuerst werden Kanäle geöffnet, dann die Grafts eingesetzt", "Der Stift öffnet den Kanal und implantiert in einem Schritt"],
-      ["Rasur", "In der Regel erforderlich", "Der Empfängerbereich kann oft unrasiert bleiben"],
-      ["Fläche pro Sitzung", "Geeignet für größere Flächen", "Geeignet für präzise Arbeit und Verdichtung"],
-      ["Spenderbereich", "Winzige punktförmige Narben, keine lineare Narbe", "Wie bei FUE"]] },
+    "table": {
+      "head": [
+        "",
+        "FUE",
+        "DHI"
+      ],
+      "rows": [
+        [
+          "Graft-Entnahme",
+          "Mikrohohlnadel, einzeln",
+          "Wie bei FUE"
+        ],
+        [
+          "Empfängerbereich",
+          "Zuerst werden Kanäle geöffnet, dann die Grafts eingesetzt",
+          "Der Stift öffnet den Kanal und implantiert in einem Schritt"
+        ],
+        [
+          "Rasur",
+          "In der Regel erforderlich",
+          "Der Empfängerbereich kann oft unrasiert bleiben"
+        ],
+        [
+          "Fläche pro Sitzung",
+          "Geeignet für größere Flächen",
+          "Geeignet für präzise Arbeit und Verdichtung"
+        ],
+        [
+          "Spenderbereich",
+          "Winzige punktförmige Narben, keine lineare Narbe",
+          "Wie bei FUE"
+        ]
+      ]
+    },
     "fact": "Gut zu wissen: DHI ist eine Variante von FUE, kein konkurrierendes Verfahren. Studien haben nicht gezeigt, dass eine der beiden Techniken zuverlässig bessere Ergebnisse liefert. Entscheidend sind chirurgisches Können, Planung und der sorgfältige Umgang mit den Grafts.",
     "clinicH": "So wenden wir FUE und DHI an",
     "clinic": [
-      { "t": "Ärztlich geleitete Planung", "d": "Ihr Arzt untersucht Ihren Spenderbereich, gestaltet den Haaransatz gemeinsam mit Ihnen und wählt FUE, DHI oder eine Kombination." },
-      { "t": "Sorgfältiger Umgang mit Grafts", "d": "Die Grafts werden gezählt, sortiert und in einer gekühlten Aufbewahrungslösung gelagert, damit sie so kurz wie möglich außerhalb des Körpers sind." },
-      { "t": "Natürlicher Winkel und natürliche Richtung", "d": "Jedes Graft wird entsprechend dem natürlichen Winkel und der Wuchsrichtung Ihres eigenen Haares eingesetzt." },
-      { "t": "Schonung des Spenderbereichs", "d": "Die Entnahme wird gleichmäßig verteilt, damit Ihr Spenderbereich auch in Zukunft eine natürliche Dichte behält." }],
+      {
+        "t": "Ärztlich geleitete Planung",
+        "d": "Ihr Arzt untersucht Ihren Spenderbereich, gestaltet den Haaransatz gemeinsam mit Ihnen und wählt FUE, DHI oder eine Kombination."
+      },
+      {
+        "t": "Sorgfältiger Umgang mit Grafts",
+        "d": "Die Grafts werden gezählt, sortiert und in einer gekühlten Aufbewahrungslösung gelagert, damit sie so kurz wie möglich außerhalb des Körpers sind."
+      },
+      {
+        "t": "Natürlicher Winkel und natürliche Richtung",
+        "d": "Jedes Graft wird entsprechend dem natürlichen Winkel und der Wuchsrichtung Ihres eigenen Haares eingesetzt."
+      },
+      {
+        "t": "Schonung des Spenderbereichs",
+        "d": "Die Entnahme wird gleichmäßig verteilt, damit Ihr Spenderbereich auch in Zukunft eine natürliche Dichte behält."
+      }
+    ],
     "timelineH": "Was Sie nach beiden Techniken erwartet",
     "timeline": [
-      { "t": "Woche 2–6", "d": "Die transplantierten Haare fallen in der Regel aus. Das ist ein normaler Teil des Haarzyklus." },
-      { "t": "Monat 3–4", "d": "Neues Haar beginnt in der Regel zu wachsen." },
-      { "t": "Monat 12–18", "d": "Das endgültige Ergebnis ist in der Regel sichtbar; am Oberkopf kann es am längsten dauern." }],
+      {
+        "t": "Woche 2–6",
+        "d": "Die transplantierten Haare fallen in der Regel aus. Das ist ein normaler Teil des Haarzyklus."
+      },
+      {
+        "t": "Monat 3–4",
+        "d": "Neues Haar beginnt in der Regel zu wachsen."
+      },
+      {
+        "t": "Monat 12–18",
+        "d": "Das endgültige Ergebnis ist in der Regel sichtbar; am Oberkopf kann es am längsten dauern."
+      }
+    ],
     "note": "Ergebnisse sind individuell verschieden. Ihr Arzt erläutert Ihnen realistische Erwartungen für Ihren Fall.",
-    "cta": "Welche Technik passt zu mir?", "more": "FUE und DHI im Vergleich",
+    "cta": "Welche Technik passt zu mir?",
+    "more": "FUE und DHI im Vergleich",
     "metaTitle": "FUE oder DHI Haartransplantation in {city}: Unterschiede erklärt – Elite+",
     "metaDesc": "Wie die Haartransplantationstechniken FUE und DHI funktionieren, worin sie sich unterscheiden, für wen sie geeignet sind und was Sie nach dem Eingriff erwartet."
+  },
+  "branch": {
+    "nav": "Kliniken",
+    "label": "Unsere Kliniken",
+    "h2a": "Wählen Sie",
+    "h2b": "Ihre Klinik",
+    "sub": "Zwei Kliniken, ein Behandlungsstandard. Wählen Sie die Klinik, die Sie kennenlernen möchten.",
+    "explore": "Klinik in {country} ansehen",
+    "suggested": "Für Sie empfohlen",
+    "yours": "Ihre Klinik",
+    "switchTo": "Zu {country} wechseln",
+    "doctorsN": "{n} Ärzte",
+    "eyebrow": "Elite+ {country}",
+    "h1a": "Elite+",
+    "h1b": "{country}",
+    "docH2a": "Ärzte in",
+    "docH2b": "{country}",
+    "resH2a": "Ergebnisse aus",
+    "resH2b": "{country}",
+    "revH2a": "Bewertungen",
+    "revH2b": "{country}",
+    "visitH2a": "Besuchen Sie",
+    "visitH2b": "die Klinik",
+    "directions": "Route planen",
+    "bookH": "Kostenlose Videoberatung buchen",
+    "bookSub": "Sprechen Sie vor Ihrer Entscheidung mit einer Koordinationsperson unserer Klinik in {country}.",
+    "bookCta": "Videotermin buchen",
+    "emptyDoctors": "Die Arztprofile dieser Klinik werden gerade erstellt.",
+    "emptyResults": "Ergebnisse dieser Klinik werden veröffentlicht, sobald die schriftlichen Einwilligungen vorliegen.",
+    "meta": [
+      "Elite+ {country} | Haartransplantation & Haarbehandlungen",
+      "Haartransplantation mit FUE und DHI sowie Haarbehandlungen bei Elite+ {country}: Ärzte, Ergebnisse, Preise und All-inclusive-Pakete."
+    ],
+    "pageSub": "Haartransplantation und Haarbehandlungen durch unser Team in {country}, mit All-inclusive-Paket für internationale Patienten."
+  },
+  "stage": {
+    "q": "Welches Bild entspricht Ihrem Haar heute am ehesten?",
+    "sub": "Eine Schätzung genügt. Ihr Arzt bestätigt sie.",
+    "male": "Haarausfall bei Männern",
+    "female": "Haarausfall bei Frauen",
+    "stage": "Stadium {n}",
+    "unsure": "Weiß nicht"
+  },
+  "currency": {
+    "label": "Währung",
+    "note": "Umgerechnete Preise sind ungefähre Angaben auf Basis der Wechselkurse vom {date}. Bezahlt wird in der Währung der Klinik."
+  },
+  "results2": {
+    "months": "{n} Monate",
+    "final": "Endergebnis"
   }
 }

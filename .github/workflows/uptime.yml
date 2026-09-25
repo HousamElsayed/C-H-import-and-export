@@ -1,0 +1,25 @@
+# Checks every 30 minutes that the Elite+ site answers. A failed run makes GitHub email the repository owner.
+# Set the repository variable SITE_URL (Settings → Secrets and variables → Actions → Variables) after launch,
+# e.g. https://eliteplusclinics.com/en/ ; until then the GitHub Pages preview is checked.
+name: Uptime check
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check home pages
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://housamelsayed.github.io/C-H-import-and-export/elite-plus/en/' }}
+        run: |
+          set -e
+          base="${SITE_URL%/en/}"
+          for path in en/ ar/ en/assessment/; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$base/$path")
+            echo "$path → $code"
+            if [ "$code" != "200" ]; then echo "::error::$base/$path returned $code"; exit 1; fi
+          done

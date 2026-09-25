@@ -8,7 +8,7 @@ const ORIGIN = 'http://localhost:8080';
 const req = (body, { path = '/leads', origin = ORIGIN, method = 'POST', ip = '203.0.113.7', type = 'application/json' } = {}) =>
   new Request(`http://edge${path}`, { method, headers: { origin, 'content-type': type, 'x-forwarded-for': ip }, body: method === 'POST' ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined });
 const full = (over = {}) => ({
-  leadId: crypto.randomUUID(), partial: false, lang: 'ar', category: 'transplant', service: 'hair-transplant',
+  leadId: crypto.randomUUID(), partial: false, lang: 'ar', branch: 'egypt', category: 'transplant', service: 'hair-transplant',
   answers: { goal: 'Improve how I look', prior: 'No' }, age: '35–44', gender: 'male', preferredMonth: '2026-11',
   name: 'Ahmed Test', country: 'SA', phone: '+966501234567', email: null,
   consent: { given: true, version: '2026-09', text: 'I give my explicit consent…', at: '2026-09-24T11:59:00Z' },
@@ -160,4 +160,27 @@ test('notification text excludes health answers and photos', () => {
   const t = notificationText({ id: 'x', name: 'A B', phone: '+905551112233', country: 'TR', lang: 'tr', is_partial: false, service: 'hair-transplant', preferred_month: '2026-12', answers: { goal: 'SECRET' }, attribution: {} }, 2);
   assert.ok(!t.includes('SECRET'));
   assert.match(t, /Photos: 2/);
+});
+
+test('branch is required on complete leads and must be a known clinic', async () => {
+  const { handle } = setup();
+  let r = await handle(req(full({ branch: 'paris' })));
+  assert.equal(r.status, 422);
+  assert.deepEqual((await r.json()).fields, ['branch']);
+  r = await handle(req(full({ branch: 'unsure' })));
+  assert.equal(r.status, 200);
+});
+
+test('partial leads without a branch default to unsure; the branch is stored for routing', async () => {
+  const { handle, leads } = setup();
+  const id = crypto.randomUUID();
+  await handle(req({ leadId: id, partial: true, lang: 'en', name: 'No Branch', country: 'GB', phone: '+447700900123', attribution: {} }));
+  assert.equal(leads.get(id).branch, 'unsure');
+  const b = full();
+  await handle(req(b));
+  assert.equal(leads.get(b.leadId).branch, 'egypt');
+});
+
+test('notification names the clinic', () => {
+  assert.match(notificationText({ id: 'x', name: 'A B', phone: '+201001234567', country: 'EG', lang: 'ar', is_partial: false, branch: 'egypt', service: 'hair-transplant', preferred_month: 'unsure', attribution: {} }, 0), /Elite\+ Egypt/);
 });

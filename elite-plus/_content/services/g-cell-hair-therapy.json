@@ -1,0 +1,29 @@
+{
+  "slug": "g-cell-hair-therapy",
+  "category": "treatment",
+  "order": 7,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "G-Cell Hair Therapy",
+      "short": "A regenerative hair therapy. Your doctor assesses whether it suits your type of hair loss."
+    },
+    "ar": {
+      "name": "علاج الشعر G-Cell",
+      "short": "علاج تجديدي للشعر، ويقيّم الطبيب مدى ملاءمته لنوع تساقط الشعر لديك."
+    },
+    "tr": {
+      "name": "G-Cell Saç Tedavisi",
+      "short": "Rejeneratif bir saç tedavisi. Saç dökülmenize uygun olup olmadığını doktorunuz değerlendirir."
+    },
+    "de": {
+      "name": "G-Cell-Haartherapie",
+      "short": "Eine regenerative Haartherapie. Ihr Arzt prüft, ob sie für Ihre Form des Haarausfalls geeignet ist."
+    },
+    "es": {
+      "name": "Terapia capilar G-Cell",
+      "short": "Una terapia capilar regenerativa. Su médico valora si es adecuada para su tipo de caída."
+    }
+  }
+}

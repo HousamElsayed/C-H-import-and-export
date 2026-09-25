@@ -9,7 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'); // elite-plus/
-const cfg = JSON.parse(fs.readFileSync(path.join(SITE, '_src/config.json'), 'utf8'));
+const cfg = { site: JSON.parse(fs.readFileSync(path.join(SITE, '_content/site.json'), 'utf8')) };
 const BASE = cfg.site.basePath.replace(/\/$/, ''); // e.g. /C-H-import-and-export/elite-plus
 const PORT = Number(process.env.PORT || 8080);
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.woff2': 'font/woff2', '.xml': 'application/xml', '.txt': 'text/plain' };

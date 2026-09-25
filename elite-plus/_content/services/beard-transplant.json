@@ -1,0 +1,29 @@
+{
+  "slug": "beard-transplant",
+  "category": "transplant",
+  "order": 2,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Beard Transplant",
+      "short": "Follicles are placed to fill patchy or thin areas of the beard."
+    },
+    "ar": {
+      "name": "زراعة اللحية",
+      "short": "زراعة البصيلات لملء الفراغات والمناطق الخفيفة في اللحية."
+    },
+    "tr": {
+      "name": "Sakal Ekimi",
+      "short": "Sakaldaki seyrek veya boş alanları doldurmak için saç kökleri yerleştirilir."
+    },
+    "de": {
+      "name": "Barttransplantation",
+      "short": "Follikel werden eingesetzt, um lückige oder dünne Stellen im Bart aufzufüllen."
+    },
+    "es": {
+      "name": "Injerto de barba",
+      "short": "Se implantan folículos para rellenar zonas despobladas o con poca densidad de la barba."
+    }
+  }
+}

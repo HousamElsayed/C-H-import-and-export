@@ -1,0 +1,29 @@
+{
+  "slug": "stem-cell-hair-therapy",
+  "category": "treatment",
+  "order": 8,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Stem Cell Hair Therapy",
+      "short": "A regenerative treatment for thinning hair using cells from your own tissue."
+    },
+    "ar": {
+      "name": "علاج الشعر بالخلايا الجذعية",
+      "short": "علاج تجديدي لضعف الشعر يعتمد على خلايا مأخوذة من أنسجتك."
+    },
+    "tr": {
+      "name": "Kök Hücre Saç Tedavisi",
+      "short": "Kendi dokunuzdan alınan hücrelerle seyrelen saçlar için rejeneratif bir tedavi."
+    },
+    "de": {
+      "name": "Stammzell-Haartherapie",
+      "short": "Eine regenerative Behandlung bei dünner werdendem Haar mit Zellen aus Ihrem eigenen Gewebe."
+    },
+    "es": {
+      "name": "Terapia capilar con células madre",
+      "short": "Un tratamiento regenerativo para el cabello debilitado con células de su propio tejido."
+    }
+  }
+}

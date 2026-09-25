@@ -36,7 +36,12 @@
   const dialOf = (c) => countries.find((x) => x.c === c)?.dial || '';
 
   // ---------- state ----------
-  const fresh = () => ({ leadId: uuid(), step: 0, a: { country: detectCountry() }, partialSent: false, started: false });
+  const presetBranch = () => {
+    const q = new URLSearchParams(location.search).get('branch');
+    let saved = null; try { saved = JSON.parse(localStorage.getItem('elite_branch')); } catch { /* ignore */ }
+    return [q, saved].find((b) => D.branches.some((x) => x.slug === b)) || undefined;
+  };
+  const fresh = () => ({ leadId: uuid(), step: 0, a: { country: detectCountry(), branch: presetBranch() }, partialSent: false, started: false });
   let state = fresh();
   let photos = []; // { blob, url, type, size } kept in memory only
   let turnstileToken = null;
@@ -47,11 +52,13 @@
   // ---------- steps ----------
   const svcById = (slug) => D.services.find((s) => s.slug === slug);
   const steps = [
+    { id: 'branch', valid: (a) => !!a.branch },
     { id: 'category', valid: (a) => !!a.category },
     { id: 'service', skip: (a) => a.category === 'unsure', valid: (a) => !!a.service },
     { id: 'goal', valid: (a) => { const q = customQs(a); return q ? q.every((x) => a['q_' + x.id]) : !!a.goal; } },
     { id: 'prior', valid: (a) => !!a.prior },
     { id: 'about', valid: (a) => !!a.age && !!a.gender },
+    { id: 'stage', skip: (a) => !D.stageServices.includes(a.service) && a.category !== 'treatment' && !(a.category === 'unsure'), valid: (a) => !!a.stage },
     { id: 'photos', optional: true, valid: () => true },
     { id: 'date', valid: (a) => !!a.date },
     { id: 'contact', valid: (a) => validateContact(a, false) },
@@ -87,6 +94,12 @@
   function body(step) {
     const a = state.a;
     switch (step.id) {
+      case 'branch':
+        return `<h2 class="qa__q" tabindex="-1">${esc(S.q_branch)}</h2><div class="qa__opts" role="radiogroup">${D.branches.map((b) => radio('branch', b.slug, `<span class="flag" aria-hidden="true">${b.flag}</span> ${esc(b.name)}${b.city ? ` · ${esc(b.city)}` : ''}`, a.branch === b.slug)).join('')}${radio('branch', 'unsure', esc(S.branchUnsure), a.branch === 'unsure')}</div>`;
+      case 'stage': {
+        const G = D.stage; const groups = a.gender === '0' ? [G.female] : a.gender === '1' ? [G.male] : [G.male, G.female];
+        return `<h2 class="qa__q" tabindex="-1">${esc(G.q)}</h2><p class="qa__sub">${esc(G.sub)}</p>${groups.map((g) => `${groups.length > 1 ? `<p class="qa__glabel qa__glabel--stage">${esc(g.label)}</p>` : ''}<div class="stages" role="radiogroup" aria-label="${esc(g.label)}">${g.images.map((im) => `<label class="opt opt--img"><input type="radio" name="stage" value="${im.id}"${a.stage === im.id ? ' checked' : ''}><img src="${im.src}" alt="" width="120" height="140" loading="lazy"><span>${esc(fmt(G.stage, { n: im.n }))}</span></label>`).join('')}</div>`).join('')}<div class="qa__opts">${radio('stage', 'unsure', esc(G.unsure), a.stage === 'unsure')}</div>`;
+      }
       case 'category':
         return `<h2 class="qa__q" tabindex="-1">${esc(S.q_category)}</h2><div class="qa__opts qa__opts--img" role="radiogroup">${D.categories.map((c) => `<label class="opt opt--img"><input type="radio" name="category" value="${c.id}"${a.category === c.id ? ' checked' : ''}><img src="${c.image}" alt="" loading="lazy" width="400" height="225"><span>${esc(c.name)}<small>${esc(c.short)}</small></span></label>`).join('')}</div><div class="qa__opts">${radio('category', 'unsure', esc(S.unsure), a.category === 'unsure')}</div>`;
       case 'service':
@@ -123,7 +136,7 @@
           <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off" data-hp></label></div>`;
       case 'consent':
         return `<h2 class="qa__q" tabindex="-1">${esc(S.q_consent)}</h2>
-          <label class="check"><input type="checkbox" name="consent" value="1"${a.consent ? ' checked' : ''} required><span data-consent-text>${esc(S.consent)} <a href="${D.privacyUrl}" target="_blank" rel="noopener">${esc(S.consentLink)}</a> · <a href="${D.kvkkUrl}" target="_blank" rel="noopener">${esc(S.consentKvkk)}</a>.</span></label>
+          <label class="check"><input type="checkbox" name="consent" value="1"${a.consent ? ' checked' : ''} required><span data-consent-text>${esc(S.consent)} <a href="${D.privacyUrl}" target="_blank" rel="noopener">${esc(S.consentLink)}</a> · <a href="${D.kvkkUrl}" target="_blank" rel="noopener">${esc(S.consentKvkk)}</a> · <a href="${D.pdplUrl}" target="_blank" rel="noopener">PDPL</a>.</span></label>
           ${D.turnstileSiteKey ? '<div data-turnstile style="margin-top:18px"></div>' : ''}`;
       default: return '';
     }
@@ -164,7 +177,7 @@
         if (t.name === 'service') Object.keys(state.a).filter((k) => k.startsWith('q_')).forEach((k) => delete state.a[k]);
         save();
         // Single-choice screens advance automatically once answered.
-        const single = ['category', 'service', 'prior', 'date'].includes(step.id) || (step.id === 'goal' && !customQs(state.a));
+        const single = ['branch', 'category', 'service', 'stage', 'prior', 'date'].includes(step.id) || (step.id === 'goal' && !customQs(state.a));
         if (single && step.valid(state.a)) setTimeout(() => next(), 180);
       } else if (t.type === 'checkbox' && t.name === 'consent') { state.a.consent = t.checked; save(); }
       else if (t.name === 'country') { state.a.country = t.value; if (!state.a.dialTouched) { state.a.dial = t.value; const d = form.querySelector('[name="dial"]'); if (d) d.value = t.value; } save(); }
@@ -249,7 +262,7 @@
   function sendPartial() {
     if (state.partialSent || !D.endpoints.lead || state.hp) return;
     state.partialSent = true; save();
-    post(D.endpoints.lead, { leadId: state.leadId, partial: true, lang, name: state.a.name.trim(), country: state.a.country, phone: phoneE164(state.a), email: state.a.email || null, attribution: attribution(), page: location.pathname })
+    post(D.endpoints.lead, { leadId: state.leadId, partial: true, lang, branch: state.a.branch || 'unsure', name: state.a.name.trim(), country: state.a.country, phone: phoneE164(state.a), email: state.a.email || null, attribution: attribution(), page: location.pathname })
       .then(() => track('lead_partial')).catch(() => { state.partialSent = false; save(); });
   }
 
@@ -261,7 +274,8 @@
     const payload = {
       leadId: state.leadId, partial: false, lang,
       category: a.category, service: a.service || null,
-      answers: Object.fromEntries(Object.entries(a).filter(([k]) => k === 'goal' || k === 'prior' || k.startsWith('q_')).map(([k, v]) => [k, k === 'goal' ? GOAL_CODES[+v] : k === 'prior' ? PRIOR_CODES[+v] : v])),
+      branch: a.branch || 'unsure',
+      answers: Object.fromEntries(Object.entries(a).filter(([k]) => k === 'goal' || k === 'prior' || k === 'stage' || k.startsWith('q_')).map(([k, v]) => [k, k === 'goal' ? GOAL_CODES[+v] : k === 'prior' ? PRIOR_CODES[+v] : v])),
       age: a.age, gender: ['female', 'male', 'undisclosed'][+a.gender] ?? null, preferredMonth: a.date,
       name: a.name.trim(), country: a.country, phone: phoneE164(a), email: a.email || null,
       consent: { given: true, version: CONSENT_VERSION, text: root.querySelector('[data-consent-text]')?.textContent.trim(), at: new Date().toISOString() },
@@ -289,6 +303,7 @@
   }
 
   function done(preview) {
+    const bwa = D.branches.find((b) => b.slug === state.a.branch)?.wa; if (bwa) D.wa = bwa;
     root.innerHTML = `<div class="qa__done" tabindex="-1">
       <svg class="star" viewBox="-52 -52 104 104" aria-hidden="true"><path d="M0 -48L3.6 -8.8L17.7 -17.7L8.8 -3.6L48 0L8.8 3.6L17.7 17.7L3.6 8.8L0 48L-3.6 8.8L-17.7 17.7L-8.8 3.6L-48 0L-8.8 -3.6L-17.7 -17.7L-3.6 -8.8Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></svg>
       <h2 class="duo"><span class="duo__a">${esc(S.thanksH1a)}</span> <span class="duo__b">${esc(S.thanksH1b)}</span></h2>

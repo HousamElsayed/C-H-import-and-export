@@ -1,0 +1,29 @@
+{
+  "slug": "prp-hair-treatment",
+  "category": "treatment",
+  "order": 10,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "PRP (Plasma) Hair Treatment",
+      "short": "Platelet-rich plasma prepared from your own blood is injected into the scalp."
+    },
+    "ar": {
+      "name": "علاج الشعر بالبلازما (PRP)",
+      "short": "حقن فروة الرأس ببلازما غنية بالصفائح الدموية محضّرة من دمك."
+    },
+    "tr": {
+      "name": "PRP Saç Tedavisi",
+      "short": "Kendi kanınızdan hazırlanan trombositten zengin plazma saçlı deriye enjekte edilir."
+    },
+    "de": {
+      "name": "PRP-Haarbehandlung (Eigenblut)",
+      "short": "Aus Ihrem eigenen Blut gewonnenes plättchenreiches Plasma wird in die Kopfhaut injiziert."
+    },
+    "es": {
+      "name": "Tratamiento capilar con PRP (plasma)",
+      "short": "Se inyecta en el cuero cabelludo plasma rico en plaquetas obtenido de su propia sangre."
+    }
+  }
+}

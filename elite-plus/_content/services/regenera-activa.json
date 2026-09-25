@@ -1,0 +1,29 @@
+{
+  "slug": "regenera-activa",
+  "category": "treatment",
+  "order": 9,
+  "priceFrom": null,
+  "image": null,
+  "content": {
+    "en": {
+      "name": "Regenera Activa",
+      "short": "Micro-grafts prepared from a small sample of your own scalp tissue are injected into thinning areas."
+    },
+    "ar": {
+      "name": "ريجينيرا أكتيفا",
+      "short": "تحضير طُعوم دقيقة من عينة صغيرة من فروة رأسك ثم حقنها في المناطق الخفيفة."
+    },
+    "tr": {
+      "name": "Regenera Activa",
+      "short": "Kendi saçlı derinizden alınan küçük bir örnekten hazırlanan mikro greftler seyrek bölgelere enjekte edilir."
+    },
+    "de": {
+      "name": "Regenera Activa",
+      "short": "Aus einer kleinen Probe Ihrer eigenen Kopfhaut werden Mikrotransplantate gewonnen und in lichte Stellen injiziert."
+    },
+    "es": {
+      "name": "Regenera Activa",
+      "short": "Se preparan microinjertos a partir de una pequeña muestra de su cuero cabelludo y se inyectan en las zonas débiles."
+    }
+  }
+}
