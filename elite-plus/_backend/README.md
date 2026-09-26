@@ -29,7 +29,7 @@ supabase functions deploy leads --no-verify-jwt
 
 `ROUTING_JSON` sends each request to its clinic's team (`unsure` = the patient did not choose a clinic). Without it, `NOTIFY_EMAILS` / `TELEGRAM_CHAT_ID` receive everything.
 
-Then set `integrations.leadEndpoint`, `integrations.uploadUrlEndpoint` and `integrations.turnstileSiteKey` in `_src/config.json` and rebuild the site.
+Then set `integrations.leadEndpoint`, `integrations.uploadUrlEndpoint` and `integrations.turnstileSiteKey` in `elite-plus/_content/site.json` and rebuild the site.
 
 Choose an EU region for the Supabase project (patients from the EU; health data). Sign Supabase's DPA and list Supabase, Resend, Telegram and Cloudflare as processors in the privacy policy. Email and Telegram messages carry only name, phone, country, interest and source: no health answers or photos.
 The CRM receives the full lead plus 7-day signed photo links.
