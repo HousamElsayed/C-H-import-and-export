@@ -48,6 +48,7 @@ branch = [
 service = [
   f("category", "Category", "select", options={"values": ["transplant", "treatment"]}, readonly=True), f("order", "Order", "number"),
   f("priceFrom", "Starting price (number only)", "number"), img("image", "Photo"),
+  f("redirectFrom", "Old web addresses that open this page", list=True, readonly=True),
   per_lang("content", "Text", [f("name", "Name"), f("short", "Two-line summary", "text"), f("intro", "Intro paragraph", "text"),
     f("whoFor", "Who it is for", list=True), {"name": "steps", "label": "Procedure steps", "type": "object", "list": True, "fields": [f("t", "Title"), f("d", "Description", "text")]},
     f("stay", "Usual stay"), {"name": "faq", "label": "FAQ", "type": "object", "list": True, "fields": [f("q", "Question"), f("a", "Answer", "text")]}]),

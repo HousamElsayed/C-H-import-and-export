@@ -910,6 +910,13 @@
           "type": "image"
         },
         {
+          "name": "redirectFrom",
+          "label": "Old web addresses that open this page",
+          "type": "string",
+          "list": true,
+          "readonly": true
+        },
+        {
           "name": "content",
           "label": "Text",
           "type": "object",

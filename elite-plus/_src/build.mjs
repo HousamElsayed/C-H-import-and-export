@@ -1071,11 +1071,15 @@ function designSystem() {
 const legalKeys = ['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'impressum'];
 const sitemapPaths = ['', 'services/', ...cfg.services.map((s) => `services/${s.slug}/`), 'fue-dhi/', ...BRANCHES.map((b) => `${b.slug}/`), 'results/', 'doctors/', ...cfg.doctors.map((d) => `${d.branch}/doctors/${d.slug}/`), 'about/', 'prices/', 'journey/', 'assessment/', 'faq/', 'contact/', ...legalKeys.map((k) => k + '/')];
 
+const redirectPage = (lang, to) => `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><title>${esc(I[lang].meta.siteName)}</title><meta name="robots" content="noindex"><link rel="canonical" href="${absUrl(to)}"><meta http-equiv="refresh" content="0; url=${to}"></head><body><a href="${to}">${esc(to)}</a></body></html>\n`;
+
 for (const lang of LANGS) {
   const put = (p, html) => out.set(`${lang}/${p}index.html`, html);
   put('', homePage(lang));
   put('services/', servicesIndex(lang));
   cfg.services.forEach((s, i) => put(`services/${s.slug}/`, servicePage(lang, s, i)));
+  // Old URLs of merged treatments keep working (bookmarks, shared links, Google).
+  cfg.services.forEach((s) => (s.redirectFrom ?? []).forEach((o) => put(`services/${o}/`, redirectPage(lang, href(lang, `services/${s.slug}/`)))));
   put('fue-dhi/', techniquesPage(lang));
   put('results/', resultsPage(lang));
   put('doctors/', doctorsPage(lang));
@@ -1104,6 +1108,8 @@ out.set('admin/index.html', `<!doctype html><html lang="en"><head><meta charset=
 <body class="pg-admin"><div id="app"><p style="padding:24px">Loading…</p></div></body></html>`);
 out.set('design-system/index.html', designSystem());
 out.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${LANGS.map((l) => `<sitemap><loc>${absUrl(`${BASE}/sitemap-${l}.xml`)}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`);
+// Real 301s on Cloudflare Pages (GitHub Pages ignores this file and uses the refresh pages above).
+out.set('_redirects', LANGS.flatMap((l) => cfg.services.flatMap((s) => (s.redirectFrom ?? []).map((o) => `${href(l, `services/${o}/`)} ${href(l, `services/${s.slug}/`)} 301`))).join('\n') + '\n');
 out.set('robots.txt', `# Must be served at the domain root to take effect.\nUser-agent: *\n${PREVIEW ? 'Disallow: /\n' : `Disallow: ${BASE}/design-system/\n`}Sitemap: ${absUrl(`${BASE}/sitemap.xml`)}\n`);
 
 if (PROD && problems.size) {

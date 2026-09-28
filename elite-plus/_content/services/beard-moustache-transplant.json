@@ -1,0 +1,30 @@
+{
+  "slug": "beard-moustache-transplant",
+  "category": "transplant",
+  "order": 2,
+  "priceFrom": null,
+  "image": null,
+  "redirectFrom": ["beard-transplant", "moustache-transplant"],
+  "content": {
+    "en": {
+      "name": "Beard & Moustache Transplant",
+      "short": "Beard and moustache are usually planned and transplanted in one session, so density and shape match across the face."
+    },
+    "ar": {
+      "name": "زراعة اللحية والشارب",
+      "short": "تُخطَّط زراعة اللحية والشارب عادةً وتُجرى في جلسة واحدة، ليتناسق شكلهما وكثافتهما على الوجه."
+    },
+    "tr": {
+      "name": "Sakal ve Bıyık Ekimi",
+      "short": "Sakal ve bıyık genellikle tek seansta planlanıp ekilir; böylece yüzde yoğunluk ve şekil uyumlu olur."
+    },
+    "de": {
+      "name": "Bart- und Schnurrbarttransplantation",
+      "short": "Bart und Schnurrbart werden meist gemeinsam in einer Sitzung geplant und transplantiert, damit Dichte und Form zueinander passen."
+    },
+    "es": {
+      "name": "Injerto de barba y bigote",
+      "short": "La barba y el bigote se suelen planificar e injertar en una sola sesión, para que densidad y forma sean armónicas."
+    }
+  }
+}
