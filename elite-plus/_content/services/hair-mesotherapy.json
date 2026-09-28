@@ -15,14 +15,6 @@
         "People who want to add to other treatments such as PRP or medication",
         "Patients after a hair transplant, to support the scalp"
       ],
-      "notFor": [
-        "Allergy to any ingredient in the formula",
-        "Pregnancy or breastfeeding (some ingredients must never be used in pregnancy)",
-        "Active infection or inflammation of the scalp",
-        "Bleeding disorders or blood thinners that cannot be safely paused",
-        "Hair loss with an untreated medical cause, such as thyroid disease or iron deficiency"
-      ],
-      "evidence": "Systematic reviews find that mesotherapy may improve hair density, especially formulas containing medicines such as dutasteride, but studies are small, use different formulas and have short follow-up. Common side effects are temporary pain, redness and headache; forehead swelling and, rarely, infection have been reported.",
       "steps": [
         {
           "t": "Assessment",
@@ -67,14 +59,6 @@
         "من يرغب في إضافته إلى علاجات أخرى مثل البلازما أو الأدوية",
         "المرضى بعد زراعة الشعر لدعم فروة الرأس"
       ],
-      "notFor": [
-        "الحساسية لأي مكوّن في التركيبة",
-        "الحمل أو الرضاعة (بعض المكونات يُمنع استخدامها في الحمل)",
-        "عدوى أو التهاب نشط في فروة الرأس",
-        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
-        "تساقط ناتج عن سبب طبي غير معالج مثل أمراض الغدة الدرقية أو نقص الحديد"
-      ],
-      "evidence": "تشير المراجعات المنهجية إلى أن الميزوثيرابي قد يحسّن كثافة الشعر، خاصةً التركيبات التي تحتوي على أدوية مثل الدوتاستيرايد، لكن الدراسات صغيرة وتستخدم تركيبات مختلفة ومدة متابعتها قصيرة. من الآثار الشائعة ألم مؤقت واحمرار وصداع، وقد سُجّل تورّم في الجبهة ونادرًا عدوى.",
       "steps": [
         {
           "t": "التقييم",
@@ -119,14 +103,6 @@
         "PRP veya ilaç gibi diğer tedavilere ek yapmak isteyenler",
         "Saçlı deriyi desteklemek için saç ekimi sonrası hastalar"
       ],
-      "notFor": [
-        "Formüldeki herhangi bir maddeye alerji",
-        "Gebelik veya emzirme (bazı maddeler gebelikte asla kullanılmamalıdır)",
-        "Saçlı deride aktif enfeksiyon veya iltihap",
-        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
-        "Tiroid hastalığı veya demir eksikliği gibi tedavi edilmemiş bir nedene bağlı dökülme"
-      ],
-      "evidence": "Sistematik derlemeler, mezoterapinin özellikle dutasterid gibi ilaçlar içeren formüllerle saç yoğunluğunu artırabileceğini gösteriyor; ancak çalışmalar küçük, formüller farklı ve takip süreleri kısa. Sık görülen yan etkiler geçici ağrı, kızarıklık ve baş ağrısıdır; alında şişlik ve nadiren enfeksiyon bildirilmiştir.",
       "steps": [
         {
           "t": "Değerlendirme",
@@ -171,14 +147,6 @@
         "Menschen, die andere Behandlungen wie PRP oder Medikamente ergänzen möchten",
         "Patienten nach einer Haartransplantation zur Unterstützung der Kopfhaut"
       ],
-      "notFor": [
-        "Allergie gegen einen Bestandteil der Rezeptur",
-        "Schwangerschaft oder Stillzeit (manche Wirkstoffe dürfen in der Schwangerschaft nie verwendet werden)",
-        "Aktive Infektion oder Entzündung der Kopfhaut",
-        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
-        "Haarausfall mit unbehandelter medizinischer Ursache, etwa Schilddrüsenerkrankung oder Eisenmangel"
-      ],
-      "evidence": "Systematische Übersichtsarbeiten zeigen, dass Mesotherapie die Haardichte verbessern kann, vor allem Rezepturen mit Medikamenten wie Dutasterid; die Studien sind jedoch klein, uneinheitlich und kurz nachbeobachtet. Häufige Nebenwirkungen sind vorübergehende Schmerzen, Rötung und Kopfschmerzen; Schwellungen der Stirn und selten Infektionen wurden beschrieben.",
       "steps": [
         {
           "t": "Untersuchung",
@@ -223,14 +191,6 @@
         "Quien quiere complementar otros tratamientos como el PRP o la medicación",
         "Pacientes tras un injerto capilar, para apoyar el cuero cabelludo"
       ],
-      "notFor": [
-        "Alergia a algún componente de la fórmula",
-        "Embarazo o lactancia (algunos componentes no deben usarse nunca en el embarazo)",
-        "Infección o inflamación activa del cuero cabelludo",
-        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
-        "Caída con una causa médica sin tratar, como enfermedad tiroidea o falta de hierro"
-      ],
-      "evidence": "Las revisiones sistemáticas indican que la mesoterapia puede mejorar la densidad capilar, sobre todo las fórmulas con medicamentos como el dutasterida, pero los estudios son pequeños, con fórmulas distintas y seguimiento corto. Los efectos frecuentes son dolor, enrojecimiento y dolor de cabeza pasajeros; se han descrito hinchazón de la frente y, rara vez, infecciones.",
       "steps": [
         {
           "t": "Valoración",

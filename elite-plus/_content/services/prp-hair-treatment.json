@@ -15,15 +15,6 @@
         "Patients who want to support a hair transplant, before or after surgery",
         "People who prefer a treatment made from their own blood, alongside or instead of daily medication"
       ],
-      "notFor": [
-        "Low platelet count or a platelet or bleeding disorder",
-        "Blood thinners (anticoagulants) that cannot be safely paused: your doctor decides",
-        "Active cancer or recent chemotherapy",
-        "Pregnancy or breastfeeding",
-        "Active infection or inflammation of the scalp",
-        "Uncontrolled diabetes or another uncontrolled illness"
-      ],
-      "evidence": "Meta-analyses of randomised trials show a statistically significant increase in hair density at 3 and 6 months compared with placebo in androgenetic alopecia. Results vary between people, preparation methods are not standardised, and the effect fades without maintenance sessions.",
       "steps": [
         {
           "t": "Assessment",
@@ -68,15 +59,6 @@
         "من يرغب في دعم زراعة الشعر قبل العملية أو بعدها",
         "من يفضّل علاجًا من دمه، مع الأدوية اليومية أو بدلًا منها"
       ],
-      "notFor": [
-        "انخفاض عدد الصفائح الدموية أو اضطرابات الصفائح أو النزف",
-        "أدوية مميّعة للدم لا يمكن إيقافها بأمان، ويقرّر ذلك الطبيب",
-        "السرطان النشط أو العلاج الكيميائي الحديث",
-        "الحمل أو الرضاعة",
-        "التهاب أو عدوى نشطة في فروة الرأس",
-        "السكري أو أي مرض آخر غير منضبط"
-      ],
-      "evidence": "تُظهر التحليلات التجميعية للتجارب العشوائية زيادة ذات دلالة إحصائية في كثافة الشعر بعد 3 و6 أشهر مقارنةً بالعلاج الوهمي في الصلع الوراثي. تختلف النتائج من شخص لآخر، وطرق التحضير غير موحّدة، ويتراجع التأثير دون جلسات المتابعة.",
       "steps": [
         {
           "t": "التقييم",
@@ -121,15 +103,6 @@
         "Saç ekimini ameliyat öncesi veya sonrası desteklemek isteyenler",
         "Günlük ilaçlarla birlikte ya da onların yerine kendi kanından hazırlanan bir tedavi tercih edenler"
       ],
-      "notFor": [
-        "Düşük trombosit sayısı, trombosit veya pıhtılaşma bozukluğu",
-        "Güvenle ara verilemeyen kan sulandırıcılar (karar doktorunuzundur)",
-        "Aktif kanser veya yakın zamanda kemoterapi",
-        "Gebelik veya emzirme",
-        "Saçlı deride aktif enfeksiyon veya iltihap",
-        "Kontrolsüz diyabet veya başka kontrolsüz bir hastalık"
-      ],
-      "evidence": "Randomize çalışmaların meta-analizleri, androgenetik alopecide plaseboya göre 3. ve 6. aylarda saç yoğunluğunda istatistiksel olarak anlamlı artış göstermektedir. Sonuçlar kişiden kişiye değişir, hazırlama yöntemleri standart değildir ve idame seansları yapılmazsa etki azalır.",
       "steps": [
         {
           "t": "Değerlendirme",
@@ -174,15 +147,6 @@
         "Patienten, die eine Haartransplantation vor oder nach dem Eingriff unterstützen möchten",
         "Menschen, die eine Behandlung aus eigenem Blut bevorzugen – zusätzlich zu oder statt täglicher Medikamente"
       ],
-      "notFor": [
-        "Niedrige Thrombozytenzahl oder Thrombozyten- bzw. Gerinnungsstörung",
-        "Blutverdünner, die nicht sicher pausiert werden können (Ihr Arzt entscheidet)",
-        "Aktive Krebserkrankung oder kürzlich erfolgte Chemotherapie",
-        "Schwangerschaft oder Stillzeit",
-        "Aktive Infektion oder Entzündung der Kopfhaut",
-        "Schlecht eingestellter Diabetes oder eine andere nicht kontrollierte Erkrankung"
-      ],
-      "evidence": "Metaanalysen randomisierter Studien zeigen bei androgenetischer Alopezie nach 3 und 6 Monaten eine statistisch signifikante Zunahme der Haardichte gegenüber Placebo. Die Ergebnisse sind individuell verschieden, die Aufbereitungsmethoden sind nicht standardisiert, und ohne Auffrischungssitzungen lässt die Wirkung nach.",
       "steps": [
         {
           "t": "Untersuchung",
@@ -227,15 +191,6 @@
         "Pacientes que quieren complementar un injerto capilar, antes o después de la cirugía",
         "Quien prefiere un tratamiento con su propia sangre, junto a la medicación diaria o en su lugar"
       ],
-      "notFor": [
-        "Plaquetas bajas o trastorno de las plaquetas o de la coagulación",
-        "Anticoagulantes que no pueden suspenderse con seguridad (lo decide su médico)",
-        "Cáncer activo o quimioterapia reciente",
-        "Embarazo o lactancia",
-        "Infección o inflamación activa del cuero cabelludo",
-        "Diabetes u otra enfermedad no controlada"
-      ],
-      "evidence": "Los metaanálisis de ensayos aleatorizados muestran un aumento estadísticamente significativo de la densidad capilar a los 3 y 6 meses frente a placebo en la alopecia androgenética. Los resultados varían entre personas, los métodos de preparación no están estandarizados y el efecto disminuye sin sesiones de mantenimiento.",
       "steps": [
         {
           "t": "Valoración",

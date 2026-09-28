@@ -15,14 +15,6 @@
         "Patients who want to support a hair transplant",
         "People who understand that this is a newer treatment and results vary"
       ],
-      "notFor": [
-        "Areas that are completely bald",
-        "People who are not fit for a small fat-collection procedure",
-        "Bleeding disorders or blood thinners that cannot be safely paused",
-        "Active cancer, active infection or uncontrolled illness",
-        "Pregnancy or breastfeeding"
-      ],
-      "evidence": "Early clinical studies report improved hair density and thickness after treatment, but they are small, use different methods and have short follow-up. The treatment is considered investigational and is not approved as a standard treatment for hair loss by regulators such as the US FDA.",
       "steps": [
         {
           "t": "Assessment",
@@ -67,14 +59,6 @@
         "من يرغب في دعم زراعة الشعر",
         "من يدرك أنه علاج حديث وأن النتائج تختلف"
       ],
-      "notFor": [
-        "المناطق الصلعاء تمامًا",
-        "من لا تسمح حالته بإجراء سحب دهون بسيط",
-        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
-        "السرطان النشط أو العدوى النشطة أو الأمراض غير المنضبطة",
-        "الحمل أو الرضاعة"
-      ],
-      "evidence": "تشير دراسات سريرية أولية إلى تحسّن كثافة الشعر وسماكته بعد العلاج، لكنها صغيرة وتستخدم طرقًا مختلفة ومدة متابعتها قصيرة. يُعد العلاج تجريبيًا، ولم تعتمده جهات تنظيمية مثل إدارة الغذاء والدواء الأمريكية علاجًا قياسيًا لتساقط الشعر.",
       "steps": [
         {
           "t": "التقييم",
@@ -119,14 +103,6 @@
         "Saç ekimini desteklemek isteyenler",
         "Bunun yeni bir tedavi olduğunu ve sonuçların değiştiğini bilenler"
       ],
-      "notFor": [
-        "Tamamen açılmış bölgeler",
-        "Küçük bir yağ alma işlemine uygun olmayanlar",
-        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
-        "Aktif kanser, aktif enfeksiyon veya kontrolsüz hastalık",
-        "Gebelik veya emzirme"
-      ],
-      "evidence": "İlk klinik çalışmalar tedavi sonrası saç yoğunluğu ve kalınlığında iyileşme bildiriyor; ancak çalışmalar küçük, yöntemler farklı ve takip süreleri kısa. Tedavi deneysel kabul edilmektedir ve ABD FDA gibi otoriteler tarafından saç dökülmesi için standart tedavi olarak onaylanmamıştır.",
       "steps": [
         {
           "t": "Değerlendirme",
@@ -171,14 +147,6 @@
         "Patienten, die eine Haartransplantation unterstützen möchten",
         "Menschen, die wissen, dass es sich um eine neuere Behandlung mit unterschiedlichen Ergebnissen handelt"
       ],
-      "notFor": [
-        "Völlig kahle Stellen",
-        "Menschen, für die eine kleine Fettentnahme nicht geeignet ist",
-        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
-        "Aktive Krebserkrankung, aktive Infektion oder nicht kontrollierte Erkrankung",
-        "Schwangerschaft oder Stillzeit"
-      ],
-      "evidence": "Erste klinische Studien berichten über eine verbesserte Haardichte und -dicke, sind aber klein, methodisch uneinheitlich und kurz nachbeobachtet. Die Behandlung gilt als experimentell und ist von Behörden wie der US-amerikanischen FDA nicht als Standardbehandlung bei Haarausfall zugelassen.",
       "steps": [
         {
           "t": "Untersuchung",
@@ -223,14 +191,6 @@
         "Pacientes que quieren complementar un injerto capilar",
         "Quien entiende que es un tratamiento reciente y que los resultados varían"
       ],
-      "notFor": [
-        "Zonas completamente calvas",
-        "Personas no aptas para una pequeña extracción de grasa",
-        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
-        "Cáncer activo, infección activa o enfermedad no controlada",
-        "Embarazo o lactancia"
-      ],
-      "evidence": "Los primeros estudios clínicos describen mejoras en densidad y grosor del cabello, pero son pequeños, usan métodos distintos y tienen seguimiento corto. El tratamiento se considera experimental y no está aprobado como tratamiento estándar de la caída del cabello por autoridades como la FDA de EE. UU.",
       "steps": [
         {
           "t": "Valoración",

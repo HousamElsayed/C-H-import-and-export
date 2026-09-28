@@ -15,14 +15,6 @@
         "People who want a single-session treatment rather than repeated injections",
         "Patients who want to support a hair transplant"
       ],
-      "notFor": [
-        "Areas that are completely bald: there are no follicles left to strengthen",
-        "Bleeding disorders or blood thinners that cannot be safely paused",
-        "Active infection or inflammation of the scalp",
-        "Pregnancy or breastfeeding",
-        "Scarring types of hair loss, unless your doctor advises otherwise"
-      ],
-      "evidence": "Published studies are small and mostly without a control group. They report a favourable response in roughly two out of three patients, with a modest rise in hair density and thickness about 6 months after one session. Larger controlled trials are still needed.",
       "steps": [
         {
           "t": "Assessment",
@@ -67,14 +59,6 @@
         "من يفضّل علاجًا في جلسة واحدة بدل الحقن المتكرر",
         "من يرغب في دعم زراعة الشعر"
       ],
-      "notFor": [
-        "المناطق الصلعاء تمامًا، إذ لا توجد بصيلات لتقويتها",
-        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
-        "عدوى أو التهاب نشط في فروة الرأس",
-        "الحمل أو الرضاعة",
-        "أنواع التساقط المصحوبة بتندّب، ما لم يوصِ الطبيب بغير ذلك"
-      ],
-      "evidence": "الدراسات المنشورة صغيرة ومعظمها دون مجموعة ضابطة، وتشير إلى استجابة جيدة لدى نحو ثلثي المرضى مع زيادة محدودة في كثافة الشعر وسماكته بعد نحو 6 أشهر من جلسة واحدة. ما زالت هناك حاجة إلى تجارب أكبر ومضبوطة.",
       "steps": [
         {
           "t": "التقييم",
@@ -119,14 +103,6 @@
         "Tekrarlayan enjeksiyonlar yerine tek seanslık bir tedavi isteyenler",
         "Saç ekimini desteklemek isteyenler"
       ],
-      "notFor": [
-        "Tamamen açılmış bölgeler: güçlendirilecek kök kalmamıştır",
-        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
-        "Saçlı deride aktif enfeksiyon veya iltihap",
-        "Gebelik veya emzirme",
-        "Doktorunuz aksini önermedikçe skar bırakan saç dökülmesi türleri"
-      ],
-      "evidence": "Yayımlanmış çalışmalar küçük ve çoğu kontrol grubu içermiyor. Hastaların yaklaşık üçte ikisinde olumlu yanıt ve tek seanstan yaklaşık 6 ay sonra saç yoğunluğu ve kalınlığında sınırlı bir artış bildiriliyor. Daha büyük kontrollü çalışmalara hâlâ ihtiyaç var.",
       "steps": [
         {
           "t": "Değerlendirme",
@@ -171,14 +147,6 @@
         "Menschen, die eine Behandlung in einer Sitzung statt wiederholter Injektionen wünschen",
         "Patienten, die eine Haartransplantation unterstützen möchten"
       ],
-      "notFor": [
-        "Völlig kahle Stellen: Dort gibt es keine Follikel mehr, die gestärkt werden können",
-        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
-        "Aktive Infektion oder Entzündung der Kopfhaut",
-        "Schwangerschaft oder Stillzeit",
-        "Vernarbende Formen des Haarausfalls, sofern Ihr Arzt nicht anders rät"
-      ],
-      "evidence": "Die veröffentlichten Studien sind klein und meist ohne Kontrollgruppe. Sie berichten bei etwa zwei von drei Patienten über ein Ansprechen mit mäßiger Zunahme von Haardichte und -dicke etwa 6 Monate nach einer Sitzung. Größere kontrollierte Studien stehen noch aus.",
       "steps": [
         {
           "t": "Untersuchung",
@@ -223,14 +191,6 @@
         "Quien prefiere un tratamiento de una sola sesión en lugar de inyecciones repetidas",
         "Pacientes que quieren complementar un injerto capilar"
       ],
-      "notFor": [
-        "Zonas completamente calvas: no quedan folículos que fortalecer",
-        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
-        "Infección o inflamación activa del cuero cabelludo",
-        "Embarazo o lactancia",
-        "Alopecias cicatriciales, salvo indicación de su médico"
-      ],
-      "evidence": "Los estudios publicados son pequeños y la mayoría sin grupo control. Describen una respuesta favorable en aproximadamente dos de cada tres pacientes, con un aumento moderado de la densidad y el grosor del cabello unos 6 meses después de una sesión. Faltan ensayos controlados más amplios.",
       "steps": [
         {
           "t": "Valoración",

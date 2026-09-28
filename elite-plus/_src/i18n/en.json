@@ -358,10 +358,7 @@
     "included": "Included in your package",
     "ctaTitle": "Is this treatment right for you?",
     "ctaSub": "Get a free assessment from our medical team.",
-    "other": "Other treatments",
-    "notFor": "Who it may not suit",
-    "evidence": "What the research shows",
-    "suitNote": "Your doctor confirms suitability after examining you. This page is general information, not medical advice."
+    "other": "Other treatments"
   },
   "pages": {
     "services": {
