@@ -826,3 +826,9 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .hdr__actions { gap: 2px; }
   .hdr .logo img, .hdr .brand img { width: 136px; height: auto; }
 }
+
+/* "Who it may not suit": neutral list, deliberately calmer than the green checks above. */
+.notfor__h { margin-top: 28px; }
+.notfor { display: grid; gap: 10px; margin-bottom: 14px; }
+.notfor li { position: relative; padding-inline-start: 22px; }
+.notfor li::before { content: ""; position: absolute; inset-inline-start: 4px; top: .65em; width: 8px; height: 2px; border-radius: 2px; background: var(--orange-text); }

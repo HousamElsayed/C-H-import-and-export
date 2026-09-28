@@ -358,7 +358,10 @@
     "included": "Paketinize dahil olanlar",
     "ctaTitle": "Bu tedavi size uygun mu?",
     "ctaSub": "Tıbbi ekibimizden ücretsiz değerlendirme alın.",
-    "other": "Diğer tedaviler"
+    "other": "Diğer tedaviler",
+    "notFor": "Kimler için uygun olmayabilir?",
+    "evidence": "Araştırmalar ne gösteriyor?",
+    "suitNote": "Uygunluğu, sizi muayene ettikten sonra doktorunuz belirler. Bu sayfa genel bilgi içerir, tıbbi tavsiye değildir."
   },
   "pages": {
     "services": {

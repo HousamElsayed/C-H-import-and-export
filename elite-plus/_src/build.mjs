@@ -820,14 +820,16 @@ function servicePage(lang, s, i) {
   <div class="phero__img">${s.image ? `<img src="${imgSrc(s.image)}" alt="" width="800" height="600" fetchpriority="high">` : phImg('service', i, '')}</div>
 </div></section>
 <section class="sec"><div class="wrap split">
-  <div><h2 class="h2">${esc(S.whoFor)}</h2>${listOrTodo(c.whoFor, 'candidate profiles', 'whoFor', (a) => `<ul class="checks">${a.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>`)}</div>
+  <div><h2 class="h2">${esc(S.whoFor)}</h2>${listOrTodo(c.whoFor, 'candidate profiles', 'whoFor', (a) => `<ul class="checks">${a.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>`)}
+    ${c.notFor?.length ? `<h2 class="h3 notfor__h">${esc(S.notFor)}</h2><ul class="notfor">${c.notFor.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><p class="note">${esc(S.suitNote)}</p>` : ''}</div>
   <div class="panel"><h2 class="h3">${esc(S.stay)}</h2><p>${h(c.stay, 'usual length of stay', key('stay'))}</p><h2 class="h3">${esc(S.price)}</h2>
     <p class="price">${s.priceFrom ? `<small>${esc(S.from)}</small> ${moneyH(lang, s.priceFrom)}` : todo('starting price', `services[${i}].priceFrom`)}</p><p class="note">${esc(S.priceNote)}</p></div>
 </div></section>
 <section class="sec sec--grey"><div class="wrap"><h2 class="h2">${esc(S.procedure)}</h2>
   ${c.steps?.length ? `<ol class="timeline timeline--row">${c.steps.map((st, n) => `<li class="timeline__step"><span class="timeline__n" aria-hidden="true">${n + 1}</span><div><h3>${esc(st.t)}</h3><p>${esc(st.d)}</p></div></li>`).join('')}</ol>` : `<p>${todo('procedure steps (medically reviewed)', key('steps'))}</p>`}
 </div></section>
-${results.length || PREVIEW ? `<section class="sec"><div class="wrap"><h2 class="h2">${esc(S.results)}</h2>${carousel(lang, (results.length ? results : [null, null]).map((r) => compareCard(lang, r, i)), 'carousel--ba')}<div class="sec__cta">${linkMore(L.nav.viewAll, href(lang, `results/?service=${s.slug}`))}</div></div></section>` : ''}
+${c.evidence ? `<section class="sec"><div class="wrap narrow"><h2 class="h2">${esc(S.evidence)}</h2><p class="lead">${esc(c.evidence)}</p></div></section>` : ''}
+${results.length || (PREVIEW && s.category === 'transplant') ? `<section class="sec"><div class="wrap"><h2 class="h2">${esc(S.results)}</h2>${carousel(lang, (results.length ? results : [null, null]).map((r) => compareCard(lang, r, i)), 'carousel--ba')}<div class="sec__cta">${linkMore(L.nav.viewAll, href(lang, `results/?service=${s.slug}`))}</div></div></section>` : ''}
 ${s.category === 'transplant' ? `<section class="sec sec--tech"><div class="wrap">${sectionHead(L.techniques.label, L.techniques.h2a, L.techniques.h2b, { sub: L.techniques.sub })}${techniques(lang)}<div class="sec__cta">${linkMore(L.techniques.more, href(lang, 'fue-dhi/'))}</div></div></section>` : ''}
 <section class="sec sec--grey"><div class="wrap split"><div><h2 class="h2">${esc(S.included)}</h2><p class="note">${esc(L.home.included.note)}</p></div><div class="panel">${includedList(lang, c.included ?? [])}</div></div></section>
 <section class="sec"><div class="wrap narrow"><h2 class="h2">${esc(S.faq)}</h2>${faq.length ? faqList(faq, 'sfaq') : `<p>${todo('service FAQ (medically reviewed)', key('faq'))}</p>`}</div></section>
@@ -864,7 +866,7 @@ function resultsPage(lang) {
   const items = resultsItems();
   const chip = (k, v, label, on) => `<button type="button" class="chip" aria-pressed="${on}" data-filter-key="${k}" data-filter="${v}">${label}</button>`;
   const filters = `<div class="filters" role="group" aria-label="${esc(L.nav.clinics)}" data-filters>${chip('branch', 'all', esc(P.all), true)}${BRANCHES.map((b) => chip('branch', b.slug, `${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}`, false)).join('')}</div>
-  <div class="filters" role="group" aria-label="${esc(L.nav.services)}" data-filters>${chip('service', 'all', esc(P.all), true)}${cfg.services.map((s, i) => chip('service', s.slug, svcName(s, lang, i), false)).join('')}</div>`;
+  <div class="filters" role="group" aria-label="${esc(L.nav.services)}" data-filters>${chip('service', 'all', esc(P.all), true)}${cfg.services.map((s, i) => (s.category === 'transplant' || RESULTS.some((r) => r.service === s.slug) ? chip('service', s.slug, svcName(s, lang, i), false) : '')).join('')}</div>`;
   const body = `${ph.html}<section class="sec"><div class="wrap">${items.length ? `${filters}<div class="ba-grid" data-filter-grid>${items.map((r, i) => compareCard(lang, r, i)).join('')}</div>` : `<p class="empty">${esc(P.empty)}</p>`}</div></section>`;
   const [t, d] = L.meta.pages.results;
   return layout({ lang, key: 'results', p: 'results/', pageName: 'Results', title: t, desc: d, body, ld: [ph.ld] });

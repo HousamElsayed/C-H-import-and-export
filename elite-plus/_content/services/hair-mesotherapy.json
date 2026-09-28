@@ -7,23 +7,263 @@
   "content": {
     "en": {
       "name": "Hair Mesotherapy",
-      "short": "Micro-injections of vitamins and active ingredients into the scalp."
+      "short": "Micro-injections of vitamins, amino acids and other active ingredients chosen by your doctor, delivered directly into the scalp.",
+      "intro": "Hair mesotherapy delivers a mix of active ingredients directly into the scalp through very fine, shallow micro-injections. Depending on your diagnosis, your doctor chooses the formula: vitamins, amino acids, minerals and antioxidants, and in some cases medicines used for hair loss. Placing them close to the follicles aims to improve the scalp environment, reduce shedding and support hair strength, while exposing the rest of the body to less of the medicine.",
+      "whoFor": [
+        "Mild to moderate thinning in men and women",
+        "Increased shedding, for example after stress, illness or childbirth, once medical causes have been checked",
+        "People who want to add to other treatments such as PRP or medication",
+        "Patients after a hair transplant, to support the scalp"
+      ],
+      "notFor": [
+        "Allergy to any ingredient in the formula",
+        "Pregnancy or breastfeeding (some ingredients must never be used in pregnancy)",
+        "Active infection or inflammation of the scalp",
+        "Bleeding disorders or blood thinners that cannot be safely paused",
+        "Hair loss with an untreated medical cause, such as thyroid disease or iron deficiency"
+      ],
+      "evidence": "Systematic reviews find that mesotherapy may improve hair density, especially formulas containing medicines such as dutasteride, but studies are small, use different formulas and have short follow-up. Common side effects are temporary pain, redness and headache; forehead swelling and, rarely, infection have been reported.",
+      "steps": [
+        {
+          "t": "Assessment",
+          "d": "The doctor identifies the type and cause of hair loss and chooses the formula."
+        },
+        {
+          "t": "Preparation",
+          "d": "The scalp is cleaned; a numbing cream can be used."
+        },
+        {
+          "t": "Micro-injections",
+          "d": "The formula is placed just under the skin of the scalp with very fine needles or an injection device. The session takes about 30 to 45 minutes."
+        },
+        {
+          "t": "Course",
+          "d": "Sessions are repeated, often every 1 to 2 weeks at first and then monthly, as your doctor advises."
+        }
+      ],
+      "stay": "About 30 to 45 minutes per session; no hospital stay. A course needs several sessions, so ask about combining it with other visits.",
+      "faq": [
+        {
+          "q": "How many sessions will I need?",
+          "a": "Usually a course of several sessions; your doctor sets the plan based on your diagnosis and response."
+        },
+        {
+          "q": "Is it painful?",
+          "a": "You feel a series of small pricks. Numbing cream helps, and redness usually settles within a day."
+        },
+        {
+          "q": "Is mesotherapy the same as PRP?",
+          "a": "No. PRP uses your own plasma; mesotherapy uses a prepared formula of ingredients. The two are sometimes combined."
+        }
+      ]
     },
     "ar": {
       "name": "الميزوثيرابي للشعر",
-      "short": "حقن دقيقة للفيتامينات والمواد الفعّالة في فروة الرأس."
+      "short": "حقن دقيقة لفيتامينات وأحماض أمينية ومواد فعّالة أخرى يختارها الطبيب مباشرةً في فروة الرأس.",
+      "intro": "يوصل الميزوثيرابي للشعر مزيجًا من المواد الفعّالة مباشرةً إلى فروة الرأس عبر حقن دقيقة وسطحية جدًا. يختار الطبيب التركيبة حسب التشخيص: فيتامينات وأحماض أمينية ومعادن ومضادات أكسدة، وفي بعض الحالات أدوية تُستخدم لعلاج التساقط. يهدف وضعها قرب البصيلات إلى تحسين بيئة فروة الرأس وتقليل التساقط ودعم قوة الشعر، مع تقليل تعرّض باقي الجسم للدواء.",
+      "whoFor": [
+        "الخفة الخفيفة إلى المتوسطة لدى الرجال والنساء",
+        "زيادة التساقط بعد التوتر أو المرض أو الولادة مثلًا، بعد استبعاد الأسباب الطبية",
+        "من يرغب في إضافته إلى علاجات أخرى مثل البلازما أو الأدوية",
+        "المرضى بعد زراعة الشعر لدعم فروة الرأس"
+      ],
+      "notFor": [
+        "الحساسية لأي مكوّن في التركيبة",
+        "الحمل أو الرضاعة (بعض المكونات يُمنع استخدامها في الحمل)",
+        "عدوى أو التهاب نشط في فروة الرأس",
+        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
+        "تساقط ناتج عن سبب طبي غير معالج مثل أمراض الغدة الدرقية أو نقص الحديد"
+      ],
+      "evidence": "تشير المراجعات المنهجية إلى أن الميزوثيرابي قد يحسّن كثافة الشعر، خاصةً التركيبات التي تحتوي على أدوية مثل الدوتاستيرايد، لكن الدراسات صغيرة وتستخدم تركيبات مختلفة ومدة متابعتها قصيرة. من الآثار الشائعة ألم مؤقت واحمرار وصداع، وقد سُجّل تورّم في الجبهة ونادرًا عدوى.",
+      "steps": [
+        {
+          "t": "التقييم",
+          "d": "يحدد الطبيب نوع التساقط وسببه ويختار التركيبة المناسبة."
+        },
+        {
+          "t": "التحضير",
+          "d": "تُنظّف فروة الرأس ويمكن استخدام كريم مخدّر."
+        },
+        {
+          "t": "الحقن الدقيق",
+          "d": "توضع التركيبة تحت جلد فروة الرأس مباشرةً بإبر دقيقة جدًا أو بجهاز حقن، وتستغرق الجلسة نحو 30 إلى 45 دقيقة."
+        },
+        {
+          "t": "البرنامج العلاجي",
+          "d": "تتكرر الجلسات، غالبًا كل أسبوع إلى أسبوعين في البداية ثم شهريًا، حسب توصية الطبيب."
+        }
+      ],
+      "stay": "نحو 30 إلى 45 دقيقة للجلسة دون إقامة في المستشفى. يحتاج البرنامج إلى عدة جلسات، لذا اسأل عن دمجها مع زيارات أخرى.",
+      "faq": [
+        {
+          "q": "كم جلسة أحتاج؟",
+          "a": "عادةً برنامج من عدة جلسات، ويضع الطبيب الخطة حسب التشخيص والاستجابة."
+        },
+        {
+          "q": "هل هو مؤلم؟",
+          "a": "تشعر بوخزات صغيرة متتالية، ويساعد الكريم المخدّر، ويزول الاحمرار عادةً خلال يوم."
+        },
+        {
+          "q": "هل الميزوثيرابي مثل البلازما؟",
+          "a": "لا. البلازما تستخدم بلازما دمك، أما الميزوثيرابي فيستخدم تركيبة مُعدّة من المكونات، ويُجمع بينهما أحيانًا."
+        }
+      ]
     },
     "tr": {
       "name": "Saç Mezoterapisi",
-      "short": "Saçlı deriye vitamin ve aktif bileşenlerin mikro enjeksiyonu."
+      "short": "Doktorunuzun seçtiği vitamin, amino asit ve diğer etken maddelerin doğrudan saçlı deriye mikro enjeksiyonlarla verilmesi.",
+      "intro": "Saç mezoterapisi, etken maddelerden oluşan bir karışımı çok ince ve yüzeysel mikro enjeksiyonlarla doğrudan saçlı deriye verir. Doktorunuz tanıya göre formülü seçer: vitaminler, amino asitler, mineraller ve antioksidanlar; bazı durumlarda saç dökülmesinde kullanılan ilaçlar. Bunların köklere yakın uygulanması, saçlı deri ortamını iyileştirmeyi, dökülmeyi azaltmayı ve saçın gücünü desteklemeyi, vücudun geri kalanının ilaca daha az maruz kalmasını amaçlar.",
+      "whoFor": [
+        "Kadın ve erkeklerde hafif ile orta düzeyde seyrelme",
+        "Tıbbi nedenler kontrol edildikten sonra stres, hastalık veya doğum sonrası artan dökülme",
+        "PRP veya ilaç gibi diğer tedavilere ek yapmak isteyenler",
+        "Saçlı deriyi desteklemek için saç ekimi sonrası hastalar"
+      ],
+      "notFor": [
+        "Formüldeki herhangi bir maddeye alerji",
+        "Gebelik veya emzirme (bazı maddeler gebelikte asla kullanılmamalıdır)",
+        "Saçlı deride aktif enfeksiyon veya iltihap",
+        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
+        "Tiroid hastalığı veya demir eksikliği gibi tedavi edilmemiş bir nedene bağlı dökülme"
+      ],
+      "evidence": "Sistematik derlemeler, mezoterapinin özellikle dutasterid gibi ilaçlar içeren formüllerle saç yoğunluğunu artırabileceğini gösteriyor; ancak çalışmalar küçük, formüller farklı ve takip süreleri kısa. Sık görülen yan etkiler geçici ağrı, kızarıklık ve baş ağrısıdır; alında şişlik ve nadiren enfeksiyon bildirilmiştir.",
+      "steps": [
+        {
+          "t": "Değerlendirme",
+          "d": "Doktor dökülmenin türünü ve nedenini belirler ve formülü seçer."
+        },
+        {
+          "t": "Hazırlık",
+          "d": "Saçlı deri temizlenir; uyuşturucu krem kullanılabilir."
+        },
+        {
+          "t": "Mikro enjeksiyonlar",
+          "d": "Formül çok ince iğnelerle veya bir enjeksiyon cihazıyla saçlı derinin hemen altına uygulanır. Seans yaklaşık 30–45 dakika sürer."
+        },
+        {
+          "t": "Kür",
+          "d": "Seanslar doktorunuzun önerisine göre, genellikle başta 1–2 haftada bir, sonra ayda bir tekrarlanır."
+        }
+      ],
+      "stay": "Seans başına yaklaşık 30–45 dakika; hastanede kalış yok. Kür birkaç seans gerektirdiğinden diğer ziyaretlerle birleştirmeyi sorun.",
+      "faq": [
+        {
+          "q": "Kaç seansa ihtiyacım olur?",
+          "a": "Genellikle birkaç seanslık bir kür; plan tanınıza ve yanıtınıza göre doktorunuz tarafından belirlenir."
+        },
+        {
+          "q": "Acıtır mı?",
+          "a": "Art arda küçük batmalar hissedersiniz. Uyuşturucu krem yardımcı olur; kızarıklık genellikle bir gün içinde geçer."
+        },
+        {
+          "q": "Mezoterapi PRP ile aynı mı?",
+          "a": "Hayır. PRP kendi plazmanızı, mezoterapi ise hazırlanmış bir madde formülünü kullanır. Bazen ikisi birlikte uygulanır."
+        }
+      ]
     },
     "de": {
       "name": "Haar-Mesotherapie",
-      "short": "Mikroinjektionen von Vitaminen und Wirkstoffen in die Kopfhaut."
+      "short": "Mikroinjektionen mit Vitaminen, Aminosäuren und weiteren von Ihrem Arzt gewählten Wirkstoffen direkt in die Kopfhaut.",
+      "intro": "Bei der Haar-Mesotherapie wird eine Wirkstoffmischung über sehr feine, oberflächliche Mikroinjektionen direkt in die Kopfhaut gebracht. Je nach Diagnose wählt Ihr Arzt die Rezeptur: Vitamine, Aminosäuren, Mineralstoffe und Antioxidantien, in manchen Fällen auch Medikamente gegen Haarausfall. Die Gabe nahe an den Follikeln soll das Kopfhautmilieu verbessern, den Haarausfall verringern und die Haarkraft unterstützen – bei geringerer Belastung des übrigen Körpers durch das Medikament.",
+      "whoFor": [
+        "Leichtes bis mittleres Lichterwerden bei Männern und Frauen",
+        "Verstärkter Haarausfall, z. B. nach Stress, Krankheit oder Geburt, nachdem medizinische Ursachen abgeklärt wurden",
+        "Menschen, die andere Behandlungen wie PRP oder Medikamente ergänzen möchten",
+        "Patienten nach einer Haartransplantation zur Unterstützung der Kopfhaut"
+      ],
+      "notFor": [
+        "Allergie gegen einen Bestandteil der Rezeptur",
+        "Schwangerschaft oder Stillzeit (manche Wirkstoffe dürfen in der Schwangerschaft nie verwendet werden)",
+        "Aktive Infektion oder Entzündung der Kopfhaut",
+        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
+        "Haarausfall mit unbehandelter medizinischer Ursache, etwa Schilddrüsenerkrankung oder Eisenmangel"
+      ],
+      "evidence": "Systematische Übersichtsarbeiten zeigen, dass Mesotherapie die Haardichte verbessern kann, vor allem Rezepturen mit Medikamenten wie Dutasterid; die Studien sind jedoch klein, uneinheitlich und kurz nachbeobachtet. Häufige Nebenwirkungen sind vorübergehende Schmerzen, Rötung und Kopfschmerzen; Schwellungen der Stirn und selten Infektionen wurden beschrieben.",
+      "steps": [
+        {
+          "t": "Untersuchung",
+          "d": "Der Arzt bestimmt Art und Ursache des Haarausfalls und wählt die Rezeptur."
+        },
+        {
+          "t": "Vorbereitung",
+          "d": "Die Kopfhaut wird gereinigt; eine Betäubungscreme kann verwendet werden."
+        },
+        {
+          "t": "Mikroinjektionen",
+          "d": "Die Rezeptur wird mit sehr feinen Nadeln oder einem Injektionsgerät knapp unter die Kopfhaut gebracht. Die Sitzung dauert etwa 30 bis 45 Minuten."
+        },
+        {
+          "t": "Behandlungsserie",
+          "d": "Die Sitzungen werden wiederholt, anfangs oft alle 1 bis 2 Wochen, später monatlich, wie Ihr Arzt empfiehlt."
+        }
+      ],
+      "stay": "Etwa 30 bis 45 Minuten pro Sitzung, ohne Klinikaufenthalt. Eine Serie umfasst mehrere Sitzungen – fragen Sie nach der Kombination mit anderen Terminen.",
+      "faq": [
+        {
+          "q": "Wie viele Sitzungen brauche ich?",
+          "a": "Meist eine Serie mehrerer Sitzungen; Ihr Arzt legt den Plan nach Diagnose und Ansprechen fest."
+        },
+        {
+          "q": "Ist es schmerzhaft?",
+          "a": "Sie spüren eine Reihe kleiner Stiche. Betäubungscreme hilft, und die Rötung klingt meist innerhalb eines Tages ab."
+        },
+        {
+          "q": "Ist Mesotherapie dasselbe wie PRP?",
+          "a": "Nein. PRP verwendet Ihr eigenes Plasma, Mesotherapie eine vorbereitete Wirkstoffrezeptur. Manchmal werden beide kombiniert."
+        }
+      ]
     },
     "es": {
       "name": "Mesoterapia capilar",
-      "short": "Microinyecciones de vitaminas y principios activos en el cuero cabelludo."
+      "short": "Microinyecciones de vitaminas, aminoácidos y otros principios activos elegidos por su médico, aplicadas directamente en el cuero cabelludo.",
+      "intro": "La mesoterapia capilar aplica una mezcla de principios activos directamente en el cuero cabelludo mediante microinyecciones muy finas y superficiales. Según su diagnóstico, el médico elige la fórmula: vitaminas, aminoácidos, minerales y antioxidantes y, en algunos casos, medicamentos para la caída del cabello. Colocarlos cerca de los folículos busca mejorar el entorno del cuero cabelludo, reducir la caída y fortalecer el cabello, exponiendo menos al resto del cuerpo al medicamento.",
+      "whoFor": [
+        "Pérdida de densidad leve o moderada en hombres y mujeres",
+        "Caída aumentada, por ejemplo tras estrés, enfermedad o parto, una vez descartadas causas médicas",
+        "Quien quiere complementar otros tratamientos como el PRP o la medicación",
+        "Pacientes tras un injerto capilar, para apoyar el cuero cabelludo"
+      ],
+      "notFor": [
+        "Alergia a algún componente de la fórmula",
+        "Embarazo o lactancia (algunos componentes no deben usarse nunca en el embarazo)",
+        "Infección o inflamación activa del cuero cabelludo",
+        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
+        "Caída con una causa médica sin tratar, como enfermedad tiroidea o falta de hierro"
+      ],
+      "evidence": "Las revisiones sistemáticas indican que la mesoterapia puede mejorar la densidad capilar, sobre todo las fórmulas con medicamentos como el dutasterida, pero los estudios son pequeños, con fórmulas distintas y seguimiento corto. Los efectos frecuentes son dolor, enrojecimiento y dolor de cabeza pasajeros; se han descrito hinchazón de la frente y, rara vez, infecciones.",
+      "steps": [
+        {
+          "t": "Valoración",
+          "d": "El médico identifica el tipo y la causa de la caída y elige la fórmula."
+        },
+        {
+          "t": "Preparación",
+          "d": "Se limpia el cuero cabelludo; puede usarse crema anestésica."
+        },
+        {
+          "t": "Microinyecciones",
+          "d": "La fórmula se coloca justo bajo la piel del cuero cabelludo con agujas muy finas o un dispositivo de inyección. La sesión dura unos 30 a 45 minutos."
+        },
+        {
+          "t": "Tratamiento",
+          "d": "Las sesiones se repiten, a menudo cada 1–2 semanas al principio y luego cada mes, según indique su médico."
+        }
+      ],
+      "stay": "Unos 30 a 45 minutos por sesión, sin ingreso. El tratamiento requiere varias sesiones; pregunte cómo combinarlas con otras visitas.",
+      "faq": [
+        {
+          "q": "¿Cuántas sesiones necesitaré?",
+          "a": "Normalmente un ciclo de varias sesiones; el médico fija el plan según su diagnóstico y respuesta."
+        },
+        {
+          "q": "¿Duele?",
+          "a": "Se notan pequeños pinchazos seguidos. La crema anestésica ayuda y el enrojecimiento suele desaparecer en un día."
+        },
+        {
+          "q": "¿La mesoterapia es lo mismo que el PRP?",
+          "a": "No. El PRP usa su propio plasma; la mesoterapia, una fórmula preparada de componentes. A veces se combinan."
+        }
+      ]
     }
   }
 }

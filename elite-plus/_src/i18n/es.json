@@ -358,7 +358,10 @@
     "included": "Incluido en su paquete",
     "ctaTitle": "¿Es este tratamiento adecuado para usted?",
     "ctaSub": "Reciba una evaluación gratuita de nuestro equipo médico.",
-    "other": "Otros tratamientos"
+    "other": "Otros tratamientos",
+    "notFor": "A quién puede no convenirle",
+    "evidence": "Qué dice la investigación",
+    "suitNote": "Su médico confirma si es adecuado tras examinarle. Esta página es información general, no consejo médico."
   },
   "pages": {
     "services": {

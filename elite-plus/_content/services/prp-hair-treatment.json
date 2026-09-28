@@ -7,23 +7,268 @@
   "content": {
     "en": {
       "name": "PRP (Plasma) Hair Treatment",
-      "short": "Platelet-rich plasma prepared from your own blood is injected into the scalp."
+      "short": "Plasma rich in platelets, prepared from a small sample of your own blood, is injected into thinning areas of the scalp.",
+      "intro": "PRP (platelet-rich plasma) uses your own blood. A small sample is spun in a centrifuge to concentrate the platelets, which carry growth factors, and the plasma is injected into thinning areas of the scalp. It aims to slow hair loss and improve the thickness and density of existing hair. It does not create new follicles where the scalp is already bald.",
+      "whoFor": [
+        "Men and women with early to moderate pattern hair loss (androgenetic alopecia)",
+        "People whose hair is thinning but whose follicles are still active",
+        "Patients who want to support a hair transplant, before or after surgery",
+        "People who prefer a treatment made from their own blood, alongside or instead of daily medication"
+      ],
+      "notFor": [
+        "Low platelet count or a platelet or bleeding disorder",
+        "Blood thinners (anticoagulants) that cannot be safely paused: your doctor decides",
+        "Active cancer or recent chemotherapy",
+        "Pregnancy or breastfeeding",
+        "Active infection or inflammation of the scalp",
+        "Uncontrolled diabetes or another uncontrolled illness"
+      ],
+      "evidence": "Meta-analyses of randomised trials show a statistically significant increase in hair density at 3 and 6 months compared with placebo in androgenetic alopecia. Results vary between people, preparation methods are not standardised, and the effect fades without maintenance sessions.",
+      "steps": [
+        {
+          "t": "Assessment",
+          "d": "The doctor examines your scalp, confirms the type of hair loss and checks your medical history and medication."
+        },
+        {
+          "t": "Blood sample",
+          "d": "A small amount of blood is taken from your arm, as for a routine blood test."
+        },
+        {
+          "t": "Preparation",
+          "d": "The sample is spun in a centrifuge to separate and concentrate the platelet-rich plasma."
+        },
+        {
+          "t": "Injection",
+          "d": "The plasma is injected into the thinning areas with fine needles, usually with a numbing cream or local anaesthetic. The session takes about an hour."
+        }
+      ],
+      "stay": "About 1 hour; no hospital stay. A typical course is 3 sessions about a month apart, then a maintenance session every 3 to 6 months.",
+      "faq": [
+        {
+          "q": "When will I see results?",
+          "a": "Most studies measure results after 3 to 6 months. Reduced shedding is often noticed first, then thicker hair."
+        },
+        {
+          "q": "Does it hurt?",
+          "a": "Numbing cream or local anaesthetic is used. The scalp may feel tender for a day or two."
+        },
+        {
+          "q": "Can I go back to normal activities?",
+          "a": "Yes, the same day. Your doctor will usually ask you not to wash your hair or use hair products for the rest of that day."
+        }
+      ]
     },
     "ar": {
       "name": "علاج الشعر بالبلازما (PRP)",
-      "short": "حقن فروة الرأس ببلازما غنية بالصفائح الدموية محضّرة من دمك."
+      "short": "بلازما غنية بالصفائح الدموية تُحضَّر من عينة صغيرة من دمك وتُحقن في المناطق الخفيفة من فروة الرأس.",
+      "intro": "يعتمد علاج البلازما (PRP) على دمك أنت. تُسحب عينة صغيرة وتُوضع في جهاز طرد مركزي لتركيز الصفائح الدموية الغنية بعوامل النمو، ثم تُحقن البلازما في المناطق الخفيفة من فروة الرأس. يهدف العلاج إلى إبطاء التساقط وتحسين سماكة الشعر الموجود وكثافته، ولا يُنشئ بصيلات جديدة في المناطق الصلعاء تمامًا.",
+      "whoFor": [
+        "الرجال والنساء في المراحل المبكرة إلى المتوسطة من الصلع الوراثي",
+        "من يعاني من خفة الشعر مع بقاء البصيلات نشطة",
+        "من يرغب في دعم زراعة الشعر قبل العملية أو بعدها",
+        "من يفضّل علاجًا من دمه، مع الأدوية اليومية أو بدلًا منها"
+      ],
+      "notFor": [
+        "انخفاض عدد الصفائح الدموية أو اضطرابات الصفائح أو النزف",
+        "أدوية مميّعة للدم لا يمكن إيقافها بأمان، ويقرّر ذلك الطبيب",
+        "السرطان النشط أو العلاج الكيميائي الحديث",
+        "الحمل أو الرضاعة",
+        "التهاب أو عدوى نشطة في فروة الرأس",
+        "السكري أو أي مرض آخر غير منضبط"
+      ],
+      "evidence": "تُظهر التحليلات التجميعية للتجارب العشوائية زيادة ذات دلالة إحصائية في كثافة الشعر بعد 3 و6 أشهر مقارنةً بالعلاج الوهمي في الصلع الوراثي. تختلف النتائج من شخص لآخر، وطرق التحضير غير موحّدة، ويتراجع التأثير دون جلسات المتابعة.",
+      "steps": [
+        {
+          "t": "التقييم",
+          "d": "يفحص الطبيب فروة الرأس ويحدد نوع التساقط ويراجع تاريخك الطبي وأدويتك."
+        },
+        {
+          "t": "سحب الدم",
+          "d": "تُسحب كمية صغيرة من الدم من الذراع كما في التحليل المعتاد."
+        },
+        {
+          "t": "التحضير",
+          "d": "توضع العينة في جهاز الطرد المركزي لفصل البلازما الغنية بالصفائح وتركيزها."
+        },
+        {
+          "t": "الحقن",
+          "d": "تُحقن البلازما في المناطق الخفيفة بإبر دقيقة، عادةً مع كريم مخدّر أو تخدير موضعي. تستغرق الجلسة نحو ساعة."
+        }
+      ],
+      "stay": "نحو ساعة واحدة دون إقامة في المستشفى. يتكوّن البرنامج المعتاد من 3 جلسات بفاصل شهر تقريبًا، ثم جلسة متابعة كل 3 إلى 6 أشهر.",
+      "faq": [
+        {
+          "q": "متى تظهر النتائج؟",
+          "a": "تقيس معظم الدراسات النتائج بعد 3 إلى 6 أشهر، ويُلاحظ غالبًا انخفاض التساقط أولًا ثم زيادة سماكة الشعر."
+        },
+        {
+          "q": "هل الحقن مؤلم؟",
+          "a": "يُستخدم كريم مخدّر أو تخدير موضعي، وقد تكون فروة الرأس حساسة ليوم أو يومين."
+        },
+        {
+          "q": "هل أعود لنشاطي المعتاد؟",
+          "a": "نعم في اليوم نفسه، وعادةً يطلب الطبيب عدم غسل الشعر أو استخدام منتجات الشعر حتى نهاية ذلك اليوم."
+        }
+      ]
     },
     "tr": {
       "name": "PRP Saç Tedavisi",
-      "short": "Kendi kanınızdan hazırlanan trombositten zengin plazma saçlı deriye enjekte edilir."
+      "short": "Kendi kanınızdan hazırlanan, trombositten zengin plazma saçlı derinin seyrek bölgelerine enjekte edilir.",
+      "intro": "PRP (trombositten zengin plazma) kendi kanınızla yapılır. Alınan küçük bir kan örneği santrifüjde döndürülerek büyüme faktörleri taşıyan trombositler yoğunlaştırılır ve plazma saçlı derinin seyrek bölgelerine enjekte edilir. Amaç dökülmeyi yavaşlatmak ve mevcut saçların kalınlığını ve yoğunluğunu artırmaktır. Tamamen açılmış bölgelerde yeni kök oluşturmaz.",
+      "whoFor": [
+        "Erken veya orta evre genetik saç dökülmesi (androgenetik alopesi) olan kadın ve erkekler",
+        "Saçları incelen ancak kökleri hâlâ aktif olanlar",
+        "Saç ekimini ameliyat öncesi veya sonrası desteklemek isteyenler",
+        "Günlük ilaçlarla birlikte ya da onların yerine kendi kanından hazırlanan bir tedavi tercih edenler"
+      ],
+      "notFor": [
+        "Düşük trombosit sayısı, trombosit veya pıhtılaşma bozukluğu",
+        "Güvenle ara verilemeyen kan sulandırıcılar (karar doktorunuzundur)",
+        "Aktif kanser veya yakın zamanda kemoterapi",
+        "Gebelik veya emzirme",
+        "Saçlı deride aktif enfeksiyon veya iltihap",
+        "Kontrolsüz diyabet veya başka kontrolsüz bir hastalık"
+      ],
+      "evidence": "Randomize çalışmaların meta-analizleri, androgenetik alopecide plaseboya göre 3. ve 6. aylarda saç yoğunluğunda istatistiksel olarak anlamlı artış göstermektedir. Sonuçlar kişiden kişiye değişir, hazırlama yöntemleri standart değildir ve idame seansları yapılmazsa etki azalır.",
+      "steps": [
+        {
+          "t": "Değerlendirme",
+          "d": "Doktor saçlı derinizi muayene eder, dökülmenin türünü belirler, sağlık geçmişinizi ve ilaçlarınızı kontrol eder."
+        },
+        {
+          "t": "Kan alma",
+          "d": "Rutin bir kan tahlilindeki gibi kolunuzdan az miktarda kan alınır."
+        },
+        {
+          "t": "Hazırlama",
+          "d": "Örnek santrifüjde döndürülerek trombositten zengin plazma ayrılır ve yoğunlaştırılır."
+        },
+        {
+          "t": "Enjeksiyon",
+          "d": "Plazma, genellikle uyuşturucu krem veya lokal anestezi eşliğinde ince iğnelerle seyrek bölgelere enjekte edilir. Seans yaklaşık bir saat sürer."
+        }
+      ],
+      "stay": "Yaklaşık 1 saat; hastanede kalış yok. Genellikle yaklaşık birer ay arayla 3 seans, ardından 3–6 ayda bir idame seansı uygulanır.",
+      "faq": [
+        {
+          "q": "Sonuçları ne zaman görürüm?",
+          "a": "Çoğu çalışma sonuçları 3–6 ay sonra ölçer. Genellikle önce dökülme azalır, sonra saçlar kalınlaşır."
+        },
+        {
+          "q": "Acıtır mı?",
+          "a": "Uyuşturucu krem veya lokal anestezi kullanılır. Saçlı deri bir iki gün hassas olabilir."
+        },
+        {
+          "q": "Günlük hayatıma dönebilir miyim?",
+          "a": "Evet, aynı gün. Doktorunuz genellikle o günün sonuna kadar saçınızı yıkamamanızı ve saç ürünü kullanmamanızı ister."
+        }
+      ]
     },
     "de": {
       "name": "PRP-Haarbehandlung (Eigenblut)",
-      "short": "Aus Ihrem eigenen Blut gewonnenes plättchenreiches Plasma wird in die Kopfhaut injiziert."
+      "short": "Plättchenreiches Plasma aus einer kleinen Probe Ihres eigenen Blutes wird in lichte Stellen der Kopfhaut injiziert.",
+      "intro": "PRP (plättchenreiches Plasma) wird aus Ihrem eigenen Blut gewonnen. Eine kleine Blutprobe wird zentrifugiert, um die Blutplättchen mit ihren Wachstumsfaktoren anzureichern; das Plasma wird dann in lichte Stellen der Kopfhaut injiziert. Ziel ist, den Haarausfall zu verlangsamen und Dicke und Dichte der vorhandenen Haare zu verbessern. Auf bereits kahlen Stellen entstehen keine neuen Haarfollikel.",
+      "whoFor": [
+        "Männer und Frauen mit früher bis mittlerer erblich bedingter Alopezie (androgenetische Alopezie)",
+        "Menschen mit dünner werdendem Haar, deren Follikel noch aktiv sind",
+        "Patienten, die eine Haartransplantation vor oder nach dem Eingriff unterstützen möchten",
+        "Menschen, die eine Behandlung aus eigenem Blut bevorzugen – zusätzlich zu oder statt täglicher Medikamente"
+      ],
+      "notFor": [
+        "Niedrige Thrombozytenzahl oder Thrombozyten- bzw. Gerinnungsstörung",
+        "Blutverdünner, die nicht sicher pausiert werden können (Ihr Arzt entscheidet)",
+        "Aktive Krebserkrankung oder kürzlich erfolgte Chemotherapie",
+        "Schwangerschaft oder Stillzeit",
+        "Aktive Infektion oder Entzündung der Kopfhaut",
+        "Schlecht eingestellter Diabetes oder eine andere nicht kontrollierte Erkrankung"
+      ],
+      "evidence": "Metaanalysen randomisierter Studien zeigen bei androgenetischer Alopezie nach 3 und 6 Monaten eine statistisch signifikante Zunahme der Haardichte gegenüber Placebo. Die Ergebnisse sind individuell verschieden, die Aufbereitungsmethoden sind nicht standardisiert, und ohne Auffrischungssitzungen lässt die Wirkung nach.",
+      "steps": [
+        {
+          "t": "Untersuchung",
+          "d": "Der Arzt untersucht Ihre Kopfhaut, bestimmt die Art des Haarausfalls und prüft Vorgeschichte und Medikamente."
+        },
+        {
+          "t": "Blutentnahme",
+          "d": "Aus dem Arm wird eine kleine Menge Blut entnommen, wie bei einer Routineuntersuchung."
+        },
+        {
+          "t": "Aufbereitung",
+          "d": "Die Probe wird zentrifugiert, um das plättchenreiche Plasma abzutrennen und anzureichern."
+        },
+        {
+          "t": "Injektion",
+          "d": "Das Plasma wird mit feinen Nadeln in die lichten Stellen injiziert, meist mit Betäubungscreme oder örtlicher Betäubung. Die Sitzung dauert etwa eine Stunde."
+        }
+      ],
+      "stay": "Etwa 1 Stunde, ohne Klinikaufenthalt. Üblich sind 3 Sitzungen im Abstand von etwa einem Monat, danach alle 3 bis 6 Monate eine Auffrischung.",
+      "faq": [
+        {
+          "q": "Wann sehe ich Ergebnisse?",
+          "a": "Die meisten Studien messen nach 3 bis 6 Monaten. Oft lässt zuerst der Haarausfall nach, dann wird das Haar kräftiger."
+        },
+        {
+          "q": "Ist die Behandlung schmerzhaft?",
+          "a": "Es wird eine Betäubungscreme oder örtliche Betäubung verwendet. Die Kopfhaut kann ein bis zwei Tage empfindlich sein."
+        },
+        {
+          "q": "Kann ich danach meinen Alltag fortsetzen?",
+          "a": "Ja, noch am selben Tag. Meist sollen Sie die Haare an diesem Tag nicht waschen und keine Haarprodukte verwenden."
+        }
+      ]
     },
     "es": {
       "name": "Tratamiento capilar con PRP (plasma)",
-      "short": "Se inyecta en el cuero cabelludo plasma rico en plaquetas obtenido de su propia sangre."
+      "short": "Plasma rico en plaquetas, preparado con una pequeña muestra de su propia sangre, se inyecta en las zonas débiles del cuero cabelludo.",
+      "intro": "El PRP (plasma rico en plaquetas) se obtiene de su propia sangre. Una pequeña muestra se centrifuga para concentrar las plaquetas, que contienen factores de crecimiento, y el plasma se inyecta en las zonas débiles del cuero cabelludo. Busca frenar la caída y mejorar el grosor y la densidad del cabello existente. No crea folículos nuevos donde el cuero cabelludo ya está calvo.",
+      "whoFor": [
+        "Hombres y mujeres con alopecia androgenética leve o moderada",
+        "Personas con cabello cada vez más fino cuyos folículos siguen activos",
+        "Pacientes que quieren complementar un injerto capilar, antes o después de la cirugía",
+        "Quien prefiere un tratamiento con su propia sangre, junto a la medicación diaria o en su lugar"
+      ],
+      "notFor": [
+        "Plaquetas bajas o trastorno de las plaquetas o de la coagulación",
+        "Anticoagulantes que no pueden suspenderse con seguridad (lo decide su médico)",
+        "Cáncer activo o quimioterapia reciente",
+        "Embarazo o lactancia",
+        "Infección o inflamación activa del cuero cabelludo",
+        "Diabetes u otra enfermedad no controlada"
+      ],
+      "evidence": "Los metaanálisis de ensayos aleatorizados muestran un aumento estadísticamente significativo de la densidad capilar a los 3 y 6 meses frente a placebo en la alopecia androgenética. Los resultados varían entre personas, los métodos de preparación no están estandarizados y el efecto disminuye sin sesiones de mantenimiento.",
+      "steps": [
+        {
+          "t": "Valoración",
+          "d": "El médico examina su cuero cabelludo, confirma el tipo de caída y revisa sus antecedentes y medicación."
+        },
+        {
+          "t": "Extracción de sangre",
+          "d": "Se extrae una pequeña cantidad de sangre del brazo, como en un análisis habitual."
+        },
+        {
+          "t": "Preparación",
+          "d": "La muestra se centrifuga para separar y concentrar el plasma rico en plaquetas."
+        },
+        {
+          "t": "Inyección",
+          "d": "El plasma se inyecta en las zonas débiles con agujas finas, normalmente con crema anestésica o anestesia local. La sesión dura alrededor de una hora."
+        }
+      ],
+      "stay": "Alrededor de 1 hora, sin ingreso. Lo habitual son 3 sesiones con un mes de intervalo y después una sesión de mantenimiento cada 3 a 6 meses.",
+      "faq": [
+        {
+          "q": "¿Cuándo veré resultados?",
+          "a": "La mayoría de estudios los miden a los 3–6 meses. Suele notarse primero menos caída y después un cabello más grueso."
+        },
+        {
+          "q": "¿Duele?",
+          "a": "Se usa crema anestésica o anestesia local. El cuero cabelludo puede estar sensible uno o dos días."
+        },
+        {
+          "q": "¿Puedo hacer vida normal?",
+          "a": "Sí, el mismo día. Normalmente se pide no lavar el cabello ni usar productos capilares hasta el final de ese día."
+        }
+      ]
     }
   }
 }

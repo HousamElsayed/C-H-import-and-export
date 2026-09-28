@@ -7,23 +7,263 @@
   "content": {
     "en": {
       "name": "Stem Cell Hair Therapy",
-      "short": "A regenerative treatment for thinning hair using cells from your own tissue."
+      "short": "Regenerative cells taken from a small sample of your own fat tissue are injected into thinning areas of the scalp.",
+      "intro": "In stem cell hair therapy, a small amount of your own fat is collected, usually from the abdomen, with a fine cannula under local anaesthetic. The tissue is processed to concentrate its regenerative cells (the stromal vascular fraction, which contains adipose-derived stem cells), and these are injected into the thinning areas of the scalp. The cells release growth factors that aim to support weakened hair follicles. It is a newer, still-developing treatment.",
+      "whoFor": [
+        "Men and women with early to moderate pattern hair loss",
+        "Thinning areas where follicles are still present",
+        "Patients who want to support a hair transplant",
+        "People who understand that this is a newer treatment and results vary"
+      ],
+      "notFor": [
+        "Areas that are completely bald",
+        "People who are not fit for a small fat-collection procedure",
+        "Bleeding disorders or blood thinners that cannot be safely paused",
+        "Active cancer, active infection or uncontrolled illness",
+        "Pregnancy or breastfeeding"
+      ],
+      "evidence": "Early clinical studies report improved hair density and thickness after treatment, but they are small, use different methods and have short follow-up. The treatment is considered investigational and is not approved as a standard treatment for hair loss by regulators such as the US FDA.",
+      "steps": [
+        {
+          "t": "Assessment",
+          "d": "The doctor confirms the type of hair loss and checks that you are fit for a small fat-collection procedure."
+        },
+        {
+          "t": "Fat collection",
+          "d": "Under local anaesthetic, a small amount of fat is collected through a fine cannula, usually from the abdomen."
+        },
+        {
+          "t": "Processing",
+          "d": "The tissue is processed to concentrate the regenerative cell fraction."
+        },
+        {
+          "t": "Injection",
+          "d": "The cells are injected into the thinning areas of the scalp. The session takes about 2 to 3 hours."
+        }
+      ],
+      "stay": "One session of about 2 to 3 hours; no overnight stay. Plan 1 to 2 days before flying, as the collection area may be sore.",
+      "faq": [
+        {
+          "q": "Is this the same as a stem cell hair transplant?",
+          "a": "No. A transplant moves hair follicles. This therapy injects cells to support existing follicles; it does not add new ones."
+        },
+        {
+          "q": "When will I see results?",
+          "a": "Studies usually assess results at 3 to 6 months."
+        },
+        {
+          "q": "Are the cells from a donor?",
+          "a": "No. Only your own tissue is used, collected and injected on the same day."
+        }
+      ]
     },
     "ar": {
       "name": "علاج الشعر بالخلايا الجذعية",
-      "short": "علاج تجديدي لضعف الشعر يعتمد على خلايا مأخوذة من أنسجتك."
+      "short": "خلايا تجديدية من عينة صغيرة من دهون جسمك تُحقن في المناطق الخفيفة من فروة الرأس.",
+      "intro": "في علاج الشعر بالخلايا الجذعية تُسحب كمية صغيرة من دهونك، غالبًا من البطن، عبر أنبوب رفيع تحت التخدير الموضعي. تُعالج الأنسجة لتركيز خلاياها التجديدية (الجزء الوعائي اللحمي الذي يحتوي على خلايا جذعية دهنية المنشأ)، ثم تُحقن في المناطق الخفيفة من فروة الرأس. تُطلق هذه الخلايا عوامل نمو تهدف إلى دعم البصيلات الضعيفة. وهو علاج حديث ما زال قيد التطوير.",
+      "whoFor": [
+        "الرجال والنساء في المراحل المبكرة إلى المتوسطة من الصلع الوراثي",
+        "المناطق الخفيفة التي ما زالت فيها بصيلات",
+        "من يرغب في دعم زراعة الشعر",
+        "من يدرك أنه علاج حديث وأن النتائج تختلف"
+      ],
+      "notFor": [
+        "المناطق الصلعاء تمامًا",
+        "من لا تسمح حالته بإجراء سحب دهون بسيط",
+        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
+        "السرطان النشط أو العدوى النشطة أو الأمراض غير المنضبطة",
+        "الحمل أو الرضاعة"
+      ],
+      "evidence": "تشير دراسات سريرية أولية إلى تحسّن كثافة الشعر وسماكته بعد العلاج، لكنها صغيرة وتستخدم طرقًا مختلفة ومدة متابعتها قصيرة. يُعد العلاج تجريبيًا، ولم تعتمده جهات تنظيمية مثل إدارة الغذاء والدواء الأمريكية علاجًا قياسيًا لتساقط الشعر.",
+      "steps": [
+        {
+          "t": "التقييم",
+          "d": "يحدد الطبيب نوع التساقط ويتأكد من ملاءمة حالتك لإجراء سحب دهون بسيط."
+        },
+        {
+          "t": "سحب الدهون",
+          "d": "تحت التخدير الموضعي تُسحب كمية صغيرة من الدهون عبر أنبوب رفيع، غالبًا من البطن."
+        },
+        {
+          "t": "المعالجة",
+          "d": "تُعالج الأنسجة لتركيز الجزء الغني بالخلايا التجديدية."
+        },
+        {
+          "t": "الحقن",
+          "d": "تُحقن الخلايا في المناطق الخفيفة من فروة الرأس، وتستغرق الجلسة نحو ساعتين إلى ثلاث ساعات."
+        }
+      ],
+      "stay": "جلسة واحدة مدتها نحو ساعتين إلى ثلاث ساعات دون مبيت. يُفضّل الانتظار يومًا أو يومين قبل السفر لأن مكان السحب قد يكون مؤلمًا.",
+      "faq": [
+        {
+          "q": "هل هو نفسه زراعة الشعر بالخلايا الجذعية؟",
+          "a": "لا. الزراعة تنقل بصيلات الشعر، أما هذا العلاج فيحقن خلايا لدعم البصيلات الموجودة ولا يضيف بصيلات جديدة."
+        },
+        {
+          "q": "متى تظهر النتائج؟",
+          "a": "تقيّم الدراسات النتائج عادةً بعد 3 إلى 6 أشهر."
+        },
+        {
+          "q": "هل الخلايا من متبرّع؟",
+          "a": "لا. تُستخدم أنسجتك أنت فقط، وتُسحب وتُحقن في اليوم نفسه."
+        }
+      ]
     },
     "tr": {
       "name": "Kök Hücre Saç Tedavisi",
-      "short": "Kendi dokunuzdan alınan hücrelerle seyrelen saçlar için rejeneratif bir tedavi."
+      "short": "Kendi yağ dokunuzdan alınan küçük bir örnekteki rejeneratif hücreler saçlı derinin seyrek bölgelerine enjekte edilir.",
+      "intro": "Kök hücre saç tedavisinde, lokal anestezi altında ince bir kanülle genellikle karından az miktarda yağ alınır. Doku işlenerek rejeneratif hücreleri (yağ kökenli kök hücreleri içeren stromal vasküler fraksiyon) yoğunlaştırılır ve bunlar saçlı derinin seyrek bölgelerine enjekte edilir. Hücrelerin salgıladığı büyüme faktörleri zayıflamış kökleri desteklemeyi amaçlar. Yeni ve hâlâ gelişmekte olan bir tedavidir.",
+      "whoFor": [
+        "Erken veya orta evre genetik saç dökülmesi olan kadın ve erkekler",
+        "Köklerin hâlâ bulunduğu seyrek bölgeler",
+        "Saç ekimini desteklemek isteyenler",
+        "Bunun yeni bir tedavi olduğunu ve sonuçların değiştiğini bilenler"
+      ],
+      "notFor": [
+        "Tamamen açılmış bölgeler",
+        "Küçük bir yağ alma işlemine uygun olmayanlar",
+        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
+        "Aktif kanser, aktif enfeksiyon veya kontrolsüz hastalık",
+        "Gebelik veya emzirme"
+      ],
+      "evidence": "İlk klinik çalışmalar tedavi sonrası saç yoğunluğu ve kalınlığında iyileşme bildiriyor; ancak çalışmalar küçük, yöntemler farklı ve takip süreleri kısa. Tedavi deneysel kabul edilmektedir ve ABD FDA gibi otoriteler tarafından saç dökülmesi için standart tedavi olarak onaylanmamıştır.",
+      "steps": [
+        {
+          "t": "Değerlendirme",
+          "d": "Doktor dökülmenin türünü belirler ve küçük bir yağ alma işlemine uygun olup olmadığınızı kontrol eder."
+        },
+        {
+          "t": "Yağ alma",
+          "d": "Lokal anestezi altında ince bir kanülle, genellikle karından az miktarda yağ alınır."
+        },
+        {
+          "t": "İşleme",
+          "d": "Doku, rejeneratif hücre fraksiyonunu yoğunlaştırmak için işlenir."
+        },
+        {
+          "t": "Enjeksiyon",
+          "d": "Hücreler saçlı derinin seyrek bölgelerine enjekte edilir. Seans yaklaşık 2–3 saat sürer."
+        }
+      ],
+      "stay": "Yaklaşık 2–3 saatlik tek seans; geceleme yok. Yağ alınan bölge ağrıyabileceği için uçuştan önce 1–2 gün planlayın.",
+      "faq": [
+        {
+          "q": "Kök hücreli saç ekimiyle aynı şey mi?",
+          "a": "Hayır. Ekim saç köklerini taşır; bu tedavi mevcut kökleri desteklemek için hücre enjekte eder, yeni kök eklemez."
+        },
+        {
+          "q": "Sonuçları ne zaman görürüm?",
+          "a": "Çalışmalar sonuçları genellikle 3–6 ayda değerlendirir."
+        },
+        {
+          "q": "Hücreler donörden mi?",
+          "a": "Hayır. Yalnızca kendi dokunuz kullanılır; aynı gün alınıp enjekte edilir."
+        }
+      ]
     },
     "de": {
       "name": "Stammzell-Haartherapie",
-      "short": "Eine regenerative Behandlung bei dünner werdendem Haar mit Zellen aus Ihrem eigenen Gewebe."
+      "short": "Regenerative Zellen aus einer kleinen Probe Ihres eigenen Fettgewebes werden in lichte Stellen der Kopfhaut injiziert.",
+      "intro": "Bei der Stammzell-Haartherapie wird unter örtlicher Betäubung mit einer feinen Kanüle eine kleine Menge Ihres eigenen Fetts entnommen, meist am Bauch. Das Gewebe wird aufbereitet, um seine regenerativen Zellen anzureichern (die stromale vaskuläre Fraktion mit Stammzellen aus dem Fettgewebe), die dann in die lichten Stellen der Kopfhaut injiziert werden. Die Zellen setzen Wachstumsfaktoren frei, die geschwächte Haarfollikel unterstützen sollen. Es handelt sich um eine neuere, noch in Entwicklung befindliche Behandlung.",
+      "whoFor": [
+        "Männer und Frauen mit früher bis mittlerer erblich bedingter Alopezie",
+        "Lichte Stellen, an denen noch Follikel vorhanden sind",
+        "Patienten, die eine Haartransplantation unterstützen möchten",
+        "Menschen, die wissen, dass es sich um eine neuere Behandlung mit unterschiedlichen Ergebnissen handelt"
+      ],
+      "notFor": [
+        "Völlig kahle Stellen",
+        "Menschen, für die eine kleine Fettentnahme nicht geeignet ist",
+        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
+        "Aktive Krebserkrankung, aktive Infektion oder nicht kontrollierte Erkrankung",
+        "Schwangerschaft oder Stillzeit"
+      ],
+      "evidence": "Erste klinische Studien berichten über eine verbesserte Haardichte und -dicke, sind aber klein, methodisch uneinheitlich und kurz nachbeobachtet. Die Behandlung gilt als experimentell und ist von Behörden wie der US-amerikanischen FDA nicht als Standardbehandlung bei Haarausfall zugelassen.",
+      "steps": [
+        {
+          "t": "Untersuchung",
+          "d": "Der Arzt bestimmt die Art des Haarausfalls und prüft, ob eine kleine Fettentnahme für Sie geeignet ist."
+        },
+        {
+          "t": "Fettentnahme",
+          "d": "Unter örtlicher Betäubung wird mit einer feinen Kanüle eine kleine Menge Fett entnommen, meist am Bauch."
+        },
+        {
+          "t": "Aufbereitung",
+          "d": "Das Gewebe wird aufbereitet, um die regenerative Zellfraktion anzureichern."
+        },
+        {
+          "t": "Injektion",
+          "d": "Die Zellen werden in die lichten Stellen der Kopfhaut injiziert. Die Sitzung dauert etwa 2 bis 3 Stunden."
+        }
+      ],
+      "stay": "Eine Sitzung von etwa 2 bis 3 Stunden, ohne Übernachtung. Planen Sie 1 bis 2 Tage bis zum Rückflug ein, da die Entnahmestelle schmerzen kann.",
+      "faq": [
+        {
+          "q": "Ist das dasselbe wie eine Stammzell-Haartransplantation?",
+          "a": "Nein. Bei einer Transplantation werden Haarfollikel versetzt. Diese Therapie injiziert Zellen zur Unterstützung vorhandener Follikel und fügt keine neuen hinzu."
+        },
+        {
+          "q": "Wann sehe ich Ergebnisse?",
+          "a": "Studien bewerten die Ergebnisse meist nach 3 bis 6 Monaten."
+        },
+        {
+          "q": "Stammen die Zellen von einem Spender?",
+          "a": "Nein. Es wird nur Ihr eigenes Gewebe verwendet, am selben Tag entnommen und injiziert."
+        }
+      ]
     },
     "es": {
       "name": "Terapia capilar con células madre",
-      "short": "Un tratamiento regenerativo para el cabello debilitado con células de su propio tejido."
+      "short": "Células regenerativas obtenidas de una pequeña muestra de su propia grasa se inyectan en las zonas débiles del cuero cabelludo.",
+      "intro": "En la terapia capilar con células madre se extrae una pequeña cantidad de su propia grasa, normalmente del abdomen, con una cánula fina y anestesia local. El tejido se procesa para concentrar sus células regenerativas (la fracción vascular estromal, que contiene células madre derivadas del tejido adiposo) y se inyectan en las zonas débiles del cuero cabelludo. Las células liberan factores de crecimiento que buscan apoyar a los folículos debilitados. Es un tratamiento reciente y aún en desarrollo.",
+      "whoFor": [
+        "Hombres y mujeres con alopecia androgenética leve o moderada",
+        "Zonas débiles donde aún hay folículos",
+        "Pacientes que quieren complementar un injerto capilar",
+        "Quien entiende que es un tratamiento reciente y que los resultados varían"
+      ],
+      "notFor": [
+        "Zonas completamente calvas",
+        "Personas no aptas para una pequeña extracción de grasa",
+        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
+        "Cáncer activo, infección activa o enfermedad no controlada",
+        "Embarazo o lactancia"
+      ],
+      "evidence": "Los primeros estudios clínicos describen mejoras en densidad y grosor del cabello, pero son pequeños, usan métodos distintos y tienen seguimiento corto. El tratamiento se considera experimental y no está aprobado como tratamiento estándar de la caída del cabello por autoridades como la FDA de EE. UU.",
+      "steps": [
+        {
+          "t": "Valoración",
+          "d": "El médico confirma el tipo de caída y comprueba que es apto para una pequeña extracción de grasa."
+        },
+        {
+          "t": "Extracción de grasa",
+          "d": "Con anestesia local se extrae una pequeña cantidad de grasa con una cánula fina, normalmente del abdomen."
+        },
+        {
+          "t": "Procesado",
+          "d": "El tejido se procesa para concentrar la fracción de células regenerativas."
+        },
+        {
+          "t": "Inyección",
+          "d": "Las células se inyectan en las zonas débiles del cuero cabelludo. La sesión dura unas 2 a 3 horas."
+        }
+      ],
+      "stay": "Una sesión de unas 2 a 3 horas, sin pernoctar. Prevea 1 o 2 días antes del vuelo, ya que la zona de extracción puede doler.",
+      "faq": [
+        {
+          "q": "¿Es lo mismo que un injerto capilar con células madre?",
+          "a": "No. Un injerto traslada folículos. Esta terapia inyecta células para apoyar los folículos existentes; no añade folículos nuevos."
+        },
+        {
+          "q": "¿Cuándo veré resultados?",
+          "a": "Los estudios suelen valorarlos a los 3–6 meses."
+        },
+        {
+          "q": "¿Las células son de un donante?",
+          "a": "No. Solo se usa su propio tejido, extraído e inyectado el mismo día."
+        }
+      ]
     }
   }
 }

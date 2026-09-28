@@ -7,23 +7,263 @@
   "content": {
     "en": {
       "name": "Regenera Activa",
-      "short": "Micro-grafts prepared from a small sample of your own scalp tissue are injected into thinning areas."
+      "short": "Micro-grafts prepared from three tiny samples of your own scalp are injected into thinning areas in a single session.",
+      "intro": "Regenera Activa is an autologous micro-grafting treatment developed in Italy. Three tiny skin samples (about 2.5 mm each) are taken from behind the ear, where hair is resistant to hair loss. A device (Rigeneracons) breaks them down into a suspension of micro-grafts containing progenitor cells and growth factors, which is injected into the thinning areas in the same session. It aims to slow hair loss and strengthen weakened follicles.",
+      "whoFor": [
+        "Men and women with early to moderate pattern hair loss",
+        "Thinning areas where hair follicles are still present, even if weakened",
+        "People who want a single-session treatment rather than repeated injections",
+        "Patients who want to support a hair transplant"
+      ],
+      "notFor": [
+        "Areas that are completely bald: there are no follicles left to strengthen",
+        "Bleeding disorders or blood thinners that cannot be safely paused",
+        "Active infection or inflammation of the scalp",
+        "Pregnancy or breastfeeding",
+        "Scarring types of hair loss, unless your doctor advises otherwise"
+      ],
+      "evidence": "Published studies are small and mostly without a control group. They report a favourable response in roughly two out of three patients, with a modest rise in hair density and thickness about 6 months after one session. Larger controlled trials are still needed.",
+      "steps": [
+        {
+          "t": "Assessment",
+          "d": "The doctor confirms the type and stage of hair loss and whether follicles in the thinning areas are still present."
+        },
+        {
+          "t": "Sampling",
+          "d": "Under local anaesthetic, three small punch samples are taken from behind the ear. The tiny wounds heal within days."
+        },
+        {
+          "t": "Preparation",
+          "d": "The samples are processed in the Rigeneracons device into a micro-graft suspension."
+        },
+        {
+          "t": "Injection",
+          "d": "The suspension is injected into the thinning areas. The whole session takes about 1 to 1.5 hours."
+        }
+      ],
+      "stay": "One session of about 1 to 1.5 hours; no hospital stay. You can usually travel the next day.",
+      "faq": [
+        {
+          "q": "How many sessions are needed?",
+          "a": "Usually one. Your doctor may suggest a repeat session after about a year, depending on your response."
+        },
+        {
+          "q": "When will I see results?",
+          "a": "Studies assess the result at about 6 months. Hair loss often slows first."
+        },
+        {
+          "q": "Will the samples leave a scar?",
+          "a": "The three samples are about 2.5 mm each and taken behind the ear, so any mark is very small and hidden by hair."
+        }
+      ]
     },
     "ar": {
       "name": "ريجينيرا أكتيفا",
-      "short": "تحضير طُعوم دقيقة من عينة صغيرة من فروة رأسك ثم حقنها في المناطق الخفيفة."
+      "short": "تُحضَّر طُعوم دقيقة من ثلاث عينات صغيرة من فروة رأسك وتُحقن في المناطق الخفيفة في جلسة واحدة.",
+      "intro": "ريجينيرا أكتيفا علاج إيطالي يعتمد على الطُعوم الدقيقة الذاتية. تُؤخذ ثلاث عينات جلدية صغيرة جدًا (نحو 2.5 مم لكل منها) من خلف الأذن حيث يكون الشعر مقاومًا للتساقط، ثم يفتّتها جهاز (Rigeneracons) إلى معلّق من الطُعوم الدقيقة يحتوي على خلايا سلفية وعوامل نمو، ويُحقن في المناطق الخفيفة في الجلسة نفسها. يهدف العلاج إلى إبطاء التساقط وتقوية البصيلات الضعيفة.",
+      "whoFor": [
+        "الرجال والنساء في المراحل المبكرة إلى المتوسطة من الصلع الوراثي",
+        "المناطق الخفيفة التي ما زالت فيها بصيلات حتى لو كانت ضعيفة",
+        "من يفضّل علاجًا في جلسة واحدة بدل الحقن المتكرر",
+        "من يرغب في دعم زراعة الشعر"
+      ],
+      "notFor": [
+        "المناطق الصلعاء تمامًا، إذ لا توجد بصيلات لتقويتها",
+        "اضطرابات النزف أو مميّعات الدم التي لا يمكن إيقافها بأمان",
+        "عدوى أو التهاب نشط في فروة الرأس",
+        "الحمل أو الرضاعة",
+        "أنواع التساقط المصحوبة بتندّب، ما لم يوصِ الطبيب بغير ذلك"
+      ],
+      "evidence": "الدراسات المنشورة صغيرة ومعظمها دون مجموعة ضابطة، وتشير إلى استجابة جيدة لدى نحو ثلثي المرضى مع زيادة محدودة في كثافة الشعر وسماكته بعد نحو 6 أشهر من جلسة واحدة. ما زالت هناك حاجة إلى تجارب أكبر ومضبوطة.",
+      "steps": [
+        {
+          "t": "التقييم",
+          "d": "يحدد الطبيب نوع التساقط ومرحلته ويتأكد من وجود بصيلات في المناطق الخفيفة."
+        },
+        {
+          "t": "أخذ العينات",
+          "d": "تحت التخدير الموضعي تُؤخذ ثلاث عينات صغيرة من خلف الأذن، وتلتئم الجروح الصغيرة خلال أيام."
+        },
+        {
+          "t": "التحضير",
+          "d": "تُعالج العينات في جهاز Rigeneracons لتحويلها إلى معلّق من الطُعوم الدقيقة."
+        },
+        {
+          "t": "الحقن",
+          "d": "يُحقن المعلّق في المناطق الخفيفة، وتستغرق الجلسة كاملة نحو ساعة إلى ساعة ونصف."
+        }
+      ],
+      "stay": "جلسة واحدة مدتها نحو ساعة إلى ساعة ونصف دون إقامة في المستشفى، ويمكن السفر عادةً في اليوم التالي.",
+      "faq": [
+        {
+          "q": "كم جلسة أحتاج؟",
+          "a": "عادةً جلسة واحدة، وقد يقترح الطبيب إعادتها بعد نحو عام حسب الاستجابة."
+        },
+        {
+          "q": "متى تظهر النتائج؟",
+          "a": "تقيّم الدراسات النتيجة بعد نحو 6 أشهر، وغالبًا يقلّ التساقط أولًا."
+        },
+        {
+          "q": "هل تترك العينات ندبة؟",
+          "a": "حجم كل عينة نحو 2.5 مم وتؤخذ من خلف الأذن، لذا يكون الأثر صغيرًا جدًا ومخفيًا بالشعر."
+        }
+      ]
     },
     "tr": {
       "name": "Regenera Activa",
-      "short": "Kendi saçlı derinizden alınan küçük bir örnekten hazırlanan mikro greftler seyrek bölgelere enjekte edilir."
+      "short": "Kendi saçlı derinizden alınan üç küçük örnekten hazırlanan mikro greftler tek seansta seyrek bölgelere enjekte edilir.",
+      "intro": "Regenera Activa, İtalya'da geliştirilmiş otolog bir mikro greft tedavisidir. Saçın dökülmeye dirençli olduğu kulak arkasından üç küçük deri örneği (her biri yaklaşık 2,5 mm) alınır. Bir cihaz (Rigeneracons) bunları öncü hücreler ve büyüme faktörleri içeren bir mikro greft süspansiyonuna dönüştürür ve bu süspansiyon aynı seansta seyrek bölgelere enjekte edilir. Amaç dökülmeyi yavaşlatmak ve zayıflamış kökleri güçlendirmektir.",
+      "whoFor": [
+        "Erken veya orta evre genetik saç dökülmesi olan kadın ve erkekler",
+        "Kökleri zayıflamış olsa da hâlâ var olan seyrek bölgeler",
+        "Tekrarlayan enjeksiyonlar yerine tek seanslık bir tedavi isteyenler",
+        "Saç ekimini desteklemek isteyenler"
+      ],
+      "notFor": [
+        "Tamamen açılmış bölgeler: güçlendirilecek kök kalmamıştır",
+        "Pıhtılaşma bozukluğu veya güvenle ara verilemeyen kan sulandırıcılar",
+        "Saçlı deride aktif enfeksiyon veya iltihap",
+        "Gebelik veya emzirme",
+        "Doktorunuz aksini önermedikçe skar bırakan saç dökülmesi türleri"
+      ],
+      "evidence": "Yayımlanmış çalışmalar küçük ve çoğu kontrol grubu içermiyor. Hastaların yaklaşık üçte ikisinde olumlu yanıt ve tek seanstan yaklaşık 6 ay sonra saç yoğunluğu ve kalınlığında sınırlı bir artış bildiriliyor. Daha büyük kontrollü çalışmalara hâlâ ihtiyaç var.",
+      "steps": [
+        {
+          "t": "Değerlendirme",
+          "d": "Doktor dökülmenin türünü ve evresini, seyrek bölgelerde kök bulunup bulunmadığını belirler."
+        },
+        {
+          "t": "Örnek alma",
+          "d": "Lokal anestezi altında kulak arkasından üç küçük punch örneği alınır; küçük yaralar birkaç günde iyileşir."
+        },
+        {
+          "t": "Hazırlama",
+          "d": "Örnekler Rigeneracons cihazında mikro greft süspansiyonuna dönüştürülür."
+        },
+        {
+          "t": "Enjeksiyon",
+          "d": "Süspansiyon seyrek bölgelere enjekte edilir. Tüm seans yaklaşık 1–1,5 saat sürer."
+        }
+      ],
+      "stay": "Yaklaşık 1–1,5 saatlik tek seans; hastanede kalış yok. Genellikle ertesi gün seyahat edebilirsiniz.",
+      "faq": [
+        {
+          "q": "Kaç seans gerekir?",
+          "a": "Genellikle bir. Yanıtınıza göre doktorunuz yaklaşık bir yıl sonra tekrar önerebilir."
+        },
+        {
+          "q": "Sonuçları ne zaman görürüm?",
+          "a": "Çalışmalar sonucu yaklaşık 6. ayda değerlendirir. Genellikle önce dökülme yavaşlar."
+        },
+        {
+          "q": "Örnekler iz bırakır mı?",
+          "a": "Her örnek yaklaşık 2,5 mm'dir ve kulak arkasından alınır; oluşabilecek iz çok küçüktür ve saçla gizlenir."
+        }
+      ]
     },
     "de": {
       "name": "Regenera Activa",
-      "short": "Aus einer kleinen Probe Ihrer eigenen Kopfhaut werden Mikrotransplantate gewonnen und in lichte Stellen injiziert."
+      "short": "Mikrotransplantate aus drei winzigen Proben Ihrer eigenen Kopfhaut werden in einer einzigen Sitzung in lichte Stellen injiziert.",
+      "intro": "Regenera Activa ist eine in Italien entwickelte autologe Mikrotransplantat-Behandlung. Hinter dem Ohr, wo das Haar gegen Haarausfall resistent ist, werden drei winzige Hautproben (je etwa 2,5 mm) entnommen. Ein Gerät (Rigeneracons) zerlegt sie in eine Suspension aus Mikrotransplantaten mit Vorläuferzellen und Wachstumsfaktoren, die in derselben Sitzung in die lichten Stellen injiziert wird. Ziel ist, den Haarausfall zu verlangsamen und geschwächte Follikel zu stärken.",
+      "whoFor": [
+        "Männer und Frauen mit früher bis mittlerer erblich bedingter Alopezie",
+        "Lichte Stellen, an denen noch – wenn auch geschwächte – Follikel vorhanden sind",
+        "Menschen, die eine Behandlung in einer Sitzung statt wiederholter Injektionen wünschen",
+        "Patienten, die eine Haartransplantation unterstützen möchten"
+      ],
+      "notFor": [
+        "Völlig kahle Stellen: Dort gibt es keine Follikel mehr, die gestärkt werden können",
+        "Gerinnungsstörungen oder Blutverdünner, die nicht sicher pausiert werden können",
+        "Aktive Infektion oder Entzündung der Kopfhaut",
+        "Schwangerschaft oder Stillzeit",
+        "Vernarbende Formen des Haarausfalls, sofern Ihr Arzt nicht anders rät"
+      ],
+      "evidence": "Die veröffentlichten Studien sind klein und meist ohne Kontrollgruppe. Sie berichten bei etwa zwei von drei Patienten über ein Ansprechen mit mäßiger Zunahme von Haardichte und -dicke etwa 6 Monate nach einer Sitzung. Größere kontrollierte Studien stehen noch aus.",
+      "steps": [
+        {
+          "t": "Untersuchung",
+          "d": "Der Arzt bestimmt Art und Stadium des Haarausfalls und ob in den lichten Stellen noch Follikel vorhanden sind."
+        },
+        {
+          "t": "Probenentnahme",
+          "d": "Unter örtlicher Betäubung werden hinter dem Ohr drei kleine Stanzproben entnommen; die winzigen Wunden heilen in wenigen Tagen."
+        },
+        {
+          "t": "Aufbereitung",
+          "d": "Die Proben werden im Rigeneracons-Gerät zu einer Mikrotransplantat-Suspension verarbeitet."
+        },
+        {
+          "t": "Injektion",
+          "d": "Die Suspension wird in die lichten Stellen injiziert. Die gesamte Sitzung dauert etwa 1 bis 1,5 Stunden."
+        }
+      ],
+      "stay": "Eine Sitzung von etwa 1 bis 1,5 Stunden, ohne Klinikaufenthalt. Meist können Sie am nächsten Tag reisen.",
+      "faq": [
+        {
+          "q": "Wie viele Sitzungen sind nötig?",
+          "a": "Meist eine. Je nach Ansprechen kann Ihr Arzt nach etwa einem Jahr eine Wiederholung empfehlen."
+        },
+        {
+          "q": "Wann sehe ich Ergebnisse?",
+          "a": "Studien bewerten das Ergebnis nach etwa 6 Monaten. Oft lässt zuerst der Haarausfall nach."
+        },
+        {
+          "q": "Hinterlassen die Proben Narben?",
+          "a": "Jede Probe misst etwa 2,5 mm und wird hinter dem Ohr entnommen; eine eventuelle Markierung ist sehr klein und vom Haar verdeckt."
+        }
+      ]
     },
     "es": {
       "name": "Regenera Activa",
-      "short": "Se preparan microinjertos a partir de una pequeña muestra de su cuero cabelludo y se inyectan en las zonas débiles."
+      "short": "Microinjertos preparados con tres pequeñas muestras de su propio cuero cabelludo se inyectan en las zonas débiles en una sola sesión.",
+      "intro": "Regenera Activa es un tratamiento de microinjertos autólogos desarrollado en Italia. Se toman tres pequeñas muestras de piel (de unos 2,5 mm cada una) de detrás de la oreja, donde el cabello resiste la caída. Un dispositivo (Rigeneracons) las convierte en una suspensión de microinjertos con células progenitoras y factores de crecimiento, que se inyecta en las zonas débiles en la misma sesión. Busca frenar la caída y fortalecer los folículos debilitados.",
+      "whoFor": [
+        "Hombres y mujeres con alopecia androgenética leve o moderada",
+        "Zonas débiles donde aún quedan folículos, aunque estén debilitados",
+        "Quien prefiere un tratamiento de una sola sesión en lugar de inyecciones repetidas",
+        "Pacientes que quieren complementar un injerto capilar"
+      ],
+      "notFor": [
+        "Zonas completamente calvas: no quedan folículos que fortalecer",
+        "Trastornos de la coagulación o anticoagulantes que no pueden suspenderse con seguridad",
+        "Infección o inflamación activa del cuero cabelludo",
+        "Embarazo o lactancia",
+        "Alopecias cicatriciales, salvo indicación de su médico"
+      ],
+      "evidence": "Los estudios publicados son pequeños y la mayoría sin grupo control. Describen una respuesta favorable en aproximadamente dos de cada tres pacientes, con un aumento moderado de la densidad y el grosor del cabello unos 6 meses después de una sesión. Faltan ensayos controlados más amplios.",
+      "steps": [
+        {
+          "t": "Valoración",
+          "d": "El médico confirma el tipo y el grado de caída y si en las zonas débiles aún hay folículos."
+        },
+        {
+          "t": "Toma de muestras",
+          "d": "Con anestesia local se toman tres pequeñas muestras con punch de detrás de la oreja; las pequeñas heridas cicatrizan en pocos días."
+        },
+        {
+          "t": "Preparación",
+          "d": "Las muestras se procesan en el dispositivo Rigeneracons hasta obtener una suspensión de microinjertos."
+        },
+        {
+          "t": "Inyección",
+          "d": "La suspensión se inyecta en las zonas débiles. La sesión completa dura entre 1 y 1,5 horas."
+        }
+      ],
+      "stay": "Una sesión de 1 a 1,5 horas, sin ingreso. Normalmente puede viajar al día siguiente.",
+      "faq": [
+        {
+          "q": "¿Cuántas sesiones hacen falta?",
+          "a": "Normalmente una. Según su respuesta, su médico puede proponer repetirla al cabo de un año."
+        },
+        {
+          "q": "¿Cuándo veré resultados?",
+          "a": "Los estudios valoran el resultado hacia los 6 meses. Suele frenarse primero la caída."
+        },
+        {
+          "q": "¿Dejan cicatriz las muestras?",
+          "a": "Cada muestra mide unos 2,5 mm y se toma detrás de la oreja, por lo que la marca es muy pequeña y queda oculta por el cabello."
+        }
+      ]
     }
   }
 }
