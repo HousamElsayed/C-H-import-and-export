@@ -1,0 +1,10 @@
+{
+  "id": "EG-EB-001",
+  "branch": "egypt",
+  "service": "eyebrow-transplant",
+  "order": 1,
+  "before": "uploads/results/eg-eb-001-before.jpg",
+  "after": "uploads/results/eg-eb-001-after.jpg",
+  "aspect": "4/5",
+  "consentRef": null
+}
