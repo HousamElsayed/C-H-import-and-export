@@ -1,0 +1,10 @@
+{
+  "id": "TR-BM-001",
+  "branch": "turkey",
+  "service": "beard-moustache-transplant",
+  "order": 1,
+  "before": "uploads/results/tr-bm-001-before.jpg",
+  "after": "uploads/results/tr-bm-001-after.jpg",
+  "aspect": "4/5",
+  "consentRef": null
+}

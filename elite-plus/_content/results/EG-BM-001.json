@@ -1,0 +1,10 @@
+{
+  "id": "EG-BM-001",
+  "branch": "egypt",
+  "service": "beard-moustache-transplant",
+  "order": 1,
+  "before": "uploads/results/eg-bm-001-before.jpg",
+  "after": "uploads/results/eg-bm-001-after.jpg",
+  "aspect": "4/5",
+  "consentRef": null
+}
