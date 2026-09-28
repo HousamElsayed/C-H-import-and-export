@@ -43,7 +43,8 @@ def find_divider(img, axis):
     n = len(prof)
     lo, hi = int(n * .35), int(n * .65)
     best = min(range(lo, hi), key=lambda i: prof[i][1])
-    if prof[best][1] > 14:  # no clean line: photos touch; split in the middle
+    typical = statistics.median(p[1] for p in prof)
+    if prof[best][1] > 14 or prof[best][1] > typical * .35:  # no clean line: photos touch; split in the middle
         mid = round((img.width if axis == 0 else img.height) / 2)
         return mid, mid
     a = b = best

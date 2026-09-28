@@ -1,0 +1,10 @@
+{
+  "id": "EG-HT-001",
+  "branch": "egypt",
+  "service": "hair-transplant",
+  "order": 1,
+  "before": "uploads/results/eg-ht-001-before.jpg",
+  "after": "uploads/results/eg-ht-001-after.jpg",
+  "aspect": "4/5",
+  "consentRef": null
+}
