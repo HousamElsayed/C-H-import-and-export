@@ -83,6 +83,7 @@ main:focus { outline: none; }
 
 /* ---------- type ---------- */
 .duo { font-size: var(--fs-h2); text-transform: uppercase; margin-bottom: .4em; }
+h1, h2, h3, .duo { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
 [lang="ar"] .duo { text-transform: none; }
 .duo__a, .duo__b { display: block; }
 .duo__a { color: var(--navy); }
@@ -153,6 +154,15 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .hdr.is-stuck { background: var(--cream); box-shadow: 0 6px 24px rgba(7, 50, 81, .08); }
 .hdr__in { display: flex; align-items: center; gap: 20px; height: var(--hdr-h); }
 @media (min-width: 1321px) { .hdr .icon-btn--wa { display: none; } }
+/* Laptops 1024–1320px: the full menu stays visible, just tighter. Below 1240px Prices and Patient Journey
+   are reached from the footer and home sections; WhatsApp stays one tap away via the floating button. */
+@media (min-width: 1024px) and (max-width: 1320px) {
+  .hdr__in { gap: 12px; }
+  .hdr .icon-btn--wa { display: none; }
+  .nav__link { padding: 8px; font-size: .92rem; }
+  .logo img { height: 42px; }
+}
+@media (min-width: 1024px) and (max-width: 1239px) { .nav__item--opt { display: none; } }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); flex: none; }
 .logo img { height: 48px; width: auto; }
 .ftr .logo img { height: 52px; }
@@ -196,12 +206,12 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .burger[aria-expanded="true"] .burger__open { display: none; }
 .burger[aria-expanded="true"] .burger__close { display: block; }
 
-@media (max-width: 1320px) {
+@media (max-width: 1023px) {
   .burger { display: grid; }
   .hdr__cta { display: none; }
-  .nav { position: fixed; inset: var(--hdr-h) 0 0 0; background: var(--cream); padding: 16px var(--gutter) 120px; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .3s var(--ease), visibility .3s; margin: 0; }
-  [dir="rtl"] .nav { transform: translateX(-100%); }
-  .nav.is-open { transform: none; visibility: visible; }
+  .nav { position: fixed; inset: var(--hdr-h) 0 0 0; background: var(--cream); padding: 16px var(--gutter) 120px; overflow-y: auto; opacity: 0; transform: translateY(-12px); visibility: hidden; transition: transform .3s var(--ease), opacity .3s var(--ease), visibility .3s; margin: 0; }
+  /* Closed menu stays inside the viewport (no sideways offset), so phones never see a page wider than the screen. */
+  .nav.is-open { opacity: 1; transform: none; visibility: visible; }
   .nav__list { flex-direction: column; align-items: stretch; gap: 0; }
   .nav__item { border-bottom: 1px solid var(--line); }
   .nav__link { width: 100%; justify-content: space-between; font-size: 1.15rem; min-height: 56px; border-radius: 0; }
@@ -246,7 +256,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .hero__mote { position: absolute; left: var(--x); top: var(--y); width: 8px; height: 8px; border-radius: 50%; opacity: 0;
   background: radial-gradient(circle, #fff 0%, rgba(245, 190, 110, .9) 45%, rgba(245, 147, 69, 0) 70%); }
 
-.hero__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px clamp(28px, 5vw, 72px); align-items: end; padding-inline: clamp(8px, 3vw, 44px); }
+.hero__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px clamp(28px, 5vw, 72px); align-items: center; padding-inline: clamp(8px, 3vw, 44px); }
 .hero__content { max-width: 600px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--orange-text); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: var(--fs-small); }
 [lang="ar"] .eyebrow { letter-spacing: 0; font-size: 1rem; }
@@ -264,8 +274,9 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .hero__banner { border-radius: 16px; max-width: none; }
   .hero__body { grid-template-columns: 1fr; padding-inline: 12px; }
   .hero__rays { width: 140px; }
-  .hero .cta-row .btn { flex: 1 1 100%; }
+  .hero .cta-row .btn { flex: 1 1 0; }
 }
+@media (max-width: 559px) { .hero .cta-row .btn { flex: 1 1 100%; } }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero__banner { animation: bannerIn .9s var(--ease) both; }
@@ -325,7 +336,8 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 1023px) { .cards--3, .cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1023px) { .cards--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1199px) { .cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .cards--2, .cards--3, .cards--4 { grid-template-columns: 1fr; } }
 .icard { background: var(--cream); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
 .sec--grey .icard { background: #fff; }
@@ -336,12 +348,21 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .icard p { margin: 0; color: var(--text-muted); }
 .icard__ico { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: #FFF1E4; color: var(--orange-text); margin-bottom: 18px; }
 .icard__ico .i { width: 28px; height: 28px; }
+/* Phones: icon beside the text instead of above it — same content, about 40% less scrolling. */
+@media (max-width: 600px) {
+  .icard { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: 16px; align-items: start; padding: 20px; }
+  .icard__ico { width: 48px; height: 48px; border-radius: 14px; margin: 0; grid-row: span 2; }
+  .icard__ico .i { width: 24px; height: 24px; }
+  .icard h3 { font-size: 1.1rem; margin-bottom: .25em; }
+  .icard > :not(.icard__ico) { grid-column: 2; }
+}
 
 /* services */
 .cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 @media (max-width: 899px) { .cat-grid { grid-template-columns: 1fr; } }
 .ccat { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
 .ccat__img { position: relative; aspect-ratio: 16/8; overflow: hidden; }
+@media (max-width: 1023px) { .ccat__img { aspect-ratio: 16/7; } }
 .ccat__img img { width: 100%; height: 100%; object-fit: cover; }
 .ccat__star { position: absolute; bottom: -1px; inset-inline-start: 28px; width: 64px; height: 64px; display: grid; place-items: center; background: #fff; border-radius: 18px 18px 0 0; color: var(--orange); }
 .ccat__star .star { width: 36px; height: 36px; }
@@ -349,7 +370,8 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .ccat__body h3 { font-size: var(--fs-h3); }
 .ccat__body > p { color: var(--text-muted); }
 .ccat__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
-@media (max-width: 480px) { .ccat__list { grid-template-columns: 1fr; } }
+.ccat { container-type: inline-size; }
+@container (max-width: 540px) { .ccat__list { grid-template-columns: 1fr; } }
 .ccat__list a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 600; min-height: 48px; }
 .ccat__list a .i { color: var(--orange); width: 18px; height: 18px; }
 .ccat__list a:hover { color: var(--orange-text); }
@@ -365,6 +387,15 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .scard__body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
 .scard__body h3 { font-size: 1.25rem; }
 .scard__body p { color: var(--text-muted); flex: 1; }
+/* Phones: treatment cards become a compact list row (photo left, text right) instead of a tall stack. */
+@media (max-width: 600px) {
+  .svc-grid { gap: 14px; }
+  .scard__link { flex-direction: row; align-items: stretch; }
+  .scard__img { flex: none; width: 116px; aspect-ratio: auto; }
+  .scard__body { padding: 16px 18px; }
+  .scard__body h3 { font-size: 1.08rem; margin-bottom: .3em; }
+  .scard__body p { font-size: .92rem; margin-bottom: .6em; }
+}
 
 /* checks */
 .checks { display: grid; gap: 14px; }
@@ -395,6 +426,14 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .dcard__title { color: var(--text-muted); margin-bottom: .6em; }
 .dcard--lead .dcard__img { aspect-ratio: 5/4; }
 .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+/* Phones: two doctors per row so the team fits on screen. */
+@media (max-width: 600px) {
+  .doc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .doc-grid .dcard--lead { grid-column: 1 / -1; }
+  .doc-grid .dcard__body { padding: 12px 14px 14px; }
+  .doc-grid .dcard__body h2, .doc-grid .dcard__body h3 { font-size: 1rem; }
+  .doc-grid .dcard__title { font-size: .85rem; }
+}
 .cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
 @media (max-width: 767px) { .cv { grid-template-columns: 1fr; } }
 
@@ -429,6 +468,14 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 .chip { min-height: 44px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; }
 .chip[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+/* Phones: each filter group is one swipeable row instead of a wall of wrapped chips. */
+@media (max-width: 767px) {
+  .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); overscroll-behavior-x: contain;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  [dir="rtl"] .filters { -webkit-mask-image: linear-gradient(270deg, #000 85%, transparent); mask-image: linear-gradient(270deg, #000 85%, transparent); }
+  .filters::-webkit-scrollbar { display: none; }
+  .chip { flex: none; white-space: nowrap; }
+}
 
 /* faq */
 .faq { display: grid; gap: 12px; }
@@ -474,7 +521,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .ds-dark { border-radius: var(--radius); margin: 24px 0; }
 
 /* footer */
-.ftr { background: var(--navy); color: rgba(255, 255, 255, .86); padding-block: 64px 120px; font-size: .95rem; border-top: 1px solid rgba(255, 255, 255, .08); }
+.ftr { background: var(--navy); color: rgba(255, 255, 255, .86); padding-block: 64px 56px; font-size: .95rem; border-top: 1px solid rgba(255, 255, 255, .08); }
 .ftr__grid { display: grid; grid-template-columns: 1.4fr 1.2fr 1fr 1.2fr; gap: 40px; }
 @media (max-width: 1023px) { .ftr__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .ftr__grid { grid-template-columns: 1fr; } }
@@ -482,7 +529,8 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .ftr__h { font-size: 1rem; color: var(--sand); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
 [lang="ar"] .ftr__h { letter-spacing: 0; }
 .ftr ul { display: grid; gap: 8px; }
-.ftr a { color: #fff; text-decoration: none; }
+@media (max-width: 600px) { .ftr__grid ul:not(.ftr__contact):not(.ftr__social) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; } }
+.ftr a { color: #fff; text-decoration: none; overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
 .ftr a:hover { text-decoration: underline; }
 .ftr__contact li { display: flex; gap: 10px; align-items: flex-start; }
 .ftr__contact .i { color: var(--sand); margin-top: 3px; }
@@ -505,8 +553,8 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .fab { display: none; }
   .mbar { position: fixed; inset-inline: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1.25fr 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(254, 252, 252, .96); backdrop-filter: blur(8px); box-shadow: 0 -6px 20px rgba(7, 50, 81, .1); }
   .mbar .btn { min-height: 50px; padding-inline: .8em; font-size: 1rem; }
-  body { padding-bottom: 72px; }
-  .pg-assessment { padding-bottom: 0; }
+  /* Room for the sticky bar, inside the navy footer so the page never ends on a blank strip. */
+  .ftr { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
 
 /* cookie banner: accept and reject have equal weight */
@@ -646,7 +694,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .clinics a:hover, .clinics a[aria-current] { background: var(--grey-bg); }
 .clinics__yours { margin-inline-start: auto; padding: 2px 8px; border-radius: 999px; background: #FFF1E4; color: var(--orange-text); font-size: .75rem; font-weight: 700; }
 .flag { font-size: 1.25em; line-height: 1; }
-@media (max-width: 1320px) { .clinics { position: static; box-shadow: none; padding: 0 0 12px; background: transparent; } }
+@media (max-width: 1023px) { .clinics { position: static; box-shadow: none; padding: 0 0 12px; background: transparent; } }
 .sec--clinics { padding-top: clamp(8px, 2vw, 24px); }
 .bchoose { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 @media (max-width: 767px) { .bchoose { grid-template-columns: 1fr; } }
@@ -771,3 +819,10 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 @media (min-width: 768px) { .trustbar__list { min-height: 44px; } }
 .ad-h1 { margin: 0 0 16px; }
 @media (max-width: 767px) { .bcard__img { aspect-ratio: 16 / 7; } }
+
+/* Very small phones (≤360px, e.g. iPhone SE 1st gen, compact Androids): tighter header so everything fits on one line. */
+@media (max-width: 360px) {
+  .hdr__in { gap: 8px; }
+  .hdr__actions { gap: 2px; }
+  .hdr .logo img, .hdr .brand img { width: 136px; height: auto; }
+}

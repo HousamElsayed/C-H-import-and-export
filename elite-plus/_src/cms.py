@@ -30,6 +30,7 @@ result = [
   {"name": "branch", "label": "Clinic", **BR, "required": True},
   {"name": "service", "label": "Treatment (file name without .json, e.g. hair-transplant)", "type": "string", "required": True},
   img("before", "Before photo", required=True), img("after", "Final after photo", required=True),
+  f("aspect", "Photo frame", "select", options={"values": ["4/3", "1/1", "4/5"]}),
   f("months", "Months after treatment (final photo)", "number"),
   {"name": "timeline", "label": "In-between photos (optional)", "type": "object", "list": True, "fields": [f("month", "Month", "number"), img("image", "Photo")]},
   f("consentRef", "Signed consent form reference (never published)", required=True),

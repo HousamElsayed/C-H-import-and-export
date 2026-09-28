@@ -73,7 +73,7 @@
     };
     burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { set(false); burger.focus(); } });
-    matchMedia('(min-width: 1321px)').addEventListener('change', (m) => m.matches && set(false));
+    matchMedia('(min-width: 1024px)').addEventListener('change', (m) => m.matches && set(false));
   }
 
   // Trust bar: rotate items on narrow screens

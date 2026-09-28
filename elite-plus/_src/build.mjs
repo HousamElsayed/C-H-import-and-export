@@ -339,7 +339,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="clinics-menu" data-clinics-btn${branch ? ' aria-current="page"' : ''}>${esc(L.nav.clinics)}${icon('chevron', 'nav__chev')}</button>
           <ul class="clinics" id="clinics-menu" data-clinics hidden>${clinicsMenu}</ul>
         </li>
-        ${headerNav.map(([k, u]) => `<li class="nav__item"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
+        ${headerNav.map(([k, u]) => `<li class="nav__item${k === 'prices' || k === 'journey' ? ' nav__item--opt' : ''}"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
       <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav')}</div>
     </nav>
@@ -526,8 +526,11 @@ function compareCard(lang, r, i, showBranch = true) {
   const si = cfg.services.indexOf(s);
   const b = r ? branchBy(r.branch) : BRANCHES[i % BRANCHES.length];
   const stages = r?.timeline?.length ? [...r.timeline.map((t) => ({ label: fmtT(R.months, { n: t.month }), src: imgSrc(t.image) })), { label: r.months ? fmtT(R.months, { n: r.months }) : R.final, src: imgSrc(r.after) }] : [];
+  // Photo frame chosen by _src/split_result.py (4/3, 1/1 or 4/5); default 4/3.
+  const ar = /^\d+\/\d+$/.test(r?.aspect ?? '') ? `;aspect-ratio:${r.aspect}` : '';
+  if (r && !r.consentRef) problems.add(`missing data: results/${r.id}.consentRef (signed consent form reference)`);
   return `<figure class="ba" data-ba data-service="${s?.slug ?? ''}" data-branch="${b?.slug ?? ''}">
-    <div class="ba__stage" style="--pos:50%">
+    <div class="ba__stage" style="--pos:50%${ar}">
       <div class="ba__img">${before}</div>
       <div class="ba__img ba__after">${after}</div>
       <span class="ba__tag ba__tag--b">${esc(L.before)}</span><span class="ba__tag ba__tag--a" data-ba-label>${esc(stages.length ? stages.at(-1).label : L.after)}</span>

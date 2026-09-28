@@ -384,6 +384,18 @@
           "required": true
         },
         {
+          "name": "aspect",
+          "label": "Photo frame",
+          "type": "select",
+          "options": {
+            "values": [
+              "4/3",
+              "1/1",
+              "4/5"
+            ]
+          }
+        },
+        {
           "name": "months",
           "label": "Months after treatment (final photo)",
           "type": "number"
