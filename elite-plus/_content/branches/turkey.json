@@ -10,17 +10,17 @@
     "es": "Turquía"
   },
   "city": {
-    "en": null,
-    "ar": null,
-    "tr": null,
-    "de": null,
-    "es": null
+    "en": "Istanbul",
+    "ar": "إسطنبول",
+    "tr": "İstanbul",
+    "de": "Istanbul",
+    "es": "Estambul"
   },
-  "street": null,
-  "district": null,
-  "postalCode": null,
-  "lat": null,
-  "lng": null,
+  "street": "Turgut Özal Millet Caddesi No:5",
+  "district": "Aksaray Mahallesi, Fatih",
+  "postalCode": "34096",
+  "lat": 41.0091762,
+  "lng": 28.9496577,
   "mapsUrl": null,
   "mapEmbedUrl": null,
   "licenceNumber": null,

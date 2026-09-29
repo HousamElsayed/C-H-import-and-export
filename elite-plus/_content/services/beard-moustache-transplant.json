@@ -4,27 +4,235 @@
   "order": 2,
   "priceFrom": null,
   "image": null,
-  "redirectFrom": ["beard-transplant", "moustache-transplant"],
+  "redirectFrom": [
+    "beard-transplant",
+    "moustache-transplant"
+  ],
   "content": {
     "en": {
       "name": "Beard & Moustache Transplant",
-      "short": "Beard and moustache are usually planned and transplanted in one session, so density and shape match across the face."
+      "short": "Beard and moustache are usually planned and transplanted in one session, so density and shape match across the face.",
+      "intro": "A beard and moustache transplant moves hair follicles, usually from the back of the scalp, to the cheeks, jawline, chin and upper lip. Both areas are normally planned together in one session, so density, shape and direction match across the face. It is done under local anaesthetic with FUE or DHI, and each graft is placed at a very shallow angle to follow the natural direction of facial hair.",
+      "whoFor": [
+        "Men with a patchy or thin beard or moustache",
+        "Men whose facial hair does not grow in some areas, such as the cheeks or around the mouth",
+        "Men who want a fuller or more defined beard line or moustache",
+        "People with scars in the beard or moustache area where hair no longer grows",
+        "Men with enough donor hair at the back of the scalp"
+      ],
+      "steps": [
+        {
+          "t": "Consultation and design",
+          "d": "The doctor examines your facial hair and donor area and draws the beard and moustache shape with you."
+        },
+        {
+          "t": "Extraction",
+          "d": "Under local anaesthetic, follicles are removed one by one, usually from the back of the scalp."
+        },
+        {
+          "t": "Implantation",
+          "d": "Grafts are placed in the beard and moustache at a shallow angle, following the natural direction of facial hair."
+        },
+        {
+          "t": "Aftercare",
+          "d": "You receive a face-washing and care plan. Shaving and trimming the treated area wait until your doctor allows it."
+        }
+      ],
+      "stay": "The procedure takes one day. Plan 2 to 3 days in total for the consultation, procedure and first check.",
+      "faq": [
+        {
+          "q": "Will the new beard look natural?",
+          "a": "Each graft is placed at the angle and direction of natural facial hair and blended with your existing beard and moustache."
+        },
+        {
+          "q": "When will I see the result?",
+          "a": "Transplanted hairs usually shed in the first weeks, new growth appears around months 3 to 4, and the final result is seen at around 12 months."
+        },
+        {
+          "q": "Can I shave the new beard?",
+          "a": "Yes. Once healed, the transplanted hair can be shaved, trimmed and styled like the rest of your beard."
+        }
+      ]
     },
     "ar": {
       "name": "زراعة اللحية والشارب",
-      "short": "تُخطَّط زراعة اللحية والشارب عادةً وتُجرى في جلسة واحدة، ليتناسق شكلهما وكثافتهما على الوجه."
+      "short": "تُخطَّط زراعة اللحية والشارب عادةً وتُجرى في جلسة واحدة، ليتناسق شكلهما وكثافتهما على الوجه.",
+      "intro": "تنقل زراعة اللحية والشارب بصيلات الشعر، غالبًا من مؤخرة الرأس، إلى الخدين وخط الفك والذقن والشفة العليا. تُخطَّط المنطقتان عادةً معًا في جلسة واحدة ليتناسق الكثافة والشكل والاتجاه على الوجه. تُجرى تحت التخدير الموضعي بتقنية FUE أو DHI، وتُزرع كل بصيلة بزاوية مائلة جدًا لتتبع الاتجاه الطبيعي لشعر الوجه.",
+      "whoFor": [
+        "الرجال الذين لديهم لحية أو شارب متقطع أو خفيف",
+        "من لا ينمو شعر وجههم في بعض المناطق مثل الخدين أو حول الفم",
+        "من يرغب في لحية أو شارب أكثف أو بخط أوضح",
+        "من لديهم ندبات في منطقة اللحية أو الشارب توقف فيها نمو الشعر",
+        "الرجال الذين لديهم شعر مانح كافٍ في مؤخرة الرأس"
+      ],
+      "steps": [
+        {
+          "t": "الاستشارة والتصميم",
+          "d": "يفحص الطبيب شعر الوجه والمنطقة المانحة ويرسم معك شكل اللحية والشارب."
+        },
+        {
+          "t": "الاستخراج",
+          "d": "تحت التخدير الموضعي تُستخرج البصيلات واحدة تلو الأخرى، غالبًا من مؤخرة الرأس."
+        },
+        {
+          "t": "الزراعة",
+          "d": "تُزرع البصيلات في اللحية والشارب بزاوية مائلة وفق الاتجاه الطبيعي لشعر الوجه."
+        },
+        {
+          "t": "الرعاية بعد العملية",
+          "d": "تحصل على خطة لغسل الوجه والعناية به، ويُؤجَّل الحلاقة والتشذيب حتى يسمح الطبيب بذلك."
+        }
+      ],
+      "stay": "تستغرق العملية يومًا واحدًا. خطّط لـ 2 إلى 3 أيام إجمالًا للاستشارة والعملية والفحص الأول.",
+      "faq": [
+        {
+          "q": "هل ستبدو اللحية طبيعية؟",
+          "a": "تُزرع كل بصيلة بزاوية شعر الوجه الطبيعي واتجاهه، وتُدمج مع لحيتك وشاربك الحاليين."
+        },
+        {
+          "q": "متى تظهر النتيجة؟",
+          "a": "يتساقط الشعر المزروع عادةً في الأسابيع الأولى، ويظهر النمو الجديد في الشهر الثالث أو الرابع، والنتيجة النهائية بعد نحو 12 شهرًا."
+        },
+        {
+          "q": "هل يمكن حلاقة اللحية الجديدة؟",
+          "a": "نعم، بعد الالتئام يمكن حلاقة الشعر المزروع وتشذيبه وتصفيفه مثل باقي لحيتك."
+        }
+      ]
     },
     "tr": {
       "name": "Sakal ve Bıyık Ekimi",
-      "short": "Sakal ve bıyık genellikle tek seansta planlanıp ekilir; böylece yüzde yoğunluk ve şekil uyumlu olur."
+      "short": "Sakal ve bıyık genellikle tek seansta planlanıp ekilir; böylece yüzde yoğunluk ve şekil uyumlu olur.",
+      "intro": "Sakal ve bıyık ekimi, saç köklerini genellikle ense bölgesinden yanaklara, çene hattına, çeneye ve üst dudağa taşır. İki bölge yoğunluk, şekil ve yön yüzde uyumlu olsun diye genellikle tek seansta birlikte planlanır. Lokal anestezi altında FUE veya DHI ile yapılır; her greft yüz kıllarının doğal yönünü izleyecek şekilde çok dar bir açıyla yerleştirilir.",
+      "whoFor": [
+        "Sakalı veya bıyığı seyrek ya da boşluklu olan erkekler",
+        "Yanaklar veya ağız çevresi gibi bazı bölgelerde kıl çıkmayanlar",
+        "Daha dolgun veya daha belirgin bir sakal hattı ya da bıyık isteyenler",
+        "Sakal veya bıyık bölgesinde kıl çıkmayan yara izi olanlar",
+        "Ense bölgesinde yeterli donör saçı olan erkekler"
+      ],
+      "steps": [
+        {
+          "t": "Konsültasyon ve tasarım",
+          "d": "Doktor yüz kıllarınızı ve donör bölgeyi inceler, sakal ve bıyık şeklini sizinle birlikte çizer."
+        },
+        {
+          "t": "Kök alma",
+          "d": "Lokal anestezi altında kökler genellikle enseden tek tek alınır."
+        },
+        {
+          "t": "Ekim",
+          "d": "Greftler sakal ve bıyığa, yüz kıllarının doğal yönünde dar açıyla yerleştirilir."
+        },
+        {
+          "t": "Bakım",
+          "d": "Yüz yıkama ve bakım planı verilir; tıraş ve düzeltme doktorunuz izin verene kadar bekler."
+        }
+      ],
+      "stay": "İşlem bir gün sürer. Konsültasyon, işlem ve ilk kontrol için toplam 2–3 gün planlayın.",
+      "faq": [
+        {
+          "q": "Yeni sakal doğal görünür mü?",
+          "a": "Her greft doğal yüz kılının açısı ve yönünde yerleştirilir ve mevcut sakal ve bıyığınızla harmanlanır."
+        },
+        {
+          "q": "Sonucu ne zaman görürüm?",
+          "a": "Ekilen kıllar genellikle ilk haftalarda dökülür, yeni çıkış 3.–4. ayda görülür, nihai sonuç yaklaşık 12. ayda ortaya çıkar."
+        },
+        {
+          "q": "Yeni sakalı tıraş edebilir miyim?",
+          "a": "Evet. İyileşme sonrası ekilen kıllar sakalınızın geri kalanı gibi tıraş edilebilir, düzeltilebilir ve şekillendirilebilir."
+        }
+      ]
     },
     "de": {
       "name": "Bart- und Schnurrbarttransplantation",
-      "short": "Bart und Schnurrbart werden meist gemeinsam in einer Sitzung geplant und transplantiert, damit Dichte und Form zueinander passen."
+      "short": "Bart und Schnurrbart werden meist gemeinsam in einer Sitzung geplant und transplantiert, damit Dichte und Form zueinander passen.",
+      "intro": "Bei der Bart- und Schnurrbarttransplantation werden Haarfollikel, meist vom Hinterkopf, an Wangen, Kieferlinie, Kinn und Oberlippe versetzt. Beide Bereiche werden in der Regel gemeinsam in einer Sitzung geplant, damit Dichte, Form und Richtung im Gesicht zusammenpassen. Der Eingriff erfolgt unter örtlicher Betäubung mit FUE oder DHI; jedes Graft wird in sehr flachem Winkel gesetzt, um der natürlichen Wuchsrichtung der Gesichtshaare zu folgen.",
+      "whoFor": [
+        "Männer mit lückenhaftem oder dünnem Bart oder Schnurrbart",
+        "Männer, bei denen an manchen Stellen, etwa an Wangen oder um den Mund, kein Bart wächst",
+        "Männer, die einen volleren oder klarer definierten Bart oder Schnurrbart wünschen",
+        "Menschen mit Narben im Bart- oder Schnurrbartbereich, auf denen kein Haar mehr wächst",
+        "Männer mit ausreichend Spenderhaar am Hinterkopf"
+      ],
+      "steps": [
+        {
+          "t": "Beratung und Planung",
+          "d": "Der Arzt untersucht Ihren Bartwuchs und den Spenderbereich und zeichnet mit Ihnen die Form von Bart und Schnurrbart ein."
+        },
+        {
+          "t": "Entnahme",
+          "d": "Unter örtlicher Betäubung werden die Follikel einzeln entnommen, meist am Hinterkopf."
+        },
+        {
+          "t": "Einsetzen",
+          "d": "Die Grafts werden in flachem Winkel entlang der natürlichen Wuchsrichtung in Bart und Schnurrbart gesetzt."
+        },
+        {
+          "t": "Nachsorge",
+          "d": "Sie erhalten einen Plan für Gesichtsreinigung und Pflege. Rasieren und Trimmen warten, bis Ihr Arzt es erlaubt."
+        }
+      ],
+      "stay": "Der Eingriff dauert einen Tag. Planen Sie insgesamt 2 bis 3 Tage für Beratung, Eingriff und erste Kontrolle ein.",
+      "faq": [
+        {
+          "q": "Sieht der neue Bart natürlich aus?",
+          "a": "Jedes Graft wird im Winkel und in der Richtung natürlicher Gesichtshaare gesetzt und mit Ihrem vorhandenen Bart und Schnurrbart verbunden."
+        },
+        {
+          "q": "Wann sehe ich das Ergebnis?",
+          "a": "Die transplantierten Haare fallen meist in den ersten Wochen aus, neues Wachstum zeigt sich etwa im 3. bis 4. Monat, das Endergebnis nach etwa 12 Monaten."
+        },
+        {
+          "q": "Kann ich den neuen Bart rasieren?",
+          "a": "Ja. Nach der Heilung kann das transplantierte Haar wie der übrige Bart rasiert, getrimmt und gestylt werden."
+        }
+      ]
     },
     "es": {
       "name": "Injerto de barba y bigote",
-      "short": "La barba y el bigote se suelen planificar e injertar en una sola sesión, para que densidad y forma sean armónicas."
+      "short": "La barba y el bigote se suelen planificar e injertar en una sola sesión, para que densidad y forma sean armónicas.",
+      "intro": "El injerto de barba y bigote traslada folículos, normalmente de la parte posterior de la cabeza, a las mejillas, la mandíbula, el mentón y el labio superior. Ambas zonas se planifican juntas en una sola sesión para que densidad, forma y dirección sean armónicas en todo el rostro. Se realiza con anestesia local mediante FUE o DHI, colocando cada injerto con un ángulo muy bajo que sigue la dirección natural del vello facial.",
+      "whoFor": [
+        "Hombres con barba o bigote despoblados o poco densos",
+        "Hombres a los que no les crece vello en algunas zonas, como las mejillas o alrededor de la boca",
+        "Quien desea una barba o un bigote más poblados o mejor definidos",
+        "Personas con cicatrices en la zona de la barba o el bigote donde ya no crece pelo",
+        "Hombres con suficiente cabello donante en la nuca"
+      ],
+      "steps": [
+        {
+          "t": "Consulta y diseño",
+          "d": "El médico examina su vello facial y la zona donante y dibuja con usted la forma de la barba y el bigote."
+        },
+        {
+          "t": "Extracción",
+          "d": "Con anestesia local, los folículos se extraen uno a uno, normalmente de la nuca."
+        },
+        {
+          "t": "Implantación",
+          "d": "Los injertos se colocan en la barba y el bigote con un ángulo bajo, siguiendo la dirección natural del vello facial."
+        },
+        {
+          "t": "Cuidados posteriores",
+          "d": "Recibe un plan de limpieza facial y cuidados. El afeitado y el recorte esperan hasta que su médico lo permita."
+        }
+      ],
+      "stay": "El procedimiento dura un día. Prevea 2 a 3 días en total para la consulta, la intervención y la primera revisión.",
+      "faq": [
+        {
+          "q": "¿La nueva barba se verá natural?",
+          "a": "Cada injerto se coloca con el ángulo y la dirección del vello facial natural y se integra con su barba y bigote actuales."
+        },
+        {
+          "q": "¿Cuándo veré el resultado?",
+          "a": "El vello injertado suele caer en las primeras semanas, el nuevo crecimiento aparece hacia el 3.º–4.º mes y el resultado final se ve hacia los 12 meses."
+        },
+        {
+          "q": "¿Puedo afeitar la nueva barba?",
+          "a": "Sí. Una vez curada, el vello injertado se puede afeitar, recortar y peinar como el resto de la barba."
+        }
+      ]
     }
   }
 }

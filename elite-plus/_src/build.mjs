@@ -189,17 +189,14 @@ const FLAG = { TR: '🇹🇷', EG: '🇪🇬' };
 
 function trustItems(lang, short = false, b = null) {
   const L = I[lang].trust; const s = cfg.stats; const items = [];
-  const rated = (b ? [b] : BRANCHES).filter((x) => x.stats?.googleRating);
   if (!b && s.patientsTreated) items.push(fmtH(L.patients, { n: s.patientsTreated.toLocaleString(LOCALES[lang]) }));
-  for (const x of rated) {
-    const r = fmtH(short ? L.ratingShort : L.rating, { r: x.stats.googleRating, n: x.stats.googleReviewCount });
-    items.push(b || BRANCHES.length === 1 ? r : `${r} · ${esc(bCountry(x, lang))}`);
-  }
   if (s.ministryLicensed) items.push(esc(short ? L.licensedShort : L.licensed));
   if (short && !b && s.languagesSpoken?.length) items.push(fmtH(L.speaks, { langs: langList(lang) }));
   if (!items.length && PREVIEW) {
-    problems.add('missing data: company.stats / branch Google ratings');
-    items.push(`<span class="todo">${esc(fmtT(L.patients, { n: 'X' }))}</span>`, `<span class="todo">${esc(fmtT(L.ratingShort, { r: '4.x' }))}</span>`, `<span class="todo">${esc(L.licensedShort)}</span>`);
+    problems.add('missing data: company.stats');
+    // Patient numbers are company-wide, so clinic pages only wait for the licence badge.
+    if (!b) items.push(`<span class="todo">${esc(fmtT(L.patients, { n: 'X' }))}</span>`);
+    items.push(`<span class="todo">${esc(L.licensedShort)}</span>`);
   }
   return items;
 }
@@ -274,7 +271,6 @@ function branchLd(lang, b) {
     medicalSpecialty: 'Dermatology', availableService: SERVICES.map((sv) => ({ '@type': 'MedicalProcedure', name: sv.content?.[lang]?.name })).filter((x) => x.name),
     employee: bDoctors(b).map((d) => ({ '@type': 'Physician', name: d.name })),
   };
-  if (b.stats?.googleRating && b.stats?.googleReviewCount) ld.aggregateRating = { '@type': 'AggregateRating', ratingValue: b.stats.googleRating, reviewCount: b.stats.googleReviewCount, bestRating: 5 };
   if (!ld.employee.length) delete ld.employee;
   return ld;
 }
@@ -286,6 +282,12 @@ function socialList(lang, cls = '') {
   const items = Object.entries(C.social).filter(([, v]) => v);
   if (!items.length) return PREVIEW ? `<p>${todo('social links', 'company.social')}</p>` : '';
   return `<ul class="social ${cls}">${items.map(([k, v]) => `<li><a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="${SOCIAL_LABEL[k] ?? k} ${esc(I[lang].a11y.ext)}" data-ev="social_click">${icon(k)}</a></li>`).join('')}</ul>`;
+}
+
+// Instagram / Facebook as brand-coloured round buttons, styled like the WhatsApp button.
+function socialBtns(lang, cls) {
+  return Object.entries(C.social).filter(([k, v]) => v && (k === 'instagram' || k === 'facebook'))
+    .map(([k, v]) => `<a class="${cls} ${cls}--${k}" href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="${SOCIAL_LABEL[k] ?? k} ${esc(I[lang].a11y.ext)}" data-ev="social_click">${icon(k)}</a>`).join('');
 }
 
 function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noindex = false, heroPreload = false, scripts = [], finalCta = true, branch = null }) {
@@ -325,7 +327,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   const header = `
 <a class="skip" href="#main">${esc(L.nav.skip)}</a>
 <div class="langbar" data-langbar hidden></div>
-<div class="trustbar"><div class="wrap trustbar__in">${trust.length ? `<ul class="trustbar__list" data-rotate>${trust.map((t) => `<li>${starMark('trustbar__star')}<span>${t}</span></li>`).join('')}</ul>` : '<span></span>'}${socialList(lang, 'social--bar')}</div></div>
+<div class="trustbar"><div class="wrap trustbar__in">${trust.length ? `<ul class="trustbar__list" data-rotate>${trust.map((t) => `<li>${starMark('trustbar__star')}<span>${t}</span></li>`).join('')}</ul>` : '<span></span>'}</div></div>
 <header class="hdr" data-header>
   <div class="wrap hdr__in">
     ${logo(lang, 'light')}
@@ -341,6 +343,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
         </li>
         ${headerNav.map(([k, u]) => `<li class="nav__item${k === 'prices' || k === 'journey' ? ' nav__item--opt' : ''}"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
+      <ul class="nav__langs" aria-label="${esc(L.nav.language)}">${langMenu}</ul>
       <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav')}</div>
     </nav>
     <div class="hdr__actions">
@@ -348,7 +351,8 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
         <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="${esc(L.nav.language)}: ${esc(L.lang.name)}">${icon('globe')}<span>${L.lang.code}</span>${icon('chevron', 'lang__chev')}</button>
         <ul class="lang__menu" id="lang-menu" hidden>${langMenu}</ul>
       </div>
-      <a class="icon-btn icon-btn--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
+      ${socialBtns(lang, 'sbtn')}
+      <a class="sbtn sbtn--wa icon-btn--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
       <a class="btn btn--primary btn--sm hdr__cta" href="${href(lang, 'assessment/')}${branch ? `?branch=${branch.slug}` : ''}" data-ev="cta_click"><span>${esc(L.nav.cta)}</span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="${esc(L.a11y.openMenu)}" data-label-open="${esc(L.a11y.openMenu)}" data-label-close="${esc(L.a11y.closeMenu)}" data-burger>${icon('menu', 'burger__open')}${icon('close', 'burger__close')}</button>
     </div>
@@ -409,7 +413,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
 </div>`;
 
   const floating = key === 'assessment' ? '' : `
-<a class="fab" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a>
+<div class="fabs">${socialBtns(lang, 'fab')}<a class="fab fab--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click" aria-label="WhatsApp ${esc(L.a11y.ext)}">${icon('wa')}</a></div>
 <div class="mbar"><a class="btn btn--primary" href="${href(lang, 'assessment/')}${branch ? `?branch=${branch.slug}` : ''}" data-ev="cta_click"><span>${esc(L.nav.assessment)}</span></a><a class="btn btn--wa" href="${wa}"${waAttr} target="_blank" rel="noopener" data-ev="whatsapp_click">${icon('wa')}<span>${esc(L.nav.whatsapp)}</span></a></div>`;
 
   const ogImg = absUrl(asset(`img/og-${lang}.png`));
@@ -634,7 +638,7 @@ function clinicsSection(lang) {
         <div class="bcard__body">
           <h3>${esc(bCountry(b, lang))}</h3>
           <p class="bcard__city">${bCity(b, lang) ? esc(bCity(b, lang)) : todo('city', `branches/${b.slug}.city`)}</p>
-          <ul class="bcard__facts">${docs ? `<li>${icon('doctor')}${esc(fmtT(B.doctorsN, { n: docs }))}</li>` : ''}${b.stats?.googleRating ? `<li>★ ${esc(b.stats.googleRating)} Google</li>` : ''}</ul>
+          <ul class="bcard__facts">${docs ? `<li>${icon('doctor')}${esc(fmtT(B.doctorsN, { n: docs }))}</li>` : ''}</ul>
           <span class="btn btn--primary btn--sm"><span>${esc(fmtT(B.explore, { country: bCountry(b, lang) }))}</span>${icon('arrow', 'i-flip')}</span>
         </div>
       </a>
@@ -677,10 +681,6 @@ function branchPage(lang, b) {
   ${sectionHead(H.results.label, B.resH2a, f(B.resH2b), { id: 'bres-title', sub: H.results.sub })}
   ${results.length ? `<div class="ba-grid">${results.map((r, i) => compareCard(lang, r, i, false)).join('')}</div>` : `<p class="empty">${esc(B.emptyResults)}</p>`}
 </div></section>
-<section class="sec sec--grey" aria-labelledby="brev-title"><div class="wrap">
-  ${sectionHead(H.testimonials.label, B.revH2a, f(B.revH2b), { id: 'brev-title', sub: H.testimonials.sub })}
-  ${reviews(lang, b)}
-</div></section>
 <section class="sec" aria-labelledby="bvisit-title"><div class="wrap split">
   <div>${sectionHead(P.h1a, B.visitH2a, B.visitH2b, { id: 'bvisit-title' })}
     <ul class="contact-list">
@@ -694,7 +694,6 @@ function branchPage(lang, b) {
     <div class="book"><span class="icard__ico">${icon('video')}</span><h3 class="h3">${esc(B.bookH)}</h3><p>${esc(f(B.bookSub))}</p>
       ${b.bookingUrl ? `<a class="btn btn--primary" href="${esc(b.bookingUrl)}" target="_blank" rel="noopener" data-ev="booking_click">${icon('calendar')}<span>${esc(B.bookCta)}</span></a>` : todo('booking link (Cal.com / Calendly)', `branches/${b.slug}.bookingUrl`)}
       ${waBtn(lang, L.hero.cta2, `${L.meta.siteName} ${country}`, 'outline', 'whatsapp_click', b)}</div>
-    <div class="map">${b.mapEmbedUrl ? `<div class="embed embed--map" data-embed="${esc(b.mapEmbedUrl)}" data-consent="none"><p>${esc(P.mapConsent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('pin')}<span>${esc(P.mapLoad)}</span></button></div>` : `<div class="embed embed--map">${todo('Google Maps embed', `branches/${b.slug}.mapEmbedUrl`)}</div>`}</div>
   </div>
 </div></section>`;
   const [t, d] = B.meta;
@@ -752,10 +751,6 @@ ${results.length ? `<section class="sec" aria-labelledby="res-title"><div class=
   ${accreditations(lang)}
   <div class="sec__cta">${linkMore(H.tech.cta, href(lang, 'about/'))}</div>
 </div></section>
-<section class="sec sec--grey" aria-labelledby="rev-title"><div class="wrap">
-  ${sectionHead(H.testimonials.label, H.testimonials.h2a, H.testimonials.h2b, { id: 'rev-title', sub: H.testimonials.sub })}
-  ${reviews(lang)}
-</div></section>
 <section class="sec" aria-labelledby="ac-title"><div class="wrap split">
   <div>${sectionHead(H.aftercare.label, H.aftercare.h2a, H.aftercare.h2b, { id: 'ac-title' })}<div class="sec__cta">${waBtn(lang, H.aftercare.cta, 'Aftercare', 'outline')}</div></div>
   <ul class="cards cards--2">${H.aftercare.items.map((it, i) => `<li class="icard icard--flat"><span class="icard__ico">${icon(afterIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul>
@@ -778,22 +773,6 @@ function accreditations(lang) {
   return PREVIEW ? `<p class="logos">${todo('Licence / accreditation logos (only if officially held)', 'accreditations')}</p>` : '';
 }
 
-function reviews(lang, b = null) {
-  const T = I[lang].home.testimonials;
-  const list = b ? [b] : BRANCHES;
-  const vids = cfg.videoTestimonials.filter((v) => !b || v.branch === b.slug);
-  const widgets = list.map((x) => {
-    if (!x.reviewsWidget) problems.add(`missing data: branches/${x.slug}.reviewsWidget (Google reviews embed)`);
-    const head = b ? '' : `<h3 class="rev__h">${FLAG[x.countryCode] ?? ''} ${esc(bCountry(x, lang))}${x.stats?.googleRating ? ` · ★ ${esc(x.stats.googleRating)}` : ''}</h3>`;
-    const w = x.reviewsWidget
-      ? `<div class="embed" data-embed="${esc(x.reviewsWidget)}" data-consent="marketing"><p>${esc(T.consent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${esc(T.load)}</button></div>`
-      : (PREVIEW ? `<div class="embed">${todo('Google reviews widget', `branches/${x.slug}.reviewsWidget`)}</div>` : '');
-    const g = x.googleBusinessUrl ? `<div class="sec__cta">${linkMore(T.cta, x.googleBusinessUrl)}</div>` : '';
-    return `<div class="rev">${head}${w}${g}</div>`;
-  }).join('');
-  const v = vids.length ? `<ul class="vids">${vids.map((x) => `<li class="embed embed--video" data-embed="${esc(x.embed)}" data-consent="marketing"><p>${esc(x.title?.[lang] ?? '')}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('video')}<span>${esc(T.load)}</span></button></li>`).join('')}</ul>` : '';
-  return `<div class="rev-grid${list.length > 1 ? ' rev-grid--2' : ''}">${widgets}</div>${v}`;
-}
 
 // ---------- inner pages ----------
 function servicesIndex(lang) {
@@ -968,7 +947,6 @@ function contactPage(lang) {
       <li>${icon('mail')}${b.email ? `<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>` : todo('email', `branches/${b.slug}.email`)}</li>
     </ul>
     <div class="cta-row">${waBtn(lang, L.hero.cta2, `Contact ${bCountry(b, lang)}`, 'primary', 'whatsapp_click', b)}${linkMore(fmtT(B.explore, { country: bCountry(b, lang) }), href(lang, `${b.slug}/`))}</div>
-    <div class="map">${b.mapEmbedUrl ? `<div class="embed embed--map" data-embed="${esc(b.mapEmbedUrl)}" data-consent="none"><p>${esc(P.mapConsent)}</p><button type="button" class="btn btn--outline btn--sm" data-embed-load>${icon('pin')}<span>${esc(P.mapLoad)}</span></button></div>` : `<div class="embed embed--map">${todo('Google Maps embed', `branches/${b.slug}.mapEmbedUrl`)}</div>`}</div>
   </article>`).join('')}</div>
   <div class="csocial"><p>${icon('mail')} ${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'company.email')}</p>${socialList(lang)}</div>
 </div></section>`;

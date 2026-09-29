@@ -545,12 +545,13 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .ftr .linklike { color: #fff; }
 
 /* floating WhatsApp + mobile CTA bar */
-.fab { position: fixed; inset-inline-end: 20px; bottom: 24px; z-index: 40; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0, 0, 0, .2); transition: transform .2s; }
+.fabs { position: fixed; inset-inline-end: 20px; bottom: 24px; z-index: 40; display: grid; gap: 12px; justify-items: center; }
+.fab { width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0, 0, 0, .2); transition: transform .2s; }
 .fab:hover { transform: scale(1.06); }
 .fab .i { width: 32px; height: 32px; }
 .mbar { display: none; }
 @media (max-width: 767px) {
-  .fab { display: none; }
+  .fabs { display: none; }
   .mbar { position: fixed; inset-inline: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1.25fr 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(254, 252, 252, .96); backdrop-filter: blur(8px); box-shadow: 0 -6px 20px rgba(7, 50, 81, .1); }
   .mbar .btn { min-height: 50px; padding-inline: .8em; font-size: 1rem; }
   /* Room for the sticky bar, inside the navy footer so the page never ends on a blank strip. */
@@ -827,3 +828,26 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .hdr .logo img, .hdr .brand img { width: 136px; height: auto; }
 }
 
+
+/* ---------- Instagram / Facebook / WhatsApp buttons ----------
+   Desktop (1024px+): floating stack at the bottom corner. Phones & tablets: round buttons in the header. */
+.fab--instagram, .sbtn--instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.fab--facebook, .sbtn--facebook { background: #1877F2; }
+.fab--instagram, .fab--facebook { width: 52px; height: 52px; }
+.fab--instagram .i, .fab--facebook .i { width: 26px; height: 26px; }
+@media (max-width: 1023px) { .fab--instagram, .fab--facebook { display: none; } }
+.sbtn { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; text-decoration: none; flex: none; box-shadow: 0 4px 12px rgba(7, 50, 81, .15); transition: transform .2s; }
+.sbtn:hover { transform: scale(1.06); color: #fff; }
+.sbtn .i { width: 22px; height: 22px; }
+.sbtn--wa { background: #25D366; }
+@media (min-width: 1024px) { .sbtn { display: none; } }
+.nav__langs { display: none; }
+@media (max-width: 600px) {
+  .hdr .lang { display: none; }
+  .nav__langs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .nav__langs a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; background: #fff; }
+  .nav__langs a[aria-current] { border-color: var(--navy); background: var(--navy); color: #fff; }
+  .nav__langs a[aria-current] .lang__code { background: #fff; color: var(--navy); }
+  .hdr__actions { gap: 6px; }
+}
+@media (max-width: 359px) { .hdr .sbtn--wa { display: none; } /* WhatsApp stays in the bottom bar */ }

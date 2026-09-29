@@ -7,23 +7,248 @@
   "content": {
     "en": {
       "name": "Hair Transplant",
-      "short": "Hair follicles are moved from a donor area to thinning or bald areas of the scalp."
+      "short": "Your own hair follicles are moved from the back of the scalp to thinning or bald areas, where they keep growing for life.",
+      "intro": "A hair transplant moves healthy follicles from the back and sides of your head, where hair is naturally resistant to loss, to thinning or bald areas. It is done under local anaesthetic using FUE or DHI: follicles are taken out one by one and placed at the angle and direction of natural hair, following a hairline designed with you. The transplanted hair is permanent and grows like the rest of your hair.",
+      "whoFor": [
+        "Men with a receding hairline or thinning crown (pattern hair loss) that has become stable",
+        "Women with localised thinning, for example at the hairline or parting, after the cause has been assessed",
+        "People with enough healthy donor hair at the back and sides of the head",
+        "Adults in good general health who have realistic expectations of density",
+        "People who want to restore a hairline changed by previous surgery or a past transplant"
+      ],
+      "steps": [
+        {
+          "t": "Consultation and design",
+          "d": "The doctor examines your scalp and donor area, plans the number of grafts and draws your new hairline with you."
+        },
+        {
+          "t": "Extraction",
+          "d": "Under local anaesthetic, follicles are removed one by one from the donor area with a micro-punch."
+        },
+        {
+          "t": "Implantation",
+          "d": "The grafts are placed into the thinning areas at the natural angle and direction, using FUE channels or a DHI implanter pen."
+        },
+        {
+          "t": "Aftercare",
+          "d": "You receive a wash and care plan, a check at the clinic before you travel, and follow-up from home."
+        }
+      ],
+      "stay": "The procedure takes one day (usually 6 to 8 hours). Plan 2 to 3 days in total for the consultation, procedure and first wash.",
+      "faq": [
+        {
+          "q": "When will I see the result?",
+          "a": "Transplanted hairs usually shed in the first weeks, new growth starts around months 3 to 4, and the final result is seen at 12 to 18 months."
+        },
+        {
+          "q": "Is the transplanted hair permanent?",
+          "a": "Yes. It comes from an area resistant to hair loss and keeps that quality. Your existing, non-transplanted hair can still thin, so your doctor may suggest treatment to protect it."
+        },
+        {
+          "q": "Does it hurt?",
+          "a": "Local anaesthetic is used, so you feel pressure rather than pain during the procedure. Mild discomfort in the first days is managed with simple painkillers."
+        },
+        {
+          "q": "When can I go back to work?",
+          "a": "Most people return to office work within a few days. Heavy exercise, swimming and saunas are avoided for about a month."
+        }
+      ]
     },
     "ar": {
       "name": "زراعة شعر الرأس",
-      "short": "نقل بصيلات الشعر من المنطقة المانحة إلى مناطق الفراغات أو الصلع في فروة الرأس."
+      "short": "تُنقل بصيلات شعرك من مؤخرة الرأس إلى المناطق الخفيفة أو الصلعاء، حيث تستمر في النمو مدى الحياة.",
+      "intro": "تنقل زراعة الشعر بصيلات سليمة من مؤخرة الرأس وجانبيه، حيث يكون الشعر مقاومًا للتساقط بطبيعته، إلى المناطق الخفيفة أو الصلعاء. تُجرى تحت التخدير الموضعي بتقنية FUE أو DHI: تُستخرج البصيلات واحدة تلو الأخرى وتُزرع بزاوية الشعر الطبيعي واتجاهه، وفق خط شعر يُصمَّم معك. الشعر المزروع دائم وينمو مثل باقي شعرك.",
+      "whoFor": [
+        "الرجال الذين يعانون من تراجع خط الشعر أو خفة منطقة التاج (الصلع الوراثي) بعد استقراره",
+        "النساء المصابات بخفة موضعية، مثل خط الشعر أو الفرق، بعد تقييم السبب",
+        "من لديهم شعر مانح كافٍ وسليم في مؤخرة الرأس وجانبيه",
+        "البالغون بصحة عامة جيدة وتوقعات واقعية للكثافة",
+        "من يرغب في استعادة خط شعر تغيّر بسبب جراحة أو زراعة سابقة"
+      ],
+      "steps": [
+        {
+          "t": "الاستشارة والتصميم",
+          "d": "يفحص الطبيب فروة الرأس والمنطقة المانحة، ويحدد عدد البصيلات، ويرسم معك خط الشعر الجديد."
+        },
+        {
+          "t": "الاستخراج",
+          "d": "تحت التخدير الموضعي تُستخرج البصيلات واحدة تلو الأخرى من المنطقة المانحة بأداة دقيقة."
+        },
+        {
+          "t": "الزراعة",
+          "d": "تُزرع البصيلات في المناطق الخفيفة بالزاوية والاتجاه الطبيعيين، عبر قنوات FUE أو قلم DHI."
+        },
+        {
+          "t": "الرعاية بعد العملية",
+          "d": "تحصل على خطة للغسل والعناية، وفحص في العيادة قبل السفر، ومتابعة عن بُعد."
+        }
+      ],
+      "stay": "تستغرق العملية يومًا واحدًا (عادةً 6 إلى 8 ساعات). خطّط لـ 2 إلى 3 أيام إجمالًا للاستشارة والعملية والغسلة الأولى.",
+      "faq": [
+        {
+          "q": "متى تظهر النتيجة؟",
+          "a": "يتساقط الشعر المزروع عادةً في الأسابيع الأولى، ويبدأ النمو الجديد في الشهر الثالث أو الرابع، وتظهر النتيجة النهائية بين 12 و18 شهرًا."
+        },
+        {
+          "q": "هل الشعر المزروع دائم؟",
+          "a": "نعم، فهو مأخوذ من منطقة مقاومة للتساقط ويحتفظ بهذه الصفة. أما شعرك الأصلي غير المزروع فقد يستمر في الخفة، لذا قد يقترح الطبيب علاجًا لحمايته."
+        },
+        {
+          "q": "هل هي مؤلمة؟",
+          "a": "يُستخدم التخدير الموضعي، فتشعر بضغط لا بألم أثناء العملية. ويُعالج الانزعاج البسيط في الأيام الأولى بمسكنات عادية."
+        },
+        {
+          "q": "متى أعود إلى العمل؟",
+          "a": "يعود معظم الأشخاص إلى الأعمال المكتبية خلال أيام قليلة، ويُتجنّب التمرين الشاق والسباحة والساونا لمدة شهر تقريبًا."
+        }
+      ]
     },
     "tr": {
       "name": "Saç Ekimi",
-      "short": "Saç kökleri donör bölgeden seyrelmiş veya açılmış bölgelere nakledilir."
+      "short": "Kendi saç kökleriniz ense bölgesinden seyrek veya açık alanlara taşınır ve orada ömür boyu çıkmaya devam eder.",
+      "intro": "Saç ekimi, doğal olarak dökülmeye dirençli olan ense ve yan bölgelerdeki sağlıklı kökleri seyrek veya açık alanlara taşır. Lokal anestezi altında FUE veya DHI ile yapılır: kökler tek tek alınır ve sizinle birlikte tasarlanan saç çizgisine göre doğal saçın açısı ve yönünde yerleştirilir. Ekilen saç kalıcıdır ve diğer saçlarınız gibi uzar.",
+      "whoFor": [
+        "Saç çizgisi geriye çekilen veya tepe bölgesi seyrelen, dökülmesi durağanlaşmış erkekler (genetik saç dökülmesi)",
+        "Nedeni değerlendirilmiş, saç çizgisi veya ayrım yerinde bölgesel seyrelmesi olan kadınlar",
+        "Ense ve yan bölgelerde yeterli sağlıklı donör saçı olanlar",
+        "Genel sağlığı iyi, yoğunluk konusunda gerçekçi beklentileri olan yetişkinler",
+        "Önceki bir ameliyat veya ekim nedeniyle değişen saç çizgisini düzeltmek isteyenler"
+      ],
+      "steps": [
+        {
+          "t": "Konsültasyon ve tasarım",
+          "d": "Doktor saçlı derinizi ve donör bölgeyi inceler, greft sayısını planlar ve yeni saç çizginizi sizinle birlikte çizer."
+        },
+        {
+          "t": "Kök alma",
+          "d": "Lokal anestezi altında kökler donör bölgeden mikro punch ile tek tek alınır."
+        },
+        {
+          "t": "Ekim",
+          "d": "Greftler FUE kanalları veya DHI implanter kalemle, doğal açı ve yönde seyrek bölgelere yerleştirilir."
+        },
+        {
+          "t": "Bakım",
+          "d": "Yıkama ve bakım planı, dönüşten önce klinikte kontrol ve evden takip sağlanır."
+        }
+      ],
+      "stay": "İşlem bir gün sürer (genellikle 6–8 saat). Konsültasyon, işlem ve ilk yıkama için toplam 2–3 gün planlayın.",
+      "faq": [
+        {
+          "q": "Sonucu ne zaman görürüm?",
+          "a": "Ekilen saçlar genellikle ilk haftalarda dökülür, yeni çıkış 3.–4. ayda başlar, nihai sonuç 12–18 ayda görülür."
+        },
+        {
+          "q": "Ekilen saç kalıcı mı?",
+          "a": "Evet. Dökülmeye dirençli bir bölgeden alınır ve bu özelliğini korur. Ekilmeyen kendi saçlarınız seyrelmeye devam edebilir; doktorunuz bunları korumak için tedavi önerebilir."
+        },
+        {
+          "q": "Acıtır mı?",
+          "a": "Lokal anestezi uygulandığı için işlem sırasında ağrı değil baskı hissedersiniz. İlk günlerdeki hafif rahatsızlık basit ağrı kesicilerle geçer."
+        },
+        {
+          "q": "İşe ne zaman dönebilirim?",
+          "a": "Çoğu kişi birkaç gün içinde masa başı işe döner. Ağır spor, yüzme ve sauna yaklaşık bir ay boyunca yapılmaz."
+        }
+      ]
     },
     "de": {
       "name": "Haartransplantation",
-      "short": "Haarfollikel werden aus einem Spenderbereich in lichte oder kahle Stellen der Kopfhaut verpflanzt."
+      "short": "Ihre eigenen Haarfollikel werden vom Hinterkopf in lichte oder kahle Bereiche versetzt und wachsen dort ein Leben lang weiter.",
+      "intro": "Bei der Haartransplantation werden gesunde Follikel vom Hinterkopf und von den Seiten, wo das Haar von Natur aus gegen Ausfall resistent ist, in lichte oder kahle Bereiche versetzt. Der Eingriff erfolgt unter örtlicher Betäubung mit FUE oder DHI: Die Follikel werden einzeln entnommen und im Winkel und in der Richtung des natürlichen Haars eingesetzt, entlang eines gemeinsam mit Ihnen geplanten Haaransatzes. Das transplantierte Haar ist dauerhaft und wächst wie Ihr übriges Haar.",
+      "whoFor": [
+        "Männer mit zurückweichendem Haaransatz oder lichter Tonsur (erblich bedingter Haarausfall), der stabil geworden ist",
+        "Frauen mit örtlich begrenztem Lichterwerden, etwa am Haaransatz oder Scheitel, nach Abklärung der Ursache",
+        "Menschen mit ausreichend gesundem Spenderhaar am Hinterkopf und an den Seiten",
+        "Erwachsene in gutem Allgemeinzustand mit realistischen Erwartungen an die Dichte",
+        "Menschen, die einen durch eine frühere Operation oder Transplantation veränderten Haaransatz korrigieren möchten"
+      ],
+      "steps": [
+        {
+          "t": "Beratung und Planung",
+          "d": "Der Arzt untersucht Kopfhaut und Spenderbereich, plant die Graftzahl und zeichnet mit Ihnen den neuen Haaransatz ein."
+        },
+        {
+          "t": "Entnahme",
+          "d": "Unter örtlicher Betäubung werden die Follikel einzeln mit einer Mikrostanze aus dem Spenderbereich entnommen."
+        },
+        {
+          "t": "Einsetzen",
+          "d": "Die Grafts werden in natürlichem Winkel und natürlicher Richtung in die lichten Bereiche gesetzt – über FUE-Kanäle oder mit einem DHI-Implanter."
+        },
+        {
+          "t": "Nachsorge",
+          "d": "Sie erhalten einen Wasch- und Pflegeplan, eine Kontrolle in der Klinik vor der Abreise und Betreuung von zu Hause aus."
+        }
+      ],
+      "stay": "Der Eingriff dauert einen Tag (meist 6 bis 8 Stunden). Planen Sie insgesamt 2 bis 3 Tage für Beratung, Eingriff und erste Haarwäsche ein.",
+      "faq": [
+        {
+          "q": "Wann sehe ich das Ergebnis?",
+          "a": "Die transplantierten Haare fallen meist in den ersten Wochen aus, neues Wachstum beginnt etwa im 3. bis 4. Monat, das Endergebnis zeigt sich nach 12 bis 18 Monaten."
+        },
+        {
+          "q": "Ist das transplantierte Haar dauerhaft?",
+          "a": "Ja. Es stammt aus einem gegen Ausfall resistenten Bereich und behält diese Eigenschaft. Ihr nicht transplantiertes Haar kann weiter dünner werden; Ihr Arzt kann eine Behandlung zu dessen Schutz empfehlen."
+        },
+        {
+          "q": "Ist der Eingriff schmerzhaft?",
+          "a": "Dank örtlicher Betäubung spüren Sie während des Eingriffs Druck statt Schmerz. Leichte Beschwerden in den ersten Tagen lassen sich mit einfachen Schmerzmitteln behandeln."
+        },
+        {
+          "q": "Wann kann ich wieder arbeiten?",
+          "a": "Die meisten kehren nach wenigen Tagen an einen Büroarbeitsplatz zurück. Intensiver Sport, Schwimmen und Sauna werden etwa einen Monat lang vermieden."
+        }
+      ]
     },
     "es": {
       "name": "Injerto capilar",
-      "short": "Los folículos se trasladan de una zona donante a las zonas con poca densidad o calvas del cuero cabelludo."
+      "short": "Sus propios folículos se trasladan de la parte posterior de la cabeza a las zonas débiles o calvas, donde siguen creciendo de por vida.",
+      "intro": "El injerto capilar traslada folículos sanos de la parte posterior y los laterales de la cabeza, donde el cabello resiste la caída de forma natural, a las zonas débiles o calvas. Se realiza con anestesia local mediante FUE o DHI: los folículos se extraen uno a uno y se colocan con el ángulo y la dirección del cabello natural, siguiendo una línea frontal diseñada con usted. El cabello injertado es permanente y crece como el resto de su pelo.",
+      "whoFor": [
+        "Hombres con entradas o coronilla despoblada (alopecia androgenética) que ya se ha estabilizado",
+        "Mujeres con pérdida localizada, por ejemplo en la línea frontal o la raya, tras valorar la causa",
+        "Personas con suficiente cabello donante sano en la nuca y los laterales",
+        "Adultos con buena salud general y expectativas realistas de densidad",
+        "Quien quiere recuperar una línea frontal alterada por una cirugía o un injerto anterior"
+      ],
+      "steps": [
+        {
+          "t": "Consulta y diseño",
+          "d": "El médico examina el cuero cabelludo y la zona donante, planifica el número de injertos y dibuja con usted la nueva línea frontal."
+        },
+        {
+          "t": "Extracción",
+          "d": "Con anestesia local, los folículos se extraen uno a uno de la zona donante con un micropunch."
+        },
+        {
+          "t": "Implantación",
+          "d": "Los injertos se colocan en las zonas débiles con el ángulo y la dirección naturales, mediante canales FUE o un implantador DHI."
+        },
+        {
+          "t": "Cuidados posteriores",
+          "d": "Recibe un plan de lavado y cuidados, una revisión en la clínica antes de viajar y seguimiento desde casa."
+        }
+      ],
+      "stay": "El procedimiento dura un día (normalmente 6 a 8 horas). Prevea 2 a 3 días en total para la consulta, la intervención y el primer lavado.",
+      "faq": [
+        {
+          "q": "¿Cuándo veré el resultado?",
+          "a": "El cabello injertado suele caer en las primeras semanas, el nuevo crecimiento empieza hacia el 3.º–4.º mes y el resultado final se ve a los 12–18 meses."
+        },
+        {
+          "q": "¿El cabello injertado es permanente?",
+          "a": "Sí. Procede de una zona resistente a la caída y conserva esa cualidad. Su cabello no injertado puede seguir perdiendo densidad, por lo que su médico puede proponer un tratamiento para protegerlo."
+        },
+        {
+          "q": "¿Duele?",
+          "a": "Se usa anestesia local, así que durante la intervención nota presión, no dolor. Las molestias leves de los primeros días se controlan con analgésicos comunes."
+        },
+        {
+          "q": "¿Cuándo puedo volver al trabajo?",
+          "a": "La mayoría vuelve a un trabajo de oficina en pocos días. El ejercicio intenso, la natación y la sauna se evitan durante un mes aproximadamente."
+        }
+      ]
     }
   }
 }

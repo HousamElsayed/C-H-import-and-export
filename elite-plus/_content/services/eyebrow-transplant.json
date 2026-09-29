@@ -7,23 +7,228 @@
   "content": {
     "en": {
       "name": "Eyebrow Transplant",
-      "short": "Individual follicles are placed to restore the shape and density of the eyebrows."
+      "short": "Individual follicles are placed to restore the shape and density of the eyebrows.",
+      "intro": "An eyebrow transplant restores thin, sparse or missing eyebrows with your own hair, usually taken from the back of the scalp. The doctor designs the shape with you, and single-hair grafts are placed one by one at a very shallow angle, following the natural direction of eyebrow hair. Because the transplanted hair keeps the growth pattern of scalp hair, it grows longer than natural brows and needs regular trimming.",
+      "whoFor": [
+        "Women and men with thin, sparse or over-plucked eyebrows",
+        "People with gaps or loss in the eyebrows after injury, a scar or a burn",
+        "People who want a fuller or better-defined eyebrow shape",
+        "People who prefer a long-term alternative to make-up or tattooing (microblading)",
+        "People whose cause of eyebrow loss has been checked and is stable"
+      ],
+      "steps": [
+        {
+          "t": "Consultation and design",
+          "d": "The doctor examines your eyebrows and draws the new shape with you, matching your face."
+        },
+        {
+          "t": "Extraction",
+          "d": "Under local anaesthetic, fine single-hair follicles are taken, usually from the back of the scalp."
+        },
+        {
+          "t": "Implantation",
+          "d": "Grafts are placed one by one at a shallow angle, following the natural direction of eyebrow hair."
+        },
+        {
+          "t": "Aftercare",
+          "d": "You receive a care plan for the first days and advice on trimming once the new hair grows."
+        }
+      ],
+      "stay": "The procedure takes a few hours on one day. Plan 2 days in total for the consultation, procedure and a check before you travel.",
+      "faq": [
+        {
+          "q": "Will I need to trim my eyebrows?",
+          "a": "Yes. Transplanted hair keeps growing like scalp hair, so it is usually trimmed every one to two weeks."
+        },
+        {
+          "q": "When will I see the result?",
+          "a": "Most transplanted hairs shed in the first weeks, regrowth starts around month 3, and the final result is seen at around 12 months."
+        },
+        {
+          "q": "Will it look natural?",
+          "a": "Single-hair grafts are placed at a shallow angle in the natural direction of brow hair, so the result blends with your existing eyebrows."
+        }
+      ]
     },
     "ar": {
       "name": "زراعة الحواجب",
-      "short": "زراعة البصيلات واحدة تلو الأخرى لاستعادة شكل الحواجب وكثافتها."
+      "short": "زراعة البصيلات واحدة تلو الأخرى لاستعادة شكل الحواجب وكثافتها.",
+      "intro": "تعيد زراعة الحواجب الحواجب الخفيفة أو المتفرقة أو المفقودة باستخدام شعرك، الذي يؤخذ غالبًا من مؤخرة الرأس. يصمّم الطبيب الشكل معك، وتُزرع بصيلات أحادية الشعرة واحدة تلو الأخرى بزاوية مائلة جدًا وفق الاتجاه الطبيعي لشعر الحاجب. ولأن الشعر المزروع يحتفظ بنمط نمو شعر الرأس، فإنه يطول أكثر من الحاجب الطبيعي ويحتاج إلى تشذيب منتظم.",
+      "whoFor": [
+        "النساء والرجال ذوو الحواجب الخفيفة أو المتفرقة أو التي أُفرط في نتفها",
+        "من لديهم فراغات أو فقدان في الحاجب بعد إصابة أو ندبة أو حرق",
+        "من يرغب في حاجب أكثف أو بشكل أوضح",
+        "من يفضّل بديلًا طويل الأمد عن المكياج أو التاتو (المايكروبليدنغ)",
+        "من تم فحص سبب فقدان الحاجب لديهم وأصبح مستقرًا"
+      ],
+      "steps": [
+        {
+          "t": "الاستشارة والتصميم",
+          "d": "يفحص الطبيب حاجبيك ويرسم معك الشكل الجديد بما يناسب وجهك."
+        },
+        {
+          "t": "الاستخراج",
+          "d": "تحت التخدير الموضعي تُؤخذ بصيلات دقيقة أحادية الشعرة، غالبًا من مؤخرة الرأس."
+        },
+        {
+          "t": "الزراعة",
+          "d": "تُزرع البصيلات واحدة تلو الأخرى بزاوية مائلة وفق الاتجاه الطبيعي لشعر الحاجب."
+        },
+        {
+          "t": "الرعاية بعد العملية",
+          "d": "تحصل على خطة للعناية في الأيام الأولى ونصائح للتشذيب بعد نمو الشعر الجديد."
+        }
+      ],
+      "stay": "تستغرق العملية بضع ساعات في يوم واحد. خطّط ليومين إجمالًا للاستشارة والعملية وفحص قبل السفر.",
+      "faq": [
+        {
+          "q": "هل سأحتاج إلى تشذيب الحاجبين؟",
+          "a": "نعم، فالشعر المزروع يستمر في النمو مثل شعر الرأس، ويُشذَّب عادةً كل أسبوع إلى أسبوعين."
+        },
+        {
+          "q": "متى تظهر النتيجة؟",
+          "a": "يتساقط معظم الشعر المزروع في الأسابيع الأولى، ويبدأ النمو من جديد نحو الشهر الثالث، وتظهر النتيجة النهائية بعد نحو 12 شهرًا."
+        },
+        {
+          "q": "هل ستبدو طبيعية؟",
+          "a": "تُزرع بصيلات أحادية الشعرة بزاوية مائلة وفق الاتجاه الطبيعي لشعر الحاجب، فتندمج النتيجة مع حاجبيك الحاليين."
+        }
+      ]
     },
     "tr": {
       "name": "Kaş Ekimi",
-      "short": "Kaşların şeklini ve yoğunluğunu yeniden kazandırmak için kökler tek tek yerleştirilir."
+      "short": "Kaşların şeklini ve yoğunluğunu yeniden kazandırmak için kökler tek tek yerleştirilir.",
+      "intro": "Kaş ekimi, ince, seyrek veya hiç olmayan kaşları genellikle enseden alınan kendi saçınızla yeniden oluşturur. Doktor şekli sizinle birlikte tasarlar ve tekli greftler kaş kıllarının doğal yönünü izleyerek çok dar bir açıyla tek tek yerleştirilir. Ekilen kıl saçın büyüme özelliğini koruduğundan doğal kaştan daha uzun uzar ve düzenli kesim gerektirir.",
+      "whoFor": [
+        "İnce, seyrek veya fazla alınmış kaşları olan kadın ve erkekler",
+        "Yaralanma, yara izi veya yanık sonrası kaşlarında boşluk ya da kayıp olanlar",
+        "Daha dolgun veya daha belirgin bir kaş şekli isteyenler",
+        "Makyaj veya dövmeye (microblading) uzun vadeli bir alternatif isteyenler",
+        "Kaş kaybının nedeni incelenmiş ve durağan olanlar"
+      ],
+      "steps": [
+        {
+          "t": "Konsültasyon ve tasarım",
+          "d": "Doktor kaşlarınızı inceler ve yüzünüze uygun yeni şekli sizinle birlikte çizer."
+        },
+        {
+          "t": "Kök alma",
+          "d": "Lokal anestezi altında ince, tekli kökler genellikle enseden alınır."
+        },
+        {
+          "t": "Ekim",
+          "d": "Greftler kaş kıllarının doğal yönünde dar açıyla tek tek yerleştirilir."
+        },
+        {
+          "t": "Bakım",
+          "d": "İlk günler için bakım planı ve yeni kıllar çıktıktan sonra kesim önerileri verilir."
+        }
+      ],
+      "stay": "İşlem bir günde birkaç saat sürer. Konsültasyon, işlem ve dönüş öncesi kontrol için toplam 2 gün planlayın.",
+      "faq": [
+        {
+          "q": "Kaşlarımı kesmem gerekecek mi?",
+          "a": "Evet. Ekilen kıllar saç gibi uzamaya devam ettiği için genellikle 1–2 haftada bir kesilir."
+        },
+        {
+          "q": "Sonucu ne zaman görürüm?",
+          "a": "Ekilen kılların çoğu ilk haftalarda dökülür, yeniden çıkış 3. ay civarında başlar, nihai sonuç yaklaşık 12. ayda görülür."
+        },
+        {
+          "q": "Doğal görünür mü?",
+          "a": "Tekli greftler kaş kıllarının doğal yönünde dar açıyla yerleştirildiği için sonuç mevcut kaşlarınızla uyum sağlar."
+        }
+      ]
     },
     "de": {
       "name": "Augenbrauentransplantation",
-      "short": "Einzelne Follikel werden eingesetzt, um Form und Dichte der Augenbrauen wiederherzustellen."
+      "short": "Einzelne Follikel werden eingesetzt, um Form und Dichte der Augenbrauen wiederherzustellen.",
+      "intro": "Eine Augenbrauentransplantation stellt dünne, lückenhafte oder fehlende Augenbrauen mit Ihrem eigenen Haar wieder her, das meist vom Hinterkopf entnommen wird. Der Arzt plant die Form mit Ihnen, und Einzelhaar-Grafts werden einzeln in sehr flachem Winkel entlang der natürlichen Wuchsrichtung der Brauen gesetzt. Da das transplantierte Haar das Wachstumsverhalten von Kopfhaar behält, wird es länger als natürliche Brauen und muss regelmäßig gekürzt werden.",
+      "whoFor": [
+        "Frauen und Männer mit dünnen, lückenhaften oder überzupften Augenbrauen",
+        "Menschen mit Lücken oder Verlust der Brauen nach Verletzung, Narbe oder Verbrennung",
+        "Menschen, die vollere oder klarer geformte Augenbrauen wünschen",
+        "Menschen, die eine langfristige Alternative zu Make-up oder Tätowierung (Microblading) suchen",
+        "Menschen, bei denen die Ursache des Brauenverlusts abgeklärt und stabil ist"
+      ],
+      "steps": [
+        {
+          "t": "Beratung und Planung",
+          "d": "Der Arzt untersucht Ihre Augenbrauen und zeichnet mit Ihnen die neue, zu Ihrem Gesicht passende Form ein."
+        },
+        {
+          "t": "Entnahme",
+          "d": "Unter örtlicher Betäubung werden feine Einzelhaar-Follikel entnommen, meist am Hinterkopf."
+        },
+        {
+          "t": "Einsetzen",
+          "d": "Die Grafts werden einzeln in flachem Winkel entlang der natürlichen Wuchsrichtung der Brauen gesetzt."
+        },
+        {
+          "t": "Nachsorge",
+          "d": "Sie erhalten einen Pflegeplan für die ersten Tage und Hinweise zum Kürzen, sobald das neue Haar wächst."
+        }
+      ],
+      "stay": "Der Eingriff dauert einige Stunden an einem Tag. Planen Sie insgesamt 2 Tage für Beratung, Eingriff und eine Kontrolle vor der Abreise ein.",
+      "faq": [
+        {
+          "q": "Muss ich die Augenbrauen kürzen?",
+          "a": "Ja. Das transplantierte Haar wächst wie Kopfhaar weiter und wird meist alle ein bis zwei Wochen gekürzt."
+        },
+        {
+          "q": "Wann sehe ich das Ergebnis?",
+          "a": "Die meisten transplantierten Haare fallen in den ersten Wochen aus, das Nachwachsen beginnt etwa im 3. Monat, das Endergebnis zeigt sich nach etwa 12 Monaten."
+        },
+        {
+          "q": "Sieht es natürlich aus?",
+          "a": "Einzelhaar-Grafts werden in flachem Winkel in natürlicher Wuchsrichtung gesetzt, sodass sich das Ergebnis in Ihre vorhandenen Brauen einfügt."
+        }
+      ]
     },
     "es": {
       "name": "Injerto de cejas",
-      "short": "Se implantan folículos uno a uno para recuperar la forma y la densidad de las cejas."
+      "short": "Se implantan folículos uno a uno para recuperar la forma y la densidad de las cejas.",
+      "intro": "El injerto de cejas recupera cejas finas, despobladas o ausentes con su propio cabello, que normalmente se toma de la parte posterior de la cabeza. El médico diseña la forma con usted y se colocan injertos de un solo pelo, uno a uno, con un ángulo muy bajo que sigue la dirección natural del vello de la ceja. Como el pelo injertado mantiene el patrón de crecimiento del cuero cabelludo, crece más que la ceja natural y necesita recortarse con regularidad.",
+      "whoFor": [
+        "Mujeres y hombres con cejas finas, despobladas o demasiado depiladas",
+        "Personas con huecos o pérdida de cejas tras una lesión, una cicatriz o una quemadura",
+        "Quien desea unas cejas más pobladas o mejor definidas",
+        "Quien prefiere una alternativa duradera al maquillaje o al tatuaje (microblading)",
+        "Personas cuya causa de pérdida de cejas se ha valorado y es estable"
+      ],
+      "steps": [
+        {
+          "t": "Consulta y diseño",
+          "d": "El médico examina sus cejas y dibuja con usted la nueva forma, adaptada a su rostro."
+        },
+        {
+          "t": "Extracción",
+          "d": "Con anestesia local se toman folículos finos de un solo pelo, normalmente de la nuca."
+        },
+        {
+          "t": "Implantación",
+          "d": "Los injertos se colocan uno a uno con un ángulo bajo, siguiendo la dirección natural del vello de la ceja."
+        },
+        {
+          "t": "Cuidados posteriores",
+          "d": "Recibe un plan de cuidados para los primeros días y consejos para recortar el pelo cuando crezca."
+        }
+      ],
+      "stay": "El procedimiento dura unas horas en un solo día. Prevea 2 días en total para la consulta, la intervención y una revisión antes de viajar.",
+      "faq": [
+        {
+          "q": "¿Tendré que recortar las cejas?",
+          "a": "Sí. El pelo injertado sigue creciendo como el del cuero cabelludo, por lo que suele recortarse cada una o dos semanas."
+        },
+        {
+          "q": "¿Cuándo veré el resultado?",
+          "a": "La mayoría del pelo injertado cae en las primeras semanas, vuelve a crecer hacia el tercer mes y el resultado final se ve hacia los 12 meses."
+        },
+        {
+          "q": "¿Se verá natural?",
+          "a": "Los injertos de un solo pelo se colocan con un ángulo bajo en la dirección natural de la ceja, por lo que el resultado se integra con sus cejas actuales."
+        }
+      ]
     }
   }
 }

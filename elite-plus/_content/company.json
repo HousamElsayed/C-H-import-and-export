@@ -40,7 +40,7 @@
     "followUpMonths": null
   },
   "stats": {
-    "patientsTreated": null,
+    "patientsTreated": 7000,
     "yearsOpen": null,
     "ministryLicensed": null
   },

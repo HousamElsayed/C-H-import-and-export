@@ -6,24 +6,232 @@
   "image": null,
   "content": {
     "en": {
-      "name": "Scar Hair Transplant",
-      "short": "Hair follicles are placed into suitable scar tissue on the scalp, beard or eyebrows."
+      "name": "Scar & Burn Scar Hair Transplant",
+      "short": "Hair follicles are transplanted into healed scars and burn scars on the scalp, beard or eyebrows to cover them with natural hair.",
+      "intro": "Scars from injuries, surgery or burns leave areas where hair no longer grows. A scar hair transplant places your own follicles, usually from the back of the scalp, directly into the healed scar so that it is covered by natural hair. Scar tissue has a weaker blood supply than healthy skin, so the doctor first assesses the scar and plans the density carefully; burn scars may need more than one session.",
+      "whoFor": [
+        "People with hairless scars on the scalp from an accident or injury",
+        "People with scars from previous surgery, including scars from older strip (FUT) hair transplants",
+        "People with healed burn scars on the scalp, beard or eyebrows",
+        "Scars that have fully matured: pale, soft and flat, usually at least a year after the injury",
+        "People with enough donor hair to cover the scar"
+      ],
+      "steps": [
+        {
+          "t": "Scar assessment",
+          "d": "The doctor examines the scar's thickness, softness and blood supply and decides whether it is ready for grafting."
+        },
+        {
+          "t": "Extraction",
+          "d": "Under local anaesthetic, follicles are removed one by one, usually from the back of the scalp."
+        },
+        {
+          "t": "Implantation",
+          "d": "Grafts are placed into the scar tissue at a planned density that the scar can support."
+        },
+        {
+          "t": "Follow-up",
+          "d": "Growth is reviewed over the following months; a second session can add density if needed."
+        }
+      ],
+      "stay": "The procedure takes one day. Plan 2 to 3 days in total for the assessment, procedure and first check.",
+      "faq": [
+        {
+          "q": "Does hair grow in scar tissue?",
+          "a": "Yes, in most mature scars. Growth is usually lower than in healthy skin because scar tissue has a weaker blood supply, which is why density is planned carefully."
+        },
+        {
+          "q": "Will I need more than one session?",
+          "a": "Small scars often need one. Larger or thicker scars, especially burn scars, may need a second session after about a year."
+        },
+        {
+          "q": "How long after an injury can I have it?",
+          "a": "The scar should be fully healed and matured, usually at least 12 months after the injury or surgery. Your doctor confirms this."
+        }
+      ]
     },
     "ar": {
-      "name": "زراعة الشعر في الندبات",
-      "short": "زراعة البصيلات في أنسجة الندبات المناسبة في فروة الرأس أو اللحية أو الحواجب."
+      "name": "زراعة الشعر في الندبات والحروق",
+      "short": "تُزرع بصيلات الشعر في الندبات وندبات الحروق الملتئمة في فروة الرأس أو اللحية أو الحواجب لتغطيتها بشعر طبيعي.",
+      "intro": "تترك الندبات الناتجة عن الإصابات أو الجراحة أو الحروق مناطق لا ينمو فيها الشعر. تضع زراعة الشعر في الندبات بصيلاتك، التي تؤخذ غالبًا من مؤخرة الرأس، مباشرةً في الندبة الملتئمة لتغطيتها بشعر طبيعي. يكون تدفق الدم في نسيج الندبة أضعف من الجلد السليم، لذا يقيّم الطبيب الندبة أولًا ويخطط للكثافة بعناية، وقد تحتاج ندبات الحروق إلى أكثر من جلسة.",
+      "whoFor": [
+        "من لديهم ندبات خالية من الشعر في فروة الرأس بسبب حادث أو إصابة",
+        "من لديهم ندبات من جراحة سابقة، بما فيها ندبات زراعة الشعر القديمة بطريقة الشريحة (FUT)",
+        "من لديهم ندبات حروق ملتئمة في فروة الرأس أو اللحية أو الحواجب",
+        "الندبات التي نضجت تمامًا: فاتحة اللون ولينة ومسطحة، عادةً بعد عام على الأقل من الإصابة",
+        "من لديهم شعر مانح كافٍ لتغطية الندبة"
+      ],
+      "steps": [
+        {
+          "t": "تقييم الندبة",
+          "d": "يفحص الطبيب سماكة الندبة وليونتها وتدفق الدم فيها ويقرر مدى جاهزيتها للزراعة."
+        },
+        {
+          "t": "الاستخراج",
+          "d": "تحت التخدير الموضعي تُستخرج البصيلات واحدة تلو الأخرى، غالبًا من مؤخرة الرأس."
+        },
+        {
+          "t": "الزراعة",
+          "d": "تُزرع البصيلات في نسيج الندبة بكثافة مدروسة تتحملها الندبة."
+        },
+        {
+          "t": "المتابعة",
+          "d": "يُتابَع النمو خلال الأشهر التالية، ويمكن إضافة كثافة بجلسة ثانية عند الحاجة."
+        }
+      ],
+      "stay": "تستغرق العملية يومًا واحدًا. خطّط لـ 2 إلى 3 أيام إجمالًا للتقييم والعملية والفحص الأول.",
+      "faq": [
+        {
+          "q": "هل ينمو الشعر في نسيج الندبة؟",
+          "a": "نعم في معظم الندبات الناضجة، لكن النمو يكون عادةً أقل من الجلد السليم لضعف تدفق الدم، ولهذا تُخطَّط الكثافة بعناية."
+        },
+        {
+          "q": "هل سأحتاج إلى أكثر من جلسة؟",
+          "a": "الندبات الصغيرة تحتاج غالبًا إلى جلسة واحدة، أما الندبات الأكبر أو الأسمك، خاصة ندبات الحروق، فقد تحتاج إلى جلسة ثانية بعد نحو عام."
+        },
+        {
+          "q": "متى يمكنني إجراؤها بعد الإصابة؟",
+          "a": "يجب أن تكون الندبة ملتئمة وناضجة تمامًا، عادةً بعد 12 شهرًا على الأقل من الإصابة أو الجراحة، ويؤكد الطبيب ذلك."
+        }
+      ]
     },
     "tr": {
-      "name": "Yara İzine Saç Ekimi",
-      "short": "Saç kökleri saçlı deri, sakal veya kaştaki uygun yara izi dokusuna yerleştirilir."
+      "name": "Yara İzi ve Yanık İzine Saç Ekimi",
+      "short": "Saçlı deri, sakal veya kaştaki iyileşmiş yara ve yanık izlerine saç kökleri ekilerek izler doğal saçla kapatılır.",
+      "intro": "Yaralanma, ameliyat veya yanık sonrası kalan izlerde saç çıkmaz. Yara izine saç ekimi, genellikle enseden alınan kendi köklerinizi doğrudan iyileşmiş ize yerleştirerek izin doğal saçla kapanmasını sağlar. Yara dokusunun kan dolaşımı sağlıklı deriden zayıf olduğu için doktor önce izi değerlendirir ve yoğunluğu dikkatle planlar; yanık izleri birden fazla seans gerektirebilir.",
+      "whoFor": [
+        "Kaza veya yaralanma sonucu saçlı deride kılsız yara izi olanlar",
+        "Eski FUT (şerit) saç ekimi izleri dahil, önceki ameliyatlardan kalan izleri olanlar",
+        "Saçlı deri, sakal veya kaşta iyileşmiş yanık izi olanlar",
+        "Tamamen olgunlaşmış izler: soluk, yumuşak ve düz; genellikle yaralanmadan en az bir yıl sonra",
+        "İzi kapatacak kadar donör saçı olanlar"
+      ],
+      "steps": [
+        {
+          "t": "İz değerlendirmesi",
+          "d": "Doktor izin kalınlığını, yumuşaklığını ve kan dolaşımını inceler ve ekime hazır olup olmadığına karar verir."
+        },
+        {
+          "t": "Kök alma",
+          "d": "Lokal anestezi altında kökler genellikle enseden tek tek alınır."
+        },
+        {
+          "t": "Ekim",
+          "d": "Greftler iz dokusuna, dokunun kaldırabileceği planlı bir yoğunlukta yerleştirilir."
+        },
+        {
+          "t": "Takip",
+          "d": "Sonraki aylarda çıkış izlenir; gerekirse ikinci bir seansla yoğunluk artırılabilir."
+        }
+      ],
+      "stay": "İşlem bir gün sürer. Değerlendirme, işlem ve ilk kontrol için toplam 2–3 gün planlayın.",
+      "faq": [
+        {
+          "q": "Yara dokusunda saç çıkar mı?",
+          "a": "Olgunlaşmış izlerin çoğunda evet. Yara dokusunun kan dolaşımı zayıf olduğundan çıkış genellikle sağlıklı deriden düşüktür; bu yüzden yoğunluk dikkatle planlanır."
+        },
+        {
+          "q": "Birden fazla seans gerekir mi?",
+          "a": "Küçük izler çoğunlukla tek seans gerektirir. Daha büyük veya kalın izler, özellikle yanık izleri, yaklaşık bir yıl sonra ikinci seans gerektirebilir."
+        },
+        {
+          "q": "Yaralanmadan ne kadar sonra yaptırabilirim?",
+          "a": "İz tamamen iyileşmiş ve olgunlaşmış olmalıdır; bu genellikle yaralanma veya ameliyattan en az 12 ay sonradır. Doktorunuz bunu doğrular."
+        }
+      ]
     },
     "de": {
-      "name": "Haartransplantation in Narben",
-      "short": "Haarfollikel werden in geeignetes Narbengewebe an Kopfhaut, Bart oder Augenbrauen eingesetzt."
+      "name": "Haartransplantation in Narben und Brandnarben",
+      "short": "Haarfollikel werden in verheilte Narben und Brandnarben an Kopfhaut, Bart oder Augenbrauen transplantiert, um sie mit natürlichem Haar zu bedecken.",
+      "intro": "Narben von Verletzungen, Operationen oder Verbrennungen hinterlassen Stellen, an denen kein Haar mehr wächst. Bei der Haartransplantation in Narben werden Ihre eigenen Follikel, meist vom Hinterkopf, direkt in die verheilte Narbe gesetzt, damit sie von natürlichem Haar bedeckt wird. Narbengewebe ist schlechter durchblutet als gesunde Haut; deshalb beurteilt der Arzt zuerst die Narbe und plant die Dichte sorgfältig. Brandnarben können mehr als eine Sitzung erfordern.",
+      "whoFor": [
+        "Menschen mit haarlosen Narben an der Kopfhaut nach Unfall oder Verletzung",
+        "Menschen mit Narben früherer Operationen, einschließlich Narben älterer Streifen-(FUT-)Transplantationen",
+        "Menschen mit verheilten Brandnarben an Kopfhaut, Bart oder Augenbrauen",
+        "Vollständig ausgereifte Narben: blass, weich und flach, meist mindestens ein Jahr nach der Verletzung",
+        "Menschen mit ausreichend Spenderhaar, um die Narbe abzudecken"
+      ],
+      "steps": [
+        {
+          "t": "Narbenbeurteilung",
+          "d": "Der Arzt untersucht Dicke, Weichheit und Durchblutung der Narbe und entscheidet, ob sie für eine Transplantation bereit ist."
+        },
+        {
+          "t": "Entnahme",
+          "d": "Unter örtlicher Betäubung werden die Follikel einzeln entnommen, meist am Hinterkopf."
+        },
+        {
+          "t": "Einsetzen",
+          "d": "Die Grafts werden in einer geplanten Dichte, die die Narbe tragen kann, in das Narbengewebe gesetzt."
+        },
+        {
+          "t": "Nachkontrolle",
+          "d": "Das Wachstum wird in den folgenden Monaten beurteilt; bei Bedarf kann eine zweite Sitzung die Dichte erhöhen."
+        }
+      ],
+      "stay": "Der Eingriff dauert einen Tag. Planen Sie insgesamt 2 bis 3 Tage für Beurteilung, Eingriff und erste Kontrolle ein.",
+      "faq": [
+        {
+          "q": "Wächst Haar in Narbengewebe?",
+          "a": "Ja, in den meisten ausgereiften Narben. Das Anwachsen ist meist geringer als in gesunder Haut, weil Narbengewebe schlechter durchblutet ist – deshalb wird die Dichte sorgfältig geplant."
+        },
+        {
+          "q": "Brauche ich mehr als eine Sitzung?",
+          "a": "Kleine Narben oft nur eine. Größere oder dickere Narben, besonders Brandnarben, können nach etwa einem Jahr eine zweite Sitzung erfordern."
+        },
+        {
+          "q": "Wie lange nach einer Verletzung ist der Eingriff möglich?",
+          "a": "Die Narbe sollte vollständig verheilt und ausgereift sein, meist mindestens 12 Monate nach Verletzung oder Operation. Ihr Arzt bestätigt dies."
+        }
+      ]
     },
     "es": {
-      "name": "Injerto capilar en cicatrices",
-      "short": "Se implantan folículos en tejido cicatricial apto del cuero cabelludo, la barba o las cejas."
+      "name": "Injerto capilar en cicatrices y quemaduras",
+      "short": "Se injertan folículos en cicatrices y quemaduras ya curadas del cuero cabelludo, la barba o las cejas para cubrirlas con cabello natural.",
+      "intro": "Las cicatrices por lesiones, cirugías o quemaduras dejan zonas donde el cabello ya no crece. El injerto capilar en cicatrices coloca sus propios folículos, normalmente de la nuca, directamente en la cicatriz curada para cubrirla con cabello natural. El tejido cicatricial tiene menos riego sanguíneo que la piel sana, por lo que el médico valora primero la cicatriz y planifica la densidad con cuidado; las cicatrices por quemadura pueden necesitar más de una sesión.",
+      "whoFor": [
+        "Personas con cicatrices sin pelo en el cuero cabelludo tras un accidente o una lesión",
+        "Personas con cicatrices de cirugías previas, incluidas las de injertos antiguos por tira (FUT)",
+        "Personas con cicatrices de quemaduras curadas en el cuero cabelludo, la barba o las cejas",
+        "Cicatrices totalmente maduras: pálidas, blandas y planas, normalmente al menos un año después de la lesión",
+        "Personas con suficiente cabello donante para cubrir la cicatriz"
+      ],
+      "steps": [
+        {
+          "t": "Valoración de la cicatriz",
+          "d": "El médico examina el grosor, la flexibilidad y el riego de la cicatriz y decide si está lista para injertar."
+        },
+        {
+          "t": "Extracción",
+          "d": "Con anestesia local, los folículos se extraen uno a uno, normalmente de la nuca."
+        },
+        {
+          "t": "Implantación",
+          "d": "Los injertos se colocan en el tejido cicatricial con una densidad planificada que la cicatriz pueda soportar."
+        },
+        {
+          "t": "Seguimiento",
+          "d": "El crecimiento se revisa en los meses siguientes; si hace falta, una segunda sesión añade densidad."
+        }
+      ],
+      "stay": "El procedimiento dura un día. Prevea 2 a 3 días en total para la valoración, la intervención y la primera revisión.",
+      "faq": [
+        {
+          "q": "¿Crece el pelo en una cicatriz?",
+          "a": "Sí, en la mayoría de cicatrices maduras. El crecimiento suele ser menor que en piel sana porque el tejido cicatricial tiene menos riego, por eso la densidad se planifica con cuidado."
+        },
+        {
+          "q": "¿Necesitaré más de una sesión?",
+          "a": "Las cicatrices pequeñas suelen necesitar una. Las más grandes o gruesas, sobre todo las de quemaduras, pueden requerir una segunda sesión al cabo de un año."
+        },
+        {
+          "q": "¿Cuánto tiempo después de una lesión puedo hacérmelo?",
+          "a": "La cicatriz debe estar totalmente curada y madura, normalmente al menos 12 meses después de la lesión o la cirugía. Su médico lo confirma."
+        }
+      ]
     }
-  }
+  },
+  "redirectFrom": [
+    "burn-scar-hair-transplant"
+  ]
 }
