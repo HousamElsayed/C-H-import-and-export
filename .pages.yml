@@ -634,9 +634,10 @@
           "type": "string"
         },
         {
-          "name": "heroPhoto",
-          "label": "Clinic photo",
-          "type": "image"
+          "name": "photos",
+          "label": "Clinic photos (first one is the cover)",
+          "type": "image",
+          "list": true
         },
         {
           "name": "story",
@@ -843,9 +844,10 @@
           "type": "string"
         },
         {
-          "name": "heroPhoto",
-          "label": "Clinic photo",
-          "type": "image"
+          "name": "photos",
+          "label": "Clinic photos (first one is the cover)",
+          "type": "image",
+          "list": true
         },
         {
           "name": "story",

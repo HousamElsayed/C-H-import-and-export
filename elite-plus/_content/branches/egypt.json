@@ -42,5 +42,11 @@
     "tr": null,
     "de": null,
     "es": null
-  }
+  },
+  "photos": [
+    "uploads/clinics/egypt-exterior.jpg",
+    "uploads/clinics/egypt-lobby.jpg",
+    "uploads/clinics/egypt-corridor.jpg",
+    "uploads/clinics/egypt-entrance.jpg"
+  ]
 }

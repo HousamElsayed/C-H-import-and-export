@@ -44,7 +44,7 @@ branch = [
   f("hours", "Opening hours (e.g. Mo-Sa 09:00-19:00)", list=True),
   {"name": "stats", "label": "Google rating", "type": "object", "fields": [f("googleRating", "Rating (e.g. 4.8)", "number"), f("googleReviewCount", "Number of reviews", "number")]},
   f("googleBusinessUrl", "Google Business Profile link"), f("reviewsWidget", "Reviews widget embed link"), f("bookingUrl", "Video consultation booking link (Cal.com / Calendly)"),
-  img("heroPhoto", "Clinic photo"), per_lang("story", "Short clinic story", "text"),
+  img("photos", "Clinic photos (first one is the cover)", list=True), per_lang("story", "Short clinic story", "text"),
 ]
 service = [
   f("category", "Category", "select", options={"values": ["transplant", "treatment"]}, readonly=True), f("order", "Order", "number"),
