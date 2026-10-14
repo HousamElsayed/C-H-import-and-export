@@ -237,8 +237,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .hero__card { position: relative; isolation: isolate; overflow: hidden; display: grid; gap: clamp(24px, 3vw, 40px);
   padding: clamp(12px, 1.6vw, 22px) clamp(12px, 1.6vw, 22px) clamp(28px, 4vw, 52px);
   border-radius: 32px; background:
-    radial-gradient(50% 70% at 85% 100%, rgba(245, 190, 110, .22), transparent 70%),
-    linear-gradient(160deg, #FFFFFF 0%, var(--cream) 50%, #FBF4EC 100%);
+    #fff;
   border: 1px solid rgba(7, 50, 81, .06); box-shadow: var(--shadow); }
 .hero__rays { position: absolute; bottom: 0; inset-inline-end: 0; width: clamp(180px, 24vw, 360px); height: auto; color: var(--orange); pointer-events: none; z-index: -1; opacity: .9; transform: rotate(180deg); }
 [dir="rtl"] .hero__rays { transform: rotate(180deg) scaleX(-1); }
@@ -861,6 +860,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .mega { border-bottom: 1px solid var(--line); }
 .lang__menu, .clinics, .faq__item, .phero__img, .panel, .icard, .ccat, .scard, .dcard, .pcard, .ccard, .cookie__box, .qa, .tcard, .ttable-wrap, .bcard, .book, .cbranch, .ad-card { border: 1px solid var(--line); }
 .bcard__flag, .ba__handle::after { border: 1px solid var(--line); }
+.ba__handle { box-shadow: none; }
 @media (max-width: 1023px) { .clinics { border: 0; } }
 @media (max-width: 767px) { .mbar { box-shadow: none; border-top: 1px solid var(--line); } }
 
