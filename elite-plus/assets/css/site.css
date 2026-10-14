@@ -882,3 +882,24 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .cards, .svc-grid, .cat-grid, .bchoose { gap: 14px; }
 }
 @media (min-width: 601px) and (max-width: 1023px) { .sec { padding-block: 64px; } }
+
+/* ---------- no placeholder images: cards and hero without a photo ---------- */
+.scard--noimg .scard__body { padding: 26px 26px 24px; }
+.scard--noimg { border-top: 3px solid var(--orange); }
+.ccat--noimg .ccat__body { padding-top: 28px; }
+.ccat__badge { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #FFF1E4; color: var(--orange); margin-bottom: 14px; }
+.ccat__badge .star { width: 30px; height: 30px; }
+.phero__solo { max-width: 860px; }
+
+/* ---------- social buttons: black & white, a little smaller ---------- */
+.fab, .fab--wa, .fab--instagram, .fab--telegram, .sbtn--wa, .sbtn--instagram, .sbtn--telegram { background: #111; color: #fff; border: 1px solid #111; }
+.fab:hover, .sbtn:hover { background: #fff; color: #111; }
+.fab, .fab--wa { width: 50px; height: 50px; }
+.fab .i, .fab--wa .i { width: 24px; height: 24px; }
+.fab--instagram, .fab--telegram { width: 44px; height: 44px; }
+.fab--instagram .i, .fab--telegram .i { width: 20px; height: 20px; }
+.fabs { gap: 10px; }
+.sbtn { padding: 7px; }
+.sbtn .i { width: 16px; height: 16px; }
+.sbtn, .sbtn--wa, .sbtn--instagram, .sbtn--telegram { border: 0; }
+.sbtn:hover { background: #333; color: #fff; }

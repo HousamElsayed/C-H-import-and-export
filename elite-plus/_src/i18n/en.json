@@ -29,10 +29,6 @@
         "About Us, Technology & Safety – Elite+ Wellness Clinics",
         "Our clinic, our equipment, and our hygiene and sterilisation standards."
       ],
-      "prices": [
-        "Prices & All-Inclusive Packages {year} – Elite+",
-        "Starting prices and what is included: procedure, hotel, VIP transfers, interpreter and aftercare."
-      ],
       "journey": [
         "Patient Journey: Your Treatment Step by Step – Elite+",
         "From free online assessment to remote follow-up: how treatment works for international patients."
@@ -147,16 +143,12 @@
       "h2b": "count on",
       "items": [
         {
-          "t": "Experienced doctors",
-          "d": "Specialists with verifiable training and years of practice in their field."
-        },
-        {
           "t": "Modern technology",
           "d": "Up-to-date equipment and strict hygiene and sterilisation standards."
         },
         {
           "t": "All-inclusive packages",
-          "d": "Treatment, hotel, VIP transfers and interpreter arranged for you."
+          "d": "Treatment, VIP transportation and interpreter arranged for you."
         },
         {
           "t": "We speak your language",
@@ -165,10 +157,6 @@
         {
           "t": "Aftercare follow-up",
           "d": "Regular check-ins by WhatsApp and scheduled calls once you are home."
-        },
-        {
-          "t": "Transparent pricing",
-          "d": "A written quote with everything included, agreed before you travel."
         }
       ],
       "cta": "Start your free assessment"
@@ -282,7 +270,7 @@
     },
     {
       "t": "Travel",
-      "d": "We book your hotel and meet you at the airport with a VIP transfer."
+      "d": "We meet you at the airport and take care of all your transfers with VIP transportation."
     },
     {
       "t": "Procedure day",
@@ -290,7 +278,7 @@
     },
     {
       "t": "Recovery",
-      "d": "Rest at your hotel with check-ups at the clinic before you fly home."
+      "d": "Rest and recover, with check-ups at the clinic before you fly home."
     },
     {
       "t": "Remote follow-up",
@@ -307,8 +295,8 @@
       "a": "Packages typically include consultation and tests, the procedure, VIP transportation, an interpreter, medication and an aftercare kit, and 12 months of follow-up. Your quote lists every item."
     },
     {
-      "q": "How long do I need to stay in Türkiye?",
-      "a": "It depends on the treatment. Each treatment page shows the usual length of stay, and your coordinator confirms it in your plan."
+      "q": "How long do I need to stay?",
+      "a": "Most patients stay 3 to 7 days, depending on the treatment. This covers your consultation, the procedure, the first check-up and the first wash before you travel home. Your coordinator confirms the exact schedule in your plan."
     },
     {
       "q": "Is the procedure painful?",
@@ -323,8 +311,8 @@
       "a": "Results develop over time and vary between patients. Your doctor explains the expected timeline for your treatment during your consultation."
     },
     {
-      "q": "Is it safe to have treatment in Türkiye?",
-      "a": "Safety depends on the clinic, not the country. Ask about the medical team and the hygiene standards; ours are described on the About & Safety page."
+      "q": "Is it safe to have treatment abroad?",
+      "a": "Yes, when you choose a licensed clinic. Your procedure is planned and performed by a qualified medical team, in a facility that follows strict hygiene and sterilisation protocols, after a full medical assessment. Your coordinator stays in touch throughout your stay and after you return home."
     },
     {
       "q": "Do you speak my language?",
@@ -798,7 +786,9 @@
       "Hair transplant, FUE, DHI and hair treatments at Elite+ {country}: address, contact details and all-inclusive packages."
     ],
     "pageSub": "Hair transplant and hair treatments by our {country} team, with an all-inclusive package for international patients.",
-    "photosH": "Inside the clinic"
+    "photosH": "Inside the clinic",
+    "talkH": "Talk to a coordinator",
+    "talkSub": "Ask any question about your treatment at our {country} clinic. We usually reply within a few hours."
   },
   "stage": {
     "q": "Which picture looks most like your hair today?",

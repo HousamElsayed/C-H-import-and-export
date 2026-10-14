@@ -377,7 +377,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
       </ul>
     </div>
     <div><h2 class="ftr__h">${esc(L.footer.services)}</h2><ul>${cfg.services.map((s, i) => `<li><a href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}</a></li>`).join('')}</ul></div>
-    <div><h2 class="ftr__h">${esc(L.footer.patients)}</h2><ul><li><a href="${href(lang, 'fue-dhi/')}">${esc(L.techniques.nav)}</a></li>${['journey', 'results', 'about', 'blog', 'faq'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.nav[k])}</a></li>`).join('')}</ul></div>
+    <div><h2 class="ftr__h">${esc(L.footer.patients)}</h2><ul><li><a href="${href(lang, 'fue-dhi/')}">${esc(L.techniques.nav)}</a></li>${['journey', 'results', 'about', 'faq'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.nav[k])}</a></li>`).join('')}</ul></div>
   </div>
   <div class="wrap ftr__legal">
     <p class="ftr__disc">${esc(L.footer.disclaimer)}</p>
@@ -562,17 +562,17 @@ function carousel(lang, items, cls = '') {
 
 function serviceCard(lang, s, i) {
   const c = svc(s, lang);
-  const img = s.image ? `<img src="${imgSrc(s.image)}" alt="" loading="lazy" width="800" height="600">` : phImg('service', i, '');
-  return `<article class="scard"><a class="scard__link" href="${href(lang, `services/${s.slug}/`)}">
-    <div class="scard__img">${img}</div>
+  const img = s.image ? `<div class="scard__img"><img src="${imgSrc(s.image)}" alt="" loading="lazy" width="800" height="600"></div>` : '';
+  return `<article class="scard${img ? '' : ' scard--noimg'}"><a class="scard__link" href="${href(lang, `services/${s.slug}/`)}">
+    ${img}
     <div class="scard__body"><h3>${svcName(s, lang, i)}</h3><p>${h(c.short, 'two-line description', `services[${i}].content.${lang}.short`)}</p><span class="more"><span>${esc(I[lang].nav.learnMore)}</span>${icon('arrow', 'i-flip')}</span></div>
   </a></article>`;
 }
 
 function categoryCard(lang, cat, items, ci) {
   const L = I[lang];
-  return `<article class="ccat"><div class="ccat__img">${phImg('service', ci, '')}<span class="ccat__star">${starMark()}</span></div>
-    <div class="ccat__body"><h3>${esc(L.categories[cat].name)}</h3><p>${esc(L.categories[cat].short)}</p>
+  return `<article class="ccat ccat--noimg">
+    <div class="ccat__body"><span class="ccat__badge">${starMark()}</span><h3>${esc(L.categories[cat].name)}</h3><p>${esc(L.categories[cat].short)}</p>
     <ul class="ccat__list">${items.map(({ s, i }) => `<li><a href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}${icon('arrow', 'i-flip')}</a></li>`).join('')}</ul></div></article>`;
 }
 
@@ -679,7 +679,7 @@ function branchPage(lang, b) {
     </ul>
   </div>
   <div>
-    <div class="book"><span class="icard__ico">${icon('video')}</span><h3 class="h3">${esc(B.bookH)}</h3><p>${esc(f(B.bookSub))}</p>
+    <div class="book"><span class="icard__ico">${icon(b.bookingUrl ? 'video' : 'chat')}</span><h3 class="h3">${esc(b.bookingUrl ? B.bookH : B.talkH)}</h3><p>${esc(f(b.bookingUrl ? B.bookSub : B.talkSub))}</p>
       ${b.bookingUrl ? `<a class="btn btn--primary" href="${esc(b.bookingUrl)}" target="_blank" rel="noopener" data-ev="booking_click">${icon('calendar')}<span>${esc(B.bookCta)}</span></a>` : ''}
       ${waBtn(lang, L.hero.cta2, `${L.meta.siteName} ${country}`, b.bookingUrl ? 'outline' : 'primary', 'whatsapp_click', b)}</div>
   </div>
@@ -694,7 +694,7 @@ ${gallery.length ? `<section class="sec sec--grey" aria-labelledby="bphotos-titl
 
 function homePage(lang) {
   const L = I[lang]; const H = L.home;
-  const whyIcons = ['doctor', 'tech', 'package', 'translate', 'chat', 'price'];
+  const whyIcons = ['tech', 'package', 'translate', 'chat'];
   const techIcons = ['check', 'file', 'tech'];
   const afterIcons = ['camera', 'video', 'file', 'wa'];
   const body = `
@@ -702,7 +702,7 @@ ${hero(lang)}
 ${clinicsSection(lang)}
 <section class="sec sec--grey" aria-labelledby="why-title"><div class="wrap">
   ${sectionHead(H.why.label, H.why.h2a, H.why.h2b, { id: 'why-title', center: true })}
-  <ul class="cards cards--3">${H.why.items.map((it, i) => `<li class="icard"><span class="icard__ico">${icon(whyIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul>
+  <ul class="cards cards--4">${H.why.items.map((it, i) => `<li class="icard"><span class="icard__ico">${icon(whyIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul>
   <div class="sec__cta sec__cta--center">${btn(H.why.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}</div>
 </div></section>
 <section class="sec" aria-labelledby="svc-title"><div class="wrap">
@@ -765,10 +765,10 @@ function servicePage(lang, s, i) {
   if (!c.faq) problems.add(`missing data: ${key('faq')}`);
   const listOrTodo = (arr, label, f, render) => arr?.length ? render(arr) : `<p>${todo(label, key(f))}</p>`;
   const body = `
-<section class="phero phero--svc">${raysSvg('phero__rays')}<div class="wrap split">
+<section class="phero phero--svc">${raysSvg('phero__rays')}<div class="wrap${s.image ? ' split' : ' phero__solo'}">
   <div>${bc.html}<p class="label">${esc(L.nav.services)}</p><h1 id="page-title" class="duo"><span class="duo__a">${svcName(s, lang, i)}</span></h1>
   <p class="phero__sub">${h(c.intro, 'one-paragraph intro', key('intro'))}</p>${ctaRow(lang, nameT)}</div>
-  <div class="phero__img">${s.image ? `<img src="${imgSrc(s.image)}" alt="" width="800" height="600" fetchpriority="high">` : phImg('service', i, '')}</div>
+  ${s.image ? `<div class="phero__img"><img src="${imgSrc(s.image)}" alt="" width="800" height="600" fetchpriority="high"></div>` : ''}
 </div></section>
 <section class="sec"><div class="wrap split">
   <div><h2 class="h2">${esc(S.whoFor)}</h2>${listOrTodo(c.whoFor, 'candidate profiles', 'whoFor', (a) => `<ul class="checks">${a.map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>`)}</div>
@@ -825,10 +825,10 @@ function aboutPage(lang) {
   const ph = pageHero(lang, 'about', [{ name: L.nav.about }]);
   const techIcons = ['check', 'file', 'tech'];
   const body = `${ph.html}
-<section class="sec"><div class="wrap split"><div><h2 class="h2">${esc(P.storyH)}</h2>${cfg.about.story[lang] ? cfg.about.story[lang].split(/\n\s*\n/).map((x) => `<p>${esc(x)}</p>`).join('') : `<p>${todo('Clinic story: founding year, team, facility (real facts only)', `company.story.${lang}`)}</p>`}</div><div class="phero__img">${phImg('service', 2, '')}</div></div></section>
+<section class="sec"><div class="wrap split"><div><h2 class="h2">${esc(P.storyH)}</h2>${cfg.about.story[lang] ? cfg.about.story[lang].split(/\n\s*\n/).map((x) => `<p>${esc(x)}</p>`).join('') : `<p>${todo('Clinic story: founding year, team, facility (real facts only)', `company.story.${lang}`)}</p>`}</div><div class="phero__img"><img src="${imgSrc('uploads/clinics/turkey-consultation.jpg')}" alt="${esc(L.meta.siteName)}" loading="lazy" width="960" height="720"></div></div></section>
 <section class="sec sec--grey"><div class="wrap">${sectionHead(H.tech.label, H.tech.h2a, H.tech.h2b, { sub: H.tech.sub })}
   <ul class="cards cards--3">${H.tech.items.map((it, i) => `<li class="icard icard--flat"><span class="icard__ico">${icon(techIcons[i])}</span><h3>${esc(it.t)}</h3><p>${esc(it.d)}</p></li>`).join('')}</ul>
-  ${Array.isArray(cfg.about.equipment[lang]) && cfg.about.equipment[lang].length ? `<ul class="checks" style="margin-top:28px">${cfg.about.equipment[lang].map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : `<p>${todo('Equipment list (devices actually in use)', `company.equipment.${lang}`)}</p>`}</div></section>`;
+  ${Array.isArray(cfg.about.equipment[lang]) && cfg.about.equipment[lang].length ? `<ul class="checks" style="margin-top:28px">${cfg.about.equipment[lang].map((x) => `<li>${icon('check', 'checks__ico')}<span>${esc(x)}</span></li>`).join('')}</ul>` : ''}</div></section>`;
   const [t, d] = L.meta.pages.about;
   return layout({ lang, key: 'about', p: 'about/', pageName: 'About', title: t, desc: d, body, ld: [ph.ld] });
 }
@@ -843,13 +843,6 @@ function journeyPage(lang) {
   return layout({ lang, key: 'journey', p: 'journey/', pageName: 'Patient Journey', title: t, desc: d, body, ld: [ph.ld] });
 }
 
-function blogPage(lang) {
-  const L = I[lang]; const P = L.pages.blog;
-  const ph = pageHero(lang, 'blog', [{ name: L.nav.blog }]);
-  const [t, d] = L.meta.pages.blog;
-  const body = `${ph.html}<section class="sec"><div class="wrap"><p class="empty">${esc(P.empty)}</p></div></section>`;
-  return layout({ lang, key: 'blog', p: 'blog/', pageName: 'Guides', title: t, desc: d, body, ld: [ph.ld], noindex: true });
-}
 
 function faqPage(lang) {
   const L = I[lang];
@@ -997,7 +990,7 @@ for (const lang of LANGS) {
   put('prices/', redirectPage(lang, href(lang, 'contact/')));
   put('journey/', journeyPage(lang));
   put('assessment/', assessmentPage(lang));
-  put('blog/', blogPage(lang));
+  put('blog/', redirectPage(lang, href(lang, '')));
   put('faq/', faqPage(lang));
   put('contact/', contactPage(lang));
   legalKeys.forEach((k) => put(`${k}/`, legalPage(lang, k)));

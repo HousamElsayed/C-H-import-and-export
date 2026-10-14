@@ -10,14 +10,14 @@
     "es": "Egipto"
   },
   "city": {
-    "en": null,
-    "ar": null,
-    "tr": null,
-    "de": null,
-    "es": null
+    "en": "Cairo",
+    "ar": "القاهرة",
+    "tr": "Kahire",
+    "de": "Kairo",
+    "es": "El Cairo"
   },
-  "street": null,
-  "district": null,
+  "street": "Medical Park Elite, El Sadat Axis (beside Gate 6)",
+  "district": "Al Rehab City, New Cairo",
   "postalCode": null,
   "lat": null,
   "lng": null,

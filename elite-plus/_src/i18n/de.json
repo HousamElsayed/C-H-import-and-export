@@ -29,10 +29,6 @@
         "Über uns, Technologie & Sicherheit – Elite+ Wellness-Kliniken",
         "Unsere Klinik, unsere Geräte sowie unsere Hygiene- und Sterilisationsstandards."
       ],
-      "prices": [
-        "Preise & All-inclusive-Pakete {year} – Elite+",
-        "Preise ab und was enthalten ist: Eingriff, Hotel, VIP-Transfers, Dolmetscher und Nachsorge."
-      ],
       "journey": [
         "Ihr Behandlungsweg Schritt für Schritt – Elite+",
         "Von der kostenlosen Online-Analyse bis zur Nachsorge aus der Ferne: So läuft die Behandlung für internationale Patienten ab."
@@ -147,16 +143,12 @@
       "h2b": "Sie sich verlassen können",
       "items": [
         {
-          "t": "Erfahrene Ärzte",
-          "d": "Fachärzte mit nachweisbarer Ausbildung und langjähriger Praxis in ihrem Fachgebiet."
-        },
-        {
           "t": "Moderne Technologie",
           "d": "Aktuelle Geräte und strenge Hygiene- und Sterilisationsstandards."
         },
         {
           "t": "All-inclusive-Pakete",
-          "d": "Behandlung, Hotel, VIP-Transfers und Dolmetscher – alles für Sie organisiert."
+          "d": "Behandlung, VIP-Transport und Dolmetscher – alles für Sie organisiert."
         },
         {
           "t": "Wir sprechen Ihre Sprache",
@@ -165,10 +157,6 @@
         {
           "t": "Nachsorge",
           "d": "Regelmäßiger Kontakt per WhatsApp und vereinbarte Gespräche, wenn Sie wieder zu Hause sind."
-        },
-        {
-          "t": "Transparente Preise",
-          "d": "Ein schriftlicher Kostenvoranschlag mit allen Leistungen, vereinbart vor Ihrer Reise."
         }
       ],
       "cta": "Kostenlose Analyse starten"
@@ -282,7 +270,7 @@
     },
     {
       "t": "Anreise",
-      "d": "Wir buchen Ihr Hotel und holen Sie mit einem VIP-Transfer am Flughafen ab."
+      "d": "Wir holen Sie am Flughafen ab und übernehmen alle Fahrten mit VIP-Transport."
     },
     {
       "t": "Behandlungstag",
@@ -290,7 +278,7 @@
     },
     {
       "t": "Erholung",
-      "d": "Erholen Sie sich im Hotel, mit Kontrollterminen in der Klinik vor Ihrer Abreise."
+      "d": "Erholen Sie sich, mit Kontrollterminen in der Klinik vor Ihrer Abreise."
     },
     {
       "t": "Nachsorge aus der Ferne",
@@ -307,8 +295,8 @@
       "a": "Pakete umfassen in der Regel Beratung und Untersuchungen, den Eingriff, VIP-Transport, Dolmetscher, Medikamente und Nachsorge-Set sowie 12 Monate Nachsorge. Ihr Kostenvoranschlag führt jede Position auf."
     },
     {
-      "q": "Wie lange muss ich in der Türkei bleiben?",
-      "a": "Das hängt von der Behandlung ab. Jede Behandlungsseite nennt die übliche Aufenthaltsdauer; Ihre Koordination bestätigt sie in Ihrem Plan."
+      "q": "Wie lange muss ich bleiben?",
+      "a": "Die meisten Patienten bleiben je nach Behandlung 3 bis 7 Tage. Das umfasst Beratung, Eingriff, erste Kontrolle und erste Haarwäsche vor der Heimreise. Ihr Koordinator bestätigt den genauen Ablauf in Ihrem Plan."
     },
     {
       "q": "Ist der Eingriff schmerzhaft?",
@@ -323,8 +311,8 @@
       "a": "Ergebnisse entwickeln sich mit der Zeit und sind individuell verschieden. Ihr Arzt erläutert im Beratungsgespräch den zu erwartenden Zeitrahmen für Ihre Behandlung."
     },
     {
-      "q": "Ist eine Behandlung in der Türkei sicher?",
-      "a": "Sicherheit hängt von der Klinik ab, nicht vom Land. Fragen Sie nach dem medizinischen Team und den Hygienestandards; unsere sind auf der Seite „Über uns & Sicherheit“ beschrieben."
+      "q": "Ist eine Behandlung im Ausland sicher?",
+      "a": "Ja, wenn Sie eine zugelassene Klinik wählen. Ihr Eingriff wird nach einer vollständigen medizinischen Untersuchung von einem qualifizierten Ärzteteam in einer Einrichtung mit strengen Hygiene- und Sterilisationsprotokollen geplant und durchgeführt. Ihr Koordinator bleibt während Ihres Aufenthalts und nach Ihrer Rückkehr mit Ihnen in Kontakt."
     },
     {
       "q": "Sprechen Sie meine Sprache?",
@@ -798,7 +786,9 @@
       "Haartransplantation mit FUE und DHI sowie Haarbehandlungen bei Elite+ {country}: Adresse, Kontaktdaten und All-inclusive-Pakete."
     ],
     "pageSub": "Haartransplantation und Haarbehandlungen durch unser Team in {country}, mit All-inclusive-Paket für internationale Patienten.",
-    "photosH": "Einblicke in die Klinik"
+    "photosH": "Einblicke in die Klinik",
+    "talkH": "Sprechen Sie mit einem Koordinator",
+    "talkSub": "Fragen Sie alles zu Ihrer Behandlung in unserer Klinik in {country}. Wir antworten meist innerhalb weniger Stunden."
   },
   "stage": {
     "q": "Welches Bild entspricht Ihrem Haar heute am ehesten?",

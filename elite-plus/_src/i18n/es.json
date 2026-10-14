@@ -29,10 +29,6 @@
         "Sobre nosotros, tecnología y seguridad – Elite+ Clínicas de Bienestar",
         "Nuestra clínica, nuestros equipos y nuestras normas de higiene y esterilización."
       ],
-      "prices": [
-        "Precios y paquetes todo incluido {year} – Elite+",
-        "Precios desde y qué incluye: procedimiento, hotel, traslados VIP, intérprete y seguimiento."
-      ],
       "journey": [
         "Su proceso de tratamiento paso a paso – Elite+",
         "Desde la evaluación online gratuita hasta el seguimiento a distancia: cómo funciona el tratamiento para pacientes internacionales."
@@ -147,16 +143,12 @@
       "h2b": "en la que puede confiar",
       "items": [
         {
-          "t": "Médicos con experiencia",
-          "d": "Especialistas con formación verificable y años de práctica en su campo."
-        },
-        {
           "t": "Tecnología moderna",
           "d": "Equipos actualizados y estrictas normas de higiene y esterilización."
         },
         {
           "t": "Paquetes todo incluido",
-          "d": "Tratamiento, hotel, traslados VIP e intérprete, todo organizado para usted."
+          "d": "Tratamiento, transporte VIP e intérprete, todo organizado para usted."
         },
         {
           "t": "Hablamos su idioma",
@@ -165,10 +157,6 @@
         {
           "t": "Seguimiento posterior",
           "d": "Contacto regular por WhatsApp y llamadas programadas cuando ya esté en casa."
-        },
-        {
-          "t": "Precios transparentes",
-          "d": "Un presupuesto por escrito con todo incluido, acordado antes de viajar."
         }
       ],
       "cta": "Inicie su evaluación gratuita"
@@ -282,7 +270,7 @@
     },
     {
       "t": "Viaje",
-      "d": "Reservamos su hotel y le recibimos en el aeropuerto con un traslado VIP."
+      "d": "Le recibimos en el aeropuerto y nos encargamos de todos sus traslados con transporte VIP."
     },
     {
       "t": "Día del procedimiento",
@@ -290,7 +278,7 @@
     },
     {
       "t": "Recuperación",
-      "d": "Descanse en su hotel, con revisiones en la clínica antes de volver."
+      "d": "Descanse y recupérese, con revisiones en la clínica antes de volver."
     },
     {
       "t": "Seguimiento a distancia",
@@ -307,8 +295,8 @@
       "a": "Los paquetes suelen incluir consulta y pruebas, el procedimiento, transporte VIP, intérprete, medicación y kit de cuidados, y 12 meses de seguimiento. Su presupuesto detalla cada concepto."
     },
     {
-      "q": "¿Cuánto tiempo debo quedarme en Turquía?",
-      "a": "Depende del tratamiento. Cada página de tratamiento indica la estancia habitual y su coordinador la confirma en su plan."
+      "q": "¿Cuánto tiempo necesito quedarme?",
+      "a": "La mayoría de los pacientes se queda de 3 a 7 días, según el tratamiento. Incluye la consulta, el procedimiento, la primera revisión y el primer lavado antes de volver a casa. Su coordinador confirma el calendario exacto en su plan."
     },
     {
       "q": "¿Es doloroso el procedimiento?",
@@ -323,8 +311,8 @@
       "a": "Los resultados se desarrollan con el tiempo y varían de una persona a otra. Su médico le explicará en la consulta los plazos previstos para su tratamiento."
     },
     {
-      "q": "¿Es seguro tratarse en Turquía?",
-      "a": "La seguridad depende de la clínica, no del país. Pregunte por el equipo médico y las normas de higiene; las nuestras se describen en la página «Nosotros y seguridad»."
+      "q": "¿Es seguro tratarse en el extranjero?",
+      "a": "Sí, cuando elige una clínica autorizada. Su procedimiento lo planifica y realiza un equipo médico cualificado, en un centro que sigue estrictos protocolos de higiene y esterilización, tras una valoración médica completa. Su coordinador está en contacto con usted durante su estancia y después de volver a casa."
     },
     {
       "q": "¿Hablan mi idioma?",
@@ -798,7 +786,9 @@
       "Injerto capilar FUE y DHI y tratamientos capilares en Elite+ {country}: dirección, datos de contacto y paquetes todo incluido."
     ],
     "pageSub": "Injerto y tratamientos capilares a cargo de nuestro equipo en {country}, con paquete todo incluido para pacientes internacionales.",
-    "photosH": "Así es la clínica"
+    "photosH": "Así es la clínica",
+    "talkH": "Hable con un coordinador",
+    "talkSub": "Pregunte lo que quiera sobre su tratamiento en nuestra clínica de {country}. Solemos responder en pocas horas."
   },
   "stage": {
     "q": "¿Qué imagen se parece más a su cabello hoy?",

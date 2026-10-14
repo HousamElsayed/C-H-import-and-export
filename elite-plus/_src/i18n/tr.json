@@ -29,10 +29,6 @@
         "Hakkımızda, Teknoloji ve Güvenlik – Elite+ Klinikleri",
         "Kliniğimiz, cihazlarımız, hijyen ve sterilizasyon standartlarımız."
       ],
-      "prices": [
-        "Fiyatlar ve Her Şey Dahil Paketler {year} – Elite+",
-        "Başlangıç fiyatları ve pakete dahil olanlar: işlem, otel, VIP transfer, tercüman ve takip."
-      ],
       "journey": [
         "Hasta Yolculuğu: Adım Adım Tedaviniz – Elite+",
         "Ücretsiz online değerlendirmeden uzaktan takibe: uluslararası hastalar için tedavi süreci."
@@ -147,16 +143,12 @@
       "h2b": "bir bakım",
       "items": [
         {
-          "t": "Deneyimli doktorlar",
-          "d": "Eğitimi doğrulanabilir, alanında yıllarca deneyim kazanmış uzmanlar."
-        },
-        {
           "t": "Modern teknoloji",
           "d": "Güncel cihazlar ve sıkı hijyen ile sterilizasyon standartları."
         },
         {
           "t": "Her şey dahil paketler",
-          "d": "Tedavi, otel, VIP transfer ve tercüman sizin için ayarlanır."
+          "d": "Tedavi, VIP ulaşım ve tercüman sizin için ayarlanır."
         },
         {
           "t": "Sizin dilinizi konuşuyoruz",
@@ -165,10 +157,6 @@
         {
           "t": "Tedavi sonrası takip",
           "d": "Evinize döndükten sonra WhatsApp üzerinden düzenli takip ve planlı görüşmeler."
-        },
-        {
-          "t": "Şeffaf fiyatlandırma",
-          "d": "Seyahatten önce üzerinde anlaşılan, her şeyi içeren yazılı fiyat teklifi."
         }
       ],
       "cta": "Ücretsiz değerlendirmenizi başlatın"
@@ -282,7 +270,7 @@
     },
     {
       "t": "Seyahat",
-      "d": "Otelinizi ayarlar, sizi havalimanında VIP transferle karşılarız."
+      "d": "Sizi havalimanında karşılar, tüm transferlerinizi VIP ulaşımla sağlarız."
     },
     {
       "t": "İşlem günü",
@@ -290,7 +278,7 @@
     },
     {
       "t": "İyileşme",
-      "d": "Otelinizde dinlenin; dönüşten önce klinikte kontrolleriniz yapılır."
+      "d": "Dinlenin ve iyileşin; dönüşten önce klinikte kontrolleriniz yapılır."
     },
     {
       "t": "Uzaktan takip",
@@ -307,8 +295,8 @@
       "a": "Paketler genellikle muayene ve tetkikleri, işlemi, VIP ulaşımı, tercümanı, ilaçları ve bakım setini ve 12 ay takibi içerir. Teklifiniz her kalemi ayrı ayrı listeler."
     },
     {
-      "q": "Türkiye'de ne kadar kalmam gerekir?",
-      "a": "Tedaviye göre değişir. Her tedavi sayfası olağan konaklama süresini gösterir; koordinatörünüz bunu planınızda netleştirir."
+      "q": "Ne kadar kalmam gerekir?",
+      "a": "Hastaların çoğu tedaviye göre 3 ila 7 gün kalır. Bu süre muayene, işlem, ilk kontrol ve dönüşten önceki ilk yıkamayı kapsar. Koordinatörünüz kesin programı planınızda onaylar."
     },
     {
       "q": "İşlem ağrılı mı?",
@@ -323,8 +311,8 @@
       "a": "Sonuçlar zamanla ortaya çıkar ve kişiden kişiye değişir. Doktorunuz muayene sırasında tedaviniz için beklenen süreci açıklar."
     },
     {
-      "q": "Türkiye'de tedavi olmak güvenli mi?",
-      "a": "Güvenlik ülkeye değil kliniğe bağlıdır. Tıbbi ekibi ve hijyen standartlarını sorun; bizimkiler Hakkımızda ve Güvenlik sayfasında anlatılmaktadır."
+      "q": "Yurt dışında tedavi olmak güvenli mi?",
+      "a": "Evet, ruhsatlı bir klinik seçtiğinizde. İşleminiz, tam bir tıbbi değerlendirmenin ardından, sıkı hijyen ve sterilizasyon protokollerine uyan bir tesiste yetkin bir tıbbi ekip tarafından planlanır ve uygulanır. Koordinatörünüz konaklamanız boyunca ve dönüşünüzden sonra sizinle iletişimde kalır."
     },
     {
       "q": "Benim dilimi konuşuyor musunuz?",
@@ -798,7 +786,9 @@
       "Elite+ {country} kliniğinde FUE, DHI saç ekimi ve saç tedavileri: adres, iletişim bilgileri ve her şey dahil paketler."
     ],
     "pageSub": "{country} ekibimizden saç ekimi ve saç tedavileri; uluslararası hastalar için her şey dahil paketle.",
-    "photosH": "Klinikten kareler"
+    "photosH": "Klinikten kareler",
+    "talkH": "Bir koordinatörle konuşun",
+    "talkSub": "{country} kliniğimizdeki tedaviniz hakkında her şeyi sorun. Genellikle birkaç saat içinde yanıt veririz."
   },
   "stage": {
     "q": "Saçınız bugün en çok hangi resme benziyor?",
