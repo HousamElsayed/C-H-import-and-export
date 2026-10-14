@@ -10,8 +10,8 @@
     "siteName": "Elite+ Clínicas de Bienestar",
     "homeTitle": "Elite+ Clínicas de Bienestar | Atención personalizada en {city}",
     "homeDesc": "Planes de tratamiento personalizados, atención médica especializada y paquetes todo incluido para pacientes internacionales en {city}, Turquía. Solicite su evaluación online gratuita.",
-    "serviceTitle": "{service} en {city} {year} | Precio y resultados – Elite+",
-    "serviceDesc": "{service} en Elite+ ({city}): para quién está indicado, el procedimiento paso a paso, resultados, precios desde y preguntas frecuentes.",
+    "serviceTitle": "{service} en {city} | Elite+ Wellness Clinics",
+    "serviceDesc": "{service} en Elite+ ({city}): para quién está indicado, el procedimiento paso a paso, resultados y preguntas frecuentes.",
     "pages": {
       "services": [
         "Tratamientos y servicios – Elite+ Clínicas de Bienestar",
@@ -27,7 +27,7 @@
       ],
       "about": [
         "Sobre nosotros, tecnología y seguridad – Elite+ Clínicas de Bienestar",
-        "Nuestra clínica, nuestros equipos, normas de higiene y esterilización, y nuestras licencias."
+        "Nuestra clínica, nuestros equipos y nuestras normas de higiene y esterilización."
       ],
       "prices": [
         "Precios y paquetes todo incluido {year} – Elite+",
@@ -43,11 +43,11 @@
       ],
       "blog": [
         "Guías para pacientes – Elite+ Clínicas de Bienestar",
-        "Guías sobre precios, recuperación y viajes a Turquía para recibir tratamiento."
+        "Guías sobre tratamientos, recuperación y viajes a Turquía para recibir tratamiento."
       ],
       "faq": [
         "Preguntas frecuentes – Elite+ Clínicas de Bienestar",
-        "Respuestas sobre precios, recuperación, seguridad, viaje y pago."
+        "Respuestas sobre tratamientos, recuperación, seguridad, viaje y pago."
       ],
       "contact": [
         "Contacto – Elite+ Clínicas de Bienestar",
@@ -182,18 +182,16 @@
     "included": {
       "label": "Todo incluido",
       "h2a": "Todo organizado,",
-      "h2b": "un precio claro",
+      "h2b": "para usted",
       "items": [
         "Consulta y pruebas médicas",
         "Su procedimiento",
-        "{nights} noches de hotel",
-        "Traslados VIP aeropuerto–clínica",
+        "Transporte VIP (aeropuerto y clínica)",
         "Intérprete personal",
         "Medicación y kit de cuidados",
         "Seguimiento durante {months} meses"
       ],
-      "note": "Los precios se indican como “desde”. Su precio final se confirma en su plan por escrito antes de viajar.",
-      "cta": "Ver precios y paquetes"
+      "note": "Su coordinador confirma todos los detalles del tratamiento y la estancia en un plan escrito antes de viajar."
     },
     "journey": {
       "label": "Su proceso",
@@ -211,12 +209,8 @@
       "label": "Tecnología y seguridad",
       "h2a": "La seguridad",
       "h2b": "ante todo",
-      "sub": "Su tratamiento se realiza en un centro autorizado que sigue protocolos documentados de higiene y esterilización.",
+      "sub": "Su tratamiento se realiza en un centro que sigue protocolos documentados de higiene y esterilización.",
       "items": [
-        {
-          "t": "Centro autorizado",
-          "d": "Opera bajo la licencia indicada al pie de cada página."
-        },
         {
           "t": "Protocolos de esterilización",
           "d": "Material de un solo uso siempre que es posible y esterilización validada del instrumental."
@@ -306,11 +300,11 @@
   "faq": [
     {
       "q": "¿Cuánto cuesta el tratamiento?",
-      "a": "Cada página de tratamiento muestra un precio “desde”. Su precio final depende de su evaluación médica y se confirma en un presupuesto por escrito antes de viajar. No hay costes ocultos."
+      "a": "Su precio depende de su evaluación médica. Cuando nuestro equipo médico ha revisado su caso, su coordinador se lo comunica y lo confirma en un presupuesto por escrito antes de viajar. No hay costes ocultos."
     },
     {
       "q": "¿Qué incluye el paquete?",
-      "a": "Los paquetes suelen incluir consulta y pruebas, el procedimiento, hotel, traslados VIP, intérprete, medicación y kit de cuidados, y seguimiento a distancia. Su presupuesto detalla cada concepto."
+      "a": "Los paquetes suelen incluir consulta y pruebas, el procedimiento, transporte VIP, intérprete, medicación y kit de cuidados, y 12 meses de seguimiento. Su presupuesto detalla cada concepto."
     },
     {
       "q": "¿Cuánto tiempo debo quedarme en Turquía?",
@@ -330,7 +324,7 @@
     },
     {
       "q": "¿Es seguro tratarse en Turquía?",
-      "a": "La seguridad depende de la clínica, no del país. Compruebe la licencia, la cualificación de los médicos y las normas de higiene. Encontrará las nuestras en las páginas «Nosotros y seguridad» y «Médicos»."
+      "a": "La seguridad depende de la clínica, no del país. Pregunte por el equipo médico y las normas de higiene; las nuestras se describen en la página «Nosotros y seguridad»."
     },
     {
       "q": "¿Hablan mi idioma?",
@@ -383,7 +377,7 @@
     "about": {
       "h1a": "Sobre la clínica,",
       "h1b": "tecnología y seguridad",
-      "sub": "Una clínica autorizada, pensada para pacientes internacionales.",
+      "sub": "Una clínica pensada para pacientes internacionales.",
       "storyH": "Nuestra clínica",
       "accredH": "Licencias y acreditaciones",
       "accredNone": "Los datos de la licencia figuran al pie de la página."
@@ -641,7 +635,7 @@
   "categories": {
     "transplant": {
       "name": "Injerto capilar",
-      "short": "Injerto de cabello, barba, cejas y bigote, y restauración capilar en cicatrices."
+      "short": "Injerto de cabello, barba y bigote, y restauración capilar en cicatrices."
     },
     "treatment": {
       "name": "Tratamientos capilares",
@@ -689,7 +683,7 @@
       ],
       "best": [
         "Diseño de la línea frontal y aumento de densidad entre el cabello existente",
-        "Injertos de barba, cejas y bigote",
+        "Injertos de barba y bigote",
         "Mantener la zona receptora sin rasurar, cuando es posible"
       ]
     },
@@ -774,9 +768,9 @@
   "branch": {
     "nav": "Clínicas",
     "label": "Nuestras clínicas",
-    "h2a": "Elija",
-    "h2b": "su clínica",
-    "sub": "Dos clínicas, un mismo nivel de atención. Elija la clínica que desea conocer.",
+    "h2a": "Nuestras clínicas en",
+    "h2b": "Egipto y Turquía",
+    "sub": "Conozca cada clínica: dirección, datos de contacto y fotos.",
     "explore": "Conocer la clínica de {country}",
     "suggested": "Recomendada para usted",
     "yours": "Su clínica",
@@ -801,9 +795,10 @@
     "emptyResults": "Los resultados de esta clínica se publicarán cuando los pacientes hayan dado su consentimiento por escrito.",
     "meta": [
       "Elite+ {country} | Injerto y tratamientos capilares",
-      "Injerto capilar FUE y DHI y tratamientos capilares en Elite+ {country}: médicos, resultados, precios y paquetes todo incluido."
+      "Injerto capilar FUE y DHI y tratamientos capilares en Elite+ {country}: dirección, datos de contacto y paquetes todo incluido."
     ],
-    "pageSub": "Injerto y tratamientos capilares a cargo de nuestro equipo en {country}, con paquete todo incluido para pacientes internacionales."
+    "pageSub": "Injerto y tratamientos capilares a cargo de nuestro equipo en {country}, con paquete todo incluido para pacientes internacionales.",
+    "photosH": "Así es la clínica"
   },
   "stage": {
     "q": "¿Qué imagen se parece más a su cabello hoy?",

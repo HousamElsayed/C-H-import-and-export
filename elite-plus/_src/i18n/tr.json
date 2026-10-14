@@ -10,8 +10,8 @@
     "siteName": "Elite+ Sağlıklı Yaşam Klinikleri",
     "homeTitle": "Elite+ Sağlıklı Yaşam Klinikleri | {city} – Size Özel Bakım",
     "homeDesc": "Uluslararası hastalar için size özel tedavi planları, uzman tıbbi bakım ve her şey dahil paketler ({city}, Türkiye). Ücretsiz online değerlendirmenizi alın.",
-    "serviceTitle": "{service} {year} – {city} | Fiyat ve Sonuçlar – Elite+",
-    "serviceDesc": "Elite+ Kliniklerinde {service} ({city}): kimler için uygun, adım adım işlem, sonuçlar, başlangıç fiyatları ve sık sorulan sorular.",
+    "serviceTitle": "{service} – {city} | Elite+ Wellness Clinics",
+    "serviceDesc": "Elite+ Kliniklerinde {service} ({city}): kimler için uygun, adım adım işlem, sonuçlar ve sık sorulan sorular.",
     "pages": {
       "services": [
         "Tedaviler ve Hizmetler – Elite+ Klinikleri",
@@ -27,7 +27,7 @@
       ],
       "about": [
         "Hakkımızda, Teknoloji ve Güvenlik – Elite+ Klinikleri",
-        "Kliniğimiz, cihazlarımız, hijyen ve sterilizasyon standartlarımız ve ruhsatlarımız."
+        "Kliniğimiz, cihazlarımız, hijyen ve sterilizasyon standartlarımız."
       ],
       "prices": [
         "Fiyatlar ve Her Şey Dahil Paketler {year} – Elite+",
@@ -43,11 +43,11 @@
       ],
       "blog": [
         "Hasta Rehberleri – Elite+ Klinikleri",
-        "Fiyatlar, iyileşme süreci ve tedavi için Türkiye'ye seyahat hakkında rehberler."
+        "Tedaviler, iyileşme süreci ve tedavi için Türkiye'ye seyahat hakkında rehberler."
       ],
       "faq": [
         "Sık Sorulan Sorular – Elite+ Klinikleri",
-        "Fiyatlar, iyileşme, güvenlik, seyahat ve ödeme hakkında yanıtlar."
+        "Tedaviler, iyileşme, güvenlik, seyahat ve ödeme hakkında yanıtlar."
       ],
       "contact": [
         "İletişim – Elite+ Klinikleri",
@@ -182,18 +182,16 @@
     "included": {
       "label": "Her şey dahil",
       "h2a": "Her şey ayarlandı,",
-      "h2b": "tek ve net bir fiyat",
+      "h2b": "sizin için",
       "items": [
         "Muayene ve tıbbi tetkikler",
         "İşleminiz",
-        "{nights} gece otel konaklaması",
-        "VIP havalimanı ve klinik transferleri",
+        "VIP ulaşım (havalimanı ve klinik)",
         "Kişisel tercüman",
         "İlaçlar ve bakım seti",
         "{months} ay boyunca takip"
       ],
-      "note": "Fiyatlar “başlangıç” fiyatı olarak gösterilir. Nihai fiyatınız seyahatten önce yazılı planınızda onaylanır.",
-      "cta": "Fiyatlar ve paketler"
+      "note": "Koordinatörünüz tedavinizin ve konaklamanızın tüm ayrıntılarını seyahatten önce yazılı bir planla onaylar."
     },
     "journey": {
       "label": "Yolculuğunuz",
@@ -211,12 +209,8 @@
       "label": "Teknoloji ve güvenlik",
       "h2a": "Güvenlik",
       "h2b": "her şeyden önce gelir",
-      "sub": "Tedaviniz, belgelenmiş hijyen ve sterilizasyon protokollerine uyan ruhsatlı bir tesiste gerçekleştirilir.",
+      "sub": "Tedaviniz, belgelenmiş hijyen ve sterilizasyon protokollerine uyan bir tesiste gerçekleştirilir.",
       "items": [
-        {
-          "t": "Ruhsatlı tesis",
-          "d": "Her sayfanın alt kısmında belirtilen ruhsat kapsamında hizmet verir."
-        },
         {
           "t": "Sterilizasyon protokolleri",
           "d": "Mümkün olan her yerde tek kullanımlık malzemeler ve aletler için onaylı sterilizasyon."
@@ -306,11 +300,11 @@
   "faq": [
     {
       "q": "Tedavi ne kadar tutar?",
-      "a": "Her tedavi sayfasında bir “başlangıç” fiyatı yer alır. Nihai fiyatınız tıbbi değerlendirmenize bağlıdır ve seyahatten önce yazılı teklifte onaylanır. Gizli maliyet yoktur."
+      "a": "Fiyatınız tıbbi değerlendirmenize bağlıdır. Tıbbi ekibimiz durumunuzu inceledikten sonra koordinatörünüz fiyatı sizinle paylaşır ve seyahatten önce yazılı teklifte onaylar. Gizli maliyet yoktur."
     },
     {
       "q": "Pakete neler dahil?",
-      "a": "Paketler genellikle muayene ve tetkikleri, işlemi, otel konaklamasını, VIP transferleri, tercümanı, ilaçları ve bakım setini ve uzaktan takibi içerir. Teklifiniz her kalemi ayrı ayrı listeler."
+      "a": "Paketler genellikle muayene ve tetkikleri, işlemi, VIP ulaşımı, tercümanı, ilaçları ve bakım setini ve 12 ay takibi içerir. Teklifiniz her kalemi ayrı ayrı listeler."
     },
     {
       "q": "Türkiye'de ne kadar kalmam gerekir?",
@@ -330,7 +324,7 @@
     },
     {
       "q": "Türkiye'de tedavi olmak güvenli mi?",
-      "a": "Güvenlik ülkeye değil kliniğe bağlıdır. Ruhsatı, doktorların yeterliliklerini ve hijyen standartlarını kontrol edin. Bizimkiler Hakkımızda ve Doktorlar sayfalarında yer alır."
+      "a": "Güvenlik ülkeye değil kliniğe bağlıdır. Tıbbi ekibi ve hijyen standartlarını sorun; bizimkiler Hakkımızda ve Güvenlik sayfasında anlatılmaktadır."
     },
     {
       "q": "Benim dilimi konuşuyor musunuz?",
@@ -383,7 +377,7 @@
     "about": {
       "h1a": "Klinik hakkında,",
       "h1b": "teknoloji ve güvenlik",
-      "sub": "Uluslararası hastalar için kurulmuş ruhsatlı bir klinik.",
+      "sub": "Uluslararası hastalar için kurulmuş bir klinik.",
       "storyH": "Kliniğimiz",
       "accredH": "Ruhsatlar ve akreditasyonlar",
       "accredNone": "Ruhsat bilgileri sayfanın alt kısmında yer alır."
@@ -641,7 +635,7 @@
   "categories": {
     "transplant": {
       "name": "Saç Ekimi",
-      "short": "Saç, sakal, kaş ve bıyık ekimi ile yara izlerinde saç restorasyonu."
+      "short": "Saç, sakal ve bıyık ekimi ile yara izlerinde saç restorasyonu."
     },
     "treatment": {
       "name": "Saç Tedavileri",
@@ -689,7 +683,7 @@
       ],
       "best": [
         "Saç çizgisi tasarımı ve mevcut saçlar arasında yoğunluk artırma",
-        "Sakal, kaş ve bıyık ekimi",
+        "Sakal ve bıyık ekimi",
         "Uygun olduğunda alıcı bölgeyi tıraşsız bırakma"
       ]
     },
@@ -774,9 +768,9 @@
   "branch": {
     "nav": "Kliniklerimiz",
     "label": "Kliniklerimiz",
-    "h2a": "Kliniğinizi",
-    "h2b": "seçin",
-    "sub": "İki klinik, tek bakım standardı. İncelemek istediğiniz kliniği seçin.",
+    "h2a": "Kliniklerimiz:",
+    "h2b": "Mısır ve Türkiye",
+    "sub": "Her kliniği keşfedin: adres, iletişim bilgileri ve fotoğraflar.",
     "explore": "{country} kliniğini inceleyin",
     "suggested": "Size önerilen",
     "yours": "Kliniğiniz",
@@ -801,9 +795,10 @@
     "emptyResults": "Bu kliniğin sonuçları, hastalar yazılı onay verdikten sonra yayınlanacak.",
     "meta": [
       "Elite+ {country} | Saç Ekimi ve Saç Tedavileri",
-      "Elite+ {country} kliniğinde FUE, DHI saç ekimi ve saç tedavileri: doktorlar, sonuçlar, fiyatlar ve her şey dahil paketler."
+      "Elite+ {country} kliniğinde FUE, DHI saç ekimi ve saç tedavileri: adres, iletişim bilgileri ve her şey dahil paketler."
     ],
-    "pageSub": "{country} ekibimizden saç ekimi ve saç tedavileri; uluslararası hastalar için her şey dahil paketle."
+    "pageSub": "{country} ekibimizden saç ekimi ve saç tedavileri; uluslararası hastalar için her şey dahil paketle.",
+    "photosH": "Klinikten kareler"
   },
   "stage": {
     "q": "Saçınız bugün en çok hangi resme benziyor?",

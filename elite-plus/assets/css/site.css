@@ -162,7 +162,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .nav__link { padding: 8px; font-size: .92rem; }
   .logo img { height: 42px; }
 }
-@media (min-width: 1024px) and (max-width: 1239px) { .nav__item--opt { display: none; } }
+@media (min-width: 1024px) and (max-width: 1279px) { .nav__item--opt { display: none; } }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); flex: none; }
 .logo img { height: 48px; width: auto; }
 .ftr .logo img { height: 52px; }
@@ -359,7 +359,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 
 /* services */
 .cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-@media (max-width: 899px) { .cat-grid { grid-template-columns: 1fr; } }
+@media (max-width: 679px) { .cat-grid { grid-template-columns: 1fr; } }
 .ccat { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
 .ccat__img { position: relative; aspect-ratio: 16/8; overflow: hidden; }
 @media (max-width: 1023px) { .ccat__img { aspect-ratio: 16/7; } }
@@ -832,13 +832,14 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 /* ---------- Instagram / Facebook / WhatsApp buttons ----------
    Desktop (1024px+): floating stack at the bottom corner. Phones & tablets: round buttons in the header. */
 .fab--instagram, .sbtn--instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.fab--facebook, .sbtn--facebook { background: #1877F2; }
-.fab--instagram, .fab--facebook { width: 52px; height: 52px; }
-.fab--instagram .i, .fab--facebook .i { width: 26px; height: 26px; }
-@media (max-width: 1023px) { .fab--instagram, .fab--facebook { display: none; } }
-.sbtn { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; text-decoration: none; flex: none; box-shadow: 0 4px 12px rgba(7, 50, 81, .15); transition: transform .2s; }
+.fab--telegram, .sbtn--telegram { background: #229ED9; }
+.fab--instagram, .fab--telegram { width: 52px; height: 52px; }
+.fab--instagram .i, .fab--telegram .i { width: 26px; height: 26px; }
+@media (max-width: 1023px) { .fab--instagram, .fab--telegram { display: none; } }
+/* Header icons on phones/tablets: a small 34px circle inside a full 44px tap area. */
+.sbtn { display: grid; place-items: center; width: 44px; height: 44px; padding: 5px; background-clip: content-box !important; border-radius: 50%; color: #fff; text-decoration: none; flex: none; transition: transform .2s; }
 .sbtn:hover { transform: scale(1.06); color: #fff; }
-.sbtn .i { width: 22px; height: 22px; }
+.sbtn .i { width: 18px; height: 18px; }
 .sbtn--wa { background: #25D366; }
 @media (min-width: 1024px) { .sbtn { display: none; } }
 .nav__langs { display: none; }
@@ -850,4 +851,34 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
   .nav__langs a[aria-current] .lang__code { background: #fff; color: var(--navy); }
   .hdr__actions { gap: 6px; }
 }
-@media (max-width: 359px) { .hdr .sbtn--wa { display: none; } /* WhatsApp stays in the bottom bar */ }
+
+
+/* ---------- flat style: no drop shadows behind cards, buttons and icons ----------
+   Surfaces are separated by a thin border instead. Focus rings and the slider handle keep their outlines. */
+:root { --shadow: none; --shadow-lg: none; }
+.btn--primary, .btn--primary:hover, .hdr.is-stuck, .mega, .hero__banner, .fab, .sbtn, .faq__item, .bcard__flag, .ba__handle::after { box-shadow: none; }
+.hdr.is-stuck { border-bottom: 1px solid var(--line); }
+.mega { border-bottom: 1px solid var(--line); }
+.lang__menu, .clinics, .faq__item, .phero__img, .panel, .icard, .ccat, .scard, .dcard, .pcard, .ccard, .cookie__box, .qa, .tcard, .ttable-wrap, .bcard, .book, .cbranch, .ad-card { border: 1px solid var(--line); }
+.bcard__flag, .ba__handle::after { border: 1px solid var(--line); }
+@media (max-width: 1023px) { .clinics { border: 0; } }
+@media (max-width: 767px) { .mbar { box-shadow: none; border-top: 1px solid var(--line); } }
+
+/* ---------- clinic photo gallery ---------- */
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.gallery img, .gallery__ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); display: block; }
+.gallery__ph { display: grid; place-items: center; background: #fff; }
+@media (max-width: 1023px) { .gallery { gap: 12px; } }
+@media (max-width: 599px) { .gallery { grid-template-columns: 1fr; } }
+@media (max-width: 359px) { .hdr .logo img, .hdr .brand img { width: 118px; } .hdr__in { gap: 4px; } .hdr__actions { gap: 0; } }
+@media (max-width: 359px) { .mbar .btn { font-size: .92rem; padding-inline: .5em; } }
+
+/* ---------- phones & tablets: tighter rhythm, no duplicate WhatsApp ---------- */
+@media (max-width: 1023px) { .fabs { display: none; } } /* WhatsApp is in the header (tablet) and bottom bar (phone) */
+@media (max-width: 600px) {
+  .sec { padding-block: 44px; }
+  .shead { margin-bottom: 22px; }
+  .phero { padding-block: 20px 36px; }
+  .cards, .svc-grid, .cat-grid, .bchoose { gap: 14px; }
+}
+@media (min-width: 601px) and (max-width: 1023px) { .sec { padding-block: 64px; } }

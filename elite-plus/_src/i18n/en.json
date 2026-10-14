@@ -10,8 +10,8 @@
     "siteName": "Elite+ Wellness Clinics",
     "homeTitle": "Elite+ Wellness Clinics | Personalised Care in {city}",
     "homeDesc": "Personalised treatment plans, expert medical care and all-inclusive packages for international patients in {city}, Türkiye. Get your free online assessment.",
-    "serviceTitle": "{service} in {city} {year} | Price & Results – Elite+",
-    "serviceDesc": "{service} at Elite+ Wellness Clinics in {city}: who it is for, the procedure step by step, results, starting prices and FAQ.",
+    "serviceTitle": "{service} in {city} | Elite+ Wellness Clinics",
+    "serviceDesc": "{service} at Elite+ Wellness Clinics in {city}: who it is for, the procedure step by step, results and FAQ.",
     "pages": {
       "services": [
         "Treatments & Services – Elite+ Wellness Clinics",
@@ -27,7 +27,7 @@
       ],
       "about": [
         "About Us, Technology & Safety – Elite+ Wellness Clinics",
-        "Our clinic, our equipment, hygiene and sterilisation standards, and our licences."
+        "Our clinic, our equipment, and our hygiene and sterilisation standards."
       ],
       "prices": [
         "Prices & All-Inclusive Packages {year} – Elite+",
@@ -43,11 +43,11 @@
       ],
       "blog": [
         "Patient Guides – Elite+ Wellness Clinics",
-        "Guides on prices, recovery and travelling to Türkiye for treatment."
+        "Guides on treatments, recovery and travelling to Türkiye for treatment."
       ],
       "faq": [
         "Frequently Asked Questions – Elite+ Wellness Clinics",
-        "Answers about prices, recovery, safety, travel and payment."
+        "Answers about treatments, recovery, safety, travel and payment."
       ],
       "contact": [
         "Contact – Elite+ Wellness Clinics",
@@ -182,18 +182,16 @@
     "included": {
       "label": "All-inclusive",
       "h2a": "Everything arranged,",
-      "h2b": "one clear price",
+      "h2b": "for you",
       "items": [
         "Consultation and medical tests",
         "Your procedure",
-        "{nights}-night hotel stay",
-        "VIP airport and clinic transfers",
+        "VIP transportation (airport and clinic)",
         "Personal interpreter",
         "Medication and aftercare kit",
         "Follow-up for {months} months"
       ],
-      "note": "Prices are shown as “starting from”. Your final price is confirmed in your written plan before you travel.",
-      "cta": "See prices & packages"
+      "note": "Your coordinator confirms every detail of your treatment and stay in a written plan before you travel."
     },
     "journey": {
       "label": "Your journey",
@@ -211,12 +209,8 @@
       "label": "Technology & safety",
       "h2a": "Safety comes",
       "h2b": "before everything",
-      "sub": "Your treatment takes place in a licensed facility that follows documented hygiene and sterilisation protocols.",
+      "sub": "Your treatment takes place in a facility that follows documented hygiene and sterilisation protocols.",
       "items": [
-        {
-          "t": "Licensed facility",
-          "d": "Operating under the licence shown in the footer of every page."
-        },
         {
           "t": "Sterilisation protocols",
           "d": "Single-use materials where possible and validated sterilisation for instruments."
@@ -306,11 +300,11 @@
   "faq": [
     {
       "q": "How much does treatment cost?",
-      "a": "Each treatment page shows a “starting from” price. Your final price depends on your medical assessment and is confirmed in a written quote before you travel. There are no hidden costs."
+      "a": "Your price depends on your medical assessment. Once our medical team has reviewed your case, your coordinator shares it with you and confirms it in a written quote before you travel. There are no hidden costs."
     },
     {
       "q": "What is included in the package?",
-      "a": "Packages typically include consultation and tests, the procedure, hotel stay, VIP transfers, an interpreter, medication and an aftercare kit, and remote follow-up. Your quote lists every item."
+      "a": "Packages typically include consultation and tests, the procedure, VIP transportation, an interpreter, medication and an aftercare kit, and 12 months of follow-up. Your quote lists every item."
     },
     {
       "q": "How long do I need to stay in Türkiye?",
@@ -330,7 +324,7 @@
     },
     {
       "q": "Is it safe to have treatment in Türkiye?",
-      "a": "Safety depends on the clinic, not the country. Check the licence, the doctors' credentials and the hygiene standards. Ours are listed on the About & Safety and Doctors pages."
+      "a": "Safety depends on the clinic, not the country. Ask about the medical team and the hygiene standards; ours are described on the About & Safety page."
     },
     {
       "q": "Do you speak my language?",
@@ -383,7 +377,7 @@
     "about": {
       "h1a": "About the clinic,",
       "h1b": "technology & safety",
-      "sub": "A licensed clinic built around international patients.",
+      "sub": "A clinic built around international patients.",
       "storyH": "Our clinic",
       "accredH": "Licences and accreditations",
       "accredNone": "Licence details are listed in the footer."
@@ -641,7 +635,7 @@
   "categories": {
     "transplant": {
       "name": "Hair Transplant",
-      "short": "Scalp, beard, eyebrow and moustache transplants, and hair restoration in scars."
+      "short": "Scalp, beard and moustache transplants, and hair restoration in scars."
     },
     "treatment": {
       "name": "Hair Treatments",
@@ -689,7 +683,7 @@
       ],
       "best": [
         "Hairline design and adding density between existing hair",
-        "Beard, eyebrow and moustache transplants",
+        "Beard and moustache transplants",
         "Keeping the recipient area unshaved, when suitable"
       ]
     },
@@ -774,9 +768,9 @@
   "branch": {
     "nav": "Clinics",
     "label": "Our clinics",
-    "h2a": "Choose",
-    "h2b": "your clinic",
-    "sub": "Two clinics, one standard of care. Choose the clinic you would like to explore.",
+    "h2a": "Our clinics in",
+    "h2b": "Egypt & Türkiye",
+    "sub": "Explore each clinic: address, contact details and photos.",
     "explore": "Explore the {country} clinic",
     "suggested": "Suggested for you",
     "yours": "Your clinic",
@@ -801,9 +795,10 @@
     "emptyResults": "Results from this clinic will be published once patients have given written consent.",
     "meta": [
       "Elite+ {country} | Hair Transplant & Hair Treatments",
-      "Hair transplant, FUE, DHI and hair treatments at Elite+ {country}: doctors, results, prices and all-inclusive packages."
+      "Hair transplant, FUE, DHI and hair treatments at Elite+ {country}: address, contact details and all-inclusive packages."
     ],
-    "pageSub": "Hair transplant and hair treatments by our {country} team, with an all-inclusive package for international patients."
+    "pageSub": "Hair transplant and hair treatments by our {country} team, with an all-inclusive package for international patients.",
+    "photosH": "Inside the clinic"
   },
   "stage": {
     "q": "Which picture looks most like your hair today?",

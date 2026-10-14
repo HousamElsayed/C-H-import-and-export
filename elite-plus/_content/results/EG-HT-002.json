@@ -2,7 +2,7 @@
   "id": "EG-HT-002",
   "branch": "egypt",
   "service": "hair-transplant",
-  "order": 2,
+  "order": 3,
   "before": "uploads/results/eg-ht-002-before.jpg",
   "after": "uploads/results/eg-ht-002-after.jpg",
   "aspect": "4/5",

@@ -151,13 +151,6 @@
     if (SITE.branch) store.set('elite_branch', SITE.branch);
     $$('[data-branch-link]').forEach((a) => a.addEventListener('click', () => store.set('elite_branch', a.dataset.branchLink)));
     const mine = store.get('elite_branch');
-    let suggested = null;
-    try { suggested = { 'Africa/Cairo': 'egypt', 'Europe/Istanbul': 'turkey' }[Intl.DateTimeFormat().resolvedOptions().timeZone] || null; } catch { /* ignore */ }
-    $$('[data-branch-card]').forEach((card) => {
-      const slug = card.dataset.branchCard; const badge = $('[data-badge]', card);
-      if (mine === slug) { card.classList.add('is-yours'); badge.textContent = SITE.labels?.yours || ''; badge.hidden = !badge.textContent; }
-      else if (!mine && suggested === slug) { badge.textContent = SITE.labels?.suggested || ''; badge.hidden = !badge.textContent; }
-    });
     if (mine) $$(`[data-clinics] [data-branch-link="${mine}"] .clinics__yours`).forEach((el) => { el.hidden = false; });
     const wa = mine && branches[mine]?.wa;
     if (wa) $$('[data-wa-main]').forEach((a) => {

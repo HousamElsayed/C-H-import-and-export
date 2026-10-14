@@ -21,9 +21,10 @@
   "_whatsappNote": "Main international WhatsApp line used on pages that are not branch-specific (digits only with country code). Branch pages use the branch's own number.",
   "social": {
     "instagram": "https://www.instagram.com/elite.plus.clinics/",
-    "facebook": "https://www.facebook.com/elite.plus.clinics",
+    "facebook": null,
     "youtube": null,
-    "tiktok": null
+    "tiktok": null,
+    "telegram": null
   },
   "languagesSpoken": null,
   "foundedYear": null,
@@ -37,7 +38,7 @@
   "currency": "EUR",
   "package": {
     "hotelNights": null,
-    "followUpMonths": null
+    "followUpMonths": 12
   },
   "stats": {
     "patientsTreated": 7000,

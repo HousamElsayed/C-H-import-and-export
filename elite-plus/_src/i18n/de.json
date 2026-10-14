@@ -10,8 +10,8 @@
     "siteName": "Elite+ Wellness-Kliniken",
     "homeTitle": "Elite+ Wellness-Kliniken | Individuelle Behandlung in {city}",
     "homeDesc": "Individuelle Behandlungspläne, fachärztliche Betreuung und All-inclusive-Pakete für internationale Patienten in {city}, Türkei. Jetzt kostenlose Online-Analyse anfragen.",
-    "serviceTitle": "{service} in {city} {year} | Preise & Ergebnisse – Elite+",
-    "serviceDesc": "{service} bei Elite+ in {city}: für wen geeignet, Ablauf Schritt für Schritt, Ergebnisse, Preise ab und häufige Fragen.",
+    "serviceTitle": "{service} in {city} | Elite+ Wellness Clinics",
+    "serviceDesc": "{service} bei Elite+ in {city}: für wen geeignet, Ablauf Schritt für Schritt, Ergebnisse und häufige Fragen.",
     "pages": {
       "services": [
         "Behandlungen & Leistungen – Elite+ Wellness-Kliniken",
@@ -27,7 +27,7 @@
       ],
       "about": [
         "Über uns, Technologie & Sicherheit – Elite+ Wellness-Kliniken",
-        "Unsere Klinik, unsere Geräte, Hygiene- und Sterilisationsstandards und unsere Zulassungen."
+        "Unsere Klinik, unsere Geräte sowie unsere Hygiene- und Sterilisationsstandards."
       ],
       "prices": [
         "Preise & All-inclusive-Pakete {year} – Elite+",
@@ -43,11 +43,11 @@
       ],
       "blog": [
         "Patientenratgeber – Elite+ Wellness-Kliniken",
-        "Ratgeber zu Preisen, Heilungsverlauf und Reisen in die Türkei zur Behandlung."
+        "Ratgeber zu Behandlungen, Heilungsverlauf und Reisen in die Türkei zur Behandlung."
       ],
       "faq": [
         "Häufige Fragen – Elite+ Wellness-Kliniken",
-        "Antworten zu Preisen, Heilung, Sicherheit, Reise und Zahlung."
+        "Antworten zu Behandlungen, Heilung, Sicherheit, Reise und Zahlung."
       ],
       "contact": [
         "Kontakt – Elite+ Wellness-Kliniken",
@@ -182,18 +182,16 @@
     "included": {
       "label": "All-inclusive",
       "h2a": "Alles organisiert,",
-      "h2b": "ein klarer Preis",
+      "h2b": "für Sie",
       "items": [
         "Beratung und medizinische Untersuchungen",
         "Ihr Eingriff",
-        "{nights} Nächte im Hotel",
-        "VIP-Transfers zwischen Flughafen und Klinik",
+        "VIP-Transport (Flughafen und Klinik)",
         "Persönlicher Dolmetscher",
         "Medikamente und Nachsorge-Set",
         "Nachsorge über {months} Monate"
       ],
-      "note": "Preise werden als „ab“-Preise angegeben. Ihr Endpreis wird vor Ihrer Reise in Ihrem schriftlichen Plan bestätigt.",
-      "cta": "Preise & Pakete ansehen"
+      "note": "Ihr Koordinator bestätigt alle Details Ihrer Behandlung und Ihres Aufenthalts vor der Reise in einem schriftlichen Plan."
     },
     "journey": {
       "label": "Ihr Weg",
@@ -211,12 +209,8 @@
       "label": "Technologie & Sicherheit",
       "h2a": "Sicherheit",
       "h2b": "steht an erster Stelle",
-      "sub": "Ihre Behandlung findet in einer zugelassenen Einrichtung statt, die dokumentierte Hygiene- und Sterilisationsprotokolle einhält.",
+      "sub": "Ihre Behandlung findet in einer Einrichtung statt, die dokumentierte Hygiene- und Sterilisationsprotokolle einhält.",
       "items": [
-        {
-          "t": "Zugelassene Einrichtung",
-          "d": "Tätig unter der Zulassung, die im Fußbereich jeder Seite angegeben ist."
-        },
         {
           "t": "Sterilisationsprotokolle",
           "d": "Einwegmaterialien, wo immer möglich, und validierte Sterilisation der Instrumente."
@@ -306,11 +300,11 @@
   "faq": [
     {
       "q": "Was kostet die Behandlung?",
-      "a": "Jede Behandlungsseite zeigt einen „ab“-Preis. Ihr Endpreis hängt von Ihrer medizinischen Analyse ab und wird vor Ihrer Reise in einem schriftlichen Kostenvoranschlag bestätigt. Es gibt keine versteckten Kosten."
+      "a": "Ihr Preis hängt von Ihrer medizinischen Analyse ab. Nachdem unser Ärzteteam Ihren Fall geprüft hat, teilt Ihr Koordinator ihn Ihnen mit und bestätigt ihn vor der Reise in einem schriftlichen Kostenvoranschlag. Es gibt keine versteckten Kosten."
     },
     {
       "q": "Was ist im Paket enthalten?",
-      "a": "Pakete umfassen in der Regel Beratung und Untersuchungen, den Eingriff, Hotelaufenthalt, VIP-Transfers, Dolmetscher, Medikamente und Nachsorge-Set sowie Nachsorge aus der Ferne. Ihr Kostenvoranschlag führt jede Position auf."
+      "a": "Pakete umfassen in der Regel Beratung und Untersuchungen, den Eingriff, VIP-Transport, Dolmetscher, Medikamente und Nachsorge-Set sowie 12 Monate Nachsorge. Ihr Kostenvoranschlag führt jede Position auf."
     },
     {
       "q": "Wie lange muss ich in der Türkei bleiben?",
@@ -330,7 +324,7 @@
     },
     {
       "q": "Ist eine Behandlung in der Türkei sicher?",
-      "a": "Sicherheit hängt von der Klinik ab, nicht vom Land. Prüfen Sie Zulassung, Qualifikationen der Ärzte und Hygienestandards. Unsere Angaben finden Sie auf den Seiten „Über uns & Sicherheit“ und „Ärzte“."
+      "a": "Sicherheit hängt von der Klinik ab, nicht vom Land. Fragen Sie nach dem medizinischen Team und den Hygienestandards; unsere sind auf der Seite „Über uns & Sicherheit“ beschrieben."
     },
     {
       "q": "Sprechen Sie meine Sprache?",
@@ -383,7 +377,7 @@
     "about": {
       "h1a": "Über die Klinik,",
       "h1b": "Technologie & Sicherheit",
-      "sub": "Eine zugelassene Klinik, ausgerichtet auf internationale Patienten.",
+      "sub": "Eine Klinik, ausgerichtet auf internationale Patienten.",
       "storyH": "Unsere Klinik",
       "accredH": "Zulassungen und Akkreditierungen",
       "accredNone": "Die Zulassungsdaten stehen im Fußbereich der Seite."
@@ -641,7 +635,7 @@
   "categories": {
     "transplant": {
       "name": "Haartransplantation",
-      "short": "Haar-, Bart-, Augenbrauen- und Schnurrbarttransplantation sowie Haarwiederherstellung in Narben."
+      "short": "Haar-, Bart- und Schnurrbarttransplantation sowie Haarwiederherstellung in Narben."
     },
     "treatment": {
       "name": "Haarbehandlungen",
@@ -689,7 +683,7 @@
       ],
       "best": [
         "Gestaltung des Haaransatzes und Verdichtung zwischen vorhandenem Haar",
-        "Bart-, Augenbrauen- und Schnurrbarttransplantation",
+        "Bart- und Schnurrbarttransplantation",
         "Den Empfängerbereich unrasiert lassen, wenn geeignet"
       ]
     },
@@ -774,9 +768,9 @@
   "branch": {
     "nav": "Kliniken",
     "label": "Unsere Kliniken",
-    "h2a": "Wählen Sie",
-    "h2b": "Ihre Klinik",
-    "sub": "Zwei Kliniken, ein Behandlungsstandard. Wählen Sie die Klinik, die Sie kennenlernen möchten.",
+    "h2a": "Unsere Kliniken in",
+    "h2b": "Ägypten & Türkei",
+    "sub": "Entdecken Sie jede Klinik: Adresse, Kontaktdaten und Fotos.",
     "explore": "Klinik in {country} ansehen",
     "suggested": "Für Sie empfohlen",
     "yours": "Ihre Klinik",
@@ -801,9 +795,10 @@
     "emptyResults": "Ergebnisse dieser Klinik werden veröffentlicht, sobald die schriftlichen Einwilligungen vorliegen.",
     "meta": [
       "Elite+ {country} | Haartransplantation & Haarbehandlungen",
-      "Haartransplantation mit FUE und DHI sowie Haarbehandlungen bei Elite+ {country}: Ärzte, Ergebnisse, Preise und All-inclusive-Pakete."
+      "Haartransplantation mit FUE und DHI sowie Haarbehandlungen bei Elite+ {country}: Adresse, Kontaktdaten und All-inclusive-Pakete."
     ],
-    "pageSub": "Haartransplantation und Haarbehandlungen durch unser Team in {country}, mit All-inclusive-Paket für internationale Patienten."
+    "pageSub": "Haartransplantation und Haarbehandlungen durch unser Team in {country}, mit All-inclusive-Paket für internationale Patienten.",
+    "photosH": "Einblicke in die Klinik"
   },
   "stage": {
     "q": "Welches Bild entspricht Ihrem Haar heute am ehesten?",
