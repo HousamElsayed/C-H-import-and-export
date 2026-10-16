@@ -159,6 +159,8 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .hdr .lang__btn { background: transparent; border-color: rgba(255, 255, 255, .35); color: #fff; }
 .hdr .lang__btn:hover { background: rgba(255, 255, 255, .12); }
 .hdr .burger { color: #fff; }
+/* Dropdown panels drop out of the header's white text colour back to navy text on their light panels. */
+.mega, .clinics, .lang__menu { color: var(--navy); }
 /* Social/WhatsApp pills in the navy header: glassy so they read against navy. */
 .hdr .sbtn, .hdr .sbtn--wa, .hdr .sbtn--instagram, .hdr .sbtn--telegram { background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
 .hdr .sbtn:hover { background: rgba(255, 255, 255, .24); color: #fff; }
