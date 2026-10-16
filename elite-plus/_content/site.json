@@ -35,8 +35,8 @@
     "TRY"
   ],
   "integrations": {
-    "leadEndpoint": null,
-    "uploadUrlEndpoint": null,
+    "leadEndpoint": "https://wrkotkzgdzlpbbsgcoug.supabase.co/functions/v1/leads",
+    "uploadUrlEndpoint": "https://wrkotkzgdzlpbbsgcoug.supabase.co/functions/v1/leads/upload-url",
     "turnstileSiteKey": "0x4AAAAAAFYvtgAPB2iHeN28",
     "gtmId": null,
     "metaPixelId": null,
