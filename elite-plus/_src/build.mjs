@@ -330,7 +330,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
 <div class="trustbar"><div class="wrap trustbar__in">${trust.length ? `<ul class="trustbar__list" data-rotate>${trust.map((t) => `<li>${starMark('trustbar__star')}<span>${t}</span></li>`).join('')}</ul>` : '<span></span>'}</div></div>
 <header class="hdr" data-header>
   <div class="wrap hdr__in">
-    ${logo(lang, 'light')}
+    ${logo(lang, 'dark')}
     <nav class="nav" id="site-nav" aria-label="${esc(L.nav.menu)}" data-nav>
       <ul class="nav__list">
         <li class="nav__item nav__item--mega">
@@ -343,7 +343,6 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
         </li>
         ${headerNav.map(([k, u]) => `<li class="nav__item${k === 'journey' || k === 'about' ? ' nav__item--opt' : ''}"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
-      <ul class="nav__langs" aria-label="${esc(L.nav.language)}">${langMenu}</ul>
       <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav', ['facebook'])}</div>
     </nav>
     <div class="hdr__actions">
@@ -387,9 +386,6 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
       <li><button type="button" class="linklike" data-cookie-open>${esc(L.footer.cookieSettings)}</button></li>
     </ul>
     <p class="ftr__meta">© ${YEAR} ${esc(L.meta.siteName)} · ${esc(L.footer.rights)}</p>
-    <div class="ftr__row">
-      <div class="ftr__langs">${LANGS.map((l) => `<a href="${href(l, p)}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="true"' : ''}>${esc(I[l].lang.name)}</a>`).join('')}</div>
-    </div>
   </div>
 </footer>`;
 
