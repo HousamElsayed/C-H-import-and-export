@@ -275,7 +275,10 @@ function branchLd(lang, b) {
 // Social profiles (company.json → social). Every link opens in a new tab without leaking the referrer.
 const SOCIAL_LABEL = { instagram: 'Instagram', facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok', telegram: 'Telegram' };
 function socialList(lang, cls = '', exclude = []) {
-  const items = Object.entries(C.social).filter(([k, v]) => v && !exclude.includes(k));
+  // Telegram shows as a placeholder in the preview until company.social.telegram (a t.me link) is filled in.
+  const social = { ...C.social };
+  if (!social.telegram && PREVIEW) social.telegram = '#todo-telegram';
+  const items = Object.entries(social).filter(([k, v]) => v && !exclude.includes(k));
   if (!items.length) return PREVIEW ? `<p>${todo('social links', 'company.social')}</p>` : '';
   return `<ul class="social ${cls}">${items.map(([k, v]) => `<li><a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="${SOCIAL_LABEL[k] ?? k} ${esc(I[lang].a11y.ext)}" data-ev="social_click">${icon(k)}</a></li>`).join('')}</ul>`;
 }
@@ -370,11 +373,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   <div class="wrap ftr__grid">
     <div class="ftr__brand">${logo(lang, 'dark')}<p>${esc(L.footer.desc)}</p>${socialList(lang, 'ftr__social')}</div>
     <div><h2 class="ftr__h">${esc(L.footer.clinics)}</h2>
-      <ul class="ftr__contact">${BRANCHES.map((b) => `<li class="ftr__branch"><a href="${href(lang, `${b.slug}/`)}"><strong>${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</strong></a>
-        <span>${b.whatsapp ? `${icon('wa')}<a href="${waHref(lang, pageName, b)}" target="_blank" rel="noopener" data-ev="whatsapp_click" dir="ltr">+${esc(b.whatsapp)}</a>` : todo('WhatsApp', `branches/${b.slug}.whatsapp`)}</span>
-        <span>${b.phone ? `${icon('phone')}<a href="tel:${esc(b.phone.replace(/\s/g, ''))}" data-ev="phone_click" dir="ltr">${esc(b.phone)}</a>` : todo('phone', `branches/${b.slug}.phone`)}</span></li>`).join('')}
-        <li>${icon('mail')}${C.email ? `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : todo('email', 'company.email')}</li>
-      </ul>
+      <ul class="ftr__contact">${BRANCHES.map((b) => `<li class="ftr__branch"><a href="${href(lang, `${b.slug}/`)}"><strong>${FLAG[b.countryCode] ?? ''} ${esc(bCountry(b, lang))}</strong></a></li>`).join('')}</ul>
     </div>
     <div><h2 class="ftr__h">${esc(L.footer.services)}</h2><ul>${cfg.services.map((s, i) => `<li><a href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}</a></li>`).join('')}</ul></div>
     <div><h2 class="ftr__h">${esc(L.footer.patients)}</h2><ul><li><a href="${href(lang, 'fue-dhi/')}">${esc(L.techniques.nav)}</a></li>${['journey', 'results', 'about', 'faq'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.nav[k])}</a></li>`).join('')}</ul></div>
