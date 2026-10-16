@@ -343,7 +343,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
         </li>
         ${headerNav.map(([k, u]) => `<li class="nav__item${k === 'journey' || k === 'about' ? ' nav__item--opt' : ''}"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
-      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav', ['facebook'])}</div>
+      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}</div>
     </nav>
     <div class="hdr__actions">
       <div class="lang" data-lang>
