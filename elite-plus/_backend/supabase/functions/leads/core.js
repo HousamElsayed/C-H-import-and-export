@@ -112,7 +112,7 @@ export function createHandler(deps) {
     const cors = corsHeaders(origin, deps.allowedOrigins);
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     if (req.method !== 'POST') return json(405, { error: 'method_not_allowed' }, cors);
-    if (!deps.allowedOrigins.includes(origin)) return json(403, { error: 'origin_not_allowed' }, cors);
+    if (!deps.allowedOrigins.includes(origin)) { deps.log('error', 'origin not allowed', { origin }); return json(403, { error: 'origin_not_allowed' }, cors); }
     if (!(req.headers.get('content-type') || '').includes('application/json')) return json(415, { error: 'json_required' }, cors);
     const len = Number(req.headers.get('content-length') || 0);
     if (len > 64 * 1024) return json(413, { error: 'too_large' }, cors);

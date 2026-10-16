@@ -45,11 +45,12 @@ const handler = createHandler({
     return (count ?? 0) > 0;
   },
   async verifyTurnstile(token: unknown, ip: string) {
-    if (typeof token !== 'string' || !token) return false;
+    if (typeof token !== 'string' || !token) { log('error', 'turnstile token missing'); return false; }
     const form = new FormData();
     form.append('secret', TURNSTILE_SECRET); form.append('response', token); form.append('remoteip', ip);
     const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: form });
     const j = await r.json().catch(() => ({}));
+    if (j.success !== true) log('error', 'turnstile rejected', { codes: j['error-codes'] ?? null, hostname: j.hostname ?? null, secretLen: TURNSTILE_SECRET.length });
     return j.success === true;
   },
 
