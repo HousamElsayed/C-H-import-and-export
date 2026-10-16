@@ -37,11 +37,11 @@
   "integrations": {
     "leadEndpoint": null,
     "uploadUrlEndpoint": null,
-    "turnstileSiteKey": null,
+    "turnstileSiteKey": "0x4AAAAAAFYvtgAPB2iHeN28",
     "gtmId": null,
     "metaPixelId": null,
     "clarityId": null,
-    "supabaseUrl": null,
+    "supabaseUrl": "https://wrkotkzgdzlpbbsgcoug.supabase.co",
     "supabaseAnonKey": null
   }
 }
