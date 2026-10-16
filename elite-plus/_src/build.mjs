@@ -999,18 +999,11 @@ for (const lang of LANGS) {
   out.set(`sitemap-${lang}.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
 }
 out.set('index.html', rootPage());
-// Coordinator dashboard (static page; data access is enforced by Supabase row-level security).
-if (!cfg.integrations.supabaseUrl || !cfg.integrations.supabaseAnonKey) problems.add('missing data: integrations.supabaseUrl / supabaseAnonKey (coordinator dashboard)');
-out.set('admin/index.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coordinator dashboard – Elite+</title><meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
-<link rel="icon" href="${imgSrc(cfg.brand.mark)}" type="image/svg+xml"><link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
-<script type="application/json" id="admin-config">${JSON.stringify({ supabaseUrl: cfg.integrations.supabaseUrl, supabaseAnonKey: cfg.integrations.supabaseAnonKey, logo: imgSrc(cfg.brand.logoLight), stageBase: asset('img/stages/') })}</script>
-<script type="module" src="app.js?v=${hash('admin/app.js')}"></script></head>
-<body class="pg-admin"><div id="app"><p style="padding:24px">Loading…</p></div></body></html>`);
+out.set('admin/index.html', redirectPage('en', href('en', '')));
 out.set('design-system/index.html', designSystem());
 out.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${LANGS.map((l) => `<sitemap><loc>${absUrl(`${BASE}/sitemap-${l}.xml`)}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 // Real 301s on Cloudflare Pages (GitHub Pages ignores this file and uses the refresh pages above).
-out.set('_redirects', LANGS.flatMap((l) => [...cfg.services.flatMap((s) => (s.redirectFrom ?? []).map((o) => `${href(l, `services/${o}/`)} ${href(l, `services/${s.slug}/`)} 301`)), `${href(l, 'doctors/')} ${href(l, '')} 301`, `${href(l, 'prices/')} ${href(l, 'contact/')} 301`]).join('\n') + '\n');
+out.set('_redirects', LANGS.flatMap((l) => [...cfg.services.flatMap((s) => (s.redirectFrom ?? []).map((o) => `${href(l, `services/${o}/`)} ${href(l, `services/${s.slug}/`)} 301`)), `${href(l, 'doctors/')} ${href(l, '')} 301`, `${href(l, 'prices/')} ${href(l, 'contact/')} 301`]).concat(`${BASE}/admin/ ${href('en', '')} 301`).join('\n') + '\n');
 out.set('robots.txt', `# Must be served at the domain root to take effect.\nUser-agent: *\n${PREVIEW ? 'Disallow: /\n' : `Disallow: ${BASE}/design-system/\n`}Sitemap: ${absUrl(`${BASE}/sitemap.xml`)}\n`);
 
 if (PROD && problems.size) {

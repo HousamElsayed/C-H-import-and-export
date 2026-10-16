@@ -19,7 +19,6 @@ elite-plus/
   _src/                   generator (build.mjs), preview server, rates, OG images, stage drawings, CMS config generator
   _backend/               Supabase: database migrations, lead-intake edge function, tests
   _docs/                  data-intake spreadsheet, content plan
-  admin/                  coordinator dashboard (sign in with work email)
   assets/                 css, js, fonts (self-hosted), images; staff uploads go to assets/img/uploads/
 ```
 
