@@ -72,6 +72,10 @@
       "pdpl": [
         "Aviso de protección de datos de Egipto – Elite+",
         "Aviso informativo conforme a la Ley egipcia de Protección de Datos Personales n.º 151 de 2020."
+      ],
+      "refund": [
+        "Política de Reembolso – Elite+ Wellness Clinics",
+        "Condiciones de depósito y reembolso para tratamientos y reservas."
       ]
     }
   },
@@ -444,6 +448,10 @@
     "pdpl": {
       "h1a": "Aviso de protección",
       "h1b": "de datos de Egipto"
+    },
+    "refund": {
+      "h1a": "Política",
+      "h1b": "de reembolso"
     }
   },
   "legal": {
@@ -494,6 +502,16 @@
       "Datos de salud y consentimiento",
       "Transferencias fuera de Egipto",
       "Sus derechos",
+      "Contacto"
+    ],
+    "refund": [
+      "Depósitos y pagos",
+      "Cancelación por el paciente",
+      "Cambios y reprogramación",
+      "Cancelación por la clínica",
+      "Inelegibilidad médica",
+      "Importes no reembolsables",
+      "Cómo se emiten los reembolsos",
       "Contacto"
     ]
   },
@@ -805,5 +823,9 @@
   "results2": {
     "months": "{n} meses",
     "final": "Final"
+  },
+  "notFound": {
+    "h1": "Página no encontrada",
+    "body": "La página que buscaba se ha movido o ya no existe. Permítanos ayudarle a volver."
   }
 }

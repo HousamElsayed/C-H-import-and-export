@@ -150,7 +150,9 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .trustbar .todo { background: transparent; color: var(--sand); border-color: var(--sand); }
 
 /* ---------- header ---------- */
-.hdr { position: sticky; top: 0; z-index: 50; background: rgba(254, 252, 252, .92); backdrop-filter: saturate(1.4) blur(10px); transition: box-shadow .25s, background-color .25s; }
+/* No backdrop-filter: it would make .hdr the containing block for the fixed mobile drawer,
+   trapping the drawer inside the header's height. A near-opaque background keeps text legible. */
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(254, 252, 252, .97); transition: box-shadow .25s, background-color .25s; }
 .hdr.is-stuck { background: var(--cream); box-shadow: 0 6px 24px rgba(7, 50, 81, .08); }
 .hdr__in { display: flex; align-items: center; gap: 20px; height: var(--hdr-h); }
 @media (min-width: 1321px) { .hdr .icon-btn--wa { display: none; } }
@@ -200,6 +202,7 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 .lang__menu a:hover { background: var(--grey-bg); }
 .lang__menu a[aria-current] { background: var(--grey-bg); font-weight: 700; }
 .lang__code { display: inline-grid; place-items: center; width: 30px; height: 22px; border-radius: 5px; background: var(--navy); color: #fff; font-size: .7rem; font-weight: 700; font-family: "Outfit", sans-serif; }
+.nav-scrim { display: none; }
 .burger { display: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: none; cursor: pointer; place-items: center; }
 .burger .i { width: 26px; height: 26px; }
 .burger__close { display: none; }
@@ -209,9 +212,12 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 @media (max-width: 1023px) {
   .burger { display: grid; }
   .hdr__cta { display: none; }
-  .nav { position: fixed; inset: var(--hdr-h) 0 0 0; background: var(--cream); padding: 16px var(--gutter) 120px; overflow-y: auto; opacity: 0; transform: translateY(-12px); visibility: hidden; transition: transform .3s var(--ease), opacity .3s var(--ease), visibility .3s; margin: 0; }
-  /* Closed menu stays inside the viewport (no sideways offset), so phones never see a page wider than the screen. */
-  .nav.is-open { opacity: 1; transform: none; visibility: visible; }
+  /* Full-height side drawer, anchored to the end side (right in LTR, left in RTL) and sliding in from off-screen. */
+  .nav { position: fixed; inset-block: var(--hdr-h) 0; inset-inline-end: 0; inset-inline-start: auto; width: min(400px, 88vw); background: var(--cream); padding: 24px var(--gutter) 120px; overflow-y: auto; overscroll-behavior: contain; visibility: hidden; transform: translateX(100%); transition: transform .34s var(--ease), visibility .34s; margin: 0; z-index: 48; border-inline-start: 1px solid var(--line); }
+  [dir="rtl"] .nav { transform: translateX(-100%); }
+  .nav.is-open { transform: none; visibility: visible; }
+  .nav-scrim { display: block; position: fixed; inset: var(--hdr-h) 0 0 0; background: rgba(7, 50, 81, .45); opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; z-index: 47; }
+  .nav-scrim.is-open { opacity: 1; visibility: visible; }
   .nav__list { flex-direction: column; align-items: stretch; gap: 0; }
   .nav__item { border-bottom: 1px solid var(--line); }
   .nav__link { width: 100%; justify-content: space-between; font-size: 1.15rem; min-height: 56px; border-radius: 0; }
@@ -795,12 +801,14 @@ a:hover > .more .i, .more:hover .i { transform: translateX(4px); }
 @media (min-width: 1024px) { .sbtn { display: none; } }
 .nav__langs { display: none; }
 @media (max-width: 600px) {
-  .hdr .lang { display: none; }
   .nav__langs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
   .nav__langs a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; background: #fff; }
   .nav__langs a[aria-current] { border-color: var(--navy); background: var(--navy); color: #fff; }
   .nav__langs a[aria-current] .lang__code { background: #fff; color: var(--navy); }
   .hdr__actions { gap: 6px; }
+  /* Compact language control in the header: globe only, no code or chevron. */
+  .hdr .lang__btn { padding: 6px; min-width: 44px; justify-content: center; }
+  .hdr .lang__btn span, .hdr .lang__btn .lang__chev { display: none; }
 }
 
 

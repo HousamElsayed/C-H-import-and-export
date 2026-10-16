@@ -274,8 +274,8 @@ function branchLd(lang, b) {
 // ---------- layout ----------
 // Social profiles (company.json → social). Every link opens in a new tab without leaking the referrer.
 const SOCIAL_LABEL = { instagram: 'Instagram', facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok', telegram: 'Telegram' };
-function socialList(lang, cls = '') {
-  const items = Object.entries(C.social).filter(([, v]) => v);
+function socialList(lang, cls = '', exclude = []) {
+  const items = Object.entries(C.social).filter(([k, v]) => v && !exclude.includes(k));
   if (!items.length) return PREVIEW ? `<p>${todo('social links', 'company.social')}</p>` : '';
   return `<ul class="social ${cls}">${items.map(([k, v]) => `<li><a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="${SOCIAL_LABEL[k] ?? k} ${esc(I[lang].a11y.ext)}" data-ev="social_click">${icon(k)}</a></li>`).join('')}</ul>`;
 }
@@ -344,7 +344,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
         ${headerNav.map(([k, u]) => `<li class="nav__item${k === 'journey' || k === 'about' ? ' nav__item--opt' : ''}"><a class="nav__link" href="${href(lang, u)}"${key === k ? ' aria-current="page"' : ''}>${esc(L.nav[k])}</a></li>`).join('')}
       </ul>
       <ul class="nav__langs" aria-label="${esc(L.nav.language)}">${langMenu}</ul>
-      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav')}</div>
+      <div class="nav__mobile-cta">${btn(L.nav.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}${socialList(lang, 'social--nav', ['facebook'])}</div>
     </nav>
     <div class="hdr__actions">
       <div class="lang" data-lang>
@@ -357,7 +357,8 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
       <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="${esc(L.a11y.openMenu)}" data-label-open="${esc(L.a11y.openMenu)}" data-label-close="${esc(L.a11y.closeMenu)}" data-burger>${icon('menu', 'burger__open')}${icon('close', 'burger__close')}</button>
     </div>
   </div>
-</header>`;
+</header>
+<div class="nav-scrim" data-nav-scrim aria-hidden="true"></div>`;
 
   const final = finalCta ? `
 <section class="final" aria-labelledby="final-title">${raysSvg('final__rays')}
@@ -382,7 +383,7 @@ function layout({ lang, key, p = '', title, desc, body, ld = [], pageName, noind
   <div class="wrap ftr__legal">
     <p class="ftr__disc">${esc(L.footer.disclaimer)}</p>
     <ul class="ftr__links">
-      ${['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'impressum'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.pages[k].h1a)} ${esc(L.pages[k].h1b)}</a></li>`).join('')}
+      ${['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'refund', 'impressum'].map((k) => `<li><a href="${href(lang, k + '/')}">${esc(L.pages[k].h1a)} ${esc(L.pages[k].h1b)}</a></li>`).join('')}
       <li><button type="button" class="linklike" data-cookie-open>${esc(L.footer.cookieSettings)}</button></li>
     </ul>
     <p class="ftr__meta">© ${YEAR} ${esc(L.meta.siteName)} · ${esc(L.footer.rights)}</p>
@@ -572,7 +573,7 @@ function serviceCard(lang, s, i) {
 function categoryCard(lang, cat, items, ci) {
   const L = I[lang];
   return `<article class="ccat ccat--noimg">
-    <div class="ccat__body"><span class="ccat__badge">${starMark()}</span><h3>${esc(L.categories[cat].name)}</h3><p>${esc(L.categories[cat].short)}</p>
+    <div class="ccat__body"><h3>${esc(L.categories[cat].name)}</h3><p>${esc(L.categories[cat].short)}</p>
     <ul class="ccat__list">${items.map(({ s, i }) => `<li><a href="${href(lang, `services/${s.slug}/`)}">${svcName(s, lang, i)}${icon('arrow', 'i-flip')}</a></li>`).join('')}</ul></div></article>`;
 }
 
@@ -715,6 +716,11 @@ ${clinicsSection(lang)}
   ${techniques(lang)}
   <div class="sec__cta">${linkMore(L.techniques.more, href(lang, 'fue-dhi/'))}${btn(L.techniques.cta, href(lang, 'assessment/'), 'primary', '', ' data-ev="cta_click"')}</div>
 </div></section>
+${(() => { const results = resultsItems(); return results.length ? `<section class="sec" aria-labelledby="res-title"><div class="wrap">
+  ${sectionHead(H.results.label, H.results.h2a, H.results.h2b, { id: 'res-title', sub: H.results.sub })}
+  ${carousel(lang, results.slice(0, 8).map((r, i) => compareCard(lang, r, i)), 'carousel--ba')}
+  <div class="sec__cta">${linkMore(H.results.cta, href(lang, 'results/'))}</div>
+</div></section>` : ''; })()}
 <section class="sec sec--grey" aria-labelledby="inc-title"><div class="wrap split">
   <div>${sectionHead(H.included.label, H.included.h2a, H.included.h2b, { id: 'inc-title' })}<p class="note">${esc(H.included.note)}</p></div>
   <div class="panel">${includedList(lang)}</div>
@@ -946,6 +952,28 @@ ${LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${absUrl(href(l)
 </head><body class="pg-root"><main class="root-pick"><div>${logo(DEF).replace(href(DEF), href(DEF))}<ul>${LANGS.map((l) => `<li><a class="btn btn--outline" href="${href(l)}" hreflang="${l}" lang="${l}" data-lang-link="${l}">${esc(I[l].lang.name)}</a></li>`).join('')}</ul></div></main></body></html>`;
 }
 
+// Custom 404, served from the Pages site root for any unknown URL across the whole domain.
+function notFoundPage() {
+  const L = I[DEF];
+  const links = [['', L.nav.home ?? 'Home'], ['services/', L.nav.services], ['results/', L.nav.results], ['contact/', L.nav.contact]];
+  return `<!doctype html><html lang="${DEF}" dir="${L.lang.dir}"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>404 – ${esc(L.meta.siteName)}</title><meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#073251">
+<link rel="icon" href="${imgSrc(cfg.brand.mark)}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${asset('img/apple-touch-icon.png')}">
+<link rel="stylesheet" href="${asset('css/site.min.css')}?v=${V.css}">
+<style>.nf{min-height:100vh;display:grid;place-items:center;padding:48px var(--gutter);text-align:center}.nf__in{max-width:560px}.nf__code{font-family:var(--f-head);font-weight:800;font-size:clamp(72px,18vw,140px);line-height:1;color:var(--orange);margin:8px 0 4px}.nf__links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}.nf__langs{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;font-size:var(--fs-small)}.nf__logo{display:inline-flex;margin-bottom:8px}</style>
+</head><body class="pg-404"><main class="nf"><div class="nf__in">
+<span class="nf__logo">${logo(DEF)}</span>
+<p class="nf__code">404</p>
+<h1 class="h2">${esc(L.notFound?.h1 ?? 'Page not found')}</h1>
+<p>${esc(L.notFound?.body ?? 'The page you were looking for has moved or no longer exists.')}</p>
+<div class="nf__links">${links.map(([u, t], i) => `<a class="btn ${i === 0 ? 'btn--primary' : 'btn--outline'}" href="${href(DEF, u)}">${esc(t)}</a>`).join('')}</div>
+<div class="nf__langs">${LANGS.map((l) => `<a href="${href(l)}" hreflang="${l}" lang="${l}">${esc(I[l].lang.name)}</a>`).join('')}</div>
+</div></main></body></html>`;
+}
+
 function designSystem() {
   const sw = [['--navy', '#073251', 'Primary, headings, body text'], ['--orange-deep', '#F1592A', 'Headline highlights ≥24px only (3.3:1)'], ['--orange', '#F59345', 'CTA background, logo mark. Never text on light'], ['--sand', '#F5BE6E', 'Accents, icons on navy. Never text on light'], ['--cream', '#FEFCFC', 'Page background'], ['--grey-bg', '#F7F7F7', 'Alternate sections'], ['--text-muted', '#5C6B75', 'Secondary text'], ['--orange-text', '#C8431A', 'Small orange text/links on light (4.9:1)']];
   const block = (lang) => {
@@ -970,7 +998,7 @@ function designSystem() {
 }
 
 // ---------- assemble ----------
-const legalKeys = ['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'impressum'];
+const legalKeys = ['privacy', 'kvkk', 'pdpl', 'cookies', 'terms', 'refund', 'impressum'];
 const sitemapPaths = ['', 'services/', ...cfg.services.map((s) => `services/${s.slug}/`), 'fue-dhi/', ...BRANCHES.map((b) => `${b.slug}/`), 'results/', 'about/', 'journey/', 'assessment/', 'faq/', 'contact/', ...legalKeys.map((k) => k + '/')];
 
 const redirectPage = (lang, to) => `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><title>${esc(I[lang].meta.siteName)}</title><meta name="robots" content="noindex"><link rel="canonical" href="${absUrl(to)}"><meta http-equiv="refresh" content="0; url=${to}"></head><body><a href="${to}">${esc(to)}</a></body></html>\n`;
@@ -1000,6 +1028,7 @@ for (const lang of LANGS) {
 }
 out.set('index.html', rootPage());
 out.set('admin/index.html', redirectPage('en', href('en', '')));
+out.set('../404.html', notFoundPage()); // served from the Pages site root for unknown URLs across the domain
 out.set('design-system/index.html', designSystem());
 out.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${LANGS.map((l) => `<sitemap><loc>${absUrl(`${BASE}/sitemap-${l}.xml`)}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 // Real 301s on Cloudflare Pages (GitHub Pages ignores this file and uses the refresh pages above).

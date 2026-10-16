@@ -72,6 +72,10 @@
       "pdpl": [
         "Egypt Data Protection Notice – Elite+",
         "Information notice under Egyptian Personal Data Protection Law No. 151 of 2020."
+      ],
+      "refund": [
+        "Refund Policy – Elite+ Wellness Clinics",
+        "Deposit and refund terms for treatments and bookings."
       ]
     }
   },
@@ -444,6 +448,10 @@
     "pdpl": {
       "h1a": "Egypt data",
       "h1b": "protection notice"
+    },
+    "refund": {
+      "h1a": "Refund",
+      "h1b": "policy"
     }
   },
   "legal": {
@@ -495,6 +503,16 @@
       "Transfers outside Egypt",
       "Your rights",
       "Contact"
+    ],
+    "refund": [
+      "Deposits and payments",
+      "Cancellation by the patient",
+      "Changes and rescheduling",
+      "Cancellation by the clinic",
+      "Medical ineligibility",
+      "Non-refundable items",
+      "How refunds are issued",
+      "Contact us"
     ]
   },
   "footer": {
@@ -805,5 +823,9 @@
   "results2": {
     "months": "{n} months",
     "final": "Final"
+  },
+  "notFound": {
+    "h1": "Page not found",
+    "body": "The page you were looking for has moved or no longer exists. Let us help you find your way back."
   }
 }

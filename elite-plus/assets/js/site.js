@@ -62,16 +62,18 @@
   disclosure($('[data-clinics-btn]'), $('[data-clinics]'));
 
   // Mobile nav
-  const burger = $('[data-burger]'); const nav = $('[data-nav]');
+  const burger = $('[data-burger]'); const nav = $('[data-nav]'); const scrim = $('[data-nav-scrim]');
   if (burger && nav) {
     const set = (open) => {
       burger.setAttribute('aria-expanded', String(open));
       burger.setAttribute('aria-label', open ? burger.dataset.labelClose : burger.dataset.labelOpen);
       nav.classList.toggle('is-open', open);
+      scrim?.classList.toggle('is-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
       if (open) $('a, button', nav)?.focus();
     };
     burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
+    scrim?.addEventListener('click', () => { set(false); burger.focus(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { set(false); burger.focus(); } });
     matchMedia('(min-width: 1024px)').addEventListener('change', (m) => m.matches && set(false));
   }

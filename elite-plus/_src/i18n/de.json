@@ -72,6 +72,10 @@
       "pdpl": [
         "Datenschutzhinweis Ägypten – Elite+",
         "Informationen nach dem ägyptischen Datenschutzgesetz Nr. 151 von 2020."
+      ],
+      "refund": [
+        "Rückerstattungsrichtlinie – Elite+ Wellness Clinics",
+        "Anzahlungs- und Rückerstattungsbedingungen für Behandlungen und Buchungen."
       ]
     }
   },
@@ -444,6 +448,10 @@
     "pdpl": {
       "h1a": "Datenschutzhinweis",
       "h1b": "Ägypten"
+    },
+    "refund": {
+      "h1a": "Rückerstattungs-",
+      "h1b": "richtlinie"
     }
   },
   "legal": {
@@ -494,6 +502,16 @@
       "Gesundheitsdaten und Einwilligung",
       "Übermittlung ins Ausland",
       "Ihre Rechte",
+      "Kontakt"
+    ],
+    "refund": [
+      "Anzahlungen und Zahlungen",
+      "Stornierung durch den Patienten",
+      "Änderungen und Umbuchung",
+      "Stornierung durch die Klinik",
+      "Medizinische Nichteignung",
+      "Nicht erstattungsfähige Beträge",
+      "Wie Rückerstattungen erfolgen",
       "Kontakt"
     ]
   },
@@ -805,5 +823,9 @@
   "results2": {
     "months": "{n} Monate",
     "final": "Endergebnis"
+  },
+  "notFound": {
+    "h1": "Seite nicht gefunden",
+    "body": "Die gesuchte Seite wurde verschoben oder existiert nicht mehr. Wir helfen Ihnen zurück."
   }
 }

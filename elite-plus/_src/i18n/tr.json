@@ -72,6 +72,10 @@
       "pdpl": [
         "Mısır Veri Koruma Bildirimi – Elite+",
         "2020 tarihli ve 151 sayılı Mısır Kişisel Verilerin Korunması Kanunu kapsamında bilgilendirme."
+      ],
+      "refund": [
+        "İade Politikası – Elite+ Wellness Clinics",
+        "Tedaviler ve rezervasyonlar için depozito ve iade şartları."
       ]
     }
   },
@@ -444,6 +448,10 @@
     "pdpl": {
       "h1a": "Mısır veri koruma",
       "h1b": "bildirimi"
+    },
+    "refund": {
+      "h1a": "İade",
+      "h1b": "politikası"
     }
   },
   "legal": {
@@ -495,6 +503,16 @@
       "Mısır dışına aktarım",
       "Haklarınız",
       "İletişim"
+    ],
+    "refund": [
+      "Depozito ve ödemeler",
+      "Hasta tarafından iptal",
+      "Değişiklik ve yeniden planlama",
+      "Klinik tarafından iptal",
+      "Tıbbi uygunsuzluk",
+      "İade edilmeyen tutarlar",
+      "İadelerin nasıl yapılacağı",
+      "Bize ulaşın"
     ]
   },
   "footer": {
@@ -805,5 +823,9 @@
   "results2": {
     "months": "{n}. ay",
     "final": "Son"
+  },
+  "notFound": {
+    "h1": "Sayfa bulunamadı",
+    "body": "Aradığınız sayfa taşınmış veya artık mevcut değil. Yolunuzu bulmanıza yardımcı olalım."
   }
 }

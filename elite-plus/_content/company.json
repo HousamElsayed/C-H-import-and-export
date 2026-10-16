@@ -21,7 +21,7 @@
   "_whatsappNote": "Main international WhatsApp line used on pages that are not branch-specific (digits only with country code). Branch pages use the branch's own number.",
   "social": {
     "instagram": "https://www.instagram.com/elite.plus.clinics/",
-    "facebook": null,
+    "facebook": "https://www.facebook.com/elite.plus.clinics",
     "youtube": null,
     "tiktok": null,
     "telegram": null
